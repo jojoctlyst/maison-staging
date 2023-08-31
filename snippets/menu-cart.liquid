@@ -1,0 +1,99 @@
+{%- unless settings.catalogue_mode -%}
+{%- if template != "cart" -%}
+
+<!-- tt-cart -->
+<div class="tt-desctop-parent-cart tt-parent-box">
+  <div class="tt-cart tt-dropdown-obj">
+    <button class="tt-dropdown-toggle{% if settings.use_svg_cart_header %} header-icon-with-text{% endif %}"
+            data-tooltip="{{ 'general.tooltip_texts.header_cart' | t }}"
+            data-tposition="bottom"
+            >
+      {% if settings.use_svg_cart_header %}
+      <span class="tt-icon">
+        {{ settings.svg_cart_header }}
+      </span>
+      {% else %}
+      <i class="icon-f-39"></i>
+      {% endif %}
+
+      {% if item.ca_text != '' %}<span class="tt-text">
+      {{ item.ca_text }}
+      </span>{% endif %}
+      <span class="tt-badge-cart{% if cart.item_count == 0 %} hide{% endif %}">{{ cart.item_count }}</span>
+    </button>
+
+    <div class="tt-dropdown-menu">
+      <div class="tt-mobile-add">
+        <h6 class="tt-title">{{ 'cart.header.title' | t }}</h6>
+        <button class="tt-close">{{ 'cart.header.close' | t }}</button>
+      </div>
+      <div class="tt-dropdown-inner">
+        <div class="tt-cart-layout">
+          <div class="tt-cart-content">
+
+            <a href="/cart" class="tt-cart-empty{% if cart.item_count > 0 %} hide{% endif %}" title="{{ 'cart.header.view_cart' | t }}">
+              <i class="icon-f-39"></i>
+              <p>{{ 'cart.header.empty_cart' | t }}</p>
+            </a>
+            
+            <div class="tt-cart-box limoniapps-discountninja-drawercart-root{% if cart.item_count == 0 %} hide{% endif %}">
+              <div class="tt-cart-list">
+                {% assign wcp_total_price = 0 %} 
+                {%- for item in cart.items -%}
+                {%- include 'wcp_discount' with item.product -%}
+                {%- include 'wcp_variant' with item.variant -%} 
+                {% include 'wcp_vd_discount' with item %} 
+                {% assign  wcp_custom_final_Price = item.final_price  %} 
+                {% if wcp_v_price < wcp_custom_final_Price %}
+                {% assign wcp_line_price = wcp_v_price | floor | minus: 0 | times: item.quantity %}
+                {% else %}
+                {% assign wcp_v_price = wcp_custom_final_Price | floor | minus: 0 %}
+                {% assign wcp_line_price = wcp_custom_final_Price | floor | minus: 0 | times: item.quantity %}
+                {% endif %}
+                {% assign wcp_total_price = wcp_total_price | plus: wcp_line_price %}	
+
+                {%- include "menu-cart-item" length: forloop.index, wcp_v_price : wcp_v_price, wcp_price : wcp_price, wcp_price_min : wcp_price_min, wcp_price_max : wcp_price_max, wcp_v_compare_at_price : wcp_v_compare_at_price, wcp_compare_at_price : wcp_compare_at_price, wcp_compare_at_price_min : wcp_compare_at_price_min, wcp_compare_at_price_max : wcp_compare_at_price_max, wcp_vd_HTML_table : wcp_vd_HTML_table,p_discount_tag :p_discount_tag ,v_discount_tag : v_discount_tag
+                -%}{%- endfor -%}
+              </div>
+              <div class="flex-align-center header-cart-more-message-js"{% if cart.items.size <= 3 %} style="display: none;"{% endif %}>
+                <a href="/cart" class="btn-link-02" title="{{ 'cart.header.view_cart' | t | capitalize }}">{{ 'cart.header.view_cart_all' | t }}</a>
+              </div>
+              <div class="tt-cart-total-row">
+                <div class="tt-cart-total-title">{{ 'cart.header.total' | t }}</div>
+                <div class="tt-cart-total-price">
+                  <span>
+                    <span class="limoniapps-discountninja-cart-subtotal-price">{{ wcp_total_price | money }}</span>
+                  </span>
+                </div>
+              </div>
+              {% if settings.terms_cond_checkbox_show %}
+              <div class="checkbox-group m-term-conditions-checkbox term-conditions-checkbox-js">
+                <input type="checkbox" id="cart-term-conditions-checkbox" value="1">
+                <label for="cart-term-conditions-checkbox">
+                  <span class="check"></span>
+                  <span class="box"></span>
+                  {{ settings.terms_cond_checkbox_text }}
+                </label>
+              </div>
+              {% endif %}
+              <div class="tt-cart-btn">
+                <div class="tt-item">
+                  <a href="/checkout" class="btn{% if settings.terms_cond_checkbox_show %} disabled{% endif %}">{{ 'cart.header.checkout' | t }}</a>
+                </div>
+                <div class="tt-item">
+                  <a href="/cart" class="btn-link-02">{{ 'cart.header.view_cart' | t }}</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {%- include "menu-cart-item-empty" -%}
+    </div>
+  </div>
+</div>
+<!-- /tt-cart -->
+
+{%- endif -%}
+{%- endunless -%}

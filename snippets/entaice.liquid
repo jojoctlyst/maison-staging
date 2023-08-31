@@ -1,0 +1,166 @@
+<script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    window.addEventListener('load', function(){
+        function getPageType() {
+            {% if template.name == "index" %}
+                return "Home Page";
+            {% elsif template.name == "collection" %}
+                return "Category Page";
+            {% elsif template.name == "product" %}
+                return "Product Detail Page";
+            {% elsif template.name == "cart" %}
+                return "Cart Page";
+            {% else %}
+                return "Other";
+            {% endif %}
+        }
+        function getThemeDetails() {
+            {% if theme %}
+                return [{{ theme.id }}, "{{ theme.name | escape }}"];
+            {% else %}
+                return [-1, "no name"];
+            {% endif %}
+        }
+        function getCustomerDetails() {
+            {% if customer %}
+                return [{{ customer.id }}, "{{ customer.email | escape }}"];
+            {% else %}
+                return [-1, "no email"];
+            {% endif %}
+        }
+        var pageType = getPageType();
+        var customerDetails = getCustomerDetails();
+        var themeDetails = getThemeDetails();
+        window.dataLayer.push({
+            entaice_gen: {
+                shop_domain: {% if shop.permanent_domain %} "{{ shop.permanent_domain | escape }}" {% else %} "" {% endif %},
+                theme_id: themeDetails[0],
+                theme_name: themeDetails[1],
+                page_type: pageType,
+                customer_id: customerDetails[0],
+                customer_email: customerDetails[1]
+            }
+        });
+        if (pageType == "Home Page") {
+            window.dataLayer.push({
+                entaice_home: {
+                    has_data: 1,
+                },
+                event: "entaice_home"
+            });
+        }
+        else if (pageType == "Product Detail Page") {
+            {% if product %}
+                var product = {{ product | json }};
+                var variantDetails = product.variants.map(function(variant, idx) {
+                    return {
+                        id: variant.id,
+                        sku: (variant.sku || "").toString(),
+                        title: (variant.title || "").toString(),
+                        available: (variant.available ? 1 : 0),
+                        price: variant.price * 0.01,
+                        option_1: (variant.option1 || "").toString(),
+                        option_2: (variant.option2 || "").toString(),
+                        option_3: (variant.option3 || "").toString(),
+                        options: variant.options
+                    };
+                });
+                window.dataLayer.push({
+                    entaice_pdp: {
+                        has_data: 1,
+                        id: product.id,
+                        title: (product.title || "").toString(),
+                        type: (product.type || "").toString(),
+                        vendor: (product.vendor || "").toString(),
+                        options: JSON.stringify("options" in product ? product.options : []),
+                        variants: JSON.stringify(variantDetails),
+                        available: (product.available ? 1 : 0),
+                        {% if collection.id %}
+                            collection_id: {{ collection.id }},
+                            collection_title: "{{ collection.title | escape }}",
+                        {% else %}
+                            collection_id: -1,
+                            collection_title: "",
+                        {% endif %}
+                        all_collections: JSON.stringify("collections" in product ? product.collections.map(function(collection, idx){return collection.id;}) : []),
+                        price_min: product.price_min * 0.01,
+                        price_max: product.price_max * 0.01,
+                        selected_variant: ("selected_variant" in product ? product.selected_variant.id : -1),
+                        tags: JSON.stringify(product.tags.slice(1,201)),
+                        description: (product.description || "").toString(),
+                        images: JSON.stringify(product.images),
+                        canonical_url: "{{ canonical_url | escape }}"
+                    },
+                    event: "entaice_pdp"
+                });
+            {% else %}
+                window.dataLayer.push({
+                    entaice_pdp: {
+                        has_data: 0
+                    },
+                    event: "entaice_pdp"
+                });
+            {% endif %}
+        } else if (pageType == "Category Page") {
+            {% if collection %}
+                window.dataLayer.push({
+                    entaice_cat: {
+                        has_data: 1,
+                        id: {% if collection.id %} {{ collection.id }} {% else %} -1 {% endif %},
+                        title: "{{ collection.title | escape }}",
+                        tags: JSON.stringify({% if collection.tags %} {{ collection.tags | json }}.slice(1,201) {% else %} [] {% endif %}),
+                        canonical_url: "{{ canonical_url | escape }}"
+                    },
+                    event: "entaice_cat"
+                });
+            {% else %}
+                window.dataLayer.push({
+                    entaice_cat: {
+                        has_data: 0
+                    },
+                    event: "entaice_cat"
+                });
+            {% endif %}
+        } else if (pageType == "Cart Page") {
+            {% if cart %}
+                var cart = {{ cart | json }};
+                var cartItems = cart.items.map(function(item, idx) {
+                    return {
+                        product_id: item.product_id,
+                        product_title: (item.product_title || "").toString(),
+                        variant_id: item.variant_id,
+                        variant_title: (item.variant_title || "").toString(),
+                        sku: (item.sku || "").toString(),
+                        quantity: item.quantity,
+                        price: item.price * 0.01,
+                        properties: (("properties" in item ? item.properties : []) || []),
+                        variant_options: (("variant_options" in item ? item.variant_options : []) || []),
+                        discounted_price: item.discounted_price * 0.01,
+                        total_discount: item.total_discount * 0.01,
+                        discounts: item.discounts,
+                        line_level_discount_allocations: item.line_level_discount_allocations
+                    };
+                });
+                window.dataLayer.push({
+                    entaice_cart: {
+                        has_data: 1,
+                        item_count: cart.item_count,
+                        items: JSON.stringify(cartItems),
+                        currency: (cart.currency || "").toString(),
+                        original_total_price: cart.original_total_price * 0.01,
+                        total_price: cart.total_price * 0.01
+                    },
+                    event: "entaice_cart"
+                });
+            {% else %}
+                window.dataLayer.push({
+                    entaice_cart: {
+                        has_data: 0
+                    },
+                    event: "entaice_cart"
+                });
+            {% endif %}
+        }
+    }, false);
+</script>
+            

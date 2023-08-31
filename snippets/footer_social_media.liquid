@@ -1,0 +1,59 @@
+{%- if footer_additional != '' and footer_additional.settings.show_content -%}
+{% unless item.footer_col %}
+  <div class="tt-col-right">
+{% endunless %}
+  <div class="footer_social_list tt-col-item">
+    <h3 class="footer-additional-title">{{ footer_additional.settings.additional_social_title }}</h3>
+    <div class="tt-mobile-collapse">
+      <ul class="tt-social-list">
+        {%- if footer_additional.settings.facebook_url -%}
+          <li>
+            <a target="_blank" href="{{ footer_additional.settings.facebook_url }}">
+              <img class="social-icon" src="https://cdn.shopify.com/s/files/1/0518/4549/7001/files/Group_4_256x256_crop_center.png?v=1646935238" alt="">
+            </a>
+          </li>
+        {%- endif -%}
+        {%- if footer_additional.settings.instagram_url -%}
+          <li>
+            <a target="_blank" href="{{ footer_additional.settings.instagram_url }}">
+              <img class="social-icon" src="https://cdn.shopify.com/s/files/1/0518/4549/7001/files/Group_5_256x256_crop_center.png?v=1646935239" alt="">
+            </a>
+          </li>
+        {%- endif -%}
+        {%- if footer_additional.settings.youtube_url -%}
+          <li>
+            <a target="_blank" href="{{ footer_additional.settings.youtube_url }}">
+              <img class="social-icon" src="https://cdn.shopify.com/s/files/1/0518/4549/7001/files/Group_2_256x256_crop_center.png?v=1646935238" alt="">
+            </a>
+          </li>
+        {%- endif -%}
+      </ul>
+  </div>
+{% unless item.footer_col %}</div>{% endunless %}
+<style>
+  .social-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .footer_social_list {
+    margin-bottom: 16px;
+    margin-left: 16px;
+  }
+  .tt-social-list {
+    display: flex;
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+  }
+  @media (max-width: 575px) {
+    .footer-additional-title {
+      text-align: center;
+    }
+    .tt-social-list {
+      gap: 20px !important;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>
+{%- endif -%}

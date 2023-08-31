@@ -1,0 +1,5 @@
+{%- for block in section.blocks -%}
+{%- if block.type == 'related_products_type2' -%}
+<div class="container-indent" data-title="{{ block.settings.title }}" data-product-id="{{ product.id }}" data-section-id="{{ section.id }}" data-limit="{{ block.settings.product_upsell_collection_count }}" data-section-type="product-recommendations" data-sectionname="product-recommendations"></div>
+{%- endif -%}
+{%- endfor -%}

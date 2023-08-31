@@ -1,0 +1,240 @@
+{%- assign comingSoonDate = settings.flash_sale_coming_soon -%}
+{%- assign startDate = settings.flash_sale_start -%}
+{%- assign endDate = settings.flash_sale_end -%}
+{%- unless startDate != '' and endDate != '' and enable_flash_sale -%}
+  <div class="clockdown-inline" id="flash-sale-inline"></div>
+{%- endunless -%}
+
+<script>
+  var comingSoonDate = '{{comingSoonDate}}';
+  var startDate = '{{startDate}}';
+  var endDate = '{{endDate}}';
+  var now = moment(new Date())
+  var expired = moment(endDate).add(1 ,'hour')
+
+  var validationDate = {
+    comingSoon: moment(comingSoonDate).isValid(),
+    startDate: moment(startDate).isValid(),
+    endDate: moment(endDate).isValid(),
+  }
+
+  console.table(validationDate)
+
+  var activeDate = {
+    comingSoon: false,
+    eventStart: false,
+    eventEnd: false
+  }
+
+  const updateActiveDate = function() {
+    activeDate = {
+      ...activeDate,
+      comingSoon: moment(now).isBetween(comingSoonDate, startDate),
+      eventStart: moment(now).isBetween(startDate, endDate),
+      eventEnd: moment(now).isAfter(endDate)
+    }
+  }
+
+  updateActiveDate()
+
+  var targetDate = null
+  const updateTarget = function() {
+    if (activeDate.comingSoon) {
+      targetDate = moment(startDate)
+    } else if (activeDate.eventStart) {
+      activeDate.comingSoon = false
+      targetDate = moment(endDate)
+    } else if (activeDate.endDate) {
+      activeDate.startDate = false
+      targetDate = null
+    }
+  }
+
+  updateTarget()
+
+  var flashSaleDate = moment(targetDate).format('YYYY/MM/DD HH:mm')
+
+  var textComingSoon = "Dimulai Dalam"
+  var textStartEvent = "Berakhir Dalam"
+  var textEndEvent = "Flash Sale Berakhir"
+
+  var render = `
+    <div class="inline-clock-header">
+      <img class="fs-ic-clock" src="https://cdn.shopify.com/s/files/1/0518/4549/7001/files/ic-clock_256x256_crop_center.png" />
+      <p class="flash-sale-title"></p>
+    </div>
+    <div class="flash-sale-countdown">
+      <div class="fs-clock-wrapper">
+        <div class="fs-clock">%H</div>
+        <span>JAM</span>
+      </div>
+      <span>:</span>
+      <div class="fs-clock-wrapper">
+        <div class="fs-clock">%M</div>
+        <span>MENIT</span>
+      </div>
+      <span>:</span>
+      <div class="fs-clock-wrapper">
+        <div class="fs-clock">%S</div>
+        <span>DETIK</span>
+      </div>
+    </div>
+  `
+
+  if (flashSaleDate && flashSaleDate !== 'Invalid date') {
+    $(".clockdown-inline").countdown(flashSaleDate,  function(event) {
+      $('.clockdown-inline').html(event.strftime(render));
+      $(".flash-sale-title").text(textComingSoon)
+    }).on('update.countdown', function(event) {
+      updateActiveDate()
+
+      if (activeDate.comingSoon) {
+        $('.flash-sale-collection').addClass("comingsoon")
+        $(".flash-sale-title").text(textComingSoon)
+      }
+      if (activeDate.eventStart) {
+        $('.flash-sale-collection').removeClass("comingsoon")
+        $(".flash-sale-title").text(textStartEvent)
+      }
+      if (activeDate.eventEnd) {
+        $('.flash-sale-collection').removeClass("comingsoon")
+        $(".flash-sale-title").text(textEndEvent)
+      }
+    }).on('finish.countdown', function (event) {
+
+      if (activeDate.eventStart) {
+        $('.flash-sale-collection').addClass('hidden')
+      }
+
+      if (activeDate.comingSoon) {
+        window.location.reload()
+      }
+    });
+  }
+
+</script>
+
+
+<style>
+  .clockdown-inline {
+    height: 64px;
+    border-radius: 8px;
+    color: #fff;
+    background: url('https://cdn.shopify.com/s/files/1/0518/4549/7001/files/Group_1179_3.png'), #12784A;
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+  }
+  .inline-clock-header {
+    display: flex;
+    align-items: center;
+  }
+  .inline-clock-header .flash-sale-title {
+    width: 100%;
+    color: #fff;
+    margin: 0;
+    font-weight: 500;
+    text-align: center;
+  }
+  .clockdown-inline .fs-clock-wrapper span {
+    padding-bottom: 0;
+  }
+  .clockdown-inline .flash-sale-countdown {
+    margin-top: 8px;
+  }
+
+  .flash-sale-collection.comingsoon .product-card,
+  .flash-sale-collection.comingsoon .link-see-all,
+  .flash-sale-collection.comingsoon .button-flash-sale {
+    pointer-events: none;
+    touch-action: none;
+  }
+  .flash-sale-collection.comingsoon .tt-product .tt-description .tt-price span.coming-soon-price {
+    display: inline-block;
+  }
+  .flash-sale-collection.comingsoon .new-price,
+  .flash-sale-collection.comingsoon .old-price,
+  .flash-sale-collection.comingsoon .base-price {
+    display: none !important;
+  }
+  .flash-sale-collection .tt-product .tt-description .tt-price span.coming-soon-price {
+    display: none;
+  }
+  .hidden {
+    display: none !important;
+  }
+
+  .flash-sale-countdown {
+    display: flex;
+    font-weight: 500;
+    color: #fff;
+  }
+  .flash-sale-countdown span {
+    padding: 4px 0;
+    margin: 0 8px;
+  }
+  .fs-clock-wrapper {
+    text-align: center;
+  }
+  .fs-clock-wrapper span {
+    font-size: 10px;
+    margin: 0;
+  }
+  .fs-clock {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: white;
+    color: #12784A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fs-ic-clock {
+    width: 20px;
+    height: 20px;
+    margin: auto 8px;
+  }
+
+  @media (max-width: 575px) {
+    .clockdown-inline {
+      height: 48px;
+      padding: 8px;
+    }
+    .clockdown-inline .flash-sale-countdown {
+      margin-top: 0;
+    }
+    .clockdown {
+      display: flex;
+      align-items: center;
+    }
+    .flash-sale-title {
+      color: #12784A;
+      width: fit-content;
+      margin: 0;
+      margin-right: 8px;
+    }
+    .fs-clock-wrapper span {
+      display: none;
+    }
+    .flash-sale-countdown > span {
+      margin: 0;
+    }
+    .fs-clock {
+      background: none;
+      color: #fff;
+    }
+    .flash-sale-countdown {
+      border-radius: 8px;
+      color: #fff;
+      background: url('https://cdn.shopify.com/s/files/1/0518/4549/7001/files/Group_1174_256x256_crop_center.png'), #12784A;
+      background-repeat: repeat;
+      background-size: 125%;
+    }
+  }
+</style>

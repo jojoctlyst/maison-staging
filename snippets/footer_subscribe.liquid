@@ -1,0 +1,128 @@
+{%- if subscribe_form != '' and subscribe_form.settings.show_content -%}
+<div class="tt-footer-custom">
+  <div class="container{% if item.fullwidth %}-fluid-custom-mobile-padding container-fluid-custom{% endif %}">
+    <div class="footer-wrapper">
+      <h4 class="tt-collapse-title text-first">
+        {{ subscribe_form.settings.text1 }}
+      </h4>
+      <p class="tt-collapse-title text-secondary">
+        {{ subscribe_form.settings.text2 }}
+      </p>
+     </div>
+      <div class="tt-collapse-content">
+        <div class="form-default">
+          {%- if settings.use_mailchimp_form -%}
+          {%- if settings.mailchimp_form_action != "" -%}
+          <form action="{{ settings.mailchimp_form_action }}" method="post" name="mc-embedded-subscribe-form" target="_blank" class="form-inline form-default">
+            <div class="form-group custom-form">
+              <input type="email" name="EMAIL" class="form-control" placeholder="{{ subscribe_form.settings.text4 }}">
+              <button type="submit" class="btn">{{ subscribe_form.settings.text3 }}</button>
+            </div>
+          </form>
+          {%- else -%}
+          <strong><u><a href="{{ shop.url }}/admin/themes" style="color: black;">
+            Add newsletter redirect link in:<br>
+            Customize Theme / General Settings / Newsletter / MailChimp form action URL
+            </a></u></strong>
+          {%- endif -%}
+
+          {%- else -%}
+          {%- form 'customer' -%}
+          {{ form.errors | default_errors }}
+          {%- if form.posted_successfully? -%}
+
+          {%- endif -%}
+          <div class="form-group custom-form ">
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <input type="email"
+                   name="contact[email]"
+                   class="form-control"
+                   value="{% if customer %}{{ customer.email }}{% endif %}"
+                   placeholder="{{ subscribe_form.settings.text4 }}"
+                   autocomplete="off"
+                   autocapitalize="off"
+                   spellcheck="false" >
+            <button type="submit" class="btn footer_subscribe_btn" name="commit">{{ subscribe_form.settings.text3 }}</button>
+          </div>
+          {%- endform -%}
+          {%- endif -%}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<style>
+  footer {
+    background-color: #fff;
+  }
+  .tt-footer-custom .footer-wrapper {
+    text-align: center;
+/*     padding-top: 40px;
+    border-top: 1px solid rgba(54, 65, 88, 0.1); */
+    color: #364158;
+  }
+  .tt-footer-custom {
+    padding-bottom: 70px !important;
+    border-bottom: 1px solid rgba(54, 65, 88, 0.1);
+  }
+  .tt-footer-custom h4.text-first {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .tt-footer-custom p.text-secondary {
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 8px;
+  }
+  .tt-collapse-content {
+    text-align: center;
+    margin-top: 26px;
+  }
+  .tt-footer-custom .custom-form {
+    margin: 0 auto;
+    max-width: 487px;
+    display: flex;
+    padding: 4px;
+    border: 1px solid #516272;
+    border-radius: 4px;
+  }
+  .custom-form .footer_subscribe_btn {
+    margin: 0;
+    margin-left: 8px;
+    background-color: #12784A;
+  }
+  .custom-form .form-control {
+    border: none;
+  }
+  @media (max-width: 575px) {
+    .tt-footer-custom h4.text-first {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .tt-footer-custom p.text-secondary {
+      font-size: 12px;
+      line-height: 18px;
+      margin-top: 8px;
+    }
+    .tt-footer-custom .footer-wrapper {
+      padding-top: 32px;
+    }
+    .tt-footer-custom {
+      padding-bottom: 26px !important;
+    }
+    .tt-collapse-content {
+      margin-top: 16px;
+    }
+    .tt-footer-custom .custom-form .form-control, .tt-footer-custom .custom-form .footer_subscribe_btn {
+      height: 56px !important;
+    }
+    .tt-footer-custom .custom-form .footer_subscribe_btn {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+</style>
+{%- endif -%}
+

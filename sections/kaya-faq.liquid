@@ -1,0 +1,52 @@
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'faq' %}
+      <div class="question" {{ block.shopify_attributes }}>
+        Q: {{ block.settings.question }}
+      </div>
+      <div class="answer" {{ block.shopify_attributes }}>
+        A: {{ block.settings.answer }}
+      </div>
+      <hr>
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+{
+  "name": "FAQ name",
+  "tag": "section",
+  "class": "faq",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "FAQ Title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "xxx",
+      "label": "testing",
+      "default": "Fredds"
+    }
+  ],
+  "blocks": [
+     {
+       "name": "FAQ block",
+       "type": "faq",
+       "settings": [
+         {
+           "type": "text",
+           "id": "question",
+           "label": "Question"
+         },
+         {
+           "type": "text",
+           "id": "answer",
+           "label": "Answer"
+         }
+       ]
+     }
+   ]
+}
+{% endschema %}

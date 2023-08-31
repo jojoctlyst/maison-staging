@@ -1,0 +1,61 @@
+{%- if footer_additional != '' and footer_additional.settings.show_content -%}
+{% unless item.footer_col %}
+  <div class="tt-col-right">
+{% endunless %}
+  <div class="footer_store_list tt-col-item">
+    <h3 class="footer-additional-title">{{ footer_additional.settings.additional_store_title }}</h3>
+    <ul class="tt-store-list">
+      {%- for i in (1..8) -%}
+      {%- assign img = 'store_icon_' | append: forloop.index -%}
+      {%- assign img = footer_additional.settings[img] -%}
+      {%- assign url = 'store_url_' | append: forloop.index -%}
+      {%- assign url = footer_additional.settings[url] -%}
+      {%- if img != blank -%}
+      <li>
+        {% if url == blank %}
+        <div>
+        {% else %}
+        <a href="{{ url }}">
+        {% endif %}
+          {% assign imgsized = 'x' | append: footer_additional.settings.payments_icons_max_height %}
+          {% assign imgsizer = footer_additional.settings.payments_icons_max_height | times: 2 %}
+          {% assign imgsizer = 'x' | append: imgsizer %}
+          <img class="lazyload"
+               data-src="{{ img | img_url: imgsized }}"
+               data-srcset="{{ img | img_url: imgsized }} 1x, {{ img | img_url: imgsizer }} 2x"
+               alt="{{ img.alt }}"
+               style="height:{{ footer_additional.settings.payments_icons_max_height }}px;">
+        {% if url != blank %}
+        </a>
+        {% else %}
+        </div>
+        {% endif %}
+      </li>
+      {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+{% unless item.footer_col %}</div>{% endunless %}
+<style>
+  .footer_store_list {
+    margin-bottom: 16px;
+    border-bottom: 1px solid #EBECEE;
+  }
+  .tt-store-list {
+    display: flex;
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+  }
+  @media (max-width: 575px) {
+    .footer-additional-title {
+      text-align: center;
+    }
+    .tt-store-list {
+      gap: 20px !important;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>
+{%- endif -%}

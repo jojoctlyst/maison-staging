@@ -1,0 +1,462 @@
+{%- comment -%}
+  {
+    "name": "Collection 01",
+    "author": "PusherCommerce"
+    "description": "Please DO NOT copy in any form. Any act of copying will be sued and held responsible with the law",
+    "Semiwrite": "Yes",
+    "App": "S"
+  }
+{%- endcomment -%}
+
+{%- capture minify -%}
+  <style>
+    #psb-{{ section.id }} {
+      background-color: {{section.settings.background_color}};
+      padding-top: {{section.settings.section_padding_top}}px;
+      padding-bottom: {{section.settings.section_padding_bottom}}px;
+    }
+
+    #psb-{{ section.id }} .item-slider__image {
+      background-color: {{section.settings.slide_bg_color}};
+    }
+
+    #psb-{{ section.id }} .wrapper {
+      padding: 30px 0;
+      min-height: 100%;
+    }
+
+    #psb-{{ section.id }} .item-slider {
+      position: relative;
+      overflow: hidden;
+    }
+    #psb-{{ section.id }} .item-slider__image {
+    overflow:hidden;
+      text-align: center;
+    margin-bottom:-10px;
+    }
+    #psb-{{ section.id }} .item-slider__image img {
+      object-fit: cover;
+      object-position: center;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      transition: all .3s;
+    }
+    #psb-{{ section.id }} .item-slider .swiper-button-next,
+    #psb-{{ section.id }} .item-slider .swiper-button-prev {
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      border: 1px solid rgb(211, 212, 213);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: rgb(255, 255, 255);
+      {% if section.settings.enable_boxshadow %}
+        box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
+      {% endif %}
+      transition: border-color 125ms ease-in-out 0s;
+      top: calc(50% - 45px);
+    }
+
+    #psb-{{ section.id }} .item-slider .swiper-button-next:hover,
+    #psb-{{ section.id }} .item-slider .swiper-button-prev:hover {
+      border-color: rgb(116, 121, 124);
+    }
+
+    #psb-{{ section.id }} .item-slider .swiper-button-prev::after,
+    #psb-{{ section.id }} .item-slider .swiper-button-next::after {
+      color: rgb(77, 85, 89);
+      font-size: 0px;
+    }
+    #psb-{{ section.id }} .item-slider .swiper-button-next::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      transform: rotate(-45deg);
+      border-bottom: 3px solid rgb(77, 85, 89);
+      border-right: 3px solid rgb(77, 85, 89);
+      margin-left: -5px;
+    }
+    #psb-{{ section.id }} .item-slider .swiper-button-prev::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      transform: rotate(135deg);
+      border-bottom: 3px solid rgb(77, 85, 89);
+      border-right: 3px solid rgb(77, 85, 89);
+      margin-left: 5px;
+    }
+    #psb-{{ section.id }} .item-slider .swiper-slide {
+      width: auto;
+      height: auto;
+      {% if section.settings.enable_boxshadow %}
+        box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
+      {% endif %}
+      border: 1px solid {{ section.settings.slide_bg_color }};
+    }
+    #psb-{{ section.id }} .item-slider__image img:hover {
+      transform: scale(1.1);
+    }
+    #psb-{{ section.id }} .swiper-button-next.swiper-button-disabled,
+    #psb-{{ section.id }} .swiper-button-prev.swiper-button-disabled {
+      display: none;
+    }
+    #psb-{{ section.id }} .swiper-button-prev {
+      left: 2%;
+    }
+    #psb-{{ section.id }} .swiper-button-next {
+      right: 0%;
+    }
+    #psb-{{ section.id }} .slide_info {
+      background-color: {{section.settings.slide_info_color}};
+      padding: 18px;
+    }
+    #psb-{{ section.id }} .slider-links {
+      text-decoration: none;
+    }
+    #psb-{{ section.id }} .slide_info-name {
+      line-height: 1.33;
+      color: {{section.settings.slide_title_color}};
+      margin:0;
+      padding-bottom: 2px;
+      {% if section.settings.inherit_fonts == false %}
+        font-size: 20px;
+      {% endif %}
+    }
+    #psb-{{ section.id }} .slide_info-description {
+      color:{{section.settings.slide_desc_color}};
+      line-height: 1.5;
+      {% if section.settings.inherit_fonts == false %}
+      font-size: {{section.settings.slide_desc_font_size}}px;
+      {% endif %}
+      margin-top: 6px;
+      margin:0;
+    }
+
+    /* Media */
+    @media screen and (max-width: 767px) {
+      #psb-{{ section.id }} {
+        padding-top: {{section.settings.section_padding_top_mobile}}px;
+        padding-bottom: {{section.settings.section_padding_bottom_mobile}}px;
+      }
+      #psb-{{ section.id }} .wrapper {
+        padding: 15px 0;
+      }
+      #psb-{{ section.id }} .item-slider {
+        padding-left: 0;
+      }
+      #psb-{{ section.id }} .item-slider .swiper-button-prev,
+      #psb-{{ section.id }} .item-slider .swiper-button-next {
+        display: none;
+      }
+    }
+  </style>
+{%- endcapture -%}
+{{ minify | strip_newlines }}
+
+<div id="psb-{{ section.id }}" class="psb-{{ section.id }} psb-section psb-collection-collection-01" style="display: none;">
+  <div class="{{ section.settings.container_width }}">
+    <div class="wrapper" style="overflow:hidden">
+      <psb-swiper data-config='
+          {
+            "navigation": {
+                "nextEl": "#psb-{{ section.id }} .swiper-button-next",
+                "prevEl": "#psb-{{ section.id }} .swiper-button-prev"
+            },
+
+            "simulateTouch": true,
+            "touchRatio": 1,
+            "touchAngle": 45,
+            "grabCursor": true,
+            "slidesPerView": {{section.settings.slider_per_view}},
+            "watchOverflow": true,
+            "spaceBetween": 30,
+            "loop": false,
+            "freeMode": true,
+            "speed": 300,
+            "effect": "slide",
+
+            "breakpoints": {
+              "320": {
+                "spaceBetween": 15,
+                "slidesPerView": 1.1
+              },
+              "768": {
+                "spaceBetween": 20,
+                "slidesPerView": 2.2
+              },
+              "992": {
+                "spaceBetween": 30,
+                "slidesPerView": {{section.settings.slider_per_view}}
+              }
+            }
+          }
+        '>
+        <div class="slider-{{section.id}} item-slider swiper-container swiper" style="overflow:visible">
+          <div class="item-slider__wrapper swiper-wrapper">
+            {%- for block in section.blocks -%}
+              <div class="item-slider__slide swiper-slide">
+                {% capture slide_content %}
+                  <div class="item-slider__image">
+                    {% if block.settings.collection.featured_image %}
+                      {{
+                        block.settings.collection.featured_image
+                        | image_url: width: block.settings.collection.featured_image.width
+                        | image_tag: loading: 'lazy', class: 'cover-image', alt: block.settings.collection.title
+                      }}
+                    {% else %}
+                      {{ 'collection-5' | placeholder_svg_tag }}
+                    {% endif %}
+                  </div>
+                  <div class="swiper-slide_info slide_info">
+                    <{{ section.settings.heading_tag }} class="slide_info-name">
+                      {% if block.settings.collection.title %}
+                        {{ block.settings.collection.title }}
+                      {% else %}
+                        Collection Title
+                      {% endif %}
+                    </{{ section.settings.heading_tag }}>
+                    <p class="slide_info-description">{{ block.settings.slide_description }}</p>
+                  </div>
+                {% endcapture %}
+
+                {% if block.settings.collection.url != blank %}
+                  <a class="slider-links" href="{{ block.settings.collection.url }}">
+                    {{ slide_content }}
+                  </a>
+                {% else %}
+                  {{ slide_content }}
+                {% endif %}
+              </div>
+            {%- endfor -%}
+          </div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </psb-swiper>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "⚡︎PSB: Collection 01",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container_width",
+      "options": [
+        {
+          "value": "psb-container",
+          "label": "Container"
+        },
+        {
+          "value": "psb-container-fluid",
+          "label": "Container Fluid"
+        },
+        {
+          "value": "psb-container-fullwidth",
+          "label": "Container Fullwidth"
+        }
+      ],
+      "default": "psb-container-fluid",
+      "label": "Container width"
+    },
+    {
+      "type": "header",
+      "content": "Main settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "inherit_fonts",
+      "default": false,
+      "label": "Inherit font sizes from theme"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_boxshadow",
+      "default": true,
+      "label": "Enable box shadow"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading tag",
+      "options": [
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "div",
+          "label": "Div"
+        }
+      ],
+      "default": "h4",
+      "info": "Title font size"
+    },
+    {
+      "type": "range",
+      "id": "slide_desc_font_size",
+      "min": 12,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Section Description Font Size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "slide_bg_color",
+      "label": "Slide Image Item Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "slide_info_color",
+      "label": "Slide Info Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "slide_title_color",
+      "label": "Slide Description Color",
+      "default": "#212a2f"
+    },
+    {
+      "type": "color",
+      "id": "slide_desc_color",
+      "label": "Slide Description Color",
+      "default": "#212a2f"
+    },
+    {
+      "type": "header",
+      "content": "Slider Settings"
+    },
+    {
+      "type": "range",
+      "id": "slider_per_view",
+      "min": 1,
+      "max": 10,
+      "step": 0.1,
+      "unit": "pic",
+      "label": "Slider Per View",
+      "default": 3.3
+    },
+    {
+      "type": "header",
+      "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding-top",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding-bottom",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_mobile",
+      "min": 0,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding-top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_mobile",
+      "min": 0,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding-bottom",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Collection",
+      "name": "Slide collection item",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Slide Collection"
+        },
+        {
+          "type": "text",
+          "id": "slide_description",
+          "label": "Slide Description",
+          "default": "Some description text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "⚡︎PSB: Collection 01",
+      "blocks": [
+        {
+          "type": "Collection"
+        },
+        {
+          "type": "Collection"
+        },
+        {
+          "type": "Collection"
+        },
+        {
+          "type": "Collection"
+        },
+        {
+          "type": "Collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,44 @@
+{%- assign item = section.settings -%}
+
+<div class="container-indent recently_view_products_wokiee hide" data-count="{{ block.settings.product_upsell_collection_count }}">
+  <div class="container container-fluid-custom-mobile-padding">
+    <div class="custom-block-title tt-block-title">
+      <h2 class="tt-title no-translate">
+        {{ item.custom_related_title }}
+      </h2>
+    </div>
+	<div class="recently_view_products-box"></div>
+  </div>
+</div>
+
+<style>
+</style>
+
+{% schema %}
+{
+  "name": "Recently Viewed",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_related_title",
+      "label": "Recent View Title",
+      "default": "Recently Viewed"
+    },
+    {
+      "type": "text",
+      "id": "product_upsell_collection_count",
+      "label": "Count",
+      "default": "8",
+      "info": "Integer"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Recently Viewed",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

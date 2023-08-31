@@ -1,0 +1,25 @@
+{%- if footer_additional != '' and footer_additional.settings.show_content -%}
+<div class="footer-additional">
+  {%- include "footer_payment_list" -%}
+  {%- include "footer_official_store" -%}
+  {%- include "footer_shipping" -%}
+  <div class="box-inline">
+    {%- include "footer_download" -%}
+    {%- include "footer_social_media" -%}
+  </div>
+</div>
+
+<style>
+  .box-inline {
+    display: flex;
+  }
+  @media (max-width: 575px) {
+    .footer-additional {
+      margin-top: 20px;
+    }
+    .box-inline {
+      flex-direction: column;
+    }
+  }
+</style>
+{%- endif -%}

@@ -1,0 +1,408 @@
+{%- assign item = section.settings -%}
+
+{%- assign grid = item.items -%}
+{%- assign name_collection = item.collection -%}
+{%- if name_collection == blank -%}{%- assign name_collection = "all" -%}{%- endif -%}
+{%- assign collection = collections[name_collection] -%}
+{%- assign length = item.limit | plus: 0 -%}
+
+<div class="gift-card {% if item.top_offset == 'none' %}nomargin {% elsif item.top_offset == 'small' %}tt-offset-small {% endif %}container-indent {{ item.custom_classes }}">
+  {% if item.nopaddings %}<div class="nopaddingspr">{% endif %}
+  <div class="container{% if item.fullwidth %}-fluid-custom{% endif %} container-fluid-custom-mobile-padding" data-sectionname="index_sectionproducts">
+    {% render 'limoniapps-discountninja-stickybar' %}
+    {%- if item.show_title -%}
+      <div class="custom-block-title hide-desktop tt-block-title{% if item.title_to_left %} text-left{% endif %}{% if item.boxed_title and item.fullwidth %} container{% endif %}">
+        <div>
+          <h2 class="tt-title no-translate">
+            {{ item.text1 }}
+          </h2>
+          {% unless item.text2 == '' %}<div class="tt-description no-translate">{{ item.text2 }}</div>{% endunless %}
+          {% unless item.default_carousel %}{% unless item.text3 == '' %}<p class="no-translate">{{ item.text3 }}</p>{% endunless %}{% endunless %}
+        </div>
+        {%- if item.use_title_as_link -%}
+          <a href="/collections/{{ collection.handle }}" class="link-see-all" title="{{ item.button_text }}">{{ item.button_text }}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if item.default_carousel -%}
+    {%- assign slider_mode = true -%}
+    <div
+      class="{% if item.boxed_buttons and item.fullwidth %}slboxedbuttons {% endif %}tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js"
+      data-slick='{"slidesToShow": {{ item.toshow }}, "slidesToScroll": {{ item.step }}, "autoplay": {{ item.module_autoplay }}, "autoplaySpeed": {{ item.delay_time }}}'>
+      {%- for product in collection.products limit: length -%}
+      <div class="forsliders-margins">
+        {%- include "product-grid-item" -%}
+      </div>
+      {%- endfor -%}
+    </div>
+    {%- else -%}
+    <div class="row tt-layout-product-item{% if item.items_always_in_center %} justify-content-center{% endif %}">
+      <div class="title-wrapper hide-mobile col-6 col-md-4 {% if grid == '5' %}col-5-inrow-lg{% else %}col-lg-{{ grid }}{% endif %}">
+        {%- if item.show_title -%}<div class="tt-block-title{% if item.title_to_left %} text-left{% endif %}{% if item.boxed_title and item.fullwidth %} container{% endif %}">
+          <h2 class="tt-title no-translate align-left text-1">
+            {%- if item.use_title_as_link -%}<a href="/collections/{{ collection.handle }}" class="title-hover-underline" title="{{ item.button_text }}">{{ item.text1 }}</a>
+            {%- else -%}{{ item.text1 }}
+            {%- endif -%}
+          </h2>
+          {% unless item.text2 == '' %}<div class="tt-description no-translate align-left text-2">{{ item.text2 }}</div>{% endunless %}
+          {% unless item.default_carousel %}{% unless item.text3 == '' %}<p class="no-translate">{{ item.text3 }}</p>{% endunless %}{% endunless %}
+        </div>{%- endif -%}
+      </div>
+      {%- for product in collection.products limit: length -%}
+      <div class="col-8 col-md-4 {% if grid == '5' %}col-5-inrow-lg{% else %}col-lg-{{ grid }}{% endif %}">
+        {%- include "product-grid-item" -%}
+      </div>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+
+    {%- if item.show_button and collection.products.size > 3 -%}
+    <div class="text-center">
+      <a href="/collections/{{ collection.handle }}" class="btn btn-border btn-top button-see-collection">{{ item.button_text }}</a>
+    </div>
+    {%- endif -%}
+
+  </div>
+  {% if item.nopaddings %}</div>{% endif %}
+</div>
+
+<style>
+  .gift-card .limoniapps-stick-to-top, .gift-card .limoniapps-stick-to-top_page_sticky {
+    position: relative !important;
+  }
+  .gift-card h2.prod-thumb-title-color {
+    display: none;
+  }
+  .hide-desktop {
+    display: none;
+  }
+  .hide-mobile {
+    display: block;
+  }
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    color: #364158;
+  }
+  .title-wrapper .align-left {
+    text-align: left;
+  }
+  .title-wrapper .text-1 {
+    font-size: 24px;
+    line-height: 38px;
+  }
+  .title-wrapper .text-2 {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    margin-top: 8px;
+  }
+  .gift-card .tt-product.thumbprod-center .tt-description .tt-price {
+    display: flex;
+    justify-content: space-between;
+  }
+  .gift-card .button-see-collection {
+  	min-width: 300px;
+    height: 42px;
+    border: 1px solid #12784A;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #12784A;
+    margin-top: 26px;
+  }
+  .gift-card .button-see-collection:hover {
+    background: #12784A;
+    color: #fff;
+  }
+  .gift-card .custom-block-title .link-see-all {
+    color: #12784A;
+    display: none;
+    font-weight: 500;
+  }
+  @media (max-width: 575px) {
+    .gift-card .tt-product.tt-small .tt-price {
+      margin-top: 8px;
+    }
+    .gift-card .tt-product.tt-small .tt-price .new-price {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .gift-card .tt-product.tt-small .tt-price .old-price {
+      font-size: 14px;
+      font-weight: 400;
+      color: #364158;
+      opacity: 0.6;
+    }
+    .hide-desktop {
+      display: block;
+    }
+    .hide-mobile {
+      display: none;
+    }
+    .gift-card .button-see-collection {
+      display: none;
+    }
+    .gift-card .tt-layout-product-item {
+      justify-content: flex-start;
+      overflow: auto;
+      width: 100vw;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+    .gift-card .tt-layout-product-item .col-8:last-child {
+      margin-right: 16px;
+    }
+    .gift-card .tt-layout-product-item::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+    .gift-card .tt-layout-product-item::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+    .gift-card .custom-block-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .gift-card .custom-block-title .link-see-all {
+      display: block;
+    }
+    .gift-card .custom-block-title .tt-description {
+      display: none;
+    }
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "Gift Card List",
+	"class": "index-section",
+    "settings": [
+      {
+        "type": "select",
+        "id": "top_offset",
+        "label": "Top Offset",
+        "default": "normal",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "normal",
+            "label": "Normal"
+          }
+        ]
+      },
+      {
+      "type": "textarea",
+        "id": "custom_classes",
+        "label": "Custom css classes",
+        "info": "For the custom styles. Add your styles in the theme.css.liquid"
+      },
+      {
+        "type": "checkbox",
+        "id": "fullwidth",
+        "label": "Fullwidth size",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "nopaddings",
+        "label": "No paddings",
+        "default": false,
+		"info": "!!! Please use this option with product thumbnail design \"type 2\""
+      },
+      {
+        "type": "checkbox",
+        "id": "show_title",
+        "label": "Show Title Block",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "title_to_left",
+        "label": "Title to left",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "boxed_title",
+        "label": "Boxed title when fullwidth",
+        "default": false
+      },
+      {
+        "type": "textarea",
+        "id": "text1",
+        "label": "Title",
+        "default": "OUR COLLECTIONS"
+      },
+      {
+        "type": "textarea",
+        "id": "text2",
+        "label": "Small description",
+        "default": "SUMMER 2018",
+		"info": "Empty field = hide field"
+      },
+      {
+        "type": "textarea",
+        "id": "text3",
+        "label": "Big description",
+		"info": "Empty field = hide field. Not work with slider mode"
+      },
+      {
+        "type": "header",
+        "content": "Show all button"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_title_as_link",
+        "label": "Use title as link to the collection",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_button",
+        "label": "Show button",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text",
+		"default": "SHOW ALL"
+      },
+      {
+        "type": "header",
+        "content": "Products settings"
+      },
+      {
+        "label": "Collection",
+        "id": "collection",
+        "type": "collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "items_always_in_center",
+        "label": "Products in center",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "limit",
+        "label": "Items Length. Integer",
+        "default": "8"
+      },
+      {
+        "type": "select",
+        "id": "items",
+        "label": "Products In Row",
+        "options": [
+          { "value": "6", "label": "2" },
+          { "value": "4", "label": "3" },
+          { "value": "3", "label": "4" },
+		  { "value": "5", "label": "5" },
+		  { "value": "2", "label": "6" }
+        ],
+        "default": "3",
+        "info": "For screen size > 1024"
+      },
+      {
+        "type": "header",
+        "content": "By Default Carousel"
+      },
+      {
+        "type": "checkbox",
+        "id": "default_carousel",
+        "label": "Default Carousel",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "boxed_buttons",
+        "label": "Boxed buttons when fullwidth",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "toshow",
+        "label": "Items in row",
+        "options": [
+          { "value": "2", "label": "2" },
+          { "value": "3", "label": "3" },
+          { "value": "4", "label": "4" },
+          { "value": "5", "label": "5" },
+          { "value": "6", "label": "6" }
+        ],
+        "default": "4",
+        "info": "For screen size > 1024"
+      },
+      {
+        "type": "select",
+        "id": "step",
+        "label": "Slides To Scroll",
+        "default": "2",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "module_autoplay",
+        "label": "Auto-rotate slides",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "delay_time",
+        "label": "Change slides every",
+        "options": [
+          { "value": "5000", "label": "5 seconds" },
+          { "value": "6000", "label": "6 seconds" },
+          { "value": "7000", "label": "7 seconds" },
+          { "value": "8000", "label": "8 seconds" },
+          { "value": "9000", "label": "9 seconds" },
+          { "value": "10000", "label": "10 seconds" }
+        ],
+        "default": "7000"
+      }
+	],
+  "presets": [
+    {
+      "name": "Gift Card List",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}
