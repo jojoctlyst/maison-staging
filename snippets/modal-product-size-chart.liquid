@@ -1,0 +1,172 @@
+<!-- Modal modalProductSizeChart-->
+<div class="modal fade" id="modalProductSizeChart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-header-clean">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <span class="icon icon-clear"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="tt-layout-product-info">
+                    <div class="sizechart-table mb-3">
+                        <h5 class="table-title"></h5>
+                        <div class="table-wrapper mb-3">
+                            <table>
+                                <thead></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div class="scroll-info mb-3 d-none">
+                            <div class="pr-1 text-dark">Scroll for more detail</div>
+                            {{ 'arrow-right.svg' | asset_url | img_tag}}
+                        </div>
+                        <div class="notes-info d-none flex-row">
+                            <img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/Info_587c33c2-3148-4b36-b080-9e9d9cc2a135.svg?v=1683779919"
+                                 alt="icon-exclamation">
+                            <div class="notes pl-2"></div>
+                        </div>
+                    </div>
+                    <div class="sizechart-measure measure">
+                        <h5 class="mb-3">How To Measure</h5>
+                        <div class="d-flex justify-content-center mb-3">
+                            <img class="image-measure">
+                        </div>
+                        <div class="measure-info"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        if (window.jQuery) {
+            $(function () {
+                const rootElement = $('#modalProductSizeChart');
+                const data = JSON.parse('{{ sizechart | jsonify }}');
+                //table
+                generateTable(data.category, data.size_chart_value, data.brand_size_text);
+
+                //notes
+                rootElement.find('.title').text(data.name);
+                if (data.notes){
+                    rootElement.find('.notes').text(data.notes);
+                    rootElement.find('.notes-info').addClass('d-flex').removeClass('d-none');
+                }
+
+                //image measure
+                let detail = {};
+                switch (data.category) {
+                    case "TOP":
+                    case "DRESS":
+                    case "BOTTOM":
+                        detail.image = 'https://cdn.shopify.com/s/files/1/0516/0760/1336/files/Size_Chart_Clothes.png?v=1683793293';
+                        detail.measureInfo = 'If you’re having trouble figuring out how much allowance to add to your measurements, try measuring a similar fitting garment instead (e.g. your own t-shirt).';
+                        break;
+                    case "SHOES":
+                        detail.image = 'https://cdn.shopify.com/s/files/1/0516/0760/1336/files/Size_Chart_Shoes.png?v=1683793293';
+                        detail.measureInfo = 'Place a piece of paper on the floor and draw a line around your foot. Using a ruler, measure the length from your big toe to your heel. Find your size in the size chart above.';
+                        break;
+                    default:
+                        break;
+                }
+                rootElement.find('.image-measure').attr({"src": detail.image, alt: data.category});
+                rootElement.find('.table-title').text(data.title);
+                rootElement.find('.measure-info').text(detail.measureInfo);
+
+                $('.tt-layout-product-info').show();
+                showHideCaption();
+            })
+
+            $('#modalProductSizeChart').on('shown.bs.modal', function () {
+                $('#modalProductSizeChart .modal-body').scrollTop(0);
+                $('#modalProductSizeChart .table-wrapper').scrollLeft(0);
+                showHideCaption();
+            });
+        }
+    }
+
+    const showHideCaption = () => {
+        if ( $('#modalProductSizeChart .table-wrapper').get(0).offsetWidth <  $('#modalProductSizeChart .table-wrapper').get(0).scrollWidth) {
+            $('#modalProductSizeChart .scroll-info').removeClass('d-none');
+        }
+    }
+
+    const generateTable = (category = 'TOP', sizeChart = [], tableSizeCategory = 'Brand Size') => {
+        const rootElement = $('#modalProductSizeChart');
+        let tableContent = {thead: null, tbody: null};
+        switch (category) {
+            case "TOP":
+            case "DRESS":
+            case "BOTTOM":
+                tableContent = generateTableTop(sizeChart, tableSizeCategory);
+                break;
+            case "SHOES":
+                tableContent = generateTableShoes(sizeChart, tableSizeCategory);
+                break;
+            default:
+                break;
+        }
+        rootElement.find('table thead').append(tableContent.thead);
+        rootElement.find('table tbody').append(tableContent.tbody);
+    }
+
+    const schemas = [
+        {key: 'brand_size', title: 'Brand Size', uom: false},
+        {key: 'eu_size', title: 'EU', uom: false},
+        {key: 'us_size', title: 'US', uom: false},
+        {key: 'uk_size', title: 'UK', uom: false},
+        {key: 'italy_size', title: 'Italy', uom: false},
+        {key: 'width_size', title: 'Width', uom: true},
+        {key: 'waist_size', title: 'Waist', uom: true},
+        {key: 'hip_size', title: 'Hip', uom: true},
+        {key: 'length_size', title: 'Length', uom: true},
+        {key: 'insole_length', title: 'Insole Length', uom: true},
+    ];
+
+    const generateTableTop = (charts = [], tableSizeCategory = 'Brand Size') => {
+        const column = ['brand_size', 'us_size', 'uk_size', 'italy_size', 'width_size', 'waist_size', 'hip_size', 'length_size'];
+        return generateDataTable(column, charts, tableSizeCategory);
+    }
+
+    const generateTableShoes = (charts = [], tableSizeCategory = 'Brand Size') => {
+        const column = ['brand_size', 'us_size', 'uk_size', 'eu_size', 'insole_length'];
+        return generateDataTable(column, charts, tableSizeCategory);
+    }
+
+    const generateDataTable = (columns = [], charts = [], tableSizeCategory = 'Brand Size') => {
+        let tableSchema = columns.map(column => {
+            return schemas.find(({key}) => key === column);
+        })
+
+        tableSchema = tableSchema.filter(schema => {
+            const hasValue = charts.some(chart => chart[schema.key]);
+            return hasValue && columns.includes(schema.key);
+        });
+
+        const thead = tableSchema.map(schema => {
+            if (schema.key === 'brand_size'){
+                return `<th>${tableSizeCategory}</th>`
+            }
+            return `<th>${schema.title}</th>`
+        });
+
+        const tbody = charts.map(chart => {
+            const column = tableSchema.map(schema => {
+                if (!chart[schema.key]) {
+                    return `<td>-</td>`;
+                }
+                if (schema.uom) {
+                    return `<td>${chart[schema.key]} ${chart.unit}</td>`;
+                }
+                return `<td>${chart[schema.key]}</td>`;
+            });
+            return `<tr>${column}</tr>`;
+        });
+
+        return {thead, tbody}
+    }
+
+</script>

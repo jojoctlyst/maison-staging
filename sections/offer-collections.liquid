@@ -1,0 +1,74 @@
+{%- assign titleIndex = 0 -%}
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'collection' %}
+    <div class="voila-slider ky-pb-4 md:ky-py-0 {% if titleIndex == 0 %} ky-mb-4 md:ky-mb-10 tab-anchor {% endif %}" {% if titleIndex == 0 %} id="tab-anchor-1" {% endif %}>
+      <div class="voila-slider-sale-js arrow-location-tab voila-slider-init">
+        <a class="ky-inline-block" href="{{ block.settings.urlto }}">
+          <div class="ky-min-h-full md:ky-min-h-400 ky-h-full ky-bg-cover ky-bg-center" style="background-image: url({{ block.settings.imgbanner | img_url: 'large' }}); height: inherit;display: flex;width: 100%;"></div>
+        </a>
+
+        {%- assign handle = block.settings.tab1collection -%}
+        {% for product in collections[handle].products limit: 15 %}
+        <a class="ky-inline-block" href="{{ product.url }}">
+          <div class="ky-min-h-0 md:ky-min-h-400 ky-w-full">
+            <div class="ky-flex ky-items-center ky-min-h-155 md:ky-min-h-300 ky-mb-2 md:ky-mb-4">
+              <picture>
+                <source media="(max-width: 791px)" srcset="{{ product.featured_image | product_img_url: '280x310' }}" />
+                <source media="(min-width: 792px)" srcset="{{ product.featured_image | product_img_url: '530x600' }}" />
+                <img class="ky-w-full ky-mb-2 md:ky-mb-4" src="{{ product.featured_image | product_img_url: '530x600' }}" alt="{{ product.title | escape  }}" />
+              </picture>
+            </div>
+            <div class="ky-text-sm">
+                <div class="ky-text-xs md:ky-text-sm ky-font-bold ky-mb-2 voila-ellipsis1">{{ product.vendor }}</div>
+                <div class="ky-text-xs md:ky-text-sm ky-mb-2 md:ky-mb-4 ky-text-black60 voila-ellipsis1-m2">
+                  {{ product.title }}
+                </div>
+                {%- assign compare-price = product.compare_at_price | money_without_currency  -%}
+                {%- assign price = product.price | money_without_currency  -%}
+                <div class="ky-block md:ky-flex ky-text-xs md:ky-text-base">
+                  <strong class="ky-text-primary ky-font-bold ky-mr-2 ky-mb-1 md:ky-mb-0 ky-block">IDR. {{ price }}</strong>
+                  {% if product.compare_at_price != product.price %}
+                    <div class="ky-text-black60 ky-line-through">IDR. {{ compare-price }}</div>
+                  {% endif %}
+                </div>
+              </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  {%- assign titleIndex = 0 | plus: 1 -%}
+  {% endcase %}
+{% endfor %}
+
+
+{% schema %}
+  {
+    "name": "Specials Promo",
+    "class": "special-promo",
+    "blocks": [
+       {
+         "name": "Collection",
+         "type": "collection",
+         "settings": [
+            {
+              "type": "collection",
+              "id": "tab1collection",
+              "label": "Select Collection"
+            },
+            {
+              "type": "image_picker",
+              "id": "imgbanner",
+              "label": "Banner"
+            },
+            {
+              "type": "text",
+              "id": "urlto",
+              "label": "Url"
+            }
+         ]
+       }
+     ]
+  }
+{% endschema %}

@@ -1,0 +1,1790 @@
+<style type="text/css">
+  html {
+     scroll-behavior: smooth;
+  }
+  .voila-x-kaya {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .voila-x-kaya * {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+    scroll-behavior: smooth;
+  }
+
+  .voila-x-kaya h1,
+  .voila-x-kaya h2,
+  .voila-x-kaya h3,
+  .voila-x-kaya h4,
+  .voila-x-kaya h5,
+  .voila-x-kaya h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  /*
+  Reset links to optimize for opt-in styling instead of opt-out.
+  */
+
+  .voila-x-kaya a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  /*
+  Add the correct font weight in Edge and Safari.
+  */
+
+  .voila-x-kaya b,
+  .voila-x-kaya strong {
+    font-weight: bold;
+  }
+
+
+  /*
+  Add the correct font size in all browsers.
+  */
+
+  .voila-x-kaya small {
+    font-size: 80%;
+  }
+
+  /*
+  Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+  */
+
+  /*
+  Removes the default spacing and border for appropriate elements.
+  */
+
+  .voila-x-kaya blockquote,
+  .voila-x-kaya dl,
+  .voila-x-kaya dd,
+  .voila-x-kaya h1,
+  .voila-x-kaya h2,
+  .voila-x-kaya h3,
+  .voila-x-kaya h4,
+  .voila-x-kaya h5,
+  .voila-x-kaya h6,
+  .voila-x-kaya hr,
+  .voila-x-kaya figure,
+  .voila-x-kaya p,
+  .voila-x-kaya pre {
+    margin: 0;
+  }
+
+
+  .voila-x-kaya ol {
+    padding-left: 16px;
+  }
+  .voila-x-kaya ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .voila-x-kaya img,
+  .voila-x-kaya svg {
+    display: block;
+    /* 1 */
+    vertical-align: middle;
+    /* 2 */
+  }
+
+  /*
+  Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+  */
+
+  .voila-x-kaya img,
+  .voila-x-kaya video {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  .voila-x-kaya .ky-absolute{
+    position: absolute;
+  }
+
+  .voila-x-kaya .ky-relative{
+    position: relative;
+  }
+
+  .voila-x-kaya .ky-left-0{
+    left: 0px;
+  }
+
+  .voila-x-kaya .ky-top-0{
+    top: 0px;
+  }
+
+  .voila-x-kaya .ky-right-0{
+    right: 0px;
+  }
+
+  .voila-x-kaya .ky-bottom-0{
+    bottom: 0px;
+  }
+
+  .voila-x-kaya .ky-mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .voila-x-kaya .ky-mb-1{
+    margin-bottom: 0.25rem;
+  }
+
+  .voila-x-kaya .ky-mb-1\.5{
+    margin-bottom: 0.375rem;
+  }
+
+  .voila-x-kaya .ky-mb-10{
+    margin-bottom: 2.5rem;
+  }
+
+  .voila-x-kaya .ky-mb-14{
+    margin-bottom: 3.5rem;
+  }
+
+  .voila-x-kaya .ky-mb-2{
+    margin-bottom: 0.5rem;
+  }
+
+  .voila-x-kaya .ky-mb-3{
+    margin-bottom: 0.75rem;
+  }
+
+  .voila-x-kaya .ky-mb-4{
+    margin-bottom: 1rem;
+  }
+
+  .voila-x-kaya .ky-mb-5{
+    margin-bottom: 1.25rem;
+  }
+
+  .voila-x-kaya .ky-mb-6{
+    margin-bottom: 1.5rem;
+  }
+
+  .voila-x-kaya .ky-mb-8{
+    margin-bottom: 2rem;
+  }
+
+  .voila-x-kaya .ky-ml-2{
+    margin-left: 0.5rem;
+  }
+
+  .voila-x-kaya .ky-ml-4{
+    margin-left: 1rem;
+  }
+
+  .voila-x-kaya .ky-mr-1{
+    margin-right: 0.25rem;
+  }
+
+  .voila-x-kaya .ky-mr-6{
+    margin-right: 1.5rem;
+  }
+
+  .voila-x-kaya .ky-mr-10{
+    margin-right: 2.5rem;
+  }
+
+  .voila-x-kaya .ky-mr-2{
+    margin-right: 0.5rem;
+  }
+
+  .voila-x-kaya .ky-mr-3{
+    margin-right: 0.75rem;
+  }
+
+  .voila-x-kaya .ky-mr-5{
+    margin-right: 1.25rem;
+  }
+
+  .voila-x-kaya .ky-mt-4{
+    margin-top: 1rem;
+  }
+
+  .voila-x-kaya .ky-mt-5{
+    margin-top: 1.25rem;
+  }
+
+  .voila-x-kaya .ky-mr-4{
+    margin-right: 1rem;
+  }
+
+  .voila-x-kaya .ky-mr-8{
+    margin-right: 2rem;
+  }
+
+  .voila-x-kaya .ky-block{
+    display: block;
+  }
+
+  .voila-x-kaya .ky-inline-block{
+    display: inline-block;
+  }
+
+  .voila-x-kaya .ky-flex{
+    display: flex;
+  }
+
+  .voila-x-kaya .ky-inline-flex{
+    display: inline-flex;
+  }
+
+  .voila-x-kaya .ky-hidden{
+    display: none;
+  }
+
+  .voila-x-kaya .ky-h-10{
+    height: 2.5rem;
+  }
+
+  .voila-x-kaya .ky-h-kaya-logo{
+    height: 77px;
+  }
+
+  .voila-x-kaya .ky-h-full{
+    height: 100%;
+  }
+
+  .voila-x-kaya .ky-h-auto{
+    height: auto;
+  }
+
+  .voila-x-kaya .ky-h-50{
+    height: 12.5rem;
+  }
+
+  .voila-x-kaya .ky-w-10{
+    width: 2.5rem;
+  }
+
+  .voila-x-kaya .ky-w-18{
+    width: 4.5rem;
+  }
+
+  .voila-x-kaya .ky-w-24{
+    width: 6rem;
+  }
+
+  .voila-x-kaya .ky-w-36{
+    width: 9rem;
+  }
+
+  .voila-x-kaya .ky-w-3\/12{
+    width: 25%;
+  }
+
+  .voila-x-kaya .ky-w-6\/12{
+    width: 50%;
+  }
+
+  .voila-x-kaya .ky-w-auto{
+    width: auto;
+  }
+
+  .voila-x-kaya .ky-w-full{
+    width: 100%;
+  }
+
+  .voila-x-kaya .ky-max-w-none{
+    max-width: none;
+  }
+
+  .voila-x-kaya .ky-max-w-xs{
+    max-width: 20rem;
+  }
+
+  .voila-x-kaya .ky-flex-none{
+    flex: none;
+  }
+
+  .voila-x-kaya .ky-grow{
+    flex-grow: 1;
+  }
+
+  .voila-x-kaya .ky-cursor-pointer{
+    cursor: pointer;
+  }
+
+  .voila-x-kaya .ky-grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .voila-x-kaya .ky-grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .voila-x-kaya .ky-grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .voila-x-kaya .ky-flex-col{
+    flex-direction: column;
+  }
+
+  .voila-x-kaya .ky-flex-col-reverse{
+    flex-direction: column-reverse;
+  }
+
+  .voila-x-kaya .ky-items-center{
+    align-items: center;
+  }
+
+  .voila-x-kaya .ky-justify-center{
+    justify-content: center;
+  }
+
+  .voila-x-kaya .ky-justify-between{
+    justify-content: space-between;
+  }
+
+  .voila-x-kaya .ky-gap-1{
+    gap: 0.25rem;
+  }
+
+  .voila-x-kaya .ky-gap-4{
+    gap: 1rem;
+  }
+
+  .voila-x-kaya .ky-gap-14{
+    gap: 3.5rem;
+  }
+
+  .voila-x-kaya .ky-gap-5{
+    gap: 1.25rem;
+  }
+
+  .voila-x-kaya .ky-gap-6{
+    gap: 1.5rem;
+  }
+
+  .voila-x-kaya .ky-gap-8{
+    gap: 2rem;
+  }
+
+  .voila-x-kaya .ky-gap-10{
+    gap: 2.5rem;
+  }
+
+  .voila-x-kaya .ky-overflow-hidden{
+    overflow: hidden;
+  }
+
+  .voila-x-kaya .ky-rounded{
+    border-radius: 0.25rem;
+  }
+
+  .voila-x-kaya .ky-rounded-full{
+    border-radius: 9999px;
+  }
+
+  .voila-x-kaya .ky-rounded-xl{
+    border-radius: 1rem;
+  }
+
+  .voila-x-kaya .ky-rounded-lg{
+    border-radius: 0.5rem;
+  }
+
+  .voila-x-kaya .ky-rounded-md{
+    border-radius: 0.375rem;
+  }
+
+  .voila-x-kaya .ky-border{
+    border-width: 1px;
+  }
+
+  .voila-x-kaya .ky-border-2{
+    border-width: 2px;
+  }
+
+  .voila-x-kaya .ky-border-t{
+    border-top-width: 1px;
+  }
+
+  .voila-x-kaya .ky-border-grey3{
+    --tw-border-opacity: 1;
+    border-color: rgb(238 238 238 / var(--tw-border-opacity));
+  }
+
+  .voila-x-kaya .ky-border-primary{
+    --tw-border-opacity: 1;
+    border-color: rgb(18 120 74 / var(--tw-border-opacity));
+  }
+
+  .voila-x-kaya .ky-bg-bg1{
+    --tw-bg-opacity: 1;
+    background-color: rgb(241 237 236 / var(--tw-bg-opacity));
+  }
+
+  .voila-x-kaya .ky-bg-black{
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  }
+
+  .voila-x-kaya .ky-bg-deblue1{
+    --tw-bg-opacity: 1;
+    background-color: rgb(214 241 255 / var(--tw-bg-opacity));
+  }
+
+  .voila-x-kaya .ky-bg-grey3{
+    --tw-bg-opacity: 1;
+    background-color: rgb(238 238 238 / var(--tw-bg-opacity));
+  }
+
+  .voila-x-kaya .ky-bg-grey4{
+    --tw-bg-opacity: 1;
+    background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+  }
+
+  .voila-x-kaya .ky-bg-white{
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .voila-x-kaya .ky-bg-cover{
+    background-size: cover;
+  }
+
+  .voila-x-kaya .ky-bg-left{
+    background-position: left;
+  }
+
+  .voila-x-kaya .ky-bg-right{
+    background-position: right;
+  }
+
+  .voila-x-kaya .ky-bg-no-repeat{
+    background-repeat: no-repeat;
+  }
+
+  .voila-x-kaya .ky-fill-current{
+    fill: currentColor;
+  }
+
+  .voila-x-kaya .ky-p-2{
+    padding: 0.5rem;
+  }
+
+  .voila-x-kaya .ky-p-4{
+    padding: 1rem;
+  }
+
+  .voila-x-kaya .ky-p-6{
+    padding: 1.5rem;
+  }
+
+  .voila-x-kaya .ky-pr-3 {
+    padding-right: 0.75rem;
+  }
+  .voila-x-kaya .ky-pr-4 {
+    padding-right: 1rem;
+  }
+
+  .voila-x-kaya .ky-px-2{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .voila-x-kaya .ky-px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .voila-x-kaya .ky-px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .voila-x-kaya .ky-py-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .voila-x-kaya .ky-py-0\.5{
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+  }
+
+  .voila-x-kaya .ky-py-1{
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .voila-x-kaya .ky-py-1\.5{
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+  }
+
+  .voila-x-kaya .ky-py-10{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .voila-x-kaya .ky-py-2{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .voila-x-kaya .ky-py-2\.5{
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+
+  .voila-x-kaya .ky-py-3{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .voila-x-kaya .ky-py-4{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .voila-x-kaya .ky-py-8{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .voila-x-kaya .ky-pb-0{
+    padding-bottom: 0;
+  }
+
+  .voila-x-kaya .ky-pb-6{
+    padding-bottom: 1.5rem;
+  }
+
+  .voila-x-kaya .ky-pb-14{
+    padding-bottom: 3.5rem;
+  }
+
+  .voila-x-kaya .ky-pb-32{
+    padding-bottom: 8rem;
+  }
+
+  .voila-x-kaya .ky-pb-8{
+    padding-bottom: 2rem;
+  }
+
+  .voila-x-kaya .ky-pl-4{
+    padding-left: 1rem;
+  }
+
+  .voila-x-kaya .ky-pl-8{
+    padding-left: 2rem;
+  }
+
+  .voila-x-kaya .ky-pt-8{
+    padding-top: 2rem;
+  }
+
+  .voila-x-kaya .ky-pt-10{
+    padding-top: 2.5rem;
+  }
+
+  .voila-x-kaya .ky-pt-12{
+    padding-top: 3rem;
+  }
+
+  .voila-x-kaya .ky-pt-14{
+    padding-top: 3.5rem;
+  }
+
+  .voila-x-kaya .ky-pt-32{
+    padding-top: 8rem;
+  }
+
+  .voila-x-kaya .ky-pt-5{
+    padding-top: 1.25rem;
+  }
+
+  .voila-x-kaya .ky-text-left{
+    text-align: left;
+  }
+
+  .voila-x-kaya .ky-text-center{
+    text-align: center;
+  }
+
+  .voila-x-kaya .ky-font-prim{
+    font-family: Poppins, sans-serif;
+  }
+
+  .voila-x-kaya .ky-font-sec{
+    font-family: Playfair Display, sans-serif;
+  }
+
+  .voila-x-kaya .ky-text-5xl{
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .voila-x-kaya .ky-text-base{
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  .voila-x-kaya .ky-text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .voila-x-kaya .ky-text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .voila-x-kaya .ky-text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .voila-x-kaya .ky-text-xs{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .voila-x-kaya .ky-font-bold{
+    font-weight: 700;
+  }
+
+  .voila-x-kaya .ky-font-medium{
+    font-weight: 500;
+  }
+
+  .voila-x-kaya .ky-font-normal{
+    font-weight: 400;
+  }
+
+  .voila-x-kaya .ky-leading-5{
+    line-height: 1.25rem;
+  }
+  .voila-x-kaya .ky-leading-6{
+    line-height: 1.5rem; 
+  }
+  .voila-x-kaya .ky-leading-8{
+    line-height: 2rem;
+  }
+
+  .voila-x-kaya .ky-leading-tight{
+    line-height: 1.25;
+  }
+
+  .voila-x-kaya .ky-text-deblue{
+    --tw-text-opacity: 1;
+    color: rgb(20 86 160 / var(--tw-text-opacity));
+  }
+
+  .voila-x-kaya .ky-text-main{
+    --tw-text-opacity: 1;
+    color: rgb(119 119 119 / var(--tw-text-opacity));
+  }
+
+  .voila-x-kaya .ky-text-neutral{
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+  }
+
+  .voila-x-kaya .ky-text-primary{
+    --tw-text-opacity: 1;
+    color: rgb(18 120 74 / var(--tw-text-opacity));
+  }
+
+  .voila-x-kaya .ky-text-title{
+    --tw-text-opacity: 1;
+    color: rgb(25 25 25 / var(--tw-text-opacity));
+  }
+
+  .voila-x-kaya .ky-text-white{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .voila-x-kaya .ky-max-w-xs2{
+    max-width: 16.875rem;
+  }
+
+  .voila-x-kaya .ky-section-container {
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .voila-x-kaya .hover\:ky-bg-primary:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(18 120 74 / var(--tw-bg-opacity));
+  }
+
+  .voila-x-kaya .hover\:ky-text-white:hover{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .voila-x-kaya .ky-deal-banner {
+    /*width: 300px;*/
+  }
+  @media (min-width: 768px){
+    .voila-x-kaya .ky-deal-banner {
+      width: 564px;
+      border-radius: 8px;
+    }
+
+    .voila-x-kaya .md\:ky-w-auto{
+      width: auto;
+    }
+
+    .voila-x-kaya .md\:ky-w-46{
+      width: 180px;
+    }
+
+    .voila-x-kaya .md\:ky-mx-auto{
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .voila-x-kaya .md\:ky-mb-0{
+      margin-bottom: 0px;
+    }
+
+    .voila-x-kaya .md\:ky-mb-10{
+      margin-bottom: 2.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-mb-12{
+      margin-bottom: 3rem;
+    }
+
+    .voila-x-kaya .md\:ky-mb-14{
+      margin-bottom: 3.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-mb-4{
+      margin-bottom: 1rem;
+    }
+
+    .voila-x-kaya .md\:ky-mb-5{
+      margin-bottom: 1.25rem;
+    }
+
+    .voila-x-kaya .md\:ky-ml-0{
+      margin-left: 0;
+    }
+
+    .voila-x-kaya .md\:ky-ml-2{
+      margin-left: 0.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-ml-4{
+      margin-left: 1rem;
+    }
+
+    .voila-x-kaya .md\:ky-ml-6{
+      margin-left: 1.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-ml-8{
+      margin-left: 2rem;
+    }
+
+    .voila-x-kaya .md\:ky-mr-2{
+      margin-right: 0.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-mr-6{
+      margin-right: 1.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-mr-8{
+      margin-right: 2rem;
+    }
+
+    .voila-x-kaya .md\:ky-mt-0{
+      margin-top: 0px;
+    }
+
+    .voila-x-kaya .md\:ky-mr-0{
+      margin-right: 0;
+    }
+
+    .voila-x-kaya .md\:ky-mr-2{
+      margin-right: 0.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-mr-3{
+      margin-right: 0.75rem;
+    }
+
+    .voila-x-kaya .md\:ky-pl-0{
+      margin-right: 0;
+    }
+
+    .voila-x-kaya .md\:ky-block{
+      display: block;
+    }
+
+    .voila-x-kaya .md\:ky-flex{
+      display: flex;
+    }
+
+    .voila-x-kaya .md\:ky-grid{
+      display: grid;
+    }
+
+    .voila-x-kaya .md\:ky-hidden{
+      display: none;
+    }
+
+    .voila-x-kaya .md\:ky-w-1\/2{
+      width: 50%;
+    }
+
+    .voila-x-kaya .md\:ky-w-6\/12{
+      width: 50%;
+    }
+
+    .voila-x-kaya .md\:ky-h-28{
+      height: 7rem;
+    }
+
+    .voila-x-kaya .md\:ky-max-w-xs{
+      max-width: 20rem;
+    }
+
+    .voila-x-kaya .md\:ky-max-w-xs3{
+      max-width: 21.875rem;
+    }
+
+    .voila-x-kaya .md\:ky-flex-row{
+      flex-direction: row;
+    }
+
+    .voila-x-kaya .md\:ky-justify-center{
+      justify-content: center;
+    }
+    .voila-x-kaya .md\:ky-items-center{
+      align-items: center;
+    }
+
+    .voila-x-kaya .md\:ky-py-10{
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-py-14{
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-py-20{
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .voila-x-kaya .md\:ky-py-44{
+      padding-top: 11rem;
+      padding-bottom: 11rem;
+    }
+
+    .voila-x-kaya .md\:ky-pb-14{
+      padding-bottom: 3.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-pt-14{
+      padding-top: 3.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-pt-12{
+      padding-top: 3rem;
+    }
+
+    .voila-x-kaya .md\:ky-pt-8{
+      padding-top: 2rem;
+    }
+
+    .voila-x-kaya .md\:ky-text-left{
+      text-align: left;
+    }
+
+    .voila-x-kaya .md\:ky-text-center{
+      text-align: center;
+    }
+
+    .voila-x-kaya .md\:ky-text-2xl{
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .voila-x-kaya .md\:ky-text-base{
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .voila-x-kaya .md\:ky-text-lg{
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+    .voila-x-kaya .md\:ky-text-xl{
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .voila-x-kaya .md\:ky-leading-5{
+      line-height: 1.25rem;
+    }
+    .voila-x-kaya .md\:ky-leading-8{
+      line-height: 2rem;
+    }
+  }
+</style>
+<style type="text/css">
+  footer {
+    margin-top: 0;
+    padding-top: 70px;
+    display: none;
+  }
+  .tt-breadcrumb {
+    display: none;
+  } 
+  .tt-desktop-header {
+    padding-bottom: 0;
+  }
+  .tt-desktop-header .tt-header-holder,
+  .tt-stuck-nav .tt-header-row {
+    /*display: none;*/
+  }
+  #second-nav {
+    min-height: unset;
+  }
+
+  /* faq */
+  .ky-collapse-header .ky-faq-minus-js,
+  .ky-collapse-header.active .ky-faq-plus-js {
+    display: none;
+  }
+  .ky-collapse-header.active .ky-faq-minus-js,
+  .ky-collapse-header .ky-faq-plus-js {
+    display: block;
+  }
+
+  .voila-x-kaya a {
+    transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+  }
+
+  .kyimg-bg-home1 { background-image: url('https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_seam-home1.png') }
+  .kyimg-bg-home2 { background-image: url('https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_seam-home2.png') }
+  .kyimg-bg-home-m { background-image: none }
+  
+  section {
+    scroll-margin-top: 112px;
+  }
+
+  .voila-x-kaya .ky-drop-img {
+    width: auto;
+  }
+  .ky-drop-imgsvg1 {
+    position: absolute;
+    left: -22px;
+    top: 50px;
+  }
+  .ky-drop-imgsvg2 {
+    position: absolute;
+    right: -29px;
+    bottom: 140px;
+  }
+
+  .sticky-prepare {
+    width: 100%;
+    z-index: 20;
+    opacity: 0;
+    position: fixed;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
+  }
+  .sticky-active {
+    opacity: 100;
+    transition: all 0.2s linear;
+  }
+
+  /* slick */
+  .voila-x-kaya .kaya-slider-init {
+    visibility: hidden;
+    transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+  }
+  .voila-x-kaya .arrow-location-tab {
+     margin-top: 0; 
+  }
+
+  .voila-x-kaya .arrow-location-tab .slick-arrow {
+    top: calc( 50% - 1rem );
+  }
+  .voila-x-kaya .arrow-location-tab .slick-arrow.slick-disabled {
+    display: none!important;
+  }
+  .voila-x-kaya .slick-slider .slick-track {
+    display: flex;
+  }
+  .voila-x-kaya .slick-dot-style .slick-dots {
+    margin-top: 16px;
+  }
+  .voila-x-kaya .slick-dot-style .slick-dots li button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    background:#CCCCCC;
+  }
+  .voila-x-kaya .slick-dot-style .slick-dots li.slick-active button {
+    background:#12784A;
+  }
+  .voila-x-kaya .arrow-location-tab .slick-next {
+    right: -18px;
+  }
+  .voila-x-kaya .arrow-location-tab .slick-prev  {
+    left: -18px;
+  }
+
+  /* SLIDER TESTIMONI */
+  .voila-x-kaya .kaya-slider-testimoni-js .slick-slide {
+    margin: 0 8px;
+  }
+  .voila-x-kaya .kaya-slider-testimoni-js .slick-list {
+    margin: 0 -8px;
+  }
+
+  /* SLIDER SHOW 3*/
+  .voila-x-kaya .kaya-slider-show3-js {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .voila-x-kaya .kaya-slider-show3-js  .slick-list {
+    margin: 0 -1rem;
+  }
+  .voila-x-kaya .kaya-slider-show3-js .slick-slide {
+    margin: 0 1rem;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+  .voila-x-kaya .kaya-slider-show3-js .slick-slide:first-child {
+    margin-left: 0;
+  }
+  .voila-x-kaya .kaya-slider-show3-js .slick-slide:last-child {
+    margin-right: 0;
+  }
+  .voila-x-kaya .kaya-slider-show3-js img {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  /* SLIDER DEAL */
+  .voila-x-kaya .kaya-slider-deal-js .slick-list {
+    margin: 0 -12px;
+  }
+  .voila-x-kaya .kaya-slider-deal-js .slick-slide {
+    margin: 0 12px;
+  }
+  .voila-x-kaya .kaya-slider-deal-js.arrow-location-tab .slick-next  {
+    right: -29px;
+  }
+  .voila-x-kaya .kaya-slider-deal-js.arrow-location-tab .slick-prev  {
+    left: -29px;
+  }
+
+  /* SLIDER GALLERY */
+  /*.voila-x-kaya .kaya-slider-gallery-js {
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+  }
+  */
+  .voila-x-kaya .kaya-slider-gallery-js .slick-list {
+    margin: 0 -8px;
+  }
+  .voila-x-kaya .kaya-slider-gallery-js .slick-slide {
+    margin: 0 8px;
+  }
+
+
+  @media (max-width: 1025px){
+    .voila-x-kaya .ky-drop-img {
+      width: 50%;
+    }
+    .ky-drop-imgsvg2 {
+      position: absolute;
+      right: -29px;
+      bottom: 40%;
+    }
+    section {
+      scroll-margin-top: 75px;
+    }
+  }
+
+  @media (max-width: 791px){
+    .voila-x-kaya .ky-drop-img {
+      width: 100%;
+    }
+
+    .voila-x-kaya .kaya-slider-gallery-js {
+      padding-right: 0;
+      padding-left: 0;
+      margin-right: -1rem;
+      margin-left: -1rem;
+    }
+    .voila-x-kaya .kaya-slider-gallery-js .slick-list {
+      margin: 0 -8px;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+    .voila-x-kaya .kaya-slider-gallery-js .slick-slide {
+      margin: 0 8px;
+    }
+    .voila-x-kaya .kaya-slider-gallery-js .slick-slide:first-child {
+      margin-left: 8px;
+    }
+
+
+    .voila-x-kaya .kaya-slider-show3-js {
+      padding-right: 0;
+      padding-left: 0;
+      margin-right: -1rem;
+      margin-left: -1rem;
+    }
+    .voila-x-kaya .kaya-slider-show3-js .slick-list {
+      margin: 0 -8px;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+    .voila-x-kaya .kaya-slider-show3-js .slick-slide {
+      margin: 0 8px;
+    }
+    .voila-x-kaya .kaya-slider-show3-js .slick-slide:first-child {
+      margin-left: 8px;
+    }
+
+    .voila-x-kaya .kaya-slider-deal-js {
+      padding-right: 0;
+      padding-left: 0;
+      margin-right: -1rem;
+      margin-left: -1rem;
+    }
+    .voila-x-kaya .kaya-slider-deal-js .slick-list {
+      margin: 0 -8px;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+    .voila-x-kaya .kaya-slider-deal-js .slick-slide {
+      margin: 0 8px;
+    }
+    .voila-x-kaya .kaya-slider-deal-js .slick-slide:first-child {
+      margin-left: 8px;
+    }
+
+   /* .voila-x-kaya .kaya-slider-deal-js .slick-list {
+      margin: 0 -8px;
+    }
+    .voila-x-kaya .kaya-slider-deal-js .slick-slide {
+      margin: 0 8px;
+    }
+    .voila-x-kaya .kaya-slider-deal-js {
+      margin-right: -4px;
+    }*/
+    /* ============ */
+    .kyimg-bg-home1,
+    .kyimg-bg-home2 {
+      background-image: none;
+    }
+    .voila-x-kaya .slick-dot-style .slick-dots {
+      margin-top: 5px;
+    }
+    #shopify-section-header-template {
+      display: none;
+    }
+  }
+
+  @media (max-width: 576px){
+    section {
+      scroll-margin-top: 64px;
+    }
+    .ky-drop-img {
+      padding-left: 12px;
+      padding-right: 20px;
+    }
+    .ky-drop-imgsvg1 {
+      position: absolute;
+      left: -12px;
+      top: 50px;
+      width: 24px;
+      height: 24px;
+    }
+    .ky-drop-imgsvg2 {
+      position: absolute;
+      right: -19px;
+      bottom: 17%;
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>
+
+<div class="sticky-header" style="border-bottom: 0;">
+    <a href="/"><div class="icon">{{ 'chevron-left.svg' | asset_url | img_tag }}</div></a>
+    <h2 class="title" id="sticky-header-title" style="text-transform: none;">voilà.id x Kaya Leathers</h2>
+</div>
+<div class="voila-x-kaya">
+  <div class="ky-font-prim ky-text-title ky-pb-0" style="border-bottom: 1px solid rgba(54, 65, 88, 0.1);">
+    
+    <section id="kaya-banner">
+      <div class="" style="display: none">
+        <div class="ky-hidden md:ky-block ky-w-3/12 ky-flex-none ky-bg-no-repeat ky-bg-left ky-bg-cover kyimg-bg-home1"></div>
+        <div class="ky-w-full md:ky-w-6/12 ky-grow">
+          <div class="ky-flex ky-mx-auto ky-w-6/12 ky-justify-center ky-pt-32 md:ky-pt-8">
+            <img class="ky-mr-10" src="{{ 'kaya_voila-black.svg' | asset_url }}">
+            <img class="ky-mr-10" src="{{ 'kaya_x.svg' | asset_url }}">
+            <img class="" src="{{ 'kaya_kaya.svg' | asset_url }}">
+          </div>
+          <div class="ky-flex ky-pt-5 ky-pb-32 md:ky-py-44">
+            <div class="ky-text-5xl ky-text-secondary ky-font-sec ky-font-bold ky-text-center ky-leading-tight">Care & repair your Luxury Collections with us</div>
+          </div>
+        </div>
+        <div class="hidden md:ky-block ky-w-3/12 ky-flex-none ky-bg-no-repeat ky-bg-right ky-bg-cover kyimg-bg-home2"></div>
+      </div>
+      <img class="ky-hidden md:ky-block ky-w-full ky-max-w-none" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_home2x.jpg?v=1689316388">
+      <img class="ky-block md:ky-hidden ky-w-full ky-max-w-none" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_home-m3x.jpg?v=1689648334">
+    </section>
+
+    <section class="ky-bg-grey4" id="kaya-desc">
+      <div class="ky-section-container ky-mx-auto">
+        <div class="ky-block md:ky-flex ky-pb-8 md:ky-pb-14 ky-pt-8 md:ky-pt-14 ky-items-center">
+          <img class="ky-h-kaya-logo md:ky-h-28 ky-mx-auto md:ky-mr-8" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_logo-kaya.png?v=1692853668">
+          <p class="ky-text-sm md:ky-text-xl ky-leading-5 md:ky-leading-8 ky-text-center md:ky-text-left ky-mt-4 md:ky-mt-0">
+            Founded in 2018, Kaya Leathers is a company that provides <strong>cleaning and care services</strong class="font-bold"> for all canvas and leather goods.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kaya-special">
+      <div class="ky-relative">
+        <img class="ky-absolute ky-top-0 ky-right-0 ky-hidden md:ky-block" src="{{ 'kaya_ornament-right.svg' | asset_url }}" style="z-index: -1;">
+        <img class="ky-absolute ky-top-0 ky-right-0 ky-block md:ky-hidden" src="{{ 'kaya_ornament-right-m.svg' | asset_url }}" style="z-index: -1;">
+      </div>
+      <div class="ky-py-8 md:ky-py-20">
+        <div class="ky-section-container ky-mx-auto">
+          <div class="md:ky-flex md:ky-justify-center">
+            <div class="ky-inline-block ky-relative ky-text-lg md:ky-text-2xl ky-font-bold ky-font-sec ky-mb-8 md:ky-mb-14">
+              <img class="ky-absolute ky-hidden md:ky-block" src="{{ 'kaya_blink.svg' | asset_url }}" style="z-index: -1;top: -22px;right: -32px;">
+              What’s Special from voilà x Kaya Leathers
+            </div>
+          </div>
+          <div class="ky-block md:ky-grid ky-grid-cols-2 ky-gap-14">
+            <div class="ky-flex ky-items-center ky-mb-10 md:ky-mb-0">
+              <img class="ky-mr-4" src="{{ 'kaya_sp-all.svg' | asset_url }}">
+              <div class="ky-text-sm">
+                <p class="md:ky-text-base ky-font-medium ky-mb-2">All in One Treatment</p>
+                <p class="ky-text-main">Get all the services that you need to take care of your luxury goods, all in. From cleaning, recolor, minor repair, coating, up until finishing.</p>
+              </div>
+            </div>
+            <div class="ky-flex ky-items-center ky-mb-10 md:ky-mb-0">
+              <img class="ky-mr-4" src="{{ 'kaya_sp-handle.svg' | asset_url }}">
+              <div class="ky-text-sm">
+                <p class="md:ky-text-base ky-font-medium ky-mb-2">Handled by Experienced Professionals</p>
+                <p class="ky-text-main">Entrust your luxury collection in the care of experts who specialized in the field for more than 20+ years.</p>
+              </div>
+            </div>
+            <div class="ky-flex ky-items-center ky-mb-10 md:ky-mb-0">
+              <img class="ky-mr-4" src="{{ 'kaya_sp-leathers.svg' | asset_url }}">
+              <div class="ky-text-sm">
+                <p class="md:ky-text-base ky-font-medium ky-mb-2">Leathers Experts</p>
+                <p class="ky-text-main">Our team of leather experts will provide the out-most care for your leather goods to ensure they receive the treatment they deserve.</p>
+              </div>
+            </div>
+            <div class="ky-flex ky-items-center">
+              <img class="ky-mr-4" src="{{ 'kaya_sp-deal.svg' | asset_url }}">
+              <div class="ky-text-sm">
+                <p class="md:ky-text-base ky-font-medium ky-mb-2">Special Deals</p>
+                <p class="ky-text-main">Within this special collaboration, you could get limited special deals with us. <a href="#kaya-special-deal" class="ky-text-primary ky-font-bold">See Special Deals</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ky-relative">
+        <img class="ky-absolute ky-bottom-0 ky-left-0 ky-hidden md:ky-block" src="{{ 'kaya_ornament-left.svg' | asset_url }}" style="z-index: -1;">
+        <img class="ky-absolute ky-bottom-0 ky-left-0 ky-block md:ky-hidden" src="{{ 'kaya_ornament-left-m.svg' | asset_url }}" style="z-index: -1;">
+      </div>
+    </section>
+
+    <section class="ky-py-8 md:ky-py-14 ky-bg-bg1" id="kaya-services">
+      <div class="ky-section-container ky-mx-auto md:ky-mb-14">
+        <div class="ky-text-lg md:ky-text-2xl ky-font-bold ky-font-sec ky-text-left md:ky-text-center md:ky-mx-auto ky-mb-6 md:ky-mb-12">Our Services</div>
+        <div class="ky-text-base md:ky-text-lg ky-font-medium ky-text-main ky-mb-4">MOST POPULAR</div>
+        
+        <div class="ky-block md:ky-grid ky-grid-cols-3 ky-gap-8 ky-mb-8">
+          <div class="ky-rounded ky-overflow-hidden ky-mb-4">
+            <img class="ky-w-full md:ky-w-auto" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_cleaning.jpg">
+            <div class="ky-bg-white ky-text-sm ky-p-4">
+              <p class="ky-text-base ky-font-medium ky-mb-2">Cleaning</p>
+              <p class="ky-text-main">Our expert team will safely and effectively clean, preserving their quality and beauty.</p>
+            </div>
+          </div>
+          <div class="ky-rounded ky-overflow-hidden ky-mb-4">
+            <img class="ky-w-full md:ky-w-auto" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_retouch.jpg">
+            <div class="ky-bg-white ky-text-sm ky-p-4">
+              <p class="ky-text-base ky-font-medium ky-mb-2">Retouch</p>
+              <p class="ky-text-main">Any stain or scratch? Get the seamless service for the new look from our skilled artisans.</p>
+            </div>
+          </div>
+          <div class="ky-rounded ky-overflow-hidden ky-mb-4">
+            <img class="ky-w-full md:ky-w-auto" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_repair.jpg">
+            <div class="ky-bg-white ky-text-sm ky-py-4 ky-pl-4 ky-pr-3">
+              <p class="ky-text-base ky-font-medium ky-mb-2">Repair</p>
+              <p class="ky-text-main">Our skilled craftsmen use high-quality materials and techniques to ensure seamless repairs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ky-section-container ky-mx-auto ky-mb-4">
+        <div class="ky-text-base md:ky-text-lg ky-font-medium ky-text-main ky-mb-4">OTHER EXPERTISE</div>
+        <!-- <div class="ky-block md:ky-grid ky-grid-cols-4 ky-gap-6"> -->
+        <div class="kaya-slider-show3-js arrow-location-tab kaya-slider-init ky-mb-8 md:ky-mb-10">
+          <div class="kaya-slider-items ky-rounded ky-overflow-hidden">
+            <img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_ex1.jpg?v=1688105496">
+            <div class="ky-grow ky-bg-white ky-text-sm ky-p-4">
+              <p class="ky-text-base ky-font-medium ky-mb-2">Hermès Specialist</p>
+              <p class="ky-text-main">We trained to work specifically with Hermes materials, ensuring the highest quality of service.</p>
+            </div>
+          </div>
+          <div class="kaya-slider-items ky-rounded ky-overflow-hidden">
+            <img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_ex2.jpg?v=1688105496">
+            <div class="ky-grow ky-bg-white ky-text-sm ky-p-4">
+              <p class="ky-text-base ky-font-medium ky-mb-2">Recolor</p>
+              <p class="ky-text-main">Bored with the item’s color? Recolor it with us using high-quality dyes to enhance its durability and longevity.</p>
+            </div>
+          </div>
+          <div class="kaya-slider-items ky-rounded ky-overflow-hidden">
+            <img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_ex3.jpg?v=1688105496">
+            <div class="ky-grow ky-bg-white ky-text-sm ky-p-4">
+              <p class="ky-text-base ky-font-medium ky-mb-2">Leather Replacement</p>
+              <p class="ky-text-main">Carefully remove the damaged leather and replace it, ensuring seamless integration. </p>
+            </div>
+          </div>
+          <div class="kaya-slider-items ky-rounded ky-overflow-hidden">
+            <img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_ex4.jpg?v=1688105496">
+            <div class="ky-grow ky-bg-white ky-text-sm ky-p-4">
+              <p class="ky-text-base ky-font-medium ky-mb-2">Bag Restoration</p>
+              <p class="ky-text-main">Clean, retouch, and repair every aspect of the bag with all-in-one treatment to get them as new.</p>
+            </div>
+          </div>
+          <div class="kaya-slider-items ky-rounded ky-overflow-hidden">
+            <img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_ex5.jpg?v=1688105496">
+            <div class="ky-grow ky-bg-white ky-text-sm ky-p-4">
+              <p class="ky-text-base ky-font-medium ky-mb-2">Shoe Restoration</p>
+              <p class="ky-text-main">Affordable packages for cleaning, retouching and recoloring (if necessary) for your bag/shoes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ky-section-container ky-mx-auto ky-flex ky-flex-col ky-items-center">
+
+        <p class="ky-text-base md:ky-text-xl ky-text-center ky-font-medium ky-mb-5">Want to repair your leather collections?</p>
+        <a class="ky-text-base ky-leading-6 ky-text-primary ky-font-medium ky-inline-block ky-text-center ky-rounded-md ky-border-2 ky-border-primary ky-bg-white ky-py-2.5 ky-px-6 ky-w-full ky-max-w-xs2 md:ky-max-w-xs3 hover:ky-bg-primary hover:ky-text-white" href="https://api.whatsapp.com/send?phone=6282170003009&text=Halo,%20Kaya%20Leathers%20Surabaya!%20:)%20Saya%20mau%20tanya">
+          Consult with Us
+        </a>
+      </div>
+    </section>
+
+    <section class="ky-py-10 md:ky-py-14 ky-bg-grey4" style="display: none;">
+      <div class="ky-section-container ky-mx-auto">
+        <div class="ky-text-lg md:ky-text-2xl ky-font-bold ky-font-sec ky-text-left md:ky-text-center md:ky-mx-auto ky-mb-4 md:ky-mb-10">Special Deals!</div>
+        <div class="kaya-slider-deal-js arrow-location-tab kaya-slider-init">
+            <img class="ky-deal-banner ky-rounded" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_promo-banner1.jpg?v=1689056968">
+            <img class="ky-deal-banner ky-rounded" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_promo-banner2.jpg?v=1689056969">
+            <img class="ky-deal-banner ky-rounded" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_promo-banner3.jpg?v=1689056969">
+        </div>
+      </div>
+    </section>
+
+    <section class="ky-py-10 md:ky-py-14 ky-bg-grey4" id="kaya-special-deal">
+      <div class="ky-section-container ky-mx-auto">
+        <div class="ky-text-lg md:ky-text-2xl ky-font-bold ky-font-sec ky-text-left md:ky-text-center md:ky-mx-auto ky-mb-4 md:ky-mb-10">Special Deals!</div>
+        <div class="ky-gap-10 ky-hidden md:ky-flex">
+            <a href="https://voila.id/blogs/voila-x-kaya-leather/shop-sparkle-shine" target="_blank">
+              <img class="ky-deal-banner ky-rounded" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_banner1-desktop.jpg?v=1689921876">
+            </a>
+            <a href="https://voila.id/blogs/voila-x-kaya-leather/shop-more-save-more" target="_blank">
+              <img class="ky-deal-banner ky-rounded" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_banner2-desktop.jpg?v=1689921876">
+            </a>
+        </div>
+        <div class="ky-block md:ky-hidden">
+          <div class="kaya-slider-deal-js arrow-location-tab kaya-slider-init">
+              <a href="https://voila.id/blogs/voila-x-kaya-leather/shop-sparkle-shine" target="_blank">
+                <img class="ky-deal-banner ky-rounded" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_banner1-mobile.jpg?v=1689921876">
+              </a>
+              <a href="https://voila.id/blogs/voila-x-kaya-leather/shop-more-save-more" target="_blank">
+                <img class="ky-deal-banner ky-rounded" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_banner2-mobile.jpg?v=1689921876">
+              </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ky-pt-12 ky-pb-14 md:ky-py-14" id="kaya-steps">
+      <div class="ky-section-container ky-mx-auto">
+        <div class="ky-flex ky-justify-center">
+          <div class="ky-inline-block ky-relative ky-text-xl md:ky-text-2xl ky-font-bold ky-font-sec ky-mb-6 md:ky-mb-14">
+            <img class="ky-absolute" src="{{ 'kaya_blink-gray.svg' | asset_url }}" style="z-index: -1;top: -18px;left: -24px;">
+            Easy steps to restore
+          </div>
+        </div>
+        <div class="ky-block md:ky-flex ky-justify-between ky-gap-14 ky-mb-10 md:ky-mb-14 ky-pl-8 md:ky-pl-0">
+          <div class="ky-mb-5 md:ky-mb-0 ky-text-center ky-flex ky-flex-col md:ky-items-center">
+            <img class="ky-mb-3 ky-w-24 ky-hidden md:ky-block" src="{{ 'kaya_stp-consult.svg' | asset_url }}">
+            <div class="ky-flex ky-items-center">
+              <span class="ky-bg-grey3 ky-flex ky-items-center ky-rounded-full ky-justify-center ky-w-10 ky-h-10 ky-mr-3 md:ky-mr-2 ky-font-sec ky-font-bold ky-text-xl">1.</span>
+              <img class="ky-mr-4 ky-w-18 ky-block md:ky-hidden" src="{{ 'kaya_stp-consult.svg' | asset_url }}">
+              <span class="ky-text-sm md:ky-text-lg ky-font-medium">Consult with us</span>
+            </div>
+          </div>
+          <div class="ky-mb-5 md:ky-mb-0 ky-text-center ky-flex ky-flex-col md:ky-items-center">
+            <img class="ky-mb-3 ky-w-24 ky-hidden md:ky-block" src="{{ 'kaya_stp-drop.svg' | asset_url }}">
+            <div class="ky-flex ky-items-center">
+              <span class="ky-bg-grey3 ky-flex ky-items-center ky-rounded-full ky-justify-center ky-w-10 ky-h-10 ky-mr-3 md:ky-mr-2 ky-font-sec ky-font-bold ky-text-xl">2.</span>
+              <img class="ky-mr-4 ky-w-18 ky-block md:ky-hidden" src="{{ 'kaya_stp-drop.svg' | asset_url }}">
+              <span class="ky-text-sm md:ky-text-lg ky-font-medium">Drop your item</span>
+            </div>
+          </div>
+          <div class="ky-mb-5 md:ky-mb-0 ky-text-center ky-flex ky-flex-col md:ky-items-center">
+            <img class="ky-mb-3 ky-w-24 ky-hidden md:ky-block" src="{{ 'kaya_stp-payment.svg' | asset_url }}">
+            <div class="ky-flex ky-items-center">
+              <span class="ky-bg-grey3 ky-flex ky-items-center ky-rounded-full ky-justify-center ky-w-10 ky-h-10 ky-mr-3 md:ky-mr-2 ky-font-sec ky-font-bold ky-text-xl">3.</span>
+              <img class="ky-mr-4 ky-w-18 ky-block md:ky-hidden" src="{{ 'kaya_stp-payment.svg' | asset_url }}">
+              <span class="ky-text-sm md:ky-text-lg ky-font-medium">Payment</span>
+            </div>
+          </div>
+          <div class="ky-mb-5 md:ky-mb-0 ky-text-center ky-flex ky-flex-col md:ky-items-center">
+            <img class="ky-mb-3 ky-w-24 ky-hidden md:ky-block" src="{{ 'kaya_stp-return.svg' | asset_url }}">
+            <div class="ky-flex ky-items-center">
+              <span class="ky-bg-grey3 ky-flex ky-items-center ky-rounded-full ky-justify-center ky-w-10 ky-h-10 ky-mr-3 md:ky-mr-2 ky-font-sec ky-font-bold ky-text-xl">4.</span>
+              <img class="ky-mr-4 ky-w-18 ky-block md:ky-hidden" src="{{ 'kaya_stp-return.svg' | asset_url }}">
+              <span class="ky-text-sm md:ky-text-lg ky-font-medium">Return the item</span>
+            </div>
+          </div>
+        </div>
+        <div class="ky-flex ky-justify-center">
+          <a class="ky-text-base ky-leading-6 ky-text-primary ky-font-medium ky-inline-block ky-text-center ky-rounded-md ky-border-2 ky-border-primary ky-bg-white ky-py-2.5 ky-px-6 ky-w-full ky-max-w-xs2 md:ky-max-w-xs3 hover:ky-bg-primary hover:ky-text-white" href="https://api.whatsapp.com/send?phone=6282170003009&text=Halo,%20Kaya%20Leathers%20Surabaya!%20:)%20Saya%20mau%20tanya">
+            Restore Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ky-py-8 md:ky-py-14 ky-bg-grey4" id="kaya-before-after">
+      <div class="ky-section-container ky-mx-auto">
+        <div class="ky-text-lg md:ky-text-2xl ky-font-bold ky-font-sec ky-text-left md:ky-text-center md:ky-mx-auto ky-mb-4 md:ky-mb-10">Before after galleries</div>
+
+        {% section 'kaya-gallery' %} 
+        <div class="ky-section-container ky-mx-auto ky-flex ky-flex-col ky-items-center">
+          <p class="ky-text-base md:ky-text-xl ky-text-center ky-font-medium ky-mb-5">More about our works & testimonials</p>
+          <a class="ky-flex ky-justify-center ky-items-center ky-text-base ky-leading-6 ky-text-primary ky-font-medium ky-inline-block ky-text-center ky-rounded-md ky-border-2 ky-border-primary ky-bg-white ky-py-2.5 ky-px-6 hover:ky-bg-primary hover:ky-text-white" href="https://www.instagram.com/kayaleathers/?hl=en">
+            <img class="ky-mr-2 ky-py-0.5" src="{{ 'kaya_ig.svg' | asset_url }}" style="height: 24px;width: 24px;">
+            <span>Visit our Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ky-py-8 md:ky-pt-12 md:ky-py-14 ky-bg-bg1" id="kaya-testimoni">
+      <div class="ky-section-container ky-mx-auto ky-mb-8 md:ky-mb-5">
+        <div class="ky-text-main md:ky-mx-auto md:ky-text-center ky-w-full ky-mb-2 md:ky-mb-5">500+ satisfied customers</div>
+        <div class="ky-text-lg md:ky-text-2xl ky-font-bold ky-font-sec ky-text-left md:ky-text-center md:ky-mx-auto ky-mb-4 md:ky-mb-10">Those who trust us</div>
+        <div class="kaya-slider-testimoni-js arrow-location-tab slick-dot-style kaya-slider-init">
+        
+          <div class="ky-flex ky-flex-col ky-justify-between ky-bg-white ky-rounded-xl ky-p-6 ky-w-auto md:ky-w-1/2 ky-h-auto">
+            <div class="ky-mb-6 md:ky-mb-8">
+              <img class="ky-mb-5" src="{{ 'kaya_quote-mark.svg' | asset_url }}" style="width: 36px;">
+              <p class="ky-text-base ky-leading-6">"I almost threw away my heavily damaged, moldy Oran sandals, but decided to try getting them repaired at Kaya Leathers. To my surprise, they managed to clean them up, although they didn't look completely brand new, I was ultimately satisfied with the result."</p>
+            </div>
+            <div class="ky-flex">
+              <img class="ky-mr-5 ky-flex-none ky-rounded-full" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_1.jpg?v=1689316933" style="width: 56px;">
+              <div class="ky-flex ky-flex-col ky-justify-center ky-grow">
+                <p class="ky-font-bold ky-mb-1">Chelsea Olivia</p>
+                <p class="ky-text-sm ky-text-neutral">Actress</p>
+              </div>
+            </div>
+          </div>     
+          <div class="ky-flex ky-flex-col ky-justify-between ky-bg-white ky-rounded-xl ky-p-6 ky-w-auto md:ky-w-1/2 ky-h-auto">
+            <div class="ky-mb-6 md:ky-mb-8">
+              <img class="ky-mb-5" src="{{ 'kaya_quote-mark.svg' | asset_url }}" style="width: 36px;">
+              <p class="ky-text-base ky-leading-6">"Thank you Kaya Leathers for doing your magic and making my Lady Dior wearable again! Black color even suits it better and make it looks more luxurious!"</p>
+            </div>
+            <div class="ky-flex">
+              <img class="ky-mr-5 ky-flex-none ky-rounded-full" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_2.jpg?v=1689316933" style="width: 56px;">
+              <div class="ky-flex ky-flex-col ky-justify-center ky-grow">
+                <p class="ky-font-bold ky-mb-1">Enrica Valencia</p>
+                <p class="ky-text-sm ky-text-neutral">Entrepreneur</p>
+              </div>
+            </div>
+          </div>     
+          <div class="ky-flex ky-flex-col ky-justify-between ky-bg-white ky-rounded-xl ky-p-6 ky-w-auto md:ky-w-1/2 ky-h-auto">
+            <div class="ky-mb-6 md:ky-mb-8">
+              <img class="ky-mb-5" src="{{ 'kaya_quote-mark.svg' | asset_url }}" style="width: 36px;">
+              <p class="ky-text-base ky-leading-6">"Even the boning of the bags return to the real shape, not just skin of the bag! Thank you Kaya Leathers!"</p>
+            </div>
+            <div class="ky-flex">
+              <img class="ky-mr-5 ky-flex-none ky-rounded-full" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_3.jpg?v=1689316933" style="width: 56px;">
+              <div class="ky-flex ky-flex-col ky-justify-center ky-grow">
+                <p class="ky-font-bold ky-mb-1">Theresa Wienathan</p>
+                <p class="ky-text-sm ky-text-neutral">Influencer</p>
+              </div>
+            </div>
+          </div>     
+          <div class="ky-flex ky-flex-col ky-justify-between ky-bg-white ky-rounded-xl ky-p-6 ky-w-auto md:ky-w-1/2 ky-h-auto">
+            <div class="ky-mb-6 md:ky-mb-8">
+              <img class="ky-mb-5" src="{{ 'kaya_quote-mark.svg' | asset_url }}" style="width: 36px;">
+              <p class="ky-text-base ky-leading-6">"OMG, My Alma, long time no see! After a month of looking for the right color! It looks brand new. They even clean the zipper! So detailed"</p>
+            </div>
+            <div class="ky-flex">
+              <img class="ky-mr-5 ky-flex-none ky-rounded-full" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_4.jpg?v=1689316934" style="width: 56px;">
+              <div class="ky-flex ky-flex-col ky-justify-center ky-grow">
+                <p class="ky-font-bold ky-mb-1">Tere Lie</p>
+                <p class="ky-text-sm ky-text-neutral">Influencer</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="ky-pt-10 ky-pb-6 md:ky-py-10 ky-bg-grey4" id="kaya-faq">
+      <div class="ky-section-container ky-mx-auto ky-block md:ky-flex">
+        <div class="ky-overflow-hidden ky-mb-4 md:ky-mb-0 md:ky-mr-8 ky-flex-none">
+          <img class="ky-block md:ky-hidden ky-w-full md:ky-w-auto" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_faqm.jpg?v=1688453584">
+          <!-- <img class="ky-hidden md:ky-block ky-w-full md:ky-w-auto ky-rounded-lg" src="" style="max-height: 608px;"> -->
+          <div class="ky-hidden md:ky-block" style="
+            background-image: url('https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_faq-update.jpg?v=1689242962');
+            width: 438px;
+            height: 100%;
+            max-height: 620px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+          "></div>
+        </div>
+        <div class="ky-w-full ky-grow">
+          <div class="ky-text-sm md:ky-text-base ky-font-medium ky-text-main ky-mb-1">F.A.Q</div>
+          <div class="ky-text-lg md:ky-text-2xl ky-font-bold ky-font-sec ky-mb-4 md:ky-mb-4">Frequently Asked Questions</div>
+          {% section 'kaya-faq' %}
+        </div>
+      </div>
+    </section>
+
+    <section class="ky-py-8 md:ky-pt-12 md:ky-pb-14 ky-bg-bg1" id="kaya-contact">
+      <div class="ky-section-container ky-mx-auto">
+        <div class="ky-text-lg md:ky-text-2xl ky-font-bold ky-font-sec ky-text-center ky-mx-auto ky-mb-6 md:ky-mb-14">Drop your items here</div>
+        <div class="ky-flex ky-flex-col-reverse md:ky-flex-row">
+          <div class="md:ky-mr-6 ky-grow">
+            <div class="ky-mb-6">
+              <div class="ky-font-bold ky-text-lg ky-mb-3">Surabaya</div>
+              <div class="ky-bg-white ky-rounded-md ky-p-4 ky-text-sm">
+                <p class="ky-mb-1.5 ky-font-medium">Kaya Leathers Store</p>
+                <p class="ky-mb-1.5 ">Office Park, Bukit Darmo Golf Boulevard No.17, Surabaya</p>
+                <p class="ky-mb-1.5 ">Mon - Sat (09:00 WIB - 17:00 WIB)</p>
+                <a class="ky-flex ky-items-center ky-mb-4 ky-text-primary ky-block" href="https://goo.gl/maps/kEGWbihNQXpoJmfk7">
+                  <svg class="ky-fill-current ky-mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.10669 13.3334L11.3467 6.09341V12.0001H13.3334V2.66675H4.00002V4.65341H9.90669L2.66669 11.8934L4.10669 13.3334Z"/>
+                  </svg>
+                  <span class="ky-font-medium ky-text-sm">Get Direction</span>
+                </a>
+                <a class="ky-flex ky-justify-center ky-items-center ky-text-primary ky-font-medium ky-inline-flex ky-text-center ky-rounded-md ky-border-2 ky-border-primary ky-bg-white ky-py-1.5 ky-px-4 hover:ky-bg-primary hover:ky-text-white" href="https://api.whatsapp.com/send?phone=6282170003009&text=Halo,%20saya%20ingin%20bertanya%20mengenai%20service%20voil%C3%A0%20x%20Kaya%20Leathers%20">
+                  <img class="ky-mr-2" src="{{ 'wa-icon.svg' | asset_url }}" style="height: 16px;width: 16px;">
+                  <span class="ky-text-sm">Contact Us</span>
+                </a>
+              </div>
+            </div>
+            <div class="ky-mb-4">
+              <div class="ky-font-bold ky-text-lg ky-mb-3">Jakarta</div>
+              <div class="ky-bg-white ky-rounded-md ky-p-4 ky-text-sm">
+                <p class="ky-mb-1.5 ky-font-medium">voilà.id Pondok Indah</p>
+                <p class="ky-mb-1.5 ">Jl. Arteri Pd. Indah No. 18G, Jakarta Selatan</p>
+                <p class="ky-mb-1.5 ">Mon - Sun (11:00 WIB - 21:00 WIB)</p>
+                <a class="ky-flex ky-items-center ky-mb-4 ky-text-primary ky-block" href="https://goo.gl/maps/uwBkSBVWU2ezM14QA">
+                  <svg class="ky-fill-current ky-mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.10669 13.3334L11.3467 6.09341V12.0001H13.3334V2.66675H4.00002V4.65341H9.90669L2.66669 11.8934L4.10669 13.3334Z"/>
+                  </svg>
+                  <span class="ky-font-medium ky-text-sm">Get Direction</span>
+                </a>
+                <a class="ky-flex ky-justify-center ky-items-center ky-text-primary ky-font-medium ky-inline-flex ky-text-center ky-rounded-md ky-border-2 ky-border-primary ky-bg-white ky-py-1.5 ky-px-4 hover:ky-bg-primary hover:ky-text-white" href="https://api.whatsapp.com/send?phone=6282170003009&text=Halo,%20saya%20ingin%20bertanya%20mengenai%20service%20voil%C3%A0%20x%20Kaya%20Leathers%20">
+                  <img class="ky-mr-2" src="{{ 'wa-icon.svg' | asset_url }}" style="height: 16px;width: 16px;">
+                  <span class="ky-text-sm">Contact Us</span>
+                </a>
+              </div>
+            </div>
+            <div class="">
+              <div class="ky-bg-white ky-rounded-md ky-p-4 ky-text-sm">
+                <p class="ky-mb-1.5 ky-font-medium">voilà.id Pantai Indah Kapuk</p>
+                <p class="ky-mb-1.5 ">Rukan The Beach, Jl. Pantai Indah Kapuk No.061, Jakarta Utara</p>
+                <p class="ky-mb-1.5 ">Mon - Sun (11.00 WIB - 21.00 WIB)</p>
+                <a class="ky-flex ky-items-center ky-mb-4 ky-text-primary ky-block" href="https://www.google.com/maps?s=web&opi=89978449&rlz=1C5CHFA_enID1050ID1051&lsa=HXAIEBABGAEiEwjJydmtoPKAAxX7cmwGHaNyDqIoAQ&vet=12ahUKEwjJydmtoPKAAxX7cmwGHaNyDqIQzooKegQIGxAB..i&cs=0&um=1&ie=UTF-8&fb=1&gl=id&sa=X&geocode=KZFMxyGk8WkuMbcQy-21rKTQ&daddr=Jl.+Arteri+Pd.+Indah+No.18G,+RT.9/RW.9,+Kby.+Lama+Sel.,+Kec.+Kby.+Lama,+Kota+Jakarta+Selatan,+Daerah+Khusus+Ibukota+Jakarta+12240">
+                  <svg class="ky-fill-current ky-mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.10669 13.3334L11.3467 6.09341V12.0001H13.3334V2.66675H4.00002V4.65341H9.90669L2.66669 11.8934L4.10669 13.3334Z"/>
+                  </svg>
+                  <span class="ky-font-medium ky-text-sm">Get Direction</span>
+                </a>
+                <a class="ky-flex ky-justify-center ky-items-center ky-text-primary ky-font-medium ky-inline-flex ky-text-center ky-rounded-md ky-border-2 ky-border-primary ky-bg-white ky-py-1.5 ky-px-4 hover:ky-bg-primary hover:ky-text-white" href="https://api.whatsapp.com/send?phone=6282170003009&text=Halo,%20saya%20ingin%20bertanya%20mengenai%20service%20voil%C3%A0%20x%20Kaya%20Leathers%20">
+                  <img class="ky-mr-2" src="{{ 'wa-icon.svg' | asset_url }}" style="height: 16px;width: 16px;">
+                  <span class="ky-text-sm">Contact Us</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="ky-drop-img md:ky-ml-6 ky-mb-6 md:ky-mb-0 ky-justify-center ky-flex-none">
+            <div class="ky-relative">
+              <svg class="ky-drop-imgsvg1" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.519707 19.7565C0.345969 19.7559 0.172706 19.7534 -6.10352e-05 19.7489V19.7641C0.172706 19.7596 0.345969 19.757 0.519707 19.7565ZM22.7723 44H22.4172C22.5343 43.1016 22.5947 42.1859 22.5947 41.2563C22.5947 29.4066 12.7854 19.7959 0.669573 19.7565C12.1853 19.7189 21.6173 11.0349 22.5234 0H22.666C23.5585 10.8683 32.7214 19.4563 43.9999 19.7489V19.7636C32.1246 20.0716 22.5948 29.5761 22.5948 41.2559C22.5948 42.1855 22.6551 43.1014 22.7723 44Z" fill="#E4D1CD"/>
+              </svg>
+              <img class="ky-w-full" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/img_kaya_dropuritem-update.png?v=1689242507" style="width: 615px">
+              <svg class="ky-drop-imgsvg2" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M30.9081 60H30.7136C30.778 59.1975 30.8108 58.386 30.8108 57.5669C30.8108 40.9984 17.3794 27.5669 0.810827 27.5669C0.539696 27.5669 0.269406 27.5705 0 27.5777V27.5562C0.269406 27.5633 0.539696 27.5669 0.810827 27.5669C16.5603 27.5669 29.4751 15.4307 30.7136 0H30.908C32.1248 15.1654 44.6199 27.1488 60 27.5569V27.5774C43.8063 28.0071 30.8108 41.2693 30.8108 57.5667C30.8108 58.3859 30.8437 59.1974 30.9081 60Z" fill="#E4D1CD"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('head title').text('Voila.id x Kaya Leathers');
+    $('.kaya-slider-init').css('visibility', 'visible');
+    $('.voila-x-kaya .ky-collapse-header').click(function (){
+      $('.voila-x-kaya .ky-collapse-item').slideUp();
+
+      if ($(this).hasClass('active')) {
+        $(this).next().slideUp();
+        $(this).removeClass('active');
+      } else {
+        $(this).next().slideDown();
+        $('.voila-x-kaya .ky-collapse-header').removeClass('active');
+        $(this).addClass('active');
+      }
+    });
+
+    $(window).scroll(function() { 
+      var HeaderTop = 70;
+      var sticky    = $('.sticky-header');
+
+      if ($window.scrollTop() > (HeaderTop - 30)) {
+        sticky.addClass('sticky-prepare');
+      }
+
+      if ($window.scrollTop() > HeaderTop) {
+        sticky.addClass('sticky-active');
+      } else {
+        sticky.removeClass('sticky-active');
+        sticky.removeClass('sticky-prepare');
+      }
+    })
+
+    $('.kaya-slider-gallery-js').slick({
+      infinite: false,
+      variableWidth: false,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      dots: false,
+      centerMode: false,
+      touchThreshold: 30,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1,
+            arrows: false,
+          }
+        },
+        {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 1.2,
+            slidesToScroll: 1,
+            arrows: false,
+          }
+        }
+      ]
+    });
+
+    $('.kaya-slider-show3-js').slick({
+      infinite: false,
+      variableWidth: false,
+      slidesToShow: 3.52,
+      slidesToScroll: 2,
+      dots: false,
+      centerMode: false,
+      touchThreshold: 30,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1.2,
+            slidesToScroll: 1,
+            arrows: false,
+          }
+        }
+      ]
+    });
+
+    $('.kaya-slider-deal-js').slick({
+      infinite: false,
+      variableWidth: false,
+      slidesToShow: 2.08,
+      slidesToScroll: 1,
+      dots: false,
+      centerMode: false,
+      touchThreshold: 30,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1.15,
+            slidesToScroll: 1,
+            arrows: false,
+          }
+        }
+      ]
+    });
+
+    $('.kaya-slider-testimoni-js').slick({
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      dots: true,
+      centerMode: false,
+      touchThreshold: 30,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+          }
+        }
+      ]
+    });
+  })
+</script>

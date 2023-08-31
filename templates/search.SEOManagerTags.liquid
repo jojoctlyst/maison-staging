@@ -1,9 +1,9 @@
-{% comment %}
-	SEO Manager - tag search v2.0
+{%- comment -%}
+	SEO Manager - tag search v4.0
 	purpose: gather all tags used in a collection
-	usage: /search?view=SEOManagerTags&q=collection-slug
+	usage: /search?view=SEOManagerTags&q=collection-slug&page=X
 	Copyright (c) venntov
-	https://venntov.com / http://SEOManager.com
+	https://venntov.com / https://SEOManager.com
 	Josh Highland
 
 	NOTICE: All information contained herein is property of venntov.
@@ -12,18 +12,39 @@
 	Reproduction of this code is strictly forbidden unless prior written
 	permission is obtained from venntov. If violated, legal action
 	will be taken. Just don't do it.
-{% endcomment %}
+{%- endcomment -%}
 
-{% layout none %}
+{%- layout none -%}
 
-{% assign output = "" %}
+{%- assign pages = collections.size | divided_by: 1000.0 | ceil -%}
 
-  {% for collection in collections %}
-    {% if collection.handle == search.terms %}
-      {% if collection.all_tags.size > 0 %}
-        {% capture output %}{{ collection.all_tags | join: ', ' }}{% endcapture %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
+{%- paginate collections by 1000 -%}
 
-{{ output | replace: ', ', ','}}
+	{%- assign currentPage = paginate.current_page -%}
+
+	{%- for collection in collections -%}
+		{%- if collection.handle == search.terms -%}
+			{%- if collection.all_tags.size > 0 -%}
+				{%- capture results -%}
+					{%- for tag in collection.all_tags -%}
+						{%- capture fullURL -%}
+							{{ shop.url }}{{ collection.url }}/{{ tag | handleize }}
+						{%- endcapture -%}
+						{
+							"tag": {{ tag | json }}, 
+							"handle": {{ tag | handleize | strip | json }},
+							"url": "{{ fullURL | strip }}"
+						}
+						{%- unless forloop.last -%},{%- endunless -%}
+					{%- endfor -%}
+				{%- endcapture -%}
+			{%- endif -%}
+		{%- endif -%}
+	{%- endfor -%}
+
+{%- endpaginate -%}
+{
+"pages": {{ pages }},
+"currentPage": {{ currentPage }},
+"tags":[{{results}}]
+}

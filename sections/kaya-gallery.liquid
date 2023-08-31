@@ -1,0 +1,44 @@
+<div class="kaya-slider-gallery-js arrow-location-tab ky-mb-10 kaya-slider-init">
+   {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'gallery' %}
+      <!-- ky-mr-2 md:ky-mr-5 ky-ml-2 -->
+      <div class="ky-mb-0 md:ky-mb-5 md:ky-mb-0 ky-bg-white ky-rounded ky-p-2 ky-flex ky-gap-1">
+        <div class="ky-w-full">
+          <div class="ky-w-full ky-h-50 ky-mb-1 ky-bg-cover" style="background-image: url({{ block.settings.imgbefore | img_url: 'large' }});background-position: center;"></div>
+          <div class="ky-w-full ky-text-xs ky-text-white ky-py-2 ky-bg-black ky-font-medium ky-text-center">Before</div>
+        </div>
+        <div class="ky-w-full">
+          <div class="ky-w-full ky-h-50 ky-mb-1 ky-bg-cover" style="background-image: url({{ block.settings.imgafter | img_url: 'large' }});background-position: center;"></div>
+          <div class="ky-w-full ky-text-xs ky-text-white ky-py-2 ky-bg-black ky-font-medium ky-text-center">After</div>
+        </div>
+      </div>
+  {% endcase %}
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Gallery Section",
+    "class": "gallery",
+    "settings": [],
+    "blocks": [
+       {
+         "name": "Gallery",
+         "type": "gallery",
+         "settings": [
+           {
+             "type": "image_picker",
+             "id": "imgbefore",
+             "label": "Before"
+           },
+           {
+             "type": "image_picker",
+             "id": "imgafter",
+             "label": "After"
+           }
+         ]
+       }
+     ]
+  }
+{% endschema %}

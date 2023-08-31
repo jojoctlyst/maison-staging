@@ -110,8 +110,8 @@
   "products": {
     "general": {
       "view_all_variants": "ALL VARIANTS",
-      "add_to_cart": "+ Keranjang",
-      "add_to_cart_html": "<span>+ Keranjang<\/span>",
+      "add_to_cart": "ADD TO CART",
+      "add_to_cart_html": "<span>ADD TO CART<\/span>",
       "preorder_html": "<span>PREORDER<\/span>",
       "added_html": "ADDED",
       "error_html": "LIMIT PRODUCTS",
@@ -305,21 +305,21 @@
     },
     "login": {
       "title": "ALREADY REGISTERED?",
-      "title_login": "Login",
-      "description": "Masuk ke akun anda melalui :",
-      "email": "Email",
-      "password": "Password",
-      "email_field": "Email",
-      "password_field": "Password",
-      "forgot_password": "Lupa password?",
+      "title_login": "LOGIN",
+      "description": "If you have an account with us, please log in.",
+      "email": "E-MAIL",
+      "password": "PASSWORD",
+      "email_field": "Enter E-mail",
+      "password_field": "Enter Password",
+      "forgot_password": "Lost your password?",
       "reset_password": "RESET PASSWORD",
       "reset_password_subtext": "We will send you an email to reset your password.",
       "sign_in": "LOGIN",
       "cancel": "Cancel",
       "submit_recover": "SUBMIT",
-      "new_customer_continue": "Register Sekarang",
+      "new_customer_continue": "CREATE AN ACCOUNT",
       "new_customer": "NEW CUSTOMER",
-      "new_customer_description": "Belum punya akun?"
+      "new_customer_description": "By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more."
     },
     "orders": {
       "order_number": "ORDER",
@@ -352,17 +352,17 @@
       "submit": "Reset Password"
     },
     "register": {
-      "title_main": "Register",
-      "title_form": "Buat akun anda melalui :",
-      "first_name": "Nama Lengkap",
+      "title_main": "CREATE AN ACCOUNT",
+      "title_form": "PERSONAL INFORMATION",
+      "first_name": "First Name",
       "last_name": "Last Name",
       "email": "Email",
       "password": "Password",
-      "first_name_form": "Nama Lengkap",
+      "first_name_form": "Enter First Name",
       "last_name_form": "Enter Last Name",
-      "email_form": "Email",
-      "password_form": "Password",
-      "submit": "Register",
+      "email_form": "Enter Email",
+      "password_form": "Enter Password",
+      "submit": "CREATE",
       "cancel": "Return to Store"
     }
   },
@@ -444,11 +444,5 @@
       "title": "VOILA IS WHERE YOU FIND PREMIUM AND HIGH-END FASHION PIECES THAT MEET HIGH STANDARD.",
       "description": "Voila is the premium online destination for fashion stuff collections ranging from bags to shoes and from clothes to accessories. We offer more than 50 high-end brands. Voila provides the most well-known brands featuring Dior, YSL, Balenciaga, Chloe’, Fendi, Givenchy, Gucci, Kenzo, Loewe, Manolo Blahnik, Tory Burch, Prada, Ralph Lauren, etc. Voila serves a seamless shopping experience at your fingertips, providing you top picks that meet the latest fashion trends."
     }
-  },
-  "discount_ninja": {
-    "from": "From",
-    "here": "here",
-    "free": "FREE",
-    "sold_out": "Sold out"
   }
 }

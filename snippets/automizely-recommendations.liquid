@@ -1,0 +1,40 @@
+<script type="module" async
+    src="https://sdks.automizely.com/recommendations/v1/am-recommendations.es.js"></script>
+
+<script>
+    window.AmRec = window.AmRec === undefined ? {} : AmRec; 
+
+    AmRec.OrgInfo = {
+      appId: "7cded0e85efb484e9369d5afe16d818a",
+      orgId: "ba4eb3ce1eda1d63ddbaca52253ed730_v1",
+      shop: "maisonmw",
+      appName: "automizely",
+    };
+
+    {% assign t = template | prepend: '/' | append: '.' %}
+    {% if t contains '/product.' %} AmRec.PageInfo = { Type: "product", ReferenceIdentifier: "{{ product.id }}" };
+    {% elsif t contains '/collection.' %} AmRec.PageInfo = { Type: "collection", ReferenceIdentifier: "{{ collection.id }}", Personalized: {%if collection.metafields.AmRec['Personalized'] == "true" %}true{%else%} false{% endif %} };
+    {% elsif t contains '/index.' %} AmRec.PageInfo = { Type: "home", ReferenceIdentifier: null };
+    {% elsif t contains '/cart.' %} AmRec.PageInfo = { Type: "cart", ReferenceIdentifier: null };
+    {% elsif t contains '/search.' %} AmRec.PageInfo = { Type: "search-results", ReferenceIdentifier: null };
+    {% elsif t contains '/404.' %} AmRec.PageInfo = { Type: "Four04", ReferenceIdentifier: null };
+    {% elsif checkout.id != blank and checkout.order_id == blank %} AmRec.PageInfo = { Type: "checkout", ReferenceIdentifier: null };
+    {% endif %}
+
+    {% if customer %} AmRec.UserInfo = { Identifier: "{{ customer.id }}", Email: "{{ customer.email }}", CellPhone: "{{ customer.phone }}", FirstName: "{{ customer.first_name }}", LastName: "{{ customer.last_name }}", Tags: {{ customer.tags | json }} };
+    {% endif %}
+
+    AmRec.StoreInfo = { Theme: "{{ theme.name | escape }}" };
+
+    {% assign cart_product_ids = "" %}
+    {% if checkout.id != blank and checkout.order_id == blank %}
+    {% for item in checkout.line_items %}
+    {% assign cart_product_ids = cart_product_ids | append: ',' | append: item.product.id %}
+    {% endfor %}
+    {% else %}
+    {% for item in cart.items %}
+    {% assign cart_product_ids = cart_product_ids | append: ',' | append: item.product.id %}
+    {% endfor %}
+    {% endif %}
+    AmRec.CartItems = [{{ cart_product_ids | remove_first: "," }}];
+</script>

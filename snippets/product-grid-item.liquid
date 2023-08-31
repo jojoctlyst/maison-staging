@@ -75,9 +75,17 @@ date_difference = 60 * 60 * 24 * day counter, this is new product period in seco
 {% endif %}
 {%- endcapture -%}
 
+
 {%- case settings.products_design -%}
 {%- when 'hidden' -%}
 {%- include "product-grid-item-design-2" -%}
 {%- else -%}
 {%- include "product-grid-item-design-1" -%}
 {%- endcase -%}
+
+<style>
+  .product-grid-item .boost-pfs-filter-product-item-price.price-upon-request {
+    margin-top: 6px;
+    text-align: left;
+  }
+</style>

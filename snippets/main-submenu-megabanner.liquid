@@ -1,0 +1,157 @@
+{%- assign grid = section_block.grid -%}
+{%- assign widget = section_block.widget -%}
+
+{%- case grid -%}
+{%- when '2' -%}
+{%- assign img_url = '200x' -%}
+{%- when '3' -%}
+{%- assign img_url = '300x' -%}
+{%- else -%}
+{%- assign img_url = '400x' -%}
+{%- endcase -%}
+
+{%- case widget -%}
+{%- when 'banner' -%}
+{%- assign maingrid1 = '7' -%}
+{%- assign maingrid2 = '4' -%}
+{%- else -%}
+{%- assign maingrid1 = '12' -%}
+{%- assign maingrid2 = '0' -%}
+{%- endcase -%}
+
+{%- assign imgs = section_block.megamenu_images -%}
+{%- if imgs != "" -%}{%- assign imgs = imgs | split: ',' -%}{%- endif -%}
+
+{%- assign banners_grid = section_block.banners_grid -%}
+{%- assign banners_btn = section_block.banners_btn -%}
+{%- assign banners_btnname = section_block.banners_btnname -%}
+{%- assign banners_tit1 = section_block.banners_tit1 -%}
+{%- assign banners_tit2 = section_block.banners_tit2 -%}
+{%- assign banners_tit11 = section_block.banners_tit11 -%}
+{%- assign banners_tit21 = section_block.banners_tit21 -%}
+{%- capture banners_img1 -%}{%- if banners_grid == '12' -%}{{ section_block.bottombanners_img_1 | img_url: '1120x' }}{%- else -%}{{ section_block.bottombanners_img_1 | img_url: '560x' }}{%- endif -%}{%- endcapture -%}
+{%- assign banners_img1alt = section_block.bottombanners_img_1.alt -%}
+{%- assign banners_img2 = section_block.bottombanners_img_2 | img_url: '560x' -%}
+{%- assign banners_img2alt = section_block.bottombanners_img_2.alt -%}
+{%- assign color11 = section_block.color_11 -%}
+{%- assign color12 = section_block.color_12 -%}
+{%- assign color21 = section_block.color_21 -%}
+{%- assign color22 = section_block.color_21 -%}
+{%- assign html = section_block.html -%}
+
+{%- assign widgetbanner_url = section_block.widgetbanner_url -%}
+{%- assign widgetbanner_title = section_block.widgetbanner_title -%}
+{%- assign widgetbanner_title2 = section_block.widgetbanner_title2 -%}
+{%- assign widgetbanner_title3 = section_block.widgetbanner_title3 -%}
+{%- assign widgetbanner_img = section_block.widgetbanner_img -%}
+{%- assign widgetbanner_imgalt = section_block.widgetbanner_img.alt -%}
+{%- assign widgetbanner_btn = section_block.widgetbanner_btn -%}
+{%- assign widgetbanner_btnname = section_block.widgetbanner_btnname -%}
+{%- assign widgetbanner_color = section_block.widgetbanner_color -%}
+{%- assign widgetbanner_color2 = section_block.widgetbanner_color2 -%}
+{%- assign widgetbanner_color3 = section_block.widgetbanner_color3 -%}
+{%- assign widgetbanner_color4 = section_block.widgetbanner_color4 -%}
+
+{%- assign titlegall = section_block.widgetgallery_title -%}
+{%- assign titlegallurl = section_block.widgetgallery_url -%}
+{%- assign name_collection = section_block.collection -%}
+{%- assign collection_limit = section_block.collection_limit | plus:0 -%}
+
+{%- assign banner1_url = section_block.banner1_url -%}
+{%- assign banner2_url = section_block.banner2_url -%}
+
+<div class="dropdown-menu">
+  <div class="row">
+    <div class="col-sm-{{ maingrid1 }}">
+      <div class="row tt-col-list">
+        {%- for child_level_2 in level_2.links -%}
+        <div class="col-sm-{{ grid }}">
+          <div class="tt-title-submenu">{{ child_level_2.title }}</div>
+
+          {%- assign image = 'image' | append: forloop.index -%}
+          {%- if section_block[image] != blank -%}
+          <img class="lazyload"
+                data-src="{{ section_block[image] | img_url: img_url }}"
+                alt="{{ section_block[image].alt }}"/>
+          {%- endif -%}
+
+          {%- capture return -%}{%- include "get_linklist_dropdown", link: child_level_2 -%}{%- endcapture -%}{%- assign return = return | split: "%%" -%}{%- assign has_drop_down = return | first | strip -%}{%- assign child_list_handle = return | last | strip -%}
+
+          {%- assign level_3 = linklists[child_list_handle] -%}
+          {%- if level_3.empty? -%}
+          {%- assign child_list_handle = child_level_2.title | handle -%}
+          {%- assign level_3 = linklists[child_list_handle] -%}
+          {%- endif -%}
+
+          {%- if level_3.links != blank -%}
+          <ul class="tt-megamenu-submenu">
+            {%- for child_level_3 in level_3.links -%}
+            <li>
+              <a href="{{ child_level_3.url }}"><span>{{ child_level_3.title }}</span></a>
+
+              {%- capture return -%}{%- include "get_linklist_dropdown", link: child_level_3 -%}{%- endcapture -%}{%- assign return = return | split: "%%" -%}{%- assign has_drop_down = return | first | strip -%}{%- assign child_list_handle = return | last | strip -%}
+
+              {%- assign level_4 = linklists[child_list_handle] -%}
+              {%- if level_4.empty? -%}
+              {%- assign child_list_handle = child_level_3.title | handle -%}
+              {%- assign level_4 = linklists[child_list_handle] -%}
+              {%- endif -%}
+
+              {%- if level_4.links != blank -%}
+              <ul>
+                {%- for child_level_4 in level_4.links -%}
+                <li>
+                  <a href="{{ child_level_4.url | downcase }}"><span>{{ child_level_4.title }}</span></a>
+
+                  {%- capture return -%}{%- include "get_linklist_dropdown", link: child_level_4 -%}{%- endcapture -%}{%- assign return = return | split: "%%" -%}{%- assign has_drop_down = return | first | strip -%}{%- assign child_list_handle = return | last | strip -%}
+
+                  {%- if has_drop_down == "true" -%}
+                  {%- assign level_5 = linklists[child_list_handle] -%}
+                  {%- unless level_5.empty? -%}
+                  <ul>
+                    {%- for child_level_5 in level_5.links -%}
+                    <li><a href="{{ child_level_5.url | downcase }}">{{ child_level_5.title }}</a></li>
+                    {%- endfor -%}
+                  </ul>
+                  {%- endunless -%}
+                  {%- endif -%}
+                </li>
+                {%- endfor -%}
+              </ul>
+              {%- endif -%}
+            </li>
+            {%- endfor -%}
+          </ul>
+          {%- endif -%}
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    {%- if maingrid2 != '0' -%}
+    <div class="col-sm-{{ maingrid2 }} offset-sm-1">
+      {%- case widget -%}
+      {%- when 'banner' -%}
+      <div class="row tt-col-list">
+        <div class="col-md-12">
+          <div class="tt-title-submenu" style="color:{{ widgetbanner_color }}">{{ widgetbanner_title }}</div>
+          <a href="{{ widgetbanner_url }}" class="tt-promo-02">
+            {%- if widgetbanner_img == blank -%}{%- include "get_svg" type:'image' size:'260x344px' -%}
+            {%- else -%}
+            <img class="lazyload"
+                data-src="{{ widgetbanner_img | img_url: '410x' }}"
+                alt="{{ widgetbanner_imgalt }}"/>
+            {%- endif -%}
+            <div class="tt-title-submenu mt-1" style="color:{{ widgetbanner_color2 }}">{{ widgetbanner_title2 }}</div>
+          </a>
+          {%- if widgetbanner_btn -%}
+          <a href="{{ widgetbanner_url }}" class="tt-promo-02">
+            <span class="btn-underline tt-obj-bottom" style="color:{{ widgetbanner_color4 }}; border-color:{{ widgetbanner_color4 }};">{{ widgetbanner_btnname }}</span>
+          </a>
+          {%- endif -%}
+        </div>
+      </div>
+      {%- endcase -%}
+    </div>
+    {%- endif -%}
+  </div>
+</div>

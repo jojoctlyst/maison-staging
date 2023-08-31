@@ -5,13 +5,13 @@
   <div class="footer_payment_list tt-col-item">
     <h3 class="footer-additional-title">{{ footer_additional.settings.additional_payment_title }}</h3>
     <ul class="tt-payment-list">
-      {%- for i in (1..9) -%}
+      {%- for i in (1..11) -%}
       {%- assign img = 'pay_icon_' | append: forloop.index -%}
       {%- assign img = footer_additional.settings[img] -%}
       {%- assign url = 'pay_url_' | append: forloop.index -%}
       {%- assign url = footer_additional.settings[url] -%}
       {%- if img != blank -%}
-      <li>
+      <li class="payment-item">
         {% if url == blank %}
         <div>
         {% else %}
@@ -46,15 +46,19 @@
     gap: 14px;
     list-style: none;
     padding: 0;
+    flex-wrap: wrap;
   }
   @media (max-width: 575px) {
     .footer-additional-title {
       text-align: center;
     }
     .tt-payment-list {
-      gap: 20px !important;
+      gap: 4px !important;
       flex-wrap: wrap;
       justify-content: center;
+    }
+    .tt-payment-list li.payment-item {
+      margin: 10px;
     }
   }
 </style>

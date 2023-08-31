@@ -4548,35 +4548,6 @@
     ]
   },
   {
-    "name": "Flash Sale",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "enable_flash_sale",
-        "label": "Enable Flash Sale",
-        "default": false
-      },
-      {
-        "type": "textarea",
-        "id": "flash_sale_coming_soon",
-        "label": "Coming Soon Start (date & time)",
-        "info": "7 March 2022, 02:00 AM"
-      },
-      {
-        "type": "textarea",
-        "id": "flash_sale_start",
-        "label": "Event Start (date & time)",
-        "info": "8 March 2022, 02:00 AM"
-      },
-      {
-        "type": "textarea",
-        "id": "flash_sale_end",
-        "label": "Event End (date & time)",
-        "info": "8 March 2022, 06:00 AM"
-      }
-    ]
-  },
-  {
     "name": "Product Quick View",
     "settings": [
       {

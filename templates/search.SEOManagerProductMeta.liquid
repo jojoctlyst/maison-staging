@@ -1,5 +1,5 @@
 {%- comment -%}
-	SEO Manager - product meta search v3.0
+	SEO Manager - product meta search v4.1
 	usage: /search?view=SEOManagerProductMeta&q=1000&page=1
 	Copyright (c) venntov
 	https://venntov.com / https://SEOManager.com
@@ -14,30 +14,40 @@
 {%- endcomment -%}
 
 {%- layout none -%}
-{%- paginate collections.all.products by search.terms -%}
-	{%- assign productCount = collections.all.all_products_count -%}
-	{%- capture results -%}
-		{%- for item in collections.all.products  -%}
-			{%- assign product = item -%}
-			{%- assign meta_description = product.metafields.global.description_tag -%}
-			{%- assign meta_title		= product.metafields.global.title_tag -%}
-			{%- assign seoDone			= product.metafields.SEOMetaManager.seoDone -%}
-			{%- assign seoScore			= product.metafields.SEOMetaManager.seoScore -%}
 
-			{%- if meta_description == null -%}
-				{%- capture meta_description -%}{{ product.description | strip_html | strip_newlines | truncate: 160 }} {% endcapture %}
-			{%- endif -%}
+{%- assign collection = collections['all'] -%}
+
+{%- if collection.products_count == 0 -%}
+    {%- assign collection = collections['allproducts'] -%}
+{%- endif -%}
+
+{% assign searchTermsNumber = search.terms | plus: 0 %}
+
+{%- if searchTermsNumber > collection.products_count -%}
+    {%- assign searchTermsNumber = collection.products_count -%}
+{%- endif -%}
+
+{%- paginate  collection.products by searchTermsNumber -%}
+
+	{%- assign currentPage = paginate.current_page -%}
+
+	{%- capture results -%}
+		{%- for item in collection.products -%}
+			{%- assign product			= item -%}
+			{%- assign meta_title		= product.metafields.global.title_tag -%}
+			{%- assign meta_description = product.metafields.global.description_tag -%}
+			{%- assign seoDone			= product.metafields.SEOMetaManager.seoDone -%}
 
 			{%- if meta_title == null -%}
 				{%- assign meta_title = product.title -%}
 			{%- endif -%}
 
-			{%- if seoDone == null -%}
-				{%- assign seoDone = 0 -%}
+			{%- if meta_description == null -%}
+				{%- capture meta_description -%}{{ product.description | strip_html | strip_newlines | truncate: 160 }} {% endcapture %}
 			{%- endif -%}
 
-			{%- if seoScore == null -%}
-				{%- assign seoScore = 0 -%}
+			{%- if seoDone == null -%}
+				{%- assign seoDone = 0 -%}
 			{%- endif -%}
 
 			{
@@ -45,8 +55,7 @@
 				"title"				: {{ product.title | json }},
 				"meta_title"		: {{ meta_title | json }},
 				"meta_description"	: {{ meta_description | json }},
-				"seo_done"			: {{ seoDone | json }},
-				"seo_score"			: {{ seoScore | json }},
+				"seo_done"			: {{ seoDone }},
 				"thumbnail"			: {{ product.featured_image.src | img_url : '100x100' | json }},
 				"handle"			: {{ product.handle | json }}
 			}
@@ -55,6 +64,11 @@
 	{%- endcapture -%}
 {%- endpaginate -%}
 {
-	"productCount"	: {{ productCount }},
+	"info": {
+		"productCount": {{ collection.products_count }},
+		"domain": {{ shop.domain | json }},
+		"currentPage": {{ currentPage }},
+		"pageSize": {{ searchTermsNumber }}
+	},	
 	"productData"	: [{{ results }}]
 }

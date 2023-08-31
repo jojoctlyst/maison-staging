@@ -6,24 +6,31 @@
     <h3 class="footer-additional-title">{{ footer_additional.settings.additional_social_title }}</h3>
     <div class="tt-mobile-collapse">
       <ul class="tt-social-list">
-        {%- if footer_additional.settings.facebook_url -%}
-          <li>
-            <a target="_blank" href="{{ footer_additional.settings.facebook_url }}">
-              <img class="social-icon" src="https://cdn.shopify.com/s/files/1/0518/4549/7001/files/Group_4_256x256_crop_center.png?v=1646935238" alt="">
+        {%- if footer_additional.settings.instagram_url -%}
+          <li class="social-item">
+            <a target="_blank" href="{{ footer_additional.settings.instagram_url }}">
+              <img class="social-icon" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/vofooter-ig.png?v=1682667163" alt="">
             </a>
           </li>
         {%- endif -%}
-        {%- if footer_additional.settings.instagram_url -%}
-          <li>
-            <a target="_blank" href="{{ footer_additional.settings.instagram_url }}">
-              <img class="social-icon" src="https://cdn.shopify.com/s/files/1/0518/4549/7001/files/Group_5_256x256_crop_center.png?v=1646935239" alt="">
+        {%- if footer_additional.settings.tiktok_url -%}
+          <li class="social-item">
+            <a target="_blank" href="{{ footer_additional.settings.tiktok_url }}">
+              <img class="social-icon" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/vofooter-tk.png?v=1682667163" alt="">
+            </a>
+          </li>
+        {%- endif -%}
+        {%- if footer_additional.settings.facebook_url -%}
+          <li class="social-item">
+            <a target="_blank" href="{{ footer_additional.settings.facebook_url }}">
+              <img class="social-icon" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/vofooter-fb.png?v=1682667163" alt="">
             </a>
           </li>
         {%- endif -%}
         {%- if footer_additional.settings.youtube_url -%}
-          <li>
+          <li class="social-item">
             <a target="_blank" href="{{ footer_additional.settings.youtube_url }}">
-              <img class="social-icon" src="https://cdn.shopify.com/s/files/1/0518/4549/7001/files/Group_2_256x256_crop_center.png?v=1646935238" alt="">
+              <img class="social-icon" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/vofooter-yt.png?v=1682667163" alt="">
             </a>
           </li>
         {%- endif -%}
@@ -50,9 +57,16 @@
       text-align: center;
     }
     .tt-social-list {
-      gap: 20px !important;
+      gap: 4px !important;
       flex-wrap: wrap;
       justify-content: center;
+    }
+    .tt-social-list li.social-item {
+      margin: 8px;
+    }
+    .social-icon {
+      width: 32px;
+      height: 32px;
     }
   }
 </style>

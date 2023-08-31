@@ -435,11 +435,5 @@
       "field_description": "Description",
       "field_vendor": "Vendor"
     }
-  },
-  "discount_ninja": {
-    "from": "A partir de",
-    "here": "aqui",
-    "free": "GRÁTIS",
-    "sold_out": "Agotado"
   }
 }

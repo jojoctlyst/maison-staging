@@ -1,0 +1,676 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');*/
+
+/*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');*/
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+.voila-template :is(.ky-relative) {
+  position: relative;
+}
+
+.voila-template :is(.ky-mb-0) {
+  margin-bottom: 0px;
+}
+
+.voila-template :is(.ky-mb-1) {
+  margin-bottom: 0.25rem;
+}
+
+.voila-template :is(.ky-mb-2) {
+  margin-bottom: 0.5rem;
+}
+
+.voila-template :is(.ky-mb-4) {
+  margin-bottom: 1rem;
+}
+
+.voila-template :is(.ky-mb-5) {
+  margin-bottom: 1.25rem;
+}
+
+.voila-template :is(.ky-mb-9) {
+  margin-bottom: 2.25rem;
+}
+
+.voila-template :is(.ky-mr-2) {
+  margin-right: 0.5rem;
+}
+
+.voila-template :is(.ky-mb-12) {
+  margin-bottom: 3rem;
+}
+
+.voila-template :is(.ky-mb-3) {
+  margin-bottom: 0.75rem;
+}
+
+.voila-template :is(.ky-mb-6) {
+  margin-bottom: 1.5rem;
+}
+
+.voila-template :is(.ky-mb-8) {
+  margin-bottom: 2rem;
+}
+
+.voila-template :is(.ky-mr-1) {
+  margin-right: 0.25rem;
+}
+
+.voila-template :is(.ky-mr-4) {
+  margin-right: 1rem;
+}
+
+.voila-template :is(.ky-mt-4) {
+  margin-top: 1rem;
+}
+
+.voila-template :is(.ky-mt-8) {
+  margin-top: 2rem;
+}
+
+.voila-template :is(.ky-block) {
+  display: block;
+}
+
+.voila-template :is(.ky-inline-block) {
+  display: inline-block;
+}
+
+.voila-template :is(.ky-flex) {
+  display: flex;
+}
+
+.voila-template :is(.ky-inline-flex) {
+  display: inline-flex;
+}
+
+.voila-template :is(.ky-grid) {
+  display: grid;
+}
+
+.voila-template :is(.ky-h-220) {
+  height: 220px;
+}
+
+.voila-template :is(.ky-h-full) {
+  height: 100%;
+}
+
+.voila-template :is(.ky-h-8) {
+  height: 2rem;
+}
+
+.voila-template :is(.ky-min-h-0) {
+  min-height: 0px;
+}
+
+.voila-template :is(.ky-min-h-145) {
+  min-height: 145px;
+}
+
+.voila-template :is(.ky-min-h-155) {
+  min-height: 155px;
+}
+
+.voila-template :is(.ky-min-h-full) {
+  min-height: 100%;
+}
+
+.voila-template :is(.ky-w-full) {
+  width: 100%;
+}
+
+.voila-template :is(.ky-w-1) {
+  width: 0.25rem;
+}
+
+.voila-template :is(.ky-w-4) {
+  width: 1rem;
+}
+
+.voila-template :is(.ky-w-8) {
+  width: 2rem;
+}
+
+.voila-template :is(.ky-flex-none) {
+  flex: none;
+}
+
+.voila-template :is(.ky-flex-grow) {
+  flex-grow: 1;
+}
+
+.voila-template :is(.ky-grid-cols-2) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.voila-template :is(.ky-grid-cols-3) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.voila-template :is(.ky-flex-row) {
+  flex-direction: row;
+}
+
+.voila-template :is(.ky-items-start) {
+  align-items: flex-start;
+}
+
+.voila-template :is(.ky-items-center) {
+  align-items: center;
+}
+
+.voila-template :is(.ky-justify-start) {
+  justify-content: flex-start;
+}
+
+.voila-template :is(.ky-justify-center) {
+  justify-content: center;
+}
+
+.voila-template :is(.ky-gap-2) {
+  gap: 0.5rem;
+}
+
+.voila-template :is(.ky-gap-4) {
+  gap: 1rem;
+}
+
+.voila-template :is(.ky-gap-6) {
+  gap: 1.5rem;
+}
+
+.voila-template :is(.ky-rounded-full) {
+  border-radius: 9999px;
+}
+
+.voila-template :is(.ky-rounded) {
+  border-radius: 0.25rem;
+}
+
+.voila-template :is(.ky-rounded-lg) {
+  border-radius: 0.5rem;
+}
+
+.voila-template :is(.ky-border) {
+  border-width: 1px;
+}
+
+.voila-template :is(.ky-border-2) {
+  border-width: 2px;
+}
+
+.voila-template :is(.ky-border-grey3) {
+  --tw-border-opacity: 1;
+  border-color: rgb(238 238 238 / var(--tw-border-opacity));
+}
+
+.voila-template :is(.ky-border-primary) {
+  --tw-border-opacity: 1;
+  border-color: rgb(18 120 74 / var(--tw-border-opacity));
+}
+
+.voila-template :is(.ky-bg-grey3) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 238 238 / var(--tw-bg-opacity));
+}
+
+.voila-template :is(.ky-bg-vgreen1) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(227 249 227 / var(--tw-bg-opacity));
+}
+
+.voila-template :is(.ky-bg-black) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.voila-template :is(.ky-bg-grey1) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 153 153 / var(--tw-bg-opacity));
+}
+
+.voila-template :is(.ky-bg-grey4) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+}
+
+.voila-template :is(.ky-bg-white) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.voila-template :is(.ky-bg-cover) {
+  background-size: cover;
+}
+
+.voila-template :is(.ky-bg-center) {
+  background-position: center;
+}
+
+.voila-template :is(.ky-fill-current) {
+  fill: currentColor;
+}
+
+.voila-template :is(.ky-p-2) {
+  padding: 0.5rem;
+}
+
+.voila-template :is(.ky-p-2\.5) {
+  padding: 0.625rem;
+}
+
+.voila-template :is(.ky-p-3) {
+  padding: 0.75rem;
+}
+
+.voila-template :is(.ky-px-2) {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.voila-template :is(.ky-py-1) {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.voila-template :is(.ky-py-1\.5) {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+.voila-template :is(.ky-py-2) {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.voila-template :is(.ky-py-3) {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.voila-template :is(.ky-py-4) {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.voila-template :is(.ky-px-4) {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.voila-template :is(.ky-px-6) {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.voila-template :is(.ky-py-0) {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.voila-template :is(.ky-py-5) {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.voila-template :is(.ky-py-8) {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.voila-template :is(.ky-pb-4) {
+  padding-bottom: 1rem;
+}
+
+.voila-template :is(.ky-pt-6) {
+  padding-top: 1.5rem;
+}
+
+.voila-template :is(.ky-text-left) {
+  text-align: left;
+}
+
+.voila-template :is(.ky-text-center) {
+  text-align: center;
+}
+
+.voila-template :is(.ky-font-prim) {
+  font-family: Poppins, sans-serif;
+}
+
+.voila-template :is(.ky-text-lg) {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.voila-template :is(.ky-text-sm) {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.voila-template :is(.ky-text-xs) {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.voila-template :is(.ky-text-xs2) {
+  font-size: 0.6875rem;
+}
+
+.voila-template :is(.ky-text-base) {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.voila-template :is(.ky-font-bold) {
+  font-weight: 700;
+}
+
+.voila-template :is(.ky-font-medium) {
+  font-weight: 500;
+}
+
+.voila-template :is(.ky-font-normal) {
+  font-weight: 400;
+}
+
+.voila-template :is(.ky-italic) {
+  font-style: italic;
+}
+
+.voila-template :is(.ky-text-black60) {
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+}
+
+.voila-template :is(.ky-text-black90) {
+  --tw-text-opacity: 1;
+  color: rgb(25 25 25 / var(--tw-text-opacity));
+}
+
+.voila-template :is(.ky-text-primary) {
+  --tw-text-opacity: 1;
+  color: rgb(18 120 74 / var(--tw-text-opacity));
+}
+
+.voila-template :is(.ky-text-blue-400) {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+}
+
+.voila-template :is(.ky-text-white) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.voila-template :is(.ky-underline) {
+  text-decoration-line: underline;
+}
+
+.voila-template :is(.ky-line-through) {
+  text-decoration-line: line-through;
+}
+
+.voila-template a, .voila-template .trans {
+  transition: all 0.3s linear;
+}
+
+.voila-template .ky-tab-btn {
+  display: inline-block;
+  cursor: pointer;
+  --tw-text-opacity: 1;
+  color: rgb(153 153 153 / var(--tw-text-opacity));
+}
+
+.voila-template .ky-tab-btn.active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.voila-template .ky-section-container {
+  width: 100%;
+  max-width: 1168px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.voila-template :is(.hover\:ky-text-primary:hover) {
+  --tw-text-opacity: 1;
+  color: rgb(18 120 74 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .voila-template :is(.md\:ky-mb-0) {
+    margin-bottom: 0px;
+  }
+
+  .voila-template :is(.md\:ky-mb-10) {
+    margin-bottom: 2.5rem;
+  }
+
+  .voila-template :is(.md\:ky-mb-4) {
+    margin-bottom: 1rem;
+  }
+
+  .voila-template :is(.md\:ky-mb-8) {
+    margin-bottom: 2rem;
+  }
+
+  .voila-template :is(.md\:ky-flex) {
+    display: flex;
+  }
+
+  .voila-template :is(.md\:ky-h-330) {
+    height: 330px;
+  }
+
+  .voila-template :is(.md\:ky-h-450) {
+    height: 450px;
+  }
+
+  .voila-template :is(.md\:ky-min-h-150) {
+    min-height: 150px;
+  }
+
+  .voila-template :is(.md\:ky-min-h-300) {
+    min-height: 300px;
+  }
+
+  .voila-template :is(.md\:ky-min-h-400) {
+    min-height: 400px;
+  }
+
+  .voila-template :is(.md\:ky-min-h-auto) {
+    min-height: auto;
+  }
+
+  .voila-template :is(.md\:ky-w-auto) {
+    width: auto;
+  }
+
+  .voila-template :is(.md\:ky-grid-cols-3) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .voila-template :is(.md\:ky-grid-cols-4) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .voila-template :is(.md\:ky-gap-x-6) {
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+
+  .voila-template :is(.md\:ky-gap-y-8) {
+    row-gap: 2rem;
+  }
+
+  .voila-template :is(.md\:ky-p-4) {
+    padding: 1rem;
+  }
+
+  .voila-template :is(.md\:ky-px-6) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .voila-template :is(.md\:ky-py-0) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .voila-template :is(.md\:ky-py-10) {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .voila-template :is(.md\:ky-py-3) {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .voila-template :is(.md\:ky-py-3\.5) {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+
+  .voila-template :is(.md\:ky-py-8) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .voila-template :is(.md\:ky-pt-20) {
+    padding-top: 5rem;
+  }
+
+  .voila-template :is(.md\:ky-text-center) {
+    text-align: center;
+  }
+
+  .voila-template :is(.md\:ky-text-2xl) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .voila-template :is(.md\:ky-text-base) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .voila-template :is(.md\:ky-text-lg) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .voila-template :is(.md\:ky-text-sm) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .voila-template :is(.md\:ky-text-xs1) {
+    font-size: 0.625rem;
+  }
+}

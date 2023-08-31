@@ -2,14 +2,23 @@
 <div class="tt-fixed-product-wrapper" style="display: none;">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-6 col-lg-4 col-xl-3">
+      <div class="col col-md col-lg">
         <div class="hidden-xs">
           <div class="tt-fixed-product hidden-xs">
             <div class="tt-img">
               <img src="{{ product.featured_image.src | product_img_url: 'x80' }}" alt="Sticky Image">
             </div>
             <div class="tt-description">
-              <h3 class="tt-title">{{ product.title }}</h3>
+              <h3 class="tt-title tt-line-clamp">{{ product.title }}</h3>
+              <div class="tt-size-js"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-auto col-md-auto col-lg-auto d-flex align-items-center justify-content-end">
+        <div class="hidden-xs">
+          <div class="tt-fixed-product hidden-xs">
+            <div class="tt-description text-center">
               <div class="tt-price">
                 <span class="new-price">$278</span>
                 <span class="old-price">$400</span>
@@ -18,8 +27,9 @@
           </div>
         </div>
       </div>
+
       {% if product.variants.size >= 1 and product.variants[0].title != "Default Title" and is_preorder == false and is_shop_wa == false %}
-      <div class="col-6 col-lg-4 col-select">
+      <div class="col-12 col-md-auto col-select">
         <form class="form-default">
           <select class="form-control tt-obj-dark">
             {% for variant in product.variants %}
@@ -36,15 +46,15 @@
       </div>
       {% endif %}
       {%- if is_preorder == true -%}
-      <div class="col-12 col-lg-4 col-xl-3">
+      <div class="col-12 col-md-auto d-flex align-items-center justify-content-center tt-button-min-width">
       <a href={{encoded_preorder}} class="btn stickyaddtocart">Pre-order by WhatsApp</a>
       </div>
       {%- elsif is_shop_wa == true -%}
-      <div class="col-12 col-lg-4 col-xl-3">
+      <div class="col-12 col-md-auto d-flex align-items-center justify-content-center tt-button-min-width">
       <a href={{encoded_text}} class="btn stickyaddtocart">Shop by WhatsApp</a>
       </div>
       {%- else -%}
-      <div class="col-12 col-lg-4 col-xl-3">
+      <div class="col-12 col-md-auto d-flex align-items-center justify-content-center tt-button-min-width">
         <div class="tt-row-custom01">
           <div class="col-item">
             <div class="tt-input-counter style-01">
@@ -70,5 +80,12 @@
 }
 .tt-fixed-product-wrapper .tt-row-custom01 .btn-action {
   flex-grow: 1;
+}
+.tt-line-clamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 </style>

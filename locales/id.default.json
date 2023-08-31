@@ -121,7 +121,7 @@
       "unavailable_html": "<span>Stok Habis<\/span>",
       "quick_view": "Lihat Sepintas",
       "sale_html": "-",
-      "new": "BARU",
+      "new": "New",
       "related_products": "Produk Sejenis",
       "featured": "Fitur",
       "view_review": "Lihat Ulasan",
@@ -180,13 +180,13 @@
   "cart": {
     "general": {
       "title": "Keranjang Belanja",
-      "continue_shopping": "Lanjutkan Belanja",
-      "clear_cart": "Hapus",
+      "continue_shopping": "BELANJA SEKARANG",
+      "clear_cart": "Hapus Semua",
       "update": "Perbaharui Keranjang",
       "subtotal": "Subtotal",
       "shipping_total": "Ongkos Kirim",
-      "total": "Grand Total",
-      "checkout": "MASUKKAN ALAMAT",
+      "total": "Total:",
+      "checkout": "CHECKOUT",
       "empty": "Keranjang Belanja Anda Kosong",
       "empty_cart": "Keranjang Belanja Anda Masih Kosong.",
       "shipping_heading": "ESTIMATE SHIPPING AND TAX",
@@ -305,21 +305,21 @@
     },
     "login": {
       "title": "SUDAH PUNYA AKUN?",
-      "title_login": "LOGIN",
-      "description": "Masuk ke akun Anda",
-      "email": "E-MAIL",
-      "password": "PASSWORD",
-      "email_field": "Enter E-mail",
-      "password_field": "Enter Password",
+      "title_login": "Login",
+      "description": "Masuk ke akun anda melalui :",
+      "email": "Email",
+      "password": "Password",
+      "email_field": "Email",
+      "password_field": "Password",
       "forgot_password": "Lupa password?",
-      "reset_password": "RESET PASSWORD",
-      "reset_password_subtext": "We will send you an email to reset your password.",
-      "sign_in": "LOGIN",
+      "reset_password": "Lupa Password",
+      "reset_password_subtext": "Masukkan email yang terdaftar di akun voilà.id Anda mengatur ulang password.",
+      "sign_in": "Login",
       "cancel": "Cancel",
-      "submit_recover": "SUBMIT",
-      "new_customer_continue": "DAFTAR BARU",
-      "new_customer": "PELANGGAN BARU",
-      "new_customer_description": "Dengan mendaftar akun, Anda akan dapat melalui proses pembayaran lebih cepat, menyimpan alamat pengiriman, melihat dan melacak pesanan Anda di akun Anda dan banyak lagi."
+      "submit_recover": "Kirim Email",
+      "new_customer_continue": "Register Sekarang",
+      "new_customer": "NEW CUSTOMER",
+      "new_customer_description": "Belum punya akun?"
     },
     "orders": {
       "order_number": "ORDER",
@@ -346,24 +346,24 @@
       "fulfilled": "Fulfilled"
     },
     "reset_password": {
-      "title_main": "RESET PASSWORD",
-      "password": "Password",
-      "password_confirm": "Confirm Password",
-      "submit": "Reset Password"
+      "title_main": "Ubah Password",
+      "password": "Password Baru",
+      "password_confirm": "Ulangi Password Baru",
+      "submit": "Ubah Password"
     },
     "register": {
-      "title_main": "DAFTAR BARU",
-      "title_form": "PERSONAL INFORMATION",
-      "first_name": "First Name",
+      "title_main": "Register",
+      "title_form": "Buat akun anda melalui :",
+      "first_name": "Nama Lengkap",
       "last_name": "Last Name",
       "email": "Email",
       "password": "Password",
-      "first_name_form": "Enter First Name",
+      "first_name_form": "Nama Lengkap",
       "last_name_form": "Enter Last Name",
-      "email_form": "Enter Email",
-      "password_form": "Enter Password",
-      "submit": "DAFTAR",
-      "cancel": "Return to Store"
+      "email_form": "Email",
+      "password_form": "Password",
+      "submit": "Register",
+      "cancel": "Kembali ke Home"
     }
   },
   "gift_cards": {
@@ -454,18 +454,23 @@
     "checkout": {
       "contact": {
         "address2_label": " ",
-        "optional_address2_label": " ",
-        "city_label": "Kota dan kecamatan"
+        "optional_address2_label": "Catatan untuk Kurir (opsional)",
+        "city_label": "Kota dan kecamatan",
+        "phone_label": "No Handphone",
+        "phone_placeholder": "No Handphone"
       },
       "field_errors": {
-        "address_address2_blank": " "
+        "address_address2_blank": " ",
+        "handle_phone_invalid": "Masukkan nomor handphone yang valid",
+        "address_phone_blank": "Masukkan nomor handphone yang valid"
       },
       "stock": {
         "sold_out_label": "Stok Habis",
         "title": "Stok Habis"
       },
       "marketing": {
-        "accept_marketing_checkbox_label": "Terima notifikasi pesanan ke WhatsApp"
+        "accept_marketing_checkbox_label": "Terima notifikasi pesanan ke WhatsApp",
+        "accept_sms_checkbox_label": "Terima info SMS resi pesanan & penawaran"
       },
       "shop_policies": {
         "refund_policy": "Kebijakan Pengembalian Dana"
@@ -473,12 +478,11 @@
       "order_summary": {
         "cart_does_not_meet_discount_requirements_notice": "Item di keranjang Anda belum memenuhi S&K penggunaan kode diskon <strong style=“text-transform:uppercase”>{{ code }}<\/strong>"
       }
+    },
+    "page_titles": {
+      "search_results": {
+        "other": "Pencarian: 0 hasil ditemukan untuk \"{{ terms }}\""
+      }
     }
-  },
-  "discount_ninja": {
-    "from": "Ab",
-    "here": "hier",
-    "free": "KOSTENLOS",
-    "sold_out": "Ausverkauft"
   }
 }

@@ -188,10 +188,10 @@
              id="ProductId-{{ product.id }}-ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"
              class="boost-pfs-quickview-select-option">
       {% if is_color %}
-      <label class="abc" for="ProductId-{{ product.id }}-ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}" style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value| prepend: 'color-' | handle | append: '.' | append: file_extension | file_url }})">
+      <label tabindex="0" class="boost-pfs-quickview-select-option-label" for="ProductId-{{ product.id }}-ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}" aria-label="{{ option.name }}: {{ value | escape }}" style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({{ value| prepend: 'color-' | handle | append: '.' | append: file_extension | file_url }})">
       </label>
       {%- else -%}
-      <label for="ProductId-{{ product.id }}-ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+      <label tabindex="0" class="boost-pfs-quickview-select-option-label" for="ProductId-{{ product.id }}-ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}" aria-label="{{ option.name }}: {{ value | escape }}">
         {{ value | escape }}
       </label>
       {%- endif -%}

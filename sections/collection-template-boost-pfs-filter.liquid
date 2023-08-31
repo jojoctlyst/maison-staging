@@ -130,6 +130,10 @@ endif
     margin-bottom: 60px;
     background: transparent;
   }
+  .boost-pfs-filter-left-col {
+    position: relative;
+    z-index: 999;
+  }
   .boost-pfs-filter-tree-v .boost-pfs-filter-option,
   .boost-pfs-filter-tree-v-custom .boost-pfs-filter-option {
     border-top: 0;
@@ -311,9 +315,9 @@ endif
     .has-bc-swap-image .boost-pfs-filter-product-item-image:hover .boost-pfs-filter-product-item-flip-image {
       opacity: 1;
     }
-  }
-  .global-banner-wrapper {
-    margin: 0 0 52px;
+    .global-banner-wrapper {
+      margin: 0 0 52px;
+    }
   }
   .global-banner-wrapper img {
     width: 100%;
@@ -572,11 +576,36 @@ endif
         </div>
       </div>
 		{%- endif -%}
+        <h1 class="tt-collection-title">{{ collection.title }}</h1>
 
 		{%- if switch_layout_filter != 'switch_layout_filter_horizontal' -%}
 		  <div class="boost-pfs-filter-right-col">
 		{%- endif -%}
-    {%- if settings.banner_collectionimage != '' and settings.show_collectionbanner -%}
+    {%- if collection.description != '' and settings.show_collection_description -%}
+        <div class="content-indent">
+          <div class="row tt-layout-promo-box tt-layout-promo-desc-align">
+            {%- if collection.description contains 'global-banner-wrapper' -%}
+              {{ collection.description }}
+            {%- else-%}
+              <div class="description-desktop">
+                {{ collection.description }}
+              </div>
+              <div id="mobile-desc" class="description-mobile hide">
+                {{ collection.description | strip_html | strip }}
+                  <a href='javascript:void(0);' class='rmlink' onclick='toggleRL(this)'>Read Less</a>
+              </div>
+              <div id="mobile-read-more">
+                {% assign smallDescription = collection.description | strip_html | strip | slice: 0, 150 %}
+                {% assign sizeDescription = collection.description | strip_html | size %}
+                {{ smallDescription }}
+                {% if sizeDescription > 150 %}
+                <a href='javascript:void(0);' class='rmlink' onclick='toggleRM(this)'>Read More</a>
+                {% endif %}
+              </div>
+            {%- endif-%}
+          </div>
+        </div>
+    {%- else if settings.banner_collectionimage != '' and settings.show_collectionbanner -%}
       <div class="global-banner-wrapper">
         <a href="{{ settings.banner_collectionlink }}">
           {%- if settings.enable_mobilebanner -%}
@@ -592,7 +621,7 @@ endif
         </a>
       </div>
     {%- endif -%}
-    <h1 class="tt-collection-title">{{ collection.title }}</h1>
+    
 {%- comment -%} TOOLBAR {%- endcomment -%}
 <div class="boost-pfs-filter-default-toolbar {% if show_view_as_m == false %} boost-pfs-filter-toolbar-top-mobile-hide-view-as {% endif %} {% if show_product_count_m == false %} boost-pfs-filter-toolbar-top-mobile-hide-product-count {% endif %} {% if filter_layout == 'filter_layout_slide' %}boost-pfs-filter-layout-slide {% endif %}">
   {%- if show_view_as or show_product_count or show_sort_by -%}

@@ -61,16 +61,19 @@
     aspect-ratio: 4/3;
     object-fit: contain;
     min-height: 50px;
-    max-height: 65px;
+    max-height: 100px;
   }
   .section-brand-banner-{{ section.id }} .brand-card {
-      margin: 0 8px;
+      margin: 12px;
     }
 
   @media (max-width: 575px) {
   	.section-brand-banner-{{ section.id }} .tt-block-title {
   	  text-align: left;
   	}
+    .section-brand-banner-{{ section.id }} .tt-block-title .tt-title {
+      text-align: left;
+    }
     .section-brand-banner-{{ section.id }} .tt-img-box-listing {
       padding-right: 46px;
       justify-content: flex-start;
@@ -83,7 +86,7 @@
       display: none;
     }
     .section-brand-banner-{{ section.id }} .brand-card {
-      margin: 8px;
+      margin: 12px;
     }
     .tt-img-box-listing .tt-img-box img {
       min-height: 35px;
@@ -96,7 +99,7 @@
       width: auto;
       max-width: unset;
       min-height: 30px;
-      max-height: 30px;
+      max-height: 60px;
       object-fit: contain;
       aspect-ratio: unset;
     }

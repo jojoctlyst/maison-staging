@@ -1,7 +1,7 @@
 {% case media.media_type %}
 {% when 'image' %}
 {% if mobilecontent %}
-<img srcset="{{ media.preview_image | img_url: '600x' }}" data-lazy="{{ media.preview_image | img_url: '1024x1024' }}" alt="{{ media.alt }}"{% if item.gallery_type == 'four_images' %} data-target="{{ media.id }}"{% endif %}>
+<img class="pdp-mobile-image" srcset="{{ media.preview_image | img_url: '600x' }}" data-zoom-image="{{ media.preview_image | img_url: '2048x2048' }}" data-lazy="{{ media.preview_image | img_url: '1024x1024' }}" alt="{{ media.alt }}"{% if item.gallery_type == 'four_images' %} data-target="{{ media.id }}"{% endif %}>
 {% endif %}
 {% when 'external_video' %}
 <div class="pt-product-media-external" data-target-id="{{ media.id }}" data-video-id="{{ media.external_id }}"{% unless mobilecontent %}{% if featured_media_type != 'external_video' %} style="display: none;"{% else %} featuredmedia{% endif %}{% endunless %}>

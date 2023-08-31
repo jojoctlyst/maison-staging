@@ -1,0 +1,199 @@
+<style type="text/css">
+	* {
+		padding: 0;
+		margin:0;
+		box-sizing: border-box;
+	}
+	.sub-font-primary {
+		font-family: 'Poppins', sans-serif;
+	}
+	.sub-font-secondary {
+		font-family: 'Playfair Display', sans-serif;
+	}
+	.header-green {
+	  background: #12784A;
+	}
+	.sub-backdrop {
+        /* gambar untuk desktop view */
+		background-image: url('https://cdn.shopify.com/s/files/1/0516/0760/1336/files/desktop.jpg?v=1688368793');
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.sub-wrapper {
+		display: flex;
+		margin-right: -10px;
+    margin-left: -10px;
+	}
+	.sub-right, .sub-left {
+		width: 50%;
+	}
+	.sub-content {
+		display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 80px 80px 16px;
+    background-color: #ffffff7a;
+    backdrop-filter: blur(2px);
+	}
+	.sub-title {
+		font-weight: 700;
+		color: rgba(0, 0, 0);
+		font-size: 44px;
+		line-height: 1;
+		margin-bottom: 43px;
+	}
+	.sub-content-wrapper {
+		max-width: 560px;
+		width: 100%;
+	}
+	.sub-img {
+		display: none;
+	}
+	.sub-desc {
+		font-weight: 400;
+    font-size: 19px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 60px;
+    max-width: 440px;
+    line-height: 28px;
+	}
+	.sub-desc2 {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 26px;
+		color: rgba(0, 0, 0, 0.9);
+		margin-bottom: 40px;
+		line-height: 34px;
+	}
+	.sub-button {
+		background: #12784A;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 15px 24px;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 24px;
+		color: white;
+		text-decoration: none;
+		border-radius: 8px;
+	}
+	.sub-button:hover {
+		color: white;
+	}
+
+
+	@media (max-width: 1230px){
+		.sub-left {
+			width: 55%;
+		}
+		.sub-right {
+			width: 45%;
+		}	
+		.sub-content {
+	  	padding: 80px 60px 80px 16px;
+	  }
+	  .sub-title {
+	    font-size: 41px;
+	  }
+	}
+	@media (max-width: 1025px){
+		.sub-left {
+			width: 70%;
+		}
+		.sub-right {
+			width: 30%;
+		}
+		.sub-title {
+	    font-size: 40px;
+	  }
+	  .sub-content {
+	  	padding: 80px 60px 80px 16px;
+	  }
+	}
+	@media (max-width: 791px){
+		.sub-backdrop {
+			background-image: none;
+		}
+		.sub-wrapper {
+			display: block;
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+		.sub-right, .sub-left {
+			width: 100%;
+		}
+		.sub-title {
+			font-weight: 700;
+			color: rgba(0, 0, 0);
+			font-size: 31px;
+			line-height: 1.4;
+			margin-bottom: 40px;
+		}
+		.sub-content {
+			padding: 30px 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: white;
+			backdrop-filter: none;
+		}
+		.sub-img {
+			display: block;
+			max-width: 100%;
+			margin-bottom: 16px;
+		}
+		.sub-desc {
+	    font-weight: 400;
+	    font-size: 16px;
+	    color: rgba(0, 0, 0, 0.6);
+	    margin-bottom: 50px;
+	    max-width: 440px;
+	    line-height: 28px;
+		}
+		.sub-desc2 {
+	    font-style: normal;
+	    font-weight: 400;
+	    font-size: 18px;
+	    color: rgba(0, 0, 0, 0.9);
+	    margin-bottom: 20px;
+	    line-height: 34px;
+		}
+		.sub-content-wrapper {
+			max-width: 100%;
+		}
+		.sub-button {
+	    padding: 10px 24px;
+	    font-weight: 500;
+	    font-size: 16px;
+		}
+	}
+	@media (max-width: 576px){
+		
+	}
+
+</style>
+<div class="sub-backdrop">
+	<div class="container">
+		<div class="sub-wrapper sub-font-primary">
+			<div class="sub-left">
+				<div class="sub-content">
+					<div class="sub-content-wrapper">
+						<div class="sub-title sub-font-secondary">Thanks for Subscribing!</div>
+                        <!-- gambar untuk mobile view -->
+						<img class="sub-img" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/image3-m.jpg?v=1688108726">
+						<p class="sub-desc">You just made a great decision! Stay updated, stay informed with our latest promos & inspirations.</p>
+						<p class="sub-desc2">Welcome to #1 Multibrand Store in Indonesia!</p>
+						<a href="https://voila.id/" class="sub-button">Shop Now</a>
+					</div>
+				</div>
+			</div>
+			<div class="sub-right">
+				
+			</div>
+		</div>
+	</div>
+</div>

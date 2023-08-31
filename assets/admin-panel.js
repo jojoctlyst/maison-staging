@@ -181,7 +181,6 @@ if(window.frameElement) {
           context: document.body,
           success: function(data){
             $live.append(data);
-            console.log('data dari softali', data);
           }
         });
       }

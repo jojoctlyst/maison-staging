@@ -5,6 +5,12 @@
 	{%- assign boost_pfs_placeholder_enable = 'true' -%}
 {% endif %}
 
+{% if bc_settings contains 'filterHorizontalOptionsAlign":' %}
+  {%- assign filterHorizontalOptionsAlign = bc_settings | split: 'filterHorizontalOptionsAlign":' | last | split: ',' | first | split: '}' | first | strip -%}
+{% else %}
+  {%- assign filterHorizontalOptionsAlign = 'left' -%}
+{% endif %}
+
 {% if boost_pfs_placeholder_enable == 'true' %}
   {% case type %}
     {% when 'filter-tree' %}
@@ -22,14 +28,16 @@
         </div>
       {% endfor %}
     {% when 'filter-tree-h' %}
-      {% for i in (1..4) %}
-        <div class="boost-pfs-filter-option boost-pfs-filter-option-skeleton boost-pfs-filter-option-collapsed">
-          <div class="boost-pfs-filter-option-title">
-            <button class="boost-pfs-filter-button boost-pfs-filter-option-title-heading"><span></span></button>
+      <div class="boost-pfs-filter-tree-content boost-pfs-filter-tree-options-align-{{filterHorizontalOptionsAlign}}">
+        {% for i in (1..4) %}
+          <div class="boost-pfs-filter-option boost-pfs-filter-option-skeleton boost-pfs-filter-option-collapsed">
+            <div class="boost-pfs-filter-option-title">
+              <button class="boost-pfs-filter-button boost-pfs-filter-option-title-heading"><span></span></button>
+            </div>
+            <div class="boost-pfs-filter-option-content"></div>
           </div>
-          <div class="boost-pfs-filter-option-content"></div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     {% when 'button' %}
       <button class="boost-pfs-filter-skeleton-button" role="status" aria-label="Loading"><span></span></button>
     {% else %}

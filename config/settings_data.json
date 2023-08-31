@@ -2,7 +2,7 @@
   "current": {
     "license": "97b59167-88b8-42ab-b515-eabb3e2ff913",
     "use_favicon": true,
-    "favicon": "shopify:\/\/shop_images\/w.jpg",
+    "favicon": "shopify:\/\/shop_images\/favicon-voila-2023.png",
     "show_preloader": false,
     "use_boxed": false,
     "use_rtl": false,
@@ -17,7 +17,7 @@
     "terms_cond_checkbox_show": false,
     "terms_cond_checkbox_text": "I agree with the terms and conditions",
     "ajax_addtocart": true,
-    "show_wishlist": true,
+    "show_wishlist": false,
     "show_compare": false,
     "buy_in_one_click": true,
     "use_countdown_timezone": false,
@@ -55,7 +55,7 @@
     "main_texts": "14",
     "main_textslh": "22",
     "mainpad_01": "70",
-    "mainpad_01_footer": "70",
+    "mainpad_01_footer": "32",
     "mainpad_02": "43",
     "mainpad_03": "33",
     "menuf_s": "14",
@@ -149,7 +149,6 @@
     "color_btt_bg_hover": "#12784a",
     "color_btt_arr_hover": "#ffffff",
     "color_btt_opacity": "0.75",
-    "def_btn_font_size": 16,
     "def_btn": "#000000",
     "def_btntext": "#ffffff",
     "def_btnhover": "#0d653e",
@@ -170,9 +169,8 @@
     "buynow_modal_def_custom_styles_hover_bo": "",
     "links_wl_co_icon_color": "#12784a",
     "links_wl_co_icon_color_hover": "#12784a",
-    "cartpagecheckout_text": 14,
     "showmore_styles": "height: 46px;\n    padding-left: 38px;\n    padding-right: 38px;\n    font-size: 14px;",
-    "color_inf_bar_bg": "#12784A",
+    "color_inf_bar_bg": "#191919",
     "color_inf_bar_text": "#ffffff",
     "color_inf_bar_link": "#000000",
     "color_inf_bar_close": "#777777",
@@ -230,8 +228,8 @@
     "color_header_sticky_bg": "#ffffff",
     "color_header_sticky_menu": "#191919",
     "color_header_sticky_menu_hover": "#000000",
-    "color_header_sticky_icons": "#191919",
-    "color_header_sticky_icons_hover": "#12784a",
+    "color_header_sticky_icons": "#ffffff",
+    "color_header_sticky_icons_hover": "#191919",
     "color_header_mobile_bg": "#ffffff",
     "color_header_mobile_line": "#e9e7e7",
     "color_header_mobile_close_btn": "#777777",
@@ -289,6 +287,7 @@
     "head3_ca_t_c_hover": "#191919",
     "head3_ca_bc_c": "#12784a",
     "head3_ca_bt_c": "#ffffff",
+    "color_footer_main_form_padding": false,
     "color_footer_subscribe_bg": "#000000",
     "color_footer_subscribe_text": "#ffffff",
     "color_footer_subscribe_social": "#ffffff",
@@ -300,9 +299,9 @@
     "color_footer_subscribe_form_btntext": "#ffffff",
     "color_footer_subscribe_form_btnhover": "#000000",
     "color_footer_subscribe_form_btntexthover": "#ffffff",
-    "footer_top_line_height": "0",
+    "footer_top_line_height": "1",
     "footer_top_line": "#e9e7e7",
-    "color_footer_main_bg": "#f7f8fa",
+    "color_footer_main_bg": "#ffffff",
     "color_footer_main_text": "#888888",
     "color_footer_main_textselected": "#191919",
     "color_footer_main_textlink": "#12784a",
@@ -360,7 +359,7 @@
     "prpage_media_3d_icon": "#12784a",
     "icon_new_bg_color": "#F3F7FC",
     "icon_new_text_color": "#1565C0",
-    "icon_sale_bg_color": "#810000",
+    "icon_sale_bg_color": "#e02d00",
     "icon_sale_text_color": "#ffffff",
     "icon_featured_bg_color": "#12784a",
     "icon_featured_text_color": "#ffffff",
@@ -406,7 +405,7 @@
     "satc_show": true,
     "satc_bg_color": "#ffffff",
     "satc_title_color": "#111111",
-    "satc_price_color": "#999999",
+    "satc_price_color": "#0d653e",
     "satc_price_new_color": "#0d653e",
     "satc_price_old_color": "#999999",
     "satc_fields_color": "#d0e4db",
@@ -417,7 +416,7 @@
     "satc_btn_color_hover": "#0d653e",
     "satc_btntext_color_hover": "#ffffff",
     "satc_btnsold_color": "#999999",
-    "satc_btntextsold_color": "#12784a",
+    "satc_btntextsold_color": "#ffffff",
     "satc_btnsold_custom": "",
     "header_design": "header_type_1",
     "search_is_open": false,
@@ -448,12 +447,7 @@
     "truncate_product_title": true,
     "truncate_product_title_w": "5",
     "truncate_product_title_s": "...",
-    "shop_by_wa_all": false,
-    "shop_by_wa": "Nike",
-    "enable_flash_sale": true,
-    "flash_sale_coming_soon": "4 April 2022, 09.00 AM",
-    "flash_sale_start": "4 April 2022, 10.00 AM",
-    "flash_sale_end": "4 April 2022, 18.00 PM",
+    "shop_by_wa": "Goyard,Hermes,Rolex,Louis Vuitton, Chanel,Van Cleef & Arpels, Patek Philippe",
     "quickview_sku": false,
     "quickview_availability": false,
     "quickview_rating": false,
@@ -475,15 +469,15 @@
     "show_perpage": false,
     "show_collection_title": true,
     "show_collection_products_count": true,
-    "show_collection_description": false,
+    "show_collection_description": true,
     "sidebar": "leftColumn",
     "tooltips_clear_section": false,
     "show_collectionbanner": true,
-    "banner_collectionimage": "https:\/\/cdn.shopify.com\/s\/files\/1\/0518\/4549\/7001\/files\/Global-Banner-Server-Down.jpg?v=1644234746",
-    "banner_collectionlink": "https:\/\/wa.me\/62818683683",
-    "banner_collectionalt": "Festivoila 10.10",
-    "enable_mobilebanner": true,
-    "bannermobile_collectionimage": "https:\/\/cdn.shopify.com\/s\/files\/1\/0518\/4549\/7001\/files\/Global-Banner-Server-Down.jpg?v=1644234746",
+    "banner_collectionimage": "https:\/\/cdn.shopify.com\/s\/files\/1\/0516\/0760\/1336\/files\/global-banner_42fa5628-7620-4dd3-bce6-fb6be2068ad6.jpg?v=1693219586",
+    "banner_collectionlink": "shopify:\/\/blogs\/promotion\/funtastic-payday",
+    "banner_collectionalt": "",
+    "enable_mobilebanner": false,
+    "bannermobile_collectionimage": "",
     "show_filtergroup1": true,
     "tooltips_filtergroup1": false,
     "open_filtergroup1": true,
@@ -495,13 +489,13 @@
     "open_filtergroup2": true,
     "design_filtergroup2": "default",
     "title_filtergroup2": "Category",
-    "filtergroup2": "Accessories, Bags, Clothing, Shoes",
+    "filtergroup2": "Accessories, Bags, Clothing, Shoes, Watches",
     "show_filtergroup3": true,
     "tooltips_filtergroup3": false,
     "open_filtergroup3": true,
     "design_filtergroup3": "default",
     "title_filtergroup3": "Designers",
-    "filtergroup3": "Acne Studios\t,\nAdidas\t,\nAlaia\t,\nAlexander McQueen\t,\nAsics\t,\nBalenciaga\t,\nBally\t,\nBalmain\t,\nBBC\t,\nBottega Veneta\t,\nBurberry\t,\nBy Far\t,\nCeline\t,\nChiara Ferragni\t,\nChinatown Market\t,\nChloe\t,\nChristian Dior\t,\nChristian Louboutin\t,\nComme Des Garcons\t,\nDolce & Gabbana\t,\nDsquared2\t,\nFendi\t,\nFurla\t,\nGivenchy\t,\nGucci\t,\nHeron Preston\t,\nHugo Boss\t,\nIh Nom Uh Nit\t,\nJacquemus\t,\nKarl Lagerfeld\t,\nKenzo\t,\nLanvin\t,\nLoewe\t,\nLongchamp\t,\nLouis Vuitton\t,\nMaison Kitsune\t,\nMalone Souliers\t,\nManolo Blahnik\t,\nMarc Jacobs\t,\nMarcelo Burlon\t,\nMCM\t,\nMichael Kors\t,\nMini Rodini\t,\nMiu Miu\t,\nMoncler\t,\nMoschino\t,\nMSGM\t,\nNeil Barrett\t,\nOff-White\t,\nPalm Angels\t,\nPhillip Lim\t,\nPolo Ralph Lauren\t,\nPrada\t,\nRoger Vivier\t,\nSaint Laurent\t,\nSalvatore Ferragamo\t,\nSprayground\t,\nStella McCartney\t,\nSteve Madden\t,\nStuart Weitzman\t,\nTod's\t,\nTory Burch\t,\nValentino Garavani\t,\nVersace\t,\nY-3",
+    "filtergroup3": "Adidas,Air Jordan,Alaia,Alexander McQueen,Alexander Wang,Alpha Industries,Amina Muaddi,Amiri,Ann Demeulemeester,A.P.C,Aries,Asics,BBC,Balenciaga,Bally,Balmain,Barrow,Berluti,Billionaire Boys Club,Bottega Veneta,Boyy,Burberry,By Far,Celine,Chiara Ferragni,Chloe,Christian Dior,Christian Louboutin,Coach, Comme Des Garcons,Diesel, Dolce & Gabbana,Dsquared2,Emporio Armani,Enterprise Japan,Evisu,Fear of God,Fendi,Fred Perry,Fossil,Furla,GCDS,Givenchy,Gucci,Heron Preston,Hugo Boss,Ih Nom Uh Nit,Jacquemus,Jimmy Choo,Junya Watanabe,Karl Lagerfeld,Kenzo,Lamborghini,Lanvin,Loewe,Longchamp,Louis Vuitton,Mach & Mach,Maison Kitsune,Maison Margiela,Malone Souliers,Manolo Blahnik,Marc Jacobs,Marcelo Burlon,Mastermind,MC2 Saint Barth,MCM,Michael Kors,Mido,Mini Rodini,Miu Miu,Missoni,Moncler,Moschino,MSGM,Neil Barrett,Nike,Off-White,Oris,Palm Angels,Paul & Shark,Pharmacy Industry,Phillip Lim,Philipp Plein,Pinko,Polo Ralph Lauren,Prada,Proenza Schouler,Red Valentino,Rick Owens,Roger Vivier,Saint Laurent,Salvatore Ferragamo,See by Chloe,Seiko,Self-Portrait,Sprayground,Stella McCartney,Steve Madden,Stuart Weitzman,Theory,Thom Browne,Tissot,Tod's,Tory Burch,Twinset,Valentino Garavani,Versace,Vetements,Vien,Yuzefi,Y-3",
     "show_filtergroup4": false,
     "tooltips_filtergroup4": false,
     "open_filtergroup4": false,
@@ -624,7 +618,7 @@
     "popup_newsletter_delay_first": "0",
     "popup_newsletter_delay": "0",
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/artwork-24.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Logo_Voila-Black_3f24f394-8552-4005-b75e-2a82a66b039a.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "small",
     "checkout_body_background_image": "",
@@ -634,7 +628,7 @@
     "checkout_sidebar_background_color": "#fafafa",
     "checkout_heading_font": "Helvetica Neue",
     "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#000000",
+    "checkout_accent_color": "#12784a",
     "checkout_button_color": "#020202",
     "checkout_error_color": "#ff6d6d",
     "popup_newsletter_description_alarm": "By subscribe, you accept the terms\n& privacy policy",
@@ -650,6 +644,7 @@
         "blocks": {
           "1512735359647": {
             "type": "recent_post",
+            "disabled": true,
             "settings": {
               "title": "RECENT POST",
               "sidebar_recent_blog_name": "promotion",
@@ -666,6 +661,7 @@
           },
           "1512737701841": {
             "type": "newsletter",
+            "disabled": true,
             "settings": {
               "title": "NEWSLETTER SIGNUP",
               "content": "Daftarkan email Anda dan jadilah orang yang pertama tahu tentang promo menarik dan trend produk terbaru dari kami.",
@@ -679,8 +675,8 @@
           "1512737701841"
         ],
         "settings": {
-          "layout": "left_column",
-          "blog_list": "6",
+          "layout": "no_column",
+          "blog_list": "10",
           "blog_show_tags": true,
           "blog_tags_uppercase": true,
           "blog_show_author": false,
@@ -698,9 +694,9 @@
           "bg_color": "#ffffff",
           "t1_color": "#191919",
           "t2_color": "#191919",
-          "cbtnbg": "#f68522",
+          "cbtnbg": "#12784a",
           "cbtntext": "#ffffff",
-          "acbtnbg": "#dd6c09",
+          "acbtnbg": "#12784a",
           "acbtntext": "#ffffff"
         }
       },
@@ -802,14 +798,6 @@
               "open_tab_by_default": true
             }
           },
-          "36dede7e-a8ba-4ab3-8a07-ef432d03e0a1": {
-            "type": "tab_same_html",
-            "settings": {
-              "title": "",
-              "html": "<div id=\"7e21d23179334681991139a1f55bbbf7\"><\/div>\n<div id=\"1ee189165a41434f9cd06089eceac037\"><\/div>",
-              "open_tab_by_default": false
-            }
-          },
           "67ed040e-7c80-4330-b063-cbe7bc0f14db": {
             "type": "related_products_type2",
             "settings": {
@@ -819,6 +807,7 @@
           },
           "48307edf-c959-492b-b1bc-7edb8966a20d": {
             "type": "recently_view_products",
+            "disabled": true,
             "settings": {
               "title": "Recently Viewed",
               "product_upsell_collection_count": "7"
@@ -827,7 +816,6 @@
         },
         "block_order": [
           "1513760820453",
-          "36dede7e-a8ba-4ab3-8a07-ef432d03e0a1",
           "67ed040e-7c80-4330-b063-cbe7bc0f14db",
           "48307edf-c959-492b-b1bc-7edb8966a20d"
         ],
@@ -854,7 +842,9 @@
           "show_sku": false,
           "show_qiantity": false,
           "show_trust_badge": false,
+          "image_l": "shopify:\/\/shop_images\/TRUSTED_BADGES_6dddb4ab-c276-4901-950b-f0ea0579b00d.png",
           "image_max_width": "541",
+          "image_lm": "shopify:\/\/shop_images\/TRUSTED_BADGES_MOBILE.png",
           "image_max_width_m": "541",
           "designoption1": "getButtonHtml",
           "designoption2": "getButtonHtml",
@@ -871,7 +861,7 @@
           "btnname": "<span class=\" icon-e-37\"><\/span> 100% Authentic",
           "popupcontent": "<div style=\"text-align: left\">\n<h6 class=\"tt-title\">Jaminan 100% Authentic atau Uang Kembali<\/h6>\nKami menjamin seluruh produk Voila.id 100% Authentic atau Original. <br>Kami akan mengembalikan 100% uang Anda jika produk kami terbukti tidak asli*.\n<br><br>\n<h6 class=\"tt-title\">Pengiriman<\/h6>\nWaktu pengiriman ditentukan oleh setiap jasa pengiriman yang dipilih serta jarak lokasi Anda. <br><br>\nProses pesanan:\n<ul>\n<li>Pemesanan <strong>sebelum<\/strong> pukul 16:00 WIB, akan dikirimkan pada hari yang sama<\/li>\n<li>Pemesanan <strong>setelah<\/strong> pukul 16:00 WIB, akan dikirimkan keesokan harinya.<\/li>\n<\/ul>\n<br>\nPengiriman setiap hari Senin - Minggu <i>(Khusus hari minggu JNE tutup)<\/i><br>\nInformasi selengkapnya <a href=\"https:\/\/voila.id\/pages\/shipping-policy\" target=\"_blank\" style=\"color:#12784A;text-decoration:underline;\">klik disini<\/a>\n<br><br>\n<h6 class=\"tt-title\">Pengembalian Barang (Retur)<\/h6>\nVoila.id memberikan layanan jangka waktu 3 hari bagi Anda yang ingin melakukan pengajuan pengembalian produk karena kondisi produk berbeda atau karena adanya cacat produk yang bukan karena penggunaan. <br><br>\nInformasi selengkapnya <a href=\"https:\/\/voila.id\/pages\/kebijakan-return-refund\" target=\"_blank\" style=\"color:#12784A;text-decoration:underline;\">klik disini<\/a>\n<\/div>",
           "show_shipping": true,
-          "btnname2": "<span class=\"icon-f-48\"><\/span> Gratis Ongkir",
+          "btnname2": "<span class=\"icon-f-48\"><\/span> Free Shipping",
           "popupcontentshipping": "<h6 style=\"text-align:left;\" class=\"tt-title\">GRATIS ONGKIR<\/h6>\n<p style=\"text-align:left;\"> Nikmati promo GRATIS ONGKIR ke seluruh kota di Indonesia tanpa syarat. Jangan lewatkan kesempatan promosi yang berlangsung eksklusif ini dan temukan ribuan koleksi pilihan yang dijamin 100% autentik.\n<br><br>\nJaminan keamanan dan ketelitian pengiriman menjadi prioritas utama kami hingga tibanya barang ke tangan kamu.<\/p>",
           "show_message": false,
           "btnname3": "<span class=\"icon-h-07\"><\/span> 100% Authentic",
@@ -888,6 +878,7 @@
             "settings": {
               "collection": "trending",
               "external_link": false,
+              "link": "",
               "usecollectionimage": false,
               "text_to_left": false,
               "description_size": "use_main_size",
@@ -907,6 +898,7 @@
             "settings": {
               "collection": "womens",
               "external_link": false,
+              "link": "",
               "usecollectionimage": false,
               "text_to_left": false,
               "description_size": "use_main_size",
@@ -926,6 +918,7 @@
             "settings": {
               "collection": "trending",
               "external_link": false,
+              "link": "",
               "usecollectionimage": false,
               "text_to_left": false,
               "description_size": "use_main_size",
@@ -945,6 +938,7 @@
             "settings": {
               "collection": "trending",
               "external_link": false,
+              "link": "",
               "usecollectionimage": false,
               "text_to_left": false,
               "description_size": "use_main_size",
@@ -964,6 +958,7 @@
             "settings": {
               "collection": "womens",
               "external_link": false,
+              "link": "",
               "usecollectionimage": false,
               "text_to_left": false,
               "description_size": "use_main_size",
@@ -983,6 +978,7 @@
             "settings": {
               "collection": "womens",
               "external_link": false,
+              "link": "",
               "usecollectionimage": false,
               "text_to_left": false,
               "description_size": "use_main_size",
@@ -1002,6 +998,7 @@
             "settings": {
               "collection": "womens",
               "external_link": false,
+              "link": "",
               "usecollectionimage": false,
               "text_to_left": false,
               "description_size": "use_main_size",
@@ -1021,6 +1018,7 @@
             "settings": {
               "collection": "womens",
               "external_link": false,
+              "link": "",
               "usecollectionimage": false,
               "text_to_left": false,
               "description_size": "use_main_size",
@@ -1070,12 +1068,12 @@
             "type": "footer_links",
             "settings": {
               "show_content": true,
-              "linklist_t1": "Company",
-              "linklist1": "footer",
+              "linklist_t1": "About voilà.id",
+              "linklist1": "footer-company",
               "linklist_showhtml1": false,
               "linklist_html1": "",
-              "linklist_t2": "FAQ",
-              "linklist2": "",
+              "linklist_t2": "Customer Service",
+              "linklist2": "footer-faq",
               "linklist_showhtml2": false,
               "linklist_html2": "",
               "linklist_t3": "",
@@ -1094,56 +1092,81 @@
               "text4": ""
             }
           },
-          "1530207572616": {
-            "type": "subscribe_form",
-            "settings": {
-              "show_content": true,
-              "text1": "Stay up to date with all fashion news and exclusive offers",
-              "text2": "Sign up for email alerts",
-              "text3": "Subcribe",
-              "text4": "Your Email Address"
-            }
-          },
-          "d98ba4f8-cd98-45a7-86e6-6f628baa0a28": {
+          "1516614916702": {
             "type": "footer_additional",
             "settings": {
               "show_content": true,
               "additional_payment_title": "Payment",
               "payments_icons_max_height": "18",
+              "pay_icon_1": "shopify:\/\/shop_images\/BCA.png",
+              "pay_icon_2": "shopify:\/\/shop_images\/Mandiri.png",
+              "pay_icon_3": "shopify:\/\/shop_images\/BRI.png",
+              "pay_icon_4": "shopify:\/\/shop_images\/BNI.png",
+              "pay_icon_5": "shopify:\/\/shop_images\/logo-digibank-croped.png",
+              "pay_icon_6": "shopify:\/\/shop_images\/Visa_cbd7411c-76ac-424e-9728-61465b63f3d6.png",
+              "pay_icon_7": "shopify:\/\/shop_images\/Mastercard_af69e020-1b10-4949-ae3e-88d36efb1d71.png",
+              "pay_icon_8": "shopify:\/\/shop_images\/JBC.png",
+              "pay_icon_9": "shopify:\/\/shop_images\/American_express.png",
+              "pay_icon_10": "shopify:\/\/shop_images\/permatabank.webp",
+              "pay_icon_11": "shopify:\/\/shop_images\/cimb-niaga.png",
               "additional_store_title": "Official Store",
+              "store_icon_1": "shopify:\/\/shop_images\/tokped.png",
               "store_url_1": "https:\/\/www.tokopedia.com\/voilaid",
-              "store_url_2": "https:\/\/shopee.co.id\/voila.id",
-              "store_url_3": "https:\/\/www.bukalapak.com\/voilaid-official-official",
-              "store_url_4": "https:\/\/www.blibli.com\/merchant\/voila-id\/VOI-70003?page=1&start=0&pickupPointCode=&cnc=&multiCategory=true&excludeProductList=true&promoTab=false&sort=7",
-              "store_url_5": "https:\/\/www.jd.id\/shop\/10058975.html",
-              "store_url_6": "https:\/\/www.istyle.id\/promo-voila-000000151028.do",
+              "store_icon_2": "shopify:\/\/shop_images\/shopee.png",
+              "store_url_2": "https:\/\/shopee.co.id\/voila.id_officialshop",
+              "store_icon_3": "shopify:\/\/shop_images\/blibli.png",
+              "store_url_3": "https:\/\/www.blibli.com\/merchant\/voila-id\/VOI-70003?page=1&start=0&pickupPointCode=&cnc=&multiCategory=true&excludeProductList=true&promoTab=false&sort=7",
+              "store_icon_4": "shopify:\/\/shop_images\/style.id.png",
+              "store_url_4": "https:\/\/www.istyle.id\/promo-voila-000000151028.do",
+              "store_icon_5": "shopify:\/\/shop_images\/tiktok-shop_43b1c84e-ef7f-4bf9-a82b-d01c6f3ffecc.png",
+              "store_url_5": "https:\/\/www.tiktok.com\/@voila.id?lang=en",
+              "store_icon_6": "shopify:\/\/shop_images\/zelora.jpg",
+              "store_url_6": "https:\/\/www.zalora.co.id\/store\/voila-id",
+              "store_url_7": "",
               "additional_shipping_title": "Shipping",
+              "shipping_icon_1": "shopify:\/\/shop_images\/jne_1bd24e3b-9b1e-4dfc-97a4-d785618251dc.png",
+              "shipping_icon_2": "shopify:\/\/shop_images\/j_t.png",
+              "shipping_icon_3": "shopify:\/\/shop_images\/Paxel_8f9583f2-4b16-4bf4-a8d0-be27c691eb50.png",
               "additional_download_title": "Download Apps On",
               "download_icons_max_height": "35",
+              "download_icon_1": "shopify:\/\/shop_images\/appstore.png",
               "download_url_1": "https:\/\/apps.apple.com\/id\/app\/voila-id\/id1560619001?l=id",
+              "download_icon_2": "shopify:\/\/shop_images\/googleplay.png",
               "download_url_2": "https:\/\/play.google.com\/store\/apps\/details?id=com.voila.id",
               "show_socials": true,
               "additional_social_title": "Follow Us",
               "facebook_url": "https:\/\/www.facebook.com\/voilalux",
               "instagram_url": "https:\/\/www.instagram.com\/voila.id\/",
-              "youtube_url": "https:\/\/www.youtube.com\/channel\/UCYkAZ9ERvRASlKhIqrGpeQA"
+              "youtube_url": "https:\/\/www.youtube.com\/channel\/UCYkAZ9ERvRASlKhIqrGpeQA",
+              "tiktok_url": "https:\/\/www.tiktok.com\/@voila.id?lang=en"
             }
           },
-          "460f8b06-63e7-4296-a5b6-23b5fef87dd6": {
+          "1530207572616": {
+            "type": "subscribe_form",
+            "settings": {
+              "show_content": true,
+              "text1": "Stay up to date with all fashion news and exclusive offers",
+              "text2": "",
+              "text3": "Subscribe",
+              "text4": "Your Email Address"
+            }
+          },
+          "d539324c-4345-415c-bf19-6563840f0f00": {
             "type": "footer_description",
             "settings": {
               "show_content": true,
               "show_logoblock": true,
               "logo_text": "",
+              "logo": "shopify:\/\/shop_images\/voila-green-logo-big.png",
               "logo_max_width": "95",
-              "coltext1": "voila.id is an online platform of luxury fashion products that focuses on providing 100% authentic branded collections. As a fashion retailer, voila.id is under management of PT Ming Jaya Sejahtera and a sister company of Machtwatch | Jamtangan.com.",
+              "coltext1": "voilà.id is an online platform of luxury fashion products that focuses on providing 100% authentic branded collections.",
               "coltext2": "",
               "show_subsribe_form": false,
               "text1": "",
               "text2": "",
-              "text3": "GET!",
-              "text4": "Enter your e-mail",
-              "linklist_t1": "Title 1",
+              "text3": "",
+              "text4": "",
+              "linklist_t1": "",
               "linklist1": "",
               "linklist_showhtml1": false,
               "linklist_html1": "",
@@ -1156,9 +1179,12 @@
         },
         "block_order": [
           "1516617959080",
+          "1516614916702",
           "1530207572616",
-          "d98ba4f8-cd98-45a7-86e6-6f628baa0a28",
-          "460f8b06-63e7-4296-a5b6-23b5fef87dd6"
+          "d539324c-4345-415c-bf19-6563840f0f00"
+        ],
+        "custom_css": [
+          "@media (max-width: 575px) {.tt-footer-custom {padding-top: 26px !important; }}"
         ],
         "settings": {
           "top_offset": "normal",
@@ -1170,8 +1196,9 @@
           "line_color": "#e9e7e7",
           "show_logoblock": false,
           "logo_text": "",
+          "logo": "shopify:\/\/shop_images\/Group_1180.png",
           "logo_max_width": "120",
-          "footer_address": "&copy; 2021 Voila.id, PT. Ming Jaya Sejahtera, All Rights Reserved.",
+          "footer_address": "&copy; 2023 voilà.id, All Rights Reserved.",
           "footer_col": false
         }
       },
@@ -1180,16 +1207,17 @@
         "blocks": {
           "1523361758164": {
             "type": "infobar",
+            "disabled": true,
             "settings": {
               "show_content": true,
-              "show_content_index": true,
+              "show_content_index": false,
               "show_button_close": false,
-              "fontsize": 10,
+              "fontsize": 12,
               "fontweight": 300,
               "toppadding": 18,
               "minimalheight": 0,
               "btnpos": 0,
-              "text": "Gratis Ongkir Tanpa Minimum Transaksi",
+              "text": "<a href=\"https:\/\/voila.id\/blogs\/promotion\/promo-produk-branded-gratis-ongkir-ke-seluruh-indonesia-voila-id\"> Free Shipping to All Over Indonesia <\/a>",
               "background_image": false
             }
           },
@@ -1198,7 +1226,7 @@
             "settings": {
               "language_menu_settings": "weglot_theme",
               "default_language": "Bahasa Indonesia",
-              "linklist": ""
+              "linklist": "menu-language2"
             }
           },
           "1522091697844": {
@@ -1308,6 +1336,31 @@
               "color_21": "#ffffff",
               "color_22": "#ffffff"
             }
+          },
+          "ecd6cd3a-5450-47fc-8e7a-9c38a9159cfb": {
+            "type": "ms_simplewithtitle",
+            "settings": {
+              "linklist": "",
+              "newnavigation_item": "Shop the Look"
+            }
+          },
+          "4d68347d-beaa-41e6-adc8-29aaf9b6f3ad": {
+            "type": "menu_banner",
+            "settings": {
+              "linklist": "",
+              "newnavigation_item": "Shop the Look",
+              "grid": "4",
+              "widget": "banner",
+              "widgetbanner_url": "shopify:\/\/collections\/curated-by-ivan-gunawan",
+              "widgetbanner_img": "shopify:\/\/shop_images\/featured-looks-banner.jpg",
+              "widgetbanner_title": "Friends of Voila",
+              "widgetbanner_title2": "Curated by Ivan Gunawan",
+              "widgetbanner_color": "#191919",
+              "widgetbanner_color2": "#191919",
+              "widgetbanner_color4": "#191919",
+              "widgetbanner_btn": true,
+              "widgetbanner_btnname": "Shop Now"
+            }
           }
         },
         "block_order": [
@@ -1315,7 +1368,9 @@
           "1563636725395",
           "1522091697844",
           "1522422569458",
-          "ec7a8f91-41ff-4700-84bb-a48b5adcd449"
+          "ec7a8f91-41ff-4700-84bb-a48b5adcd449",
+          "ecd6cd3a-5450-47fc-8e7a-9c38a9159cfb",
+          "4d68347d-beaa-41e6-adc8-29aaf9b6f3ad"
         ],
         "settings": {
           "header_sticky_header": true,
@@ -1326,9 +1381,11 @@
           "logo_max_width_d": "120",
           "showsucklogomobile": true,
           "logo_max_width_m": "95",
-          "logo_text": "",
+          "logo_text": "Voila",
           "logo_margin_top": "",
+          "logo": "shopify:\/\/shop_images\/voila-trans-logo.png",
           "logo_max_width": "120",
+          "logomobile": "shopify:\/\/shop_images\/voila-trans-logo.png",
           "logo_max_mobile_width": "85",
           "logo_bar": "allinline",
           "menu_bar": "default",
@@ -1343,15 +1400,15 @@
       },
       "1521704967763": {
         "type": "index-section-construction_banners",
-        "disabled": true,
         "blocks": {
           "1521704979930": {
             "type": "item",
             "settings": {
+              "image": "shopify:\/\/shop_images\/women_c4acd414-6f7d-4cad-af72-ae9ed28367b5.jpg",
               "use_link": true,
-              "link": "https:\/\/sonetamw.myshopify.com\/collections\/women-test-collection?pf_t_gender=Women",
+              "link": "shopify:\/\/collections\/women",
               "text_to_left": false,
-              "description_size": "use_main_size",
+              "description_size": "small",
               "animation": "use_main_animation",
               "position": "normal",
               "text1": "",
@@ -1359,13 +1416,13 @@
               "show_icon": false,
               "width": "128",
               "cbtntext": "#191919",
-              "cbtntext2": "#ffffff",
+              "cbtntext2": "#191919",
               "acbtntext": "#ffffff",
               "acbtntext2": "#ffffff",
               "cbtnbg": "#ffffff",
-              "background_alpha": "0",
+              "background_alpha": "90",
               "acbtnbg": "#f68522",
-              "background_alpha_a": "0",
+              "background_alpha_a": "90",
               "cbtnbor": "#ffffff",
               "border_alpha": "0",
               "acbtnbor": "#191919",
@@ -1397,10 +1454,11 @@
           "1521704977937": {
             "type": "item",
             "settings": {
+              "image": "shopify:\/\/shop_images\/men_14d61067-61ea-4438-97f6-6e075bebb8fe.jpg",
               "use_link": true,
               "link": "shopify:\/\/collections\/men",
               "text_to_left": false,
-              "description_size": "small",
+              "description_size": "use_main_size",
               "animation": "use_main_animation",
               "position": "use_main_position",
               "text1": "",
@@ -1408,13 +1466,13 @@
               "show_icon": false,
               "width": "128",
               "cbtntext": "#191919",
-              "cbtntext2": "#ffffff",
+              "cbtntext2": "#191919",
               "acbtntext": "#ffffff",
               "acbtntext2": "#ffffff",
               "cbtnbg": "#ffffff",
-              "background_alpha": "0",
+              "background_alpha": "90",
               "acbtnbg": "#f68522",
-              "background_alpha_a": "0",
+              "background_alpha_a": "90",
               "cbtnbor": "#ffffff",
               "border_alpha": "0",
               "acbtnbor": "#191919",
@@ -1443,27 +1501,28 @@
               "background_alpha_a_2": "90"
             }
           },
-          "42078814-2353-4bdc-a524-79b1a0ba14fe": {
+          "dd8cb9f5-9a65-4ad2-8933-141c2509ca7f": {
             "type": "item",
             "settings": {
+              "image": "shopify:\/\/shop_images\/kids_358236b0-f030-4d81-b67d-b06b5d8e086e.jpg",
               "use_link": true,
-              "link": "https:\/\/sonetamw.myshopify.com\/collections\/pharmacy-industry?pf_t_gender=Kids",
+              "link": "shopify:\/\/collections\/kids",
               "text_to_left": false,
-              "description_size": "long",
+              "description_size": "use_main_size",
               "animation": "use_main_animation",
-              "position": "normal",
+              "position": "use_main_position",
               "text1": "",
               "text2": "",
               "show_icon": false,
               "width": "128",
-              "cbtntext": "#ffffff",
-              "cbtntext2": "#ffffff",
+              "cbtntext": "#191919",
+              "cbtntext2": "#191919",
               "acbtntext": "#ffffff",
               "acbtntext2": "#ffffff",
-              "cbtnbg": "#d6d6d6",
-              "background_alpha": "0",
+              "cbtnbg": "#ffffff",
+              "background_alpha": "90",
               "acbtnbg": "#2879fe",
-              "background_alpha_a": "0",
+              "background_alpha_a": "90",
               "cbtnbor": "rgba(0,0,0,0)",
               "border_alpha": "0",
               "acbtnbor": "rgba(0,0,0,0)",
@@ -1496,12 +1555,12 @@
         "block_order": [
           "1521704979930",
           "1521704977937",
-          "42078814-2353-4bdc-a524-79b1a0ba14fe"
+          "dd8cb9f5-9a65-4ad2-8933-141c2509ca7f"
         ],
         "settings": {
           "top_offset": "normal",
           "custom_classes": "",
-          "fullwidth": true,
+          "fullwidth": false,
           "nopaddings": false,
           "bannerstoshow": "3",
           "show_title": false,
@@ -1532,6 +1591,34 @@
       },
       "1521705177678": {
         "type": "index-section-products",
+        "settings": {
+          "top_offset": "normal",
+          "custom_classes": "",
+          "fullwidth": false,
+          "nopaddings": false,
+          "show_title": true,
+          "title_to_left": true,
+          "boxed_title": false,
+          "text1": "Hermes",
+          "text2": "",
+          "text3": "",
+          "use_title_as_link": true,
+          "show_button": true,
+          "button_text": "See All",
+          "collection": "hermes",
+          "items_always_in_center": false,
+          "limit": "16",
+          "items": "3",
+          "default_carousel": true,
+          "boxed_buttons": false,
+          "toshow": "4",
+          "step": "2",
+          "module_autoplay": false,
+          "delay_time": "7000"
+        }
+      },
+      "1521705360339": {
+        "type": "index-section-products",
         "disabled": true,
         "settings": {
           "top_offset": "normal",
@@ -1541,272 +1628,15 @@
           "show_title": true,
           "title_to_left": true,
           "boxed_title": false,
-          "text1": "E-GIFT CARD",
-          "text2": "",
-          "text3": "",
-          "use_title_as_link": true,
-          "show_button": false,
-          "button_text": "SHOW ALL",
-          "collection": "e-gift-card",
-          "items_always_in_center": false,
-          "limit": "3",
-          "items": "3",
-          "default_carousel": false,
-          "boxed_buttons": false,
-          "toshow": "4",
-          "step": "2",
-          "module_autoplay": false,
-          "delay_time": "7000"
-        }
-      },
-      "1521705207815": {
-        "type": "index-section-simple_banners",
-        "disabled": true,
-        "blocks": {
-          "57669ae7-f564-4819-ac18-6f1617a4a0c8": {
-            "type": "item",
-            "settings": {
-              "use_link": true,
-              "link": "shopify:\/\/collections\/bags",
-              "text_to_left": false,
-              "description_size": "small",
-              "animation": "use_main_animation",
-              "position": "use_main_position",
-              "text1": "BAGS",
-              "text2": "",
-              "show_icon": false,
-              "width": "128",
-              "cbtntext": "#191919",
-              "cbtntext2": "#191919",
-              "acbtntext": "#ffffff",
-              "acbtntext2": "#ffffff",
-              "cbtnbg": "#ffffff",
-              "background_alpha": "90",
-              "acbtnbg": "#dd6c09",
-              "background_alpha_a": "90",
-              "cbtnbor": "rgba(0,0,0,0)",
-              "border_alpha": "0",
-              "acbtnbor": "rgba(0,0,0,0)",
-              "border_alpha_a": "0",
-              "show_custom_html": false,
-              "custom_html_position": "normal",
-              "custom_html": "",
-              "show_prem_btn": false,
-              "show_prem_btn_1": true,
-              "link_1": "",
-              "text_b_1": "SHOP WOMEN",
-              "show_prem_btn_2": true,
-              "link_2": "",
-              "text_b_2": "SHOP MEN",
-              "cbtntext_1": "#191919",
-              "acbtntext_1": "#ffffff",
-              "cbtnbg_1": "#ffffff",
-              "background_alpha_1": "90",
-              "acbtnbg_1": "#dd6c09",
-              "background_alpha_a_1": "90",
-              "cbtntext_2": "#191919",
-              "acbtntext_2": "#ffffff",
-              "cbtnbg_2": "#ffffff",
-              "background_alpha_2": "90",
-              "acbtnbg_2": "#dd6c09",
-              "background_alpha_a_2": "90"
-            }
-          },
-          "1521705336790": {
-            "type": "item",
-            "settings": {
-              "use_link": true,
-              "link": "shopify:\/\/collections\/shoes",
-              "text_to_left": false,
-              "description_size": "small",
-              "animation": "use_main_animation",
-              "position": "use_main_position",
-              "text1": "SHOES",
-              "text2": "",
-              "show_icon": false,
-              "width": "128",
-              "cbtntext": "#191919",
-              "cbtntext2": "#191919",
-              "acbtntext": "#191919",
-              "acbtntext2": "#ffffff",
-              "cbtnbg": "#ffffff",
-              "background_alpha": "90",
-              "acbtnbg": "#dd6c09",
-              "background_alpha_a": "90",
-              "cbtnbor": "#dd6c09",
-              "border_alpha": "0",
-              "acbtnbor": "#191919",
-              "border_alpha_a": "0",
-              "show_custom_html": false,
-              "custom_html_position": "normal",
-              "custom_html": "",
-              "show_prem_btn": false,
-              "show_prem_btn_1": true,
-              "link_1": "",
-              "text_b_1": "SHOP WOMEN",
-              "show_prem_btn_2": true,
-              "link_2": "",
-              "text_b_2": "SHOP MEN",
-              "cbtntext_1": "#191919",
-              "acbtntext_1": "#ffffff",
-              "cbtnbg_1": "#dd6c09",
-              "background_alpha_1": "90",
-              "acbtnbg_1": "#dd6c09",
-              "background_alpha_a_1": "90",
-              "cbtntext_2": "#191919",
-              "acbtntext_2": "#ffffff",
-              "cbtnbg_2": "#dd6c09",
-              "background_alpha_2": "90",
-              "acbtnbg_2": "#dd6c09",
-              "background_alpha_a_2": "90"
-            }
-          },
-          "1521705213118": {
-            "type": "item",
-            "settings": {
-              "use_link": true,
-              "link": "shopify:\/\/collections\/clothing",
-              "text_to_left": false,
-              "description_size": "small",
-              "animation": "use_main_animation",
-              "position": "use_main_position",
-              "text1": "CLOTHING",
-              "text2": "",
-              "show_icon": false,
-              "width": "128",
-              "cbtntext": "#191919",
-              "cbtntext2": "#191919",
-              "acbtntext": "#191919",
-              "acbtntext2": "#ffffff",
-              "cbtnbg": "#ffffff",
-              "background_alpha": "90",
-              "acbtnbg": "#dd6c09",
-              "background_alpha_a": "90",
-              "cbtnbor": "#ffffff",
-              "border_alpha": "0",
-              "acbtnbor": "#191919",
-              "border_alpha_a": "0",
-              "show_custom_html": false,
-              "custom_html_position": "normal",
-              "custom_html": "",
-              "show_prem_btn": false,
-              "show_prem_btn_1": true,
-              "link_1": "",
-              "text_b_1": "SHOP WOMEN",
-              "show_prem_btn_2": true,
-              "link_2": "",
-              "text_b_2": "SHOP MEN",
-              "cbtntext_1": "#191919",
-              "acbtntext_1": "#ffffff",
-              "cbtnbg_1": "#dd6c09",
-              "background_alpha_1": "90",
-              "acbtnbg_1": "#dd6c09",
-              "background_alpha_a_1": "90",
-              "cbtntext_2": "#191919",
-              "acbtntext_2": "#ffffff",
-              "cbtnbg_2": "#ffffff",
-              "background_alpha_2": "90",
-              "acbtnbg_2": "#dd6c09",
-              "background_alpha_a_2": "90"
-            }
-          },
-          "1521705310244": {
-            "type": "item",
-            "settings": {
-              "use_link": true,
-              "link": "shopify:\/\/collections\/accesories",
-              "text_to_left": false,
-              "description_size": "small",
-              "animation": "use_main_animation",
-              "position": "use_main_position",
-              "text1": "ACCESSORIES",
-              "text2": "",
-              "show_icon": false,
-              "width": "128",
-              "cbtntext": "#191919",
-              "cbtntext2": "#191919",
-              "acbtntext": "#191919",
-              "acbtntext2": "#ffffff",
-              "cbtnbg": "#ffffff",
-              "background_alpha": "90",
-              "acbtnbg": "#dd6c09",
-              "background_alpha_a": "90",
-              "cbtnbor": "#ffffff",
-              "border_alpha": "0",
-              "acbtnbor": "#191919",
-              "border_alpha_a": "0",
-              "show_custom_html": false,
-              "custom_html_position": "normal",
-              "custom_html": "",
-              "show_prem_btn": false,
-              "show_prem_btn_1": true,
-              "link_1": "",
-              "text_b_1": "SHOP WOMEN",
-              "show_prem_btn_2": true,
-              "link_2": "",
-              "text_b_2": "SHOP MEN",
-              "cbtntext_1": "#191919",
-              "acbtntext_1": "#dd6c09",
-              "cbtnbg_1": "#dd6c09",
-              "background_alpha_1": "90",
-              "acbtnbg_1": "#dd6c09",
-              "background_alpha_a_1": "90",
-              "cbtntext_2": "#191919",
-              "acbtntext_2": "#dd6c09",
-              "cbtnbg_2": "#dd6c09",
-              "background_alpha_2": "90",
-              "acbtnbg_2": "#dd6c09",
-              "background_alpha_a_2": "90"
-            }
-          }
-        },
-        "block_order": [
-          "57669ae7-f564-4819-ac18-6f1617a4a0c8",
-          "1521705336790",
-          "1521705213118",
-          "1521705310244"
-        ],
-        "settings": {
-          "top_offset": "normal",
-          "custom_classes": "",
-          "fullwidth": false,
-          "nopaddings": false,
-          "minus20": false,
-          "items": "3",
-          "show_title": false,
-          "title_to_left": false,
-          "boxed_title": false,
-          "text1": "POPULAR",
-          "text2": "CLOTHING BRANDS",
-          "description_size": "small",
-          "animation": "simple",
-          "position": "normal",
-          "use_same_desc_width": false,
-          "same_width": "330",
-          "show_border": false,
-          "border_color": "#e9e7e7",
-          "bg_round": 6
-        }
-      },
-      "1521705360339": {
-        "type": "index-section-products",
-        "settings": {
-          "top_offset": "normal",
-          "custom_classes": "",
-          "fullwidth": false,
-          "nopaddings": false,
-          "show_title": true,
-          "title_to_left": false,
-          "boxed_title": false,
-          "text1": "Clothing",
+          "text1": "Live Sale",
           "text2": "",
           "text3": "",
           "use_title_as_link": true,
           "show_button": true,
           "button_text": "See All",
-          "collection": "kids",
+          "collection": "live-sale",
           "items_always_in_center": false,
-          "limit": "8",
+          "limit": "16",
           "items": "3",
           "default_carousel": true,
           "boxed_buttons": false,
@@ -1850,7 +1680,7 @@
           "1521705420393-2": {
             "type": "item",
             "settings": {
-              "link": "#",
+              "link": "\/pages\/offers",
               "show_icon": "icon",
               "icon": "icon-e-37",
               "text1": "100% AUTHENTIC",
@@ -1880,10 +1710,21 @@
               "icon_color": "#191919"
             }
           },
+          "1521705420393-1": {
+            "type": "item",
+            "settings": {
+              "link": "shopify:\/\/collections\/new-arrival",
+              "show_icon": "icon",
+              "icon": "icon-e-39",
+              "text1": "LATEST COLLECTIONS",
+              "text2": "",
+              "icon_color": "#dd6c09"
+            }
+          },
           "747cbfa3-5306-4dd5-bcf6-14f6244cdfe4": {
             "type": "item",
             "settings": {
-              "link": "shopify:\/\/collections",
+              "link": "shopify:\/\/pages\/shipping-policy",
               "show_icon": "icon",
               "icon": "icon-f-77",
               "text1": "SECURE PAYMENT",
@@ -1894,23 +1735,12 @@
           "ab945f0f-0fa1-4edf-a167-c2e21afd024f": {
             "type": "item",
             "settings": {
-              "link": "shopify:\/\/collections",
+              "link": "shopify:\/\/pages\/kebijakan-return-refund",
               "show_icon": "icon",
               "icon": "icon-e-17",
               "text1": "3 DAYS FREE RETURN",
               "text2": "",
               "icon_color": "#2879fe"
-            }
-          },
-          "1521705420393-1": {
-            "type": "item",
-            "settings": {
-              "link": "shopify:\/\/collections",
-              "show_icon": "icon",
-              "icon": "icon-e-39",
-              "text1": "LATEST COLLECTIONS",
-              "text2": "",
-              "icon_color": "#dd6c09"
             }
           }
         },
@@ -1918,10 +1748,11 @@
           "1521705420393-2",
           "1521705420393-0",
           "e63f0d74-03eb-4945-a1ac-a0d1edbc3b2c",
+          "1521705420393-1",
           "747cbfa3-5306-4dd5-bcf6-14f6244cdfe4",
-          "ab945f0f-0fa1-4edf-a167-c2e21afd024f",
-          "1521705420393-1"
+          "ab945f0f-0fa1-4edf-a167-c2e21afd024f"
         ],
+        "disabled": true,
         "settings": {
           "top_offset": "normal",
           "custom_classes": "why-voila",
@@ -1931,7 +1762,7 @@
           "items": "4",
           "same_iconcolor": true,
           "icon_color": "#000000",
-          "title_color": "#424242",
+          "title_color": "#191919",
           "desc_color": "#777777",
           "title_hover_color": "#000000",
           "use_background": false,
@@ -2137,60 +1968,12 @@
       "1530224149715": {
         "type": "index-section-revolution",
         "blocks": {
-          "94133613-0519-4783-a58c-ccb90a1d6ebd": {
+          "ffb7af0e-e69d-4ebb-a266-6b4b05d8ce80": {
             "type": "slider_list",
             "settings": {
-              "image": "shopify:\/\/shop_images\/green-and-white-marbled-coloring.jpg",
-              "banner_link": "shopify:\/\/pages\/contact",
-              "position": "left",
-              "imgpositionvertical": "center",
-              "show_video": "no",
-              "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
-              "loopvideo": false,
-              "muted_video": true,
-              "show_infoblock": "no",
-              "show_item_button": "yes",
-              "infoposition": "value",
-              "infoposition_v": "center",
-              "textaligment": "center",
-              "info_point": "351",
-              "info_point_v": "-20",
-              "textbackground_s": false,
-              "textbackground_r": 6,
-              "textbackground_c": "#191919",
-              "textbackground_a": "80",
-              "text1": "Ready To",
-              "text2": "Use Unique<br>Demos",
-              "text3": "Optimized for speed, website that sells",
-              "button_title": "SHOP NOW!",
-              "button_link_size": "17",
-              "button_link_top": "5",
-              "button2": false,
-              "banner_link2": "",
-              "button_title2": "SHOP NOW!",
-              "color_text1": "#ffffff",
-              "color_text2": "#ffffff",
-              "color_text3": "#ffffff",
-              "color_textbase": "#ffffff",
-              "color_bgbase": "#2879fe",
-              "color_textactive": "#ffffff",
-              "color_bgactive": "#2267d8",
-              "color_textbase2": "#ffffff",
-              "color_bgbase2": "#2879fe",
-              "color_textactive2": "#ffffff",
-              "color_bgactive2": "#2267d8",
-              "btn_custom_styles": "",
-              "btn_custom_styles_hover": "",
-              "show_customhtml": "no",
-              "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
-            }
-          },
-          "7e658dd3-ad1f-4e6b-8608-9b9e3f3c1870": {
-            "type": "slider_list",
-            "disabled": true,
-            "settings": {
-              "banner_link": "https:\/\/wa.me\/62818683683",
-              "position": "left",
+              "image": "shopify:\/\/shop_images\/slider_23af9caf-42c0-4e65-b07f-c686de6acbd6.jpg",
+              "banner_link": "\/pages\/offers",
+              "position": "center",
               "imgpositionvertical": "center",
               "show_video": "no",
               "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
@@ -2233,19 +2016,19 @@
               "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
             }
           },
-          "aac79d59-b292-473d-b68a-95eaf7833bd5": {
+          "fc11059d-ab53-4070-9338-c1f4a7a817f5": {
             "type": "slider_list",
-            "disabled": true,
             "settings": {
-              "banner_link": "shopify:\/\/collections",
+              "image": "shopify:\/\/shop_images\/slider_3b01356f-2e66-467b-924a-7c34754a37d2.jpg",
+              "banner_link": "https:\/\/www.instagram.com\/voila.id\/",
               "position": "center",
               "imgpositionvertical": "center",
               "show_video": "no",
               "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
               "loopvideo": false,
               "muted_video": true,
-              "show_infoblock": "yes",
-              "show_item_button": "yes",
+              "show_infoblock": "no",
+              "show_item_button": "no",
               "infoposition": "value",
               "infoposition_v": "center",
               "textaligment": "center",
@@ -2255,11 +2038,11 @@
               "textbackground_r": 6,
               "textbackground_c": "#191919",
               "textbackground_a": "80",
-              "text1": "",
-              "text2": "",
-              "text3": "",
-              "button_title": "",
-              "button_link_size": "",
+              "text1": "Ready To",
+              "text2": "Use Unique<br>Demos",
+              "text3": "Optimized for speed, website that sells",
+              "button_title": "SHOP NOW!",
+              "button_link_size": "17",
               "button_link_top": "5",
               "button2": false,
               "banner_link2": "",
@@ -2268,7 +2051,7 @@
               "color_text2": "#ffffff",
               "color_text3": "#ffffff",
               "color_textbase": "#ffffff",
-              "color_bgbase": "rgba(0,0,0,0)",
+              "color_bgbase": "#2879fe",
               "color_textactive": "#ffffff",
               "color_bgactive": "#2267d8",
               "color_textbase2": "#ffffff",
@@ -2281,15 +2064,15 @@
               "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
             }
           },
-          "2e9df102-f255-4175-a48d-07336ccc9337": {
+          "2cb409d3-7d9f-4df8-bae0-e34555e34c26": {
             "type": "slider_list",
-            "disabled": true,
             "settings": {
-              "banner_link": "https:\/\/voila.id\/blogs\/promotion\/promo-puncak-festivoila-1010-branded-fair",
+              "image": "shopify:\/\/shop_images\/slider_847afe4f-a692-466f-b543-8f8f11a283e4.jpg",
+              "banner_link": "shopify:\/\/collections\/exclusive-series",
               "position": "center",
               "imgpositionvertical": "center",
               "show_video": "no",
-              "video_url": "",
+              "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
               "loopvideo": false,
               "muted_video": true,
               "show_infoblock": "no",
@@ -2331,9 +2114,203 @@
           },
           "44992cee-ccc7-45b2-a4ed-21025e8f5734": {
             "type": "slider_list",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider_1_5e5a0c2f-8474-49b8-8b78-97581d6ed990.jpg",
+              "banner_link": "",
+              "position": "center",
+              "imgpositionvertical": "center",
+              "show_video": "no",
+              "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
+              "loopvideo": false,
+              "muted_video": true,
+              "show_infoblock": "no",
+              "show_item_button": "no",
+              "infoposition": "value",
+              "infoposition_v": "center",
+              "textaligment": "center",
+              "info_point": "351",
+              "info_point_v": "-20",
+              "textbackground_s": false,
+              "textbackground_r": 6,
+              "textbackground_c": "#191919",
+              "textbackground_a": "80",
+              "text1": "Ready To",
+              "text2": "Use Unique<br>Demos",
+              "text3": "Optimized for speed, website that sells",
+              "button_title": "SHOP NOW!",
+              "button_link_size": "17",
+              "button_link_top": "5",
+              "button2": false,
+              "banner_link2": "",
+              "button_title2": "SHOP NOW!",
+              "color_text1": "#ffffff",
+              "color_text2": "#ffffff",
+              "color_text3": "#ffffff",
+              "color_textbase": "#ffffff",
+              "color_bgbase": "#2879fe",
+              "color_textactive": "#ffffff",
+              "color_bgactive": "#2267d8",
+              "color_textbase2": "#ffffff",
+              "color_bgbase2": "#2879fe",
+              "color_textactive2": "#ffffff",
+              "color_bgactive2": "#2267d8",
+              "btn_custom_styles": "",
+              "btn_custom_styles_hover": "",
+              "show_customhtml": "no",
+              "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
+            }
+          },
+          "de412986-bdc3-4b89-a47a-642bbec8cce4": {
+            "type": "slider_list",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider_1_c6ca6e1b-a318-4abf-98c6-899a3f7854cd.jpg",
+              "banner_link": "shopify:\/\/collections\/chanel",
+              "position": "center",
+              "imgpositionvertical": "center",
+              "show_video": "no",
+              "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
+              "loopvideo": false,
+              "muted_video": true,
+              "show_infoblock": "no",
+              "show_item_button": "no",
+              "infoposition": "value",
+              "infoposition_v": "center",
+              "textaligment": "center",
+              "info_point": "351",
+              "info_point_v": "-20",
+              "textbackground_s": false,
+              "textbackground_r": 6,
+              "textbackground_c": "#191919",
+              "textbackground_a": "80",
+              "text1": "Ready To",
+              "text2": "Use Unique<br>Demos",
+              "text3": "Optimized for speed, website that sells",
+              "button_title": "SHOP NOW!",
+              "button_link_size": "17",
+              "button_link_top": "5",
+              "button2": false,
+              "banner_link2": "",
+              "button_title2": "SHOP NOW!",
+              "color_text1": "#ffffff",
+              "color_text2": "#ffffff",
+              "color_text3": "#ffffff",
+              "color_textbase": "#ffffff",
+              "color_bgbase": "#2879fe",
+              "color_textactive": "#ffffff",
+              "color_bgactive": "#2267d8",
+              "color_textbase2": "#ffffff",
+              "color_bgbase2": "#2879fe",
+              "color_textactive2": "#ffffff",
+              "color_bgactive2": "#2267d8",
+              "btn_custom_styles": "",
+              "btn_custom_styles_hover": "",
+              "show_customhtml": "no",
+              "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
+            }
+          },
+          "3f740c31-a9c2-4e27-b68e-063ff5b22130": {
+            "type": "slider_list",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider_2_5348bc46-df47-48b3-ab2e-cde8ef85394a.jpg",
+              "banner_link": "shopify:\/\/collections\/thom-browne",
+              "position": "center",
+              "imgpositionvertical": "center",
+              "show_video": "no",
+              "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
+              "loopvideo": false,
+              "muted_video": true,
+              "show_infoblock": "no",
+              "show_item_button": "no",
+              "infoposition": "value",
+              "infoposition_v": "center",
+              "textaligment": "center",
+              "info_point": "351",
+              "info_point_v": "-20",
+              "textbackground_s": false,
+              "textbackground_r": 6,
+              "textbackground_c": "#191919",
+              "textbackground_a": "80",
+              "text1": "Ready To",
+              "text2": "Use Unique<br>Demos",
+              "text3": "Optimized for speed, website that sells",
+              "button_title": "SHOP NOW!",
+              "button_link_size": "17",
+              "button_link_top": "5",
+              "button2": false,
+              "banner_link2": "",
+              "button_title2": "SHOP NOW!",
+              "color_text1": "#ffffff",
+              "color_text2": "#ffffff",
+              "color_text3": "#ffffff",
+              "color_textbase": "#ffffff",
+              "color_bgbase": "#2879fe",
+              "color_textactive": "#ffffff",
+              "color_bgactive": "#2267d8",
+              "color_textbase2": "#ffffff",
+              "color_bgbase2": "#2879fe",
+              "color_textactive2": "#ffffff",
+              "color_bgactive2": "#2267d8",
+              "btn_custom_styles": "",
+              "btn_custom_styles_hover": "",
+              "show_customhtml": "no",
+              "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
+            }
+          },
+          "a49cd587-f153-4b6b-b891-f47571913bc5": {
+            "type": "slider_list",
             "disabled": true,
             "settings": {
-              "banner_link": "https:\/\/voila.id\/blogs\/promotion\/cicilan-mandiri",
+              "image": "shopify:\/\/shop_images\/slider_dcb94ba3-6115-4859-a621-3c6f02e1c048.jpg",
+              "banner_link": "\/collections\/sac-de-jour",
+              "position": "center",
+              "imgpositionvertical": "center",
+              "show_video": "no",
+              "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
+              "loopvideo": false,
+              "muted_video": true,
+              "show_infoblock": "no",
+              "show_item_button": "no",
+              "infoposition": "value",
+              "infoposition_v": "center",
+              "textaligment": "center",
+              "info_point": "351",
+              "info_point_v": "-20",
+              "textbackground_s": false,
+              "textbackground_r": 6,
+              "textbackground_c": "#191919",
+              "textbackground_a": "80",
+              "text1": "Ready To",
+              "text2": "Use Unique<br>Demos",
+              "text3": "Optimized for speed, website that sells",
+              "button_title": "SHOP NOW!",
+              "button_link_size": "17",
+              "button_link_top": "5",
+              "button2": false,
+              "banner_link2": "",
+              "button_title2": "SHOP NOW!",
+              "color_text1": "#ffffff",
+              "color_text2": "#ffffff",
+              "color_text3": "#ffffff",
+              "color_textbase": "#ffffff",
+              "color_bgbase": "#2879fe",
+              "color_textactive": "#ffffff",
+              "color_bgactive": "#2267d8",
+              "color_textbase2": "#ffffff",
+              "color_bgbase2": "#2879fe",
+              "color_textactive2": "#ffffff",
+              "color_bgactive2": "#2267d8",
+              "btn_custom_styles": "",
+              "btn_custom_styles_hover": "",
+              "show_customhtml": "no",
+              "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
+            }
+          },
+          "81e30f31-eff0-4396-9831-bd5eaf9f172f": {
+            "type": "slider_list",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider_3d7aa739-cc94-4eb9-998f-e20a8540ab6c.jpg",
+              "banner_link": "\/collections\/malone-souliers",
               "position": "center",
               "imgpositionvertical": "center",
               "show_video": "no",
@@ -2381,7 +2358,8 @@
             "type": "slider_list",
             "disabled": true,
             "settings": {
-              "banner_link": "shopify:\/\/collections\/sale",
+              "image": "shopify:\/\/shop_images\/slider_2_9dbcaf75-02a6-427a-b2b0-30ad7a23809c.jpg",
+              "banner_link": "shopify:\/\/collections\/luxury-watches",
               "position": "center",
               "imgpositionvertical": "center",
               "show_video": "no",
@@ -2425,10 +2403,12 @@
               "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
             }
           },
-          "81e30f31-eff0-4396-9831-bd5eaf9f172f": {
+          "2e9df102-f255-4175-a48d-07336ccc9337": {
             "type": "slider_list",
+            "disabled": true,
             "settings": {
-              "banner_link": "https:\/\/voiladev.myshopify.com\/pages\/contact#map",
+              "image": "shopify:\/\/shop_images\/slider-desktop_d2ee01ec-44aa-4a31-a105-99ac4ba7e002.jpg",
+              "banner_link": "shopify:\/\/blogs\/bank-promotion",
               "position": "center",
               "imgpositionvertical": "center",
               "show_video": "no",
@@ -2474,8 +2454,10 @@
           },
           "05e926d7-73e4-4be7-9b7a-04830ad0f9c1": {
             "type": "slider_list",
+            "disabled": true,
             "settings": {
-              "banner_link": "shopify:\/\/blogs\/promotion\/voila-id-instagram-live-shopping-rekomendasi-koleksi-yang-lagi-trending",
+              "image": "shopify:\/\/shop_images\/slider_514b0925-cd56-4626-8bef-fd0fff51d5e7.jpg",
+              "banner_link": "shopify:\/\/collections\/balenciaga-hourglass",
               "position": "center",
               "imgpositionvertical": "center",
               "show_video": "no",
@@ -2519,154 +2501,12 @@
               "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
             }
           },
-          "a49cd587-f153-4b6b-b891-f47571913bc5": {
-            "type": "slider_list",
-            "settings": {
-              "banner_link": "shopify:\/\/blogs\/promotion\/belanja-branded-lebih-hemat-dengan-e-gift-card-cashback-10",
-              "position": "center",
-              "imgpositionvertical": "center",
-              "show_video": "no",
-              "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
-              "loopvideo": false,
-              "muted_video": true,
-              "show_infoblock": "no",
-              "show_item_button": "no",
-              "infoposition": "value",
-              "infoposition_v": "center",
-              "textaligment": "center",
-              "info_point": "351",
-              "info_point_v": "-20",
-              "textbackground_s": false,
-              "textbackground_r": 6,
-              "textbackground_c": "#191919",
-              "textbackground_a": "80",
-              "text1": "Ready To",
-              "text2": "Use Unique<br>Demos",
-              "text3": "Optimized for speed, website that sells",
-              "button_title": "SHOP NOW!",
-              "button_link_size": "17",
-              "button_link_top": "5",
-              "button2": false,
-              "banner_link2": "",
-              "button_title2": "SHOP NOW!",
-              "color_text1": "#ffffff",
-              "color_text2": "#ffffff",
-              "color_text3": "#ffffff",
-              "color_textbase": "#ffffff",
-              "color_bgbase": "#2879fe",
-              "color_textactive": "#ffffff",
-              "color_bgactive": "#2267d8",
-              "color_textbase2": "#ffffff",
-              "color_bgbase2": "#2879fe",
-              "color_textactive2": "#ffffff",
-              "color_bgactive2": "#2267d8",
-              "btn_custom_styles": "",
-              "btn_custom_styles_hover": "",
-              "show_customhtml": "no",
-              "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
-            }
-          },
-          "3f740c31-a9c2-4e27-b68e-063ff5b22130": {
+          "8ca689ec-95b0-43ed-970b-0bb4079f9ce3": {
             "type": "slider_list",
             "disabled": true,
             "settings": {
-              "banner_link": "https:\/\/voila.id\/discount\/GEMES200?redirect=%2Fcollections%2Fkids",
-              "position": "center",
-              "imgpositionvertical": "center",
-              "show_video": "no",
-              "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
-              "loopvideo": false,
-              "muted_video": true,
-              "show_infoblock": "no",
-              "show_item_button": "no",
-              "infoposition": "value",
-              "infoposition_v": "center",
-              "textaligment": "center",
-              "info_point": "351",
-              "info_point_v": "-20",
-              "textbackground_s": false,
-              "textbackground_r": 6,
-              "textbackground_c": "#191919",
-              "textbackground_a": "80",
-              "text1": "Ready To",
-              "text2": "Use Unique<br>Demos",
-              "text3": "Optimized for speed, website that sells",
-              "button_title": "SHOP NOW!",
-              "button_link_size": "17",
-              "button_link_top": "5",
-              "button2": false,
-              "banner_link2": "",
-              "button_title2": "SHOP NOW!",
-              "color_text1": "#ffffff",
-              "color_text2": "#ffffff",
-              "color_text3": "#ffffff",
-              "color_textbase": "#ffffff",
-              "color_bgbase": "#2879fe",
-              "color_textactive": "#ffffff",
-              "color_bgactive": "#2267d8",
-              "color_textbase2": "#ffffff",
-              "color_bgbase2": "#2879fe",
-              "color_textactive2": "#ffffff",
-              "color_bgactive2": "#2267d8",
-              "btn_custom_styles": "",
-              "btn_custom_styles_hover": "",
-              "show_customhtml": "no",
-              "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
-            }
-          },
-          "2cb409d3-7d9f-4df8-bae0-e34555e34c26": {
-            "type": "slider_list",
-            "disabled": true,
-            "settings": {
-              "banner_link": "shopify:\/\/blogs\/promotion\/potongan-200-ribu-untuk-koleksi-brand-favorit-hanya-di-voila-id",
-              "position": "center",
-              "imgpositionvertical": "center",
-              "show_video": "no",
-              "video_url": "\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/Video.mp4?7607761490217037888",
-              "loopvideo": false,
-              "muted_video": true,
-              "show_infoblock": "no",
-              "show_item_button": "no",
-              "infoposition": "value",
-              "infoposition_v": "center",
-              "textaligment": "center",
-              "info_point": "351",
-              "info_point_v": "-20",
-              "textbackground_s": false,
-              "textbackground_r": 6,
-              "textbackground_c": "#191919",
-              "textbackground_a": "80",
-              "text1": "Ready To",
-              "text2": "Use Unique<br>Demos",
-              "text3": "Optimized for speed, website that sells",
-              "button_title": "SHOP NOW!",
-              "button_link_size": "17",
-              "button_link_top": "5",
-              "button2": false,
-              "banner_link2": "",
-              "button_title2": "SHOP NOW!",
-              "color_text1": "#ffffff",
-              "color_text2": "#ffffff",
-              "color_text3": "#ffffff",
-              "color_textbase": "#ffffff",
-              "color_bgbase": "#2879fe",
-              "color_textactive": "#ffffff",
-              "color_bgactive": "#2267d8",
-              "color_textbase2": "#ffffff",
-              "color_bgbase2": "#2879fe",
-              "color_textactive2": "#ffffff",
-              "color_bgactive2": "#2267d8",
-              "btn_custom_styles": "",
-              "btn_custom_styles_hover": "",
-              "show_customhtml": "no",
-              "code": "<img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0130\/5041\/3114\/files\/home1_01.png?v=1530224249\" alt=\"slide1\" data-bgposition=\"center center\" data-bgfit=\"cover\" data-bgrepeat=\"no-repeat\"><div class=\"tp-caption tp-caption1 lfb stb text-center\" data-x=\"center\" data-y=\"center\" data-hoffset=\"0\" data-voffset=\"-20\" data-speed=\"600\" data-start=\"900\" data-easing=\"Power4.easeOut\" data-endeasing=\"Power4.easeIn\">\n<div class=\"tp-caption1-wd-1\">Multipurpose<\/div>\n<div class=\"tp-caption1-wd-2\">Premium<br>Shopify Theme<\/div>\n<div class=\"tp-caption1-wd-3\">30 skins, powerful features, great support, exclusive offer<\/div>\n<div class=\"tp-caption1-wd-4\"><a href=\"#\" class=\"btn btn-xl\" data-text=\"SHOP NOW!\">SHOP NOW!<\/a><\/div>\n<\/div>"
-            }
-          },
-          "de412986-bdc3-4b89-a47a-642bbec8cce4": {
-            "type": "slider_list",
-            "disabled": true,
-            "settings": {
-              "banner_link": "shopify:\/\/blogs\/promotion\/potongan-300-ribu-untuk-stella-mccartney-hanya-di-voila-id",
+              "image": "shopify:\/\/shop_images\/slider_65170ba6-b1fb-4186-a739-e376fd9b4e5f.jpg",
+              "banner_link": "shopify:\/\/collections\/hugo-boss",
               "position": "center",
               "imgpositionvertical": "center",
               "show_video": "no",
@@ -2712,28 +2552,28 @@
           }
         },
         "block_order": [
-          "94133613-0519-4783-a58c-ccb90a1d6ebd",
-          "7e658dd3-ad1f-4e6b-8608-9b9e3f3c1870",
-          "aac79d59-b292-473d-b68a-95eaf7833bd5",
-          "2e9df102-f255-4175-a48d-07336ccc9337",
-          "44992cee-ccc7-45b2-a4ed-21025e8f5734",
-          "fba8b615-09d0-4443-9cde-ff6d8ebdb33c",
-          "81e30f31-eff0-4396-9831-bd5eaf9f172f",
-          "05e926d7-73e4-4be7-9b7a-04830ad0f9c1",
-          "a49cd587-f153-4b6b-b891-f47571913bc5",
-          "3f740c31-a9c2-4e27-b68e-063ff5b22130",
+          "ffb7af0e-e69d-4ebb-a266-6b4b05d8ce80",
+          "fc11059d-ab53-4070-9338-c1f4a7a817f5",
           "2cb409d3-7d9f-4df8-bae0-e34555e34c26",
-          "de412986-bdc3-4b89-a47a-642bbec8cce4"
+          "44992cee-ccc7-45b2-a4ed-21025e8f5734",
+          "de412986-bdc3-4b89-a47a-642bbec8cce4",
+          "3f740c31-a9c2-4e27-b68e-063ff5b22130",
+          "a49cd587-f153-4b6b-b891-f47571913bc5",
+          "81e30f31-eff0-4396-9831-bd5eaf9f172f",
+          "fba8b615-09d0-4443-9cde-ff6d8ebdb33c",
+          "2e9df102-f255-4175-a48d-07336ccc9337",
+          "05e926d7-73e4-4be7-9b7a-04830ad0f9c1",
+          "8ca689ec-95b0-43ed-970b-0bb4079f9ce3"
         ],
         "settings": {
-          "top_offset": "normal",
+          "top_offset": "small",
           "usebanner": "none",
           "fullwidth": false,
-          "bg_round_r": 6,
+          "bg_round_r": 44,
           "img_fullscreen": true,
           "customwidthvalue": "1180",
           "customheightvalue": "650",
-          "delay_time": "4000",
+          "delay_time": "5000",
           "use_same_desc_width": false,
           "same_width": "330",
           "show_border": false,
@@ -2754,13 +2594,41 @@
           "count": "6"
         }
       },
+      "16073349048014e014": {
+        "type": "index-section-products",
+        "settings": {
+          "top_offset": "normal",
+          "custom_classes": "",
+          "fullwidth": false,
+          "nopaddings": false,
+          "show_title": true,
+          "title_to_left": true,
+          "boxed_title": false,
+          "text1": "New in Bags",
+          "text2": "",
+          "text3": "",
+          "use_title_as_link": true,
+          "show_button": true,
+          "button_text": "See All",
+          "collection": "new-in-bags",
+          "items_always_in_center": false,
+          "limit": "16",
+          "items": "3",
+          "default_carousel": true,
+          "boxed_buttons": false,
+          "toshow": "5",
+          "step": "5",
+          "module_autoplay": false,
+          "delay_time": "7000"
+        }
+      },
       "1608178090f2dc0b06": {
         "type": "index-section-simple_banners",
-        "disabled": true,
         "blocks": {
           "4c78423d-9153-4cf7-a584-1e829eb65a5a": {
             "type": "item",
             "settings": {
+              "image": "shopify:\/\/shop_images\/voila_BG_biru_TEKS_00726e17-0409-4030-bb21-0390abdb5204.jpg",
               "use_link": true,
               "link": "shopify:\/\/pages\/belanja-produk-branded-diskon-1juta-dan-gratis-ongkir",
               "text_to_left": false,
@@ -2811,6 +2679,7 @@
         "block_order": [
           "4c78423d-9153-4cf7-a584-1e829eb65a5a"
         ],
+        "disabled": true,
         "settings": {
           "top_offset": "normal",
           "custom_classes": "",
@@ -2833,89 +2702,13 @@
           "bg_round": 6
         }
       },
-      "1608204347fc626939": {
-        "type": "index-section-border_banners",
-        "blocks": {
-          "85e17c74-a75c-481c-b15c-4f3b119eaf14": {
-            "type": "item",
-            "settings": {
-              "link": "shopify:\/\/collections\/givenchy",
-              "image": "shopify:\/\/shop_images\/1-product-rjneg-xms-2023-16-06-15.53.jpg"
-            }
-          },
-          "6829f0a6-f049-4d70-97cd-8308ad49f9b3": {
-            "type": "item",
-            "settings": {
-              "link": "https:\/\/sonetamw.myshopify.com\/collections\/fendi"
-            }
-          },
-          "6cd1b90e-9e5e-4e44-9b14-d8adceff7165": {
-            "type": "item",
-            "settings": {
-              "link": "shopify:\/\/collections\/celine"
-            }
-          },
-          "517ee8b2-72b6-4bfe-b37a-b8406dfd8a8c": {
-            "type": "item",
-            "settings": {
-              "link": "shopify:\/\/collections\/christian-dior"
-            }
-          },
-          "468ddf33-efbc-4f4d-a39b-a4975a80e83b": {
-            "type": "item",
-            "settings": {
-              "link": "shopify:\/\/collections\/givenchy"
-            }
-          },
-          "160820434613a3d653-2": {
-            "type": "item",
-            "settings": {
-              "link": "shopify:\/\/collections\/gucci"
-            }
-          },
-          "c7972ba5-4ab3-432c-873d-3f14ecf9e1c7": {
-            "type": "item",
-            "settings": {
-              "link": "shopify:\/\/collections\/fendi"
-            }
-          },
-          "160820434613a3d653-3": {
-            "type": "item",
-            "settings": {
-              "link": "shopify:\/\/collections\/kenzo"
-            }
-          }
-        },
-        "block_order": [
-          "85e17c74-a75c-481c-b15c-4f3b119eaf14",
-          "6829f0a6-f049-4d70-97cd-8308ad49f9b3",
-          "6cd1b90e-9e5e-4e44-9b14-d8adceff7165",
-          "517ee8b2-72b6-4bfe-b37a-b8406dfd8a8c",
-          "468ddf33-efbc-4f4d-a39b-a4975a80e83b",
-          "160820434613a3d653-2",
-          "c7972ba5-4ab3-432c-873d-3f14ecf9e1c7",
-          "160820434613a3d653-3"
-        ],
-        "settings": {
-          "top_offset": "normal",
-          "fullwidth": false,
-          "show_title": true,
-          "title_to_left": false,
-          "boxed_title": false,
-          "text1": "Designers",
-          "text2": "",
-          "items": "3",
-          "border_base_color": "#ffffff",
-          "border_active_color": "#ffffff"
-        }
-      },
       "160834734286428b64": {
         "type": "index-section-simple_banners",
-        "disabled": true,
         "blocks": {
           "3cf7ca38-0c9f-4969-a39c-3b31e0f7a201": {
             "type": "item",
             "settings": {
+              "image": "shopify:\/\/shop_images\/voila_BG_oranye_431ce492-fae1-4db0-94f9-599b3044c155.jpg",
               "use_link": true,
               "link": "shopify:\/\/pages\/belanja-produk-branded-diskon-1juta-dan-gratis-ongkir",
               "text_to_left": false,
@@ -2966,6 +2759,7 @@
         "block_order": [
           "3cf7ca38-0c9f-4969-a39c-3b31e0f7a201"
         ],
+        "disabled": true,
         "settings": {
           "top_offset": "normal",
           "custom_classes": "",
@@ -2996,24 +2790,80 @@
           "fullwidth": false,
           "nopaddings": false,
           "show_title": true,
-          "title_to_left": false,
+          "title_to_left": true,
           "boxed_title": false,
-          "text1": "Best Deals",
+          "text1": "New in Clothing",
           "text2": "",
           "text3": "",
           "use_title_as_link": true,
           "show_button": true,
           "button_text": "See All",
-          "collection": "women-test-collection",
+          "collection": "new-in-clothing",
           "items_always_in_center": false,
-          "limit": "4",
+          "limit": "16",
           "items": "3",
-          "default_carousel": false,
+          "default_carousel": true,
           "boxed_buttons": false,
           "toshow": "4",
           "step": "2",
           "module_autoplay": false,
           "delay_time": "7000"
+        }
+      },
+      "1612092465c79485b1": {
+        "type": "index-section-column_products",
+        "blocks": {
+          "d0e30394-fe5d-4cd7-836a-4d3bcb02f01c": {
+            "type": "item",
+            "settings": {
+              "collection": "sneaker",
+              "limit": "3",
+              "text1": "Sneakers Terbaru",
+              "show_button": false,
+              "text2": "See All",
+              "show_rating": false,
+              "show_type": false,
+              "show_vendor": false,
+              "show_options": false
+            }
+          },
+          "c78b4c55-14c8-42ef-a662-7f982ebb810f": {
+            "type": "item",
+            "settings": {
+              "collection": "wallet",
+              "limit": "3",
+              "text1": "Dompet Terbaru",
+              "show_button": true,
+              "text2": "See All",
+              "show_rating": false,
+              "show_type": false,
+              "show_vendor": false,
+              "show_options": false
+            }
+          },
+          "674cd544-9707-40fe-883c-ce5f43352aec": {
+            "type": "item",
+            "settings": {
+              "collection": "case-handphone",
+              "limit": "3",
+              "text1": "Casing Handphone",
+              "show_button": false,
+              "text2": "See All",
+              "show_rating": true,
+              "show_type": true,
+              "show_vendor": false,
+              "show_options": false
+            }
+          }
+        },
+        "block_order": [
+          "d0e30394-fe5d-4cd7-836a-4d3bcb02f01c",
+          "c78b4c55-14c8-42ef-a662-7f982ebb810f",
+          "674cd544-9707-40fe-883c-ce5f43352aec"
+        ],
+        "disabled": true,
+        "settings": {
+          "items": "6"
         }
       },
       "1612095521ccec02bd": {
@@ -3024,19 +2874,19 @@
           "fullwidth": false,
           "nopaddings": false,
           "show_title": true,
-          "title_to_left": false,
+          "title_to_left": true,
           "boxed_title": false,
-          "text1": "Bags",
+          "text1": "Luxury Watches",
           "text2": "",
           "text3": "",
           "use_title_as_link": true,
           "show_button": true,
           "button_text": "See All",
-          "collection": "women-test-collection",
+          "collection": "luxury-watches",
           "items_always_in_center": false,
-          "limit": "4",
+          "limit": "16",
           "items": "3",
-          "default_carousel": false,
+          "default_carousel": true,
           "boxed_buttons": false,
           "toshow": "4",
           "step": "2",
@@ -3052,51 +2902,52 @@
           "fullwidth": false,
           "nopaddings": false,
           "show_title": true,
-          "title_to_left": false,
+          "title_to_left": true,
           "boxed_title": false,
-          "text1": "Shoes",
+          "text1": "Pre Order",
           "text2": "",
           "text3": "",
           "use_title_as_link": true,
           "show_button": true,
           "button_text": "See All",
-          "collection": "women-test-collection",
+          "collection": "pre-order",
           "items_always_in_center": false,
-          "limit": "4",
+          "limit": "16",
           "items": "3",
-          "default_carousel": false,
+          "default_carousel": true,
           "boxed_buttons": false,
           "toshow": "4",
-          "step": "2",
+          "step": "4",
           "module_autoplay": false,
           "delay_time": "7000"
         }
       },
       "1616215911af3e5bf0": {
         "type": "index-section-products",
+        "disabled": true,
         "settings": {
           "top_offset": "normal",
-          "custom_classes": "",
+          "custom_classes": "smaller-title",
           "fullwidth": false,
           "nopaddings": false,
           "show_title": true,
-          "title_to_left": false,
+          "title_to_left": true,
           "boxed_title": false,
-          "text1": "Fresh Collection",
+          "text1": "TRENDING NOW",
           "text2": "",
           "text3": "",
           "use_title_as_link": true,
           "show_button": true,
-          "button_text": "asdlkjflaksjd lkajsdkl fjaklsdjf lkajsdflk ajfl",
-          "collection": "women-test-collection",
+          "button_text": "See All",
+          "collection": "trending-now",
           "items_always_in_center": false,
-          "limit": "8",
+          "limit": "16",
           "items": "3",
           "default_carousel": true,
           "boxed_buttons": false,
           "toshow": "4",
           "step": "2",
-          "module_autoplay": false,
+          "module_autoplay": true,
           "delay_time": "7000"
         }
       },
@@ -3109,12 +2960,12 @@
           "show_title": true,
           "title_to_left": false,
           "boxed_title": false,
-          "text1": "Our New Article",
+          "text1": "Our New Articles",
           "text2": "",
           "text3": "",
           "use_title_as_link": true,
           "button_text": "SHOW ALL",
-          "blog": "news",
+          "blog": "inspiration",
           "limit": "2",
           "items": "6",
           "show_tags": false,
@@ -3137,6 +2988,16 @@
           "show_share_buttons": true
         }
       },
+      "16197524767f4952d2": {
+        "type": "instafeed",
+        "disabled": true,
+        "settings": {
+          "heading_font": "roboto_n5",
+          "heading_size": 20,
+          "feed_width": 100,
+          "html_area": ""
+        }
+      },
       "collection-template-boost-pfs-filter": {
         "type": "collection-template-boost-pfs-filter",
         "settings": {
@@ -3150,13 +3011,13 @@
           "enable_filter_sticky_m": true,
           "filter_layout": "filter_layout_default",
           "show_view_as": false,
-          "show_product_count": true,
+          "show_product_count": false,
           "show_sort_by": true,
           "show_view_as_m": false,
-          "show_product_count_m": true,
+          "show_product_count_m": false,
           "show_sort_by_m": true,
           "view_as_type": "view_as_type_list_grid_multi_col",
-          "products_per_page": 24,
+          "products_per_page": 30,
           "products_per_row": 3,
           "products_per_row_m": 2,
           "product_item_type": "grid",
@@ -3166,7 +3027,7 @@
           "show_vendor": true,
           "show_price": true,
           "active_image_swap": true,
-          "show_product_review": true,
+          "show_product_review": false,
           "product_title_color": "#191919",
           "product_title_font": "montserrat_n4",
           "product_title_size": 14,
@@ -3176,7 +3037,7 @@
           "product_vendor_size": 12,
           "product_vendor_transform": "uppercase",
           "product_price_color": "#222222",
-          "product_old_price_color": "#364158",
+          "product_old_price_color": "#999999",
           "product_sale_price_color": "#12784a",
           "product_price_font": "montserrat_n7",
           "product_price_size": 14,
@@ -3204,7 +3065,7 @@
           "product_img_crop": "none",
           "label_position": "top_left",
           "label_type": "rectangle",
-          "sale_label_enable": true,
+          "sale_label_enable": false,
           "sale_label_display": "sale_percent",
           "sale_label_bg": "",
           "sale_label_text": "",
@@ -3255,7 +3116,7 @@
           "product_vendor_size": 14,
           "product_vendor_transform": "capitalize",
           "product_price_color": "#222222",
-          "product_old_price_color": "#364158",
+          "product_old_price_color": "#999999",
           "product_sale_price_color": "#12784a",
           "product_price_font": "poppins_n7",
           "product_price_size": 14,
@@ -3273,7 +3134,7 @@
           "swatch_by_pro_img_shape": "circle",
           "swatch_by_text_apply": "",
           "swatch_by_text_shape": "square",
-          "swatch_by_text_bg": "#ffffff",
+          "swatch_by_text_bg": "#fff",
           "swatch_by_text_color": "#3d4246",
           "swatch_by_text_border": "#ebebeb",
           "swatch_color_display_type": "swatch_color_display_type_image_product",
@@ -3296,43 +3157,15 @@
           "tag_label_text": ""
         }
       },
-      "16443032930d6f5f66": {
-        "type": "index-section-gift-card",
-        "disabled": true,
-        "settings": {
-          "top_offset": "normal",
-          "custom_classes": "",
-          "fullwidth": false,
-          "nopaddings": false,
-          "show_title": true,
-          "title_to_left": false,
-          "boxed_title": false,
-          "text1": "E-GIFT CARD",
-          "text2": "Give something more personal \nto your beloved ones",
-          "text3": "",
-          "use_title_as_link": true,
-          "show_button": true,
-          "button_text": "See All",
-          "collection": "gift-card",
-          "items_always_in_center": false,
-          "limit": "3",
-          "items": "3",
-          "default_carousel": false,
-          "boxed_buttons": false,
-          "toshow": "2",
-          "step": "2",
-          "module_autoplay": false,
-          "delay_time": "7000"
-        }
-      },
-      "164542609332ab1f61": {
+      "1647869365be35b989": {
         "type": "index-section-store_banner",
         "blocks": {
-          "164542609332ab1f61-0": {
+          "1647869365be35b989-0": {
             "type": "item",
             "settings": {
+              "image": "shopify:\/\/shop_images\/store_c211e9c2-e46e-4173-a22b-f199ea1b8b21.jpg",
               "use_link": true,
-              "link": "shopify:\/\/collections",
+              "link": "shopify:\/\/pages\/our-store",
               "use_parallax": false,
               "text1": "OUR STORE",
               "text2": "",
@@ -3343,26 +3176,25 @@
               "text_color1": "#ffffff",
               "text_color2": "#191919",
               "text_color3": "#191919",
-              "cbtntext": "#12784a",
-              "acbtntext": "#0d653e",
-              "cbtnbg": "#ffffff",
-              "acbtnbg": "#e9e7e7"
+              "cbtntext": "#ffffff",
+              "acbtntext": "#e9e7e7",
+              "cbtnbg": "#12784a",
+              "acbtnbg": "#0d653e"
             }
           }
         },
         "block_order": [
-          "164542609332ab1f61-0"
+          "1647869365be35b989-0"
         ],
         "settings": {
           "top_offset": "normal",
           "fullwidth": true,
           "bg_overlay": "#000000",
-          "overlay_alpha": "30"
+          "overlay_alpha": "0"
         }
       },
-      "1646905458a97bfb4c": {
+      "164786983444ca73ce": {
         "type": "index-section-products",
-        "disabled": true,
         "settings": {
           "top_offset": "normal",
           "custom_classes": "",
@@ -3371,17 +3203,17 @@
           "show_title": true,
           "title_to_left": false,
           "boxed_title": false,
-          "text1": "FLASH SALE",
+          "text1": "New in Shoes",
           "text2": "",
           "text3": "",
           "use_title_as_link": true,
-          "show_button": false,
-          "button_text": "SHOW ALL",
-          "collection": "flash-sale",
+          "show_button": true,
+          "button_text": "See All",
+          "collection": "new-in-shoes",
           "items_always_in_center": false,
           "limit": "8",
           "items": "3",
-          "default_carousel": false,
+          "default_carousel": true,
           "boxed_buttons": false,
           "toshow": "4",
           "step": "2",
@@ -3389,311 +3221,633 @@
           "delay_time": "7000"
         }
       },
-      "1647284255a481870e": {
-        "type": "index-section-products-flash-sale",
-        "disabled": true,
-        "settings": {
-          "top_offset": "normal",
-          "custom_classes": "",
-          "fullwidth": true,
-          "nopaddings": false,
-          "show_title": true,
-          "title_to_left": true,
-          "boxed_title": false,
-          "text1": "Flash Sale",
-          "text2": "",
-          "text3": "",
-          "use_title_as_link": true,
-          "show_button": true,
-          "button_text": "LIHAT SEMUA",
-          "collection": "frontpage",
-          "items_always_in_center": false,
-          "limit": "8",
-          "items": "4",
-          "default_carousel": true,
-          "boxed_buttons": false,
-          "toshow": "3",
-          "step": "1",
-          "module_autoplay": false,
-          "delay_time": "7000"
-        }
-      },
-      "collection-template-boost-pfs-filter-flashsale": {
-        "type": "collection-template-boost-pfs-filter-flashsale",
-        "settings": {
-          "layout_type": "box",
-          "show_collection_image": false,
-          "show_collection_des": false,
-          "collection_header_bg": "",
-          "collection_header_text": "",
-          "switch_layout_filter": "switch_layout_filter_vertical",
-          "enable_filter_sticky_d": false,
-          "enable_filter_sticky_m": true,
-          "filter_layout": "filter_layout_default",
-          "show_view_as": false,
-          "show_product_count": true,
-          "show_sort_by": true,
-          "show_view_as_m": false,
-          "show_product_count_m": true,
-          "show_sort_by_m": true,
-          "view_as_type": "view_as_type_list_grid_multi_col",
-          "products_per_page": 24,
-          "products_per_row": 3,
-          "products_per_row_m": 2,
-          "product_item_type": "grid",
-          "product_item_layout": "no-border",
-          "text_alignment": "center",
-          "show_detail_when_hover": false,
-          "show_vendor": true,
-          "show_price": true,
-          "active_image_swap": true,
-          "show_product_review": true,
-          "product_title_color": "#191919",
-          "product_title_font": "poppins_n4",
-          "product_title_size": 14,
-          "product_title_transform": "capitalize",
-          "product_vendor_color": "#969595",
-          "product_vendor_font": "poppins_n4",
-          "product_vendor_size": 12,
-          "product_vendor_transform": "uppercase",
-          "product_price_color": "#222222",
-          "product_old_price_color": "#364158",
-          "product_sale_price_color": "#12784a",
-          "product_price_font": "poppins_n6",
-          "product_price_size": 15,
-          "product_des_color": "#3a3a3a",
-          "product_des_font": "poppins_n4",
-          "product_des_size": 14,
-          "swatch_enable": true,
-          "show_swatch_tooltip": true,
-          "swatch_change_img": "hover",
-          "swatch_by_color_apply": "",
-          "swatch_by_color_shape": "circle",
-          "swatch_by_img_apply": "",
-          "swatch_by_img_shape": "circle",
-          "swatch_by_pro_img_apply": "color",
-          "swatch_by_pro_img_shape": "circle",
-          "swatch_by_text_apply": "",
-          "swatch_by_text_shape": "square",
-          "swatch_by_text_bg": "#ffffff",
-          "swatch_by_text_color": "#3d4246",
-          "swatch_by_text_border": "#ebebeb",
-          "swatch_color_display_type": "swatch_color_display_type_image_product",
-          "swatches_color_shape": "circle",
-          "aspect_ratio": "auto",
-          "aspect_ratio_other": "",
-          "product_img_crop": "none",
-          "label_position": "top_left",
-          "label_type": "rectangle",
-          "sale_label_enable": true,
-          "sale_label_display": "sale_percent",
-          "sale_label_bg": "",
-          "sale_label_text": "",
-          "sold_out_enable": true,
-          "sold_out_display": "text",
-          "sold_out_bg": "",
-          "sold_out_text": "",
-          "tag_label_enable": false,
-          "tag_label_bg": "",
-          "tag_label_text": ""
-        }
-      },
-      "b18e5e5d-28d3-48c2-bfe2-8d582ed7a44e": {
+      "fff7265b-1d27-490f-ba60-d9294528e2f8": {
         "type": "index-section-recent-view",
+        "disabled": true,
         "settings": {
           "custom_related_title": "Recently Viewed",
           "product_upsell_collection_count": "7"
         }
       },
-      "dbc320e5-7d87-496a-a438-34963680f257": {
-        "type": "psb-product-product-01",
-        "blocks": {
-          "dbc320e5-7d87-496a-a438-34963680f257-16868860102ea2ef11-0": {
-            "type": "Product",
-            "settings": {
-              "product": "",
-              "slide_description": "Some description text"
-            }
-          },
-          "dbc320e5-7d87-496a-a438-34963680f257-16868860102ea2ef11-1": {
-            "type": "Product",
-            "settings": {
-              "product": "",
-              "slide_description": "Some description text"
-            }
-          },
-          "dbc320e5-7d87-496a-a438-34963680f257-16868860102ea2ef11-2": {
-            "type": "Product",
-            "settings": {
-              "product": "",
-              "slide_description": "Some description text"
-            }
-          },
-          "dbc320e5-7d87-496a-a438-34963680f257-16868860102ea2ef11-3": {
-            "type": "Product",
-            "settings": {
-              "product": "",
-              "slide_description": "Some description text"
-            }
-          },
-          "dbc320e5-7d87-496a-a438-34963680f257-16868860102ea2ef11-4": {
-            "type": "Product",
-            "settings": {
-              "product": "",
-              "slide_description": "Some description text"
-            }
-          }
-        },
-        "block_order": [
-          "dbc320e5-7d87-496a-a438-34963680f257-16868860102ea2ef11-0",
-          "dbc320e5-7d87-496a-a438-34963680f257-16868860102ea2ef11-1",
-          "dbc320e5-7d87-496a-a438-34963680f257-16868860102ea2ef11-2",
-          "dbc320e5-7d87-496a-a438-34963680f257-16868860102ea2ef11-3",
-          "dbc320e5-7d87-496a-a438-34963680f257-16868860102ea2ef11-4"
+      "db254884-2eed-4fa0-8b3f-4b4a78c911ee": {
+        "type": "index-section-products",
+        "settings": {
+          "top_offset": "normal",
+          "custom_classes": "smaller-title",
+          "fullwidth": false,
+          "nopaddings": false,
+          "show_title": true,
+          "title_to_left": false,
+          "boxed_title": false,
+          "text1": "Exclusive Series",
+          "text2": "",
+          "text3": "",
+          "use_title_as_link": true,
+          "show_button": true,
+          "button_text": "See All",
+          "collection": "exclusive-series",
+          "items_always_in_center": false,
+          "limit": "16",
+          "items": "3",
+          "default_carousel": true,
+          "boxed_buttons": false,
+          "toshow": "4",
+          "step": "2",
+          "module_autoplay": false,
+          "delay_time": "7000"
+        }
+      },
+      "8f781e12-84af-4f32-8a42-3f7c562a063e": {
+        "type": "index-section-custom_html",
+        "custom_css": [
+          ".container-indent {margin-top: 0 !important;}",
+          ".enaplSpg {margin-top: 25px !important;}",
+          ".enapSlideOuter .enaplSpg > li a {z-index: 1 !important; background-color: #d9d9d9;}",
+          ".enapslideactive a,.enapSlideOuter ul li:hover a {background: #12784a !important;}"
         ],
         "settings": {
-          "container_width": "psb-container-fluid",
-          "inherit_fonts": false,
-          "enable_boxshadow": true,
-          "heading_tag": "h4",
-          "slide_desc_font_size": 16,
-          "background_color": "rgba(0,0,0,0)",
-          "slide_bg_color": "#f5f5f5",
-          "slide_info_color": "#ffffff",
-          "slide_title_color": "#212a2f",
-          "slide_desc_color": "#212a2f",
-          "slider_per_view": 3.3,
-          "section_padding_top": 100,
-          "section_padding_bottom": 100,
-          "section_padding_top_mobile": 50,
-          "section_padding_bottom_mobile": 50
-        }
-      },
-      "2af2961a-6005-4b88-9191-5ca09a2fe0f5": {
-        "type": "neno-slider-collection-ccs",
-        "settings": {
-          "slider_id": "03bceb27-1592-41a3-a0ed-6cfcec071928"
-        }
-      },
-      "f781db71-12da-49a6-9fb1-59bb11d4a6fc": {
-        "type": "index-section-custom_html",
-        "settings": {
           "topoffset": true,
-          "fullwidth": true,
+          "fullwidth": false,
           "fullwidth2": false,
-          "data": "<div class=\"container\">\n<div id=\"enap-slider-24428\"><\/div>\n<\/div>\n<script src=\"https:\/\/www.enormapps.com\/slider-v2\/assets\/frontend\/js\/embed.js\" data-id=\"24428\" async defer><\/script>",
-          "usebgcolor": false,
+          "data": "<div id=\"enap-slider-24464\"><\/div> <script src=\"https:\/\/www.enormapps.com\/slider-v2\/assets\/frontend\/js\/embed.js\" data-id=\"24464\" async defer>\n\nsetTimeout(function() {\ndocument.getElementById(\"enrm-branding-24464\").style.display = \"none\";\n}, 3000);\n<\/script>",
+          "usebgcolor": true,
           "usebgcolorfullwidth": false,
           "bgco": "#ffffff"
         }
       },
-      "6f301bd9-cb27-4b5a-b4d3-c026601a8547": {
+      "977c7537-0ccb-429a-9742-5c9014676735": {
         "type": "index-section-text_block",
+        "custom_css": [
+          "@media (max-width: 576px) {.tt-title {text-align: left; }}"
+        ],
         "settings": {
-          "text1": "BRAND HIGHLIGHT",
+          "text1": "Trending This Month",
           "text2": "",
           "center_b_d": true,
           "text3": ""
         }
       },
-      "kaya-faq": {
-        "type": "kaya-faq",
+      "9a6c8cc1-5497-4cb2-baa1-25babae54ec7": {
+        "type": "index-section-custom_html",
+        "settings": {
+          "topoffset": false,
+          "fullwidth": false,
+          "fullwidth2": false,
+          "data": "<div id=\"google-review\" class=\"elfsight-sapp-613df3f0-a583-418e-b7de-315427a6f882\"><\/div>",
+          "usebgcolor": false,
+          "usebgcolorfullwidth": false,
+          "bgco": "#ffffff"
+        }
+      },
+      "kaya-gallery": {
+        "type": "kaya-gallery",
         "blocks": {
-          "9ef87224-902b-4cb0-ba14-03c7a36d4556": {
-            "type": "faq",
+          "cdde176c-9382-4eba-9f19-7ce19318d080": {
+            "type": "gallery",
             "settings": {
-              "question": "mau tanya boleh?",
-              "answer": "boleh aja"
+              "imgbefore": "shopify:\/\/shop_images\/1before.jpg",
+              "imgafter": "shopify:\/\/shop_images\/1after.jpg"
             }
           },
-          "289616d1-d614-42bd-ba18-1f7dc3bef417": {
-            "type": "faq",
+          "e6de09f9-5083-4f8e-8d5a-17c5a54a74fd": {
+            "type": "gallery",
             "settings": {
-              "question": "Aku juga mau tanya",
-              "answer": "Oke silahkah"
+              "imgbefore": "shopify:\/\/shop_images\/2before.jpg",
+              "imgafter": "shopify:\/\/shop_images\/2after.jpg"
             }
           },
-          "9a1858c2-f58c-4092-b3d7-ab45f4142fb4": {
-            "type": "faq",
+          "b801d7bd-29d9-45b6-8112-dffb1571c9a4": {
+            "type": "gallery",
             "settings": {
-              "question": "Tanya trus gpp?",
-              "answer": "gpp"
+              "imgbefore": "shopify:\/\/shop_images\/3before.jpg",
+              "imgafter": "shopify:\/\/shop_images\/3after.jpg"
             }
           },
-          "603e72db-3294-4625-8446-ba553eebf759": {
-            "type": "faq",
+          "3470ba52-1970-418d-849e-8f37721d7767": {
+            "type": "gallery",
             "settings": {
-              "question": "Lagi tanya?",
-              "answer": "boleh"
+              "imgbefore": "shopify:\/\/shop_images\/4before.jpg",
+              "imgafter": "shopify:\/\/shop_images\/4after.jpg"
             }
           },
-          "202545aa-4fa7-4d13-9605-136ba0909d61": {
-            "type": "faq",
+          "13380365-18b5-477b-8266-9bef609842f7": {
+            "type": "gallery",
             "settings": {
-              "question": "",
-              "answer": ""
+              "imgbefore": "shopify:\/\/shop_images\/5before.jpg",
+              "imgafter": "shopify:\/\/shop_images\/5after.jpg"
+            }
+          },
+          "079da368-1104-4de8-867a-e4bc929108f8": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/6before.jpg",
+              "imgafter": "shopify:\/\/shop_images\/6after.jpg"
+            }
+          },
+          "4308854d-e75e-4f52-9f31-5c4ea05b9627": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n_363b22cf-2061-44a0-b51c-773a21fd2d79.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n_d4603e4a-350e-4b8c-827a-0bd3bcb1747b.png"
+            }
+          },
+          "e1fe3da5-026f-476d-ab89-f09838215455": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-1_004f3ffb-b12b-4c9d-9635-85a00e990457.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-1_22925f48-d476-4d45-821c-9f1b6bc9f81e.png"
+            }
+          },
+          "10babfa0-3fb2-4676-8c01-476df9d823d5": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-2_2d68cf9a-fded-4231-80e8-58ce85add90c.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-2_b20a19a0-a59d-4940-9a84-6a1c86e7c9be.png"
+            }
+          },
+          "fca60856-2e61-4b35-b760-f9cef818253c": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-3_a4ea0f26-863c-4ec9-9169-e14f858d0cb7.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-3_f5173aac-27fe-4b12-ac4c-a6c8024809ba.png"
+            }
+          },
+          "148116e5-dc2b-46f5-9ca9-e62c408140f6": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-4_dca486ba-bd80-4914-a164-2c47f9b6e9e1.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-4_9f2c043a-aacf-411a-81a2-7f424653b493.png"
+            }
+          },
+          "7ca45a6c-736f-464d-960e-55ffce69ea41": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-5_c0d08b4f-841a-487b-9f1e-0680c518c973.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-5_052d0af0-6572-4468-9016-d268d2c3bdd8.png"
+            }
+          },
+          "2ae84a12-eda8-4da4-9518-2b360d4a1bb6": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-6_03fb86ad-0ae7-4ae0-ae6d-c2d20eaadfff.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-6_f7993c44-8c41-4234-a666-d99ca6264acc.png"
+            }
+          },
+          "70a88117-7572-42da-8311-7e1f8f3e716f": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-7_42d4f788-445b-4858-8e04-205d9f5a8cdf.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-7_b44f3760-13b6-4af6-9cf7-fb1d90c74d2d.png"
+            }
+          },
+          "7901f7f0-ebcc-448f-a959-8eb344aa3548": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-8_819bc9b4-bded-48be-b143-306d593685bb.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-8_526a6a30-4fb0-4387-aed3-e19593b85e0d.png"
+            }
+          },
+          "254fe830-429f-4818-8fbf-5667b66f7e3a": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-9_5117e00c-5770-46f6-9f40-85e33cd78bf2.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-9_21486d4f-ba1f-460c-99ce-caf118fee810.png"
+            }
+          },
+          "9630a717-4197-4c4e-9aae-f47fb87630ac": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-10_01dc1b4a-dcd1-44ee-9167-065b9a3e20d2.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-10_aa49b2e3-72ae-4d7f-ac58-bec1895c1e2e.png"
+            }
+          },
+          "f443294d-4e37-49a2-b176-0c742f0bb9ad": {
+            "type": "gallery",
+            "settings": {
+              "imgbefore": "shopify:\/\/shop_images\/322924047_868355394306502_8003045587845976371_n-11_93c46e92-833b-4b2d-a83a-b0affd8127e4.png",
+              "imgafter": "shopify:\/\/shop_images\/322924516_690308772673469_2825106993311520556_n-11_8ab56e91-2571-4733-9da1-9678c89497e6.png"
             }
           }
         },
         "block_order": [
-          "9ef87224-902b-4cb0-ba14-03c7a36d4556",
-          "289616d1-d614-42bd-ba18-1f7dc3bef417",
-          "9a1858c2-f58c-4092-b3d7-ab45f4142fb4",
-          "603e72db-3294-4625-8446-ba553eebf759",
-          "202545aa-4fa7-4d13-9605-136ba0909d61"
+          "cdde176c-9382-4eba-9f19-7ce19318d080",
+          "e6de09f9-5083-4f8e-8d5a-17c5a54a74fd",
+          "b801d7bd-29d9-45b6-8112-dffb1571c9a4",
+          "3470ba52-1970-418d-849e-8f37721d7767",
+          "13380365-18b5-477b-8266-9bef609842f7",
+          "079da368-1104-4de8-867a-e4bc929108f8",
+          "4308854d-e75e-4f52-9f31-5c4ea05b9627",
+          "e1fe3da5-026f-476d-ab89-f09838215455",
+          "10babfa0-3fb2-4676-8c01-476df9d823d5",
+          "fca60856-2e61-4b35-b760-f9cef818253c",
+          "148116e5-dc2b-46f5-9ca9-e62c408140f6",
+          "7ca45a6c-736f-464d-960e-55ffce69ea41",
+          "2ae84a12-eda8-4da4-9518-2b360d4a1bb6",
+          "70a88117-7572-42da-8311-7e1f8f3e716f",
+          "7901f7f0-ebcc-448f-a959-8eb344aa3548",
+          "254fe830-429f-4818-8fbf-5667b66f7e3a",
+          "9630a717-4197-4c4e-9aae-f47fb87630ac",
+          "f443294d-4e37-49a2-b176-0c742f0bb9ad"
         ],
         "settings": {
-          "title": "Frequently Asked Questions"
+        }
+      },
+      "kaya-faq": {
+        "type": "kaya-faq",
+        "blocks": {
+          "f9e58e5d-c9d4-474b-9957-625367c83f42": {
+            "type": "faq",
+            "settings": {
+              "question": "What services are include in all-in-one treatment?",
+              "answer": "All in one treatments include cleaning, retouch, recoloring (if needed), and coating."
+            }
+          },
+          "20ea7a6c-6246-4bac-bcb9-88f0f6b175a2": {
+            "type": "faq",
+            "settings": {
+              "question": "If the item was not purchased at voilà.id, can it be repaired at Kaya Leathers?",
+              "answer": "Absolutely! Yet, we have an exclusive deal specifically for purchases made at voilà.id. Whether you're looking to repair or pamper your collection at Kaya Leathers, you are eligible for this special offer."
+            }
+          },
+          "797b24d2-00a3-4b43-aa95-70e763b61863": {
+            "type": "faq",
+            "settings": {
+              "question": "Can you recolor patent leathers items?",
+              "answer": "Certainly, we can. However, there are certain factors to consider when recoloring and changing the color of patent leather. For more information, please consult\/WhatsApp our outlet team."
+            }
+          },
+          "ad9a2d8f-fba6-4f61-8221-2dbc3a1556d6": {
+            "type": "faq",
+            "settings": {
+              "question": "Will the leather texture change after recolor?",
+              "answer": "The texture may change slightly from its original state in the area we worked on. The extent of texture change depends on the severity of the item's condition and the amount of material applied. However, we always strive to restore the leather to its original texture as much as possible."
+            }
+          },
+          "b1f2c3e0-198f-47a7-bebe-3d42ccfe325a": {
+            "type": "faq",
+            "settings": {
+              "question": "How long is the warranty provided by Kaya Leathers after the item is collected?",
+              "answer": "The warranty period lasts for 7 working days from the day your item is collected\/delivered. If there is any damage or product mismatch during the warranty period, customers can return the product at no additional cost."
+            }
+          },
+          "27e7278f-e59e-4933-a6e0-4bde34fad614": {
+            "type": "faq",
+            "settings": {
+              "question": "How long does the process take at Kaya Leathers?",
+              "answer": "The normal processing time is 14-21 working days. For patent leather and certain specific cases, it may take 1-3 months. Additional time may be required to ensure the item is fully ready. However, it is possible that the item can be completed faster."
+            }
+          },
+          "9e9f1947-1b3a-4baf-8111-90cdae15590c": {
+            "type": "faq",
+            "settings": {
+              "question": "Why does the process take long?",
+              "answer": "<ol>\n<li>Queue: there are still many people who need restoration services for their branded items. It seems like more and more people are becoming aware of sustainable fashion!<\/li>\n\n<li>Manpower: our workshop team consists of a total of 10 individuals. We provide specialized training that requires an annual commitment.<\/li>\n\n<li>Quality Control: our QC team follows strict standards and focuses on maintaining high-quality output.<\/li>\n<\/ol>"
+            }
+          },
+          "98fbe57f-30ce-460d-abd6-69d567db9ea7": {
+            "type": "faq",
+            "settings": {
+              "question": "Do you offer a fast\/express service?",
+              "answer": "Absolutely! Our fast\/express service utilizes our priority service option. The maximum processing time for this service is 7 working days, with an additional cost of 50%. Please be aware that certain cases may not be eligible for the priority service."
+            }
+          }
+        },
+        "block_order": [
+          "f9e58e5d-c9d4-474b-9957-625367c83f42",
+          "20ea7a6c-6246-4bac-bcb9-88f0f6b175a2",
+          "797b24d2-00a3-4b43-aa95-70e763b61863",
+          "ad9a2d8f-fba6-4f61-8221-2dbc3a1556d6",
+          "b1f2c3e0-198f-47a7-bebe-3d42ccfe325a",
+          "27e7278f-e59e-4933-a6e0-4bde34fad614",
+          "9e9f1947-1b3a-4baf-8111-90cdae15590c",
+          "98fbe57f-30ce-460d-abd6-69d567db9ea7"
+        ],
+        "settings": {
+        }
+      },
+      "7a8cf20b-b867-4691-9389-083737200e92": {
+        "type": "index-section-custom_html",
+        "settings": {
+          "topoffset": true,
+          "fullwidth": false,
+          "fullwidth2": false,
+          "data": "<div class=\"voila-usp\">\n  <div class=\"usp-container\">\n    <div class=\"usp-page-block-title\">\n      <div class=\"usp-page-title\">\n        You'll <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_heart.svg?v=158166391850312207761690182752\"> to shop at voilà.id\n      <\/div>\n    <\/div>\n    <div class=\"usp-desktop\">\n      <div class=\"slider-usp-js arrow-location-tab slick-dot-style usp-slider-init\">\n        <div class=\"usp-slide\">\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_authentic.svg?v=112918141729926320661690172633\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">100% Authentic<\/div>\n              <div class=\"usp-description\">Authenticity assured. Trust secured with a <br> Money-Back Guarantee!<\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"usp-slide\">\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_absolute.svg?v=168286952632929943601690172632\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">Absolute Collections<\/div>\n              <div class=\"usp-description\"> Elevate your style with top-tier luxury brands.<\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"usp-slide\">\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0516\/0760\/1336\/t\/36\/assets\/usp_return.svg?v=134537498441886691961690964158\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">3-Day Return Free<\/div>\n              <div class=\"usp-description\">Shop with peace of mind with our hassle-free, <br>no-cost 3-day return guarantee!<\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"usp-slide usp-slider-init-items\">\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_costumer.svg?v=45316353090467455191690172633\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">Satisfaction Guaranteed<\/div>\n              <div class=\"usp-description\">Quality guaranteed. Your satisfaction, <br>our promise.<\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"usp-slide usp-slider-init-items\">\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_payment.svg?v=100708167687019030861690172634\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">Secure Payment & 0% Installments<\/div>\n              <div class=\"usp-description\">Various payment options with 0% installment. <\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"usp-slide usp-slider-init-items\">\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_shipping.svg?v=102019612602572773781690172635\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">Free Shipping Nationwide<\/div>\n              <div class=\"usp-description\">Seamless and secure delivery to your doorstep across Indonesia. No Boundaries, No Worries!<\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n    <\/div>\n    <div class=\"usp-mobile\">\n      <div class=\"slider-usp-js arrow-location-tab slick-dot-style usp-slider-init\">\n        <div class=\"usp-slide\">\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_authentic.svg?v=112918141729926320661690172633\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">100% Authentic<\/div>\n              <div class=\"usp-description\">Authenticity assured. Trust secured with a Money-Back Guarantee!<\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n           <div class=\"usp-wrapper\">\n            <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_absolute.svg?v=168286952632929943601690172632\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">Absolute Collections<\/div>\n              <div class=\"usp-description\">Elevate your style with top-tier luxury brands.<\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0516\/0760\/1336\/t\/36\/assets\/usp_return.svg?v=134537498441886691961690964158\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">3-Day Return Free<\/div>\n              <div class=\"usp-description\">Shop with peace of mind with our hassle-free, no-cost 3-day return guarantee! <\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"usp-slide usp-slider-init-items\">\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_costumer.svg?v=45316353090467455191690172633\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">Satisfaction Guaranteed<\/div>\n              <div class=\"usp-description\">Quality guaranteed. Your satisfaction, our promise.<\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_payment.svg?v=100708167687019030861690172634\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">Secure Payment & 0% Installment<\/div>\n              <div class=\"usp-description\">Various payment options including 0% installment plans for stress-free shopping.<\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n          <div class=\"usp-wrapper\">\n            <img src=\"\/\/maisonmw.myshopify.com\/cdn\/shop\/t\/36\/assets\/usp_shipping.svg?v=102019612602572773781690172635\">\n            <div class=\"usp_content\">\n              <div class=\"usp-title\">Free Shipping Nationwide<\/div>\n              <div class=\"usp-description\">Seamless and secure delivery to your doorstep across Indonesia. No Boundaries, No Worries!<\/div>\n              <a href=\"\" class=\"usp-link\" style=\"display: none;\">Learn more<\/a>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/div>\n<script type=\"text\/javascript\">\n  $(document).ready(function(){\n    $('.usp-slider-init').css('display', 'block');\n    $('.usp-slider-init-items').css('display', 'block');\n    $('.slider-usp-js').slick({\n      slidesToShow: 3,\n      slidesToScroll: 3,\n      dots: false,\n      centerMode: false,\n      touchThreshold: 30,\n      responsive: [\n        {\n          breakpoint: 767,\n          settings: {\n            dots: true,\n            slidesToShow: 1,\n            slidesToScroll: 1,\n            arrows: false,\n            autoplay: true,\n            autoplaySpeed: 5000,\n          }\n        }\n      ]\n    });\n  })\n<\/script>",
+          "usebgcolor": false,
+          "usebgcolorfullwidth": false,
+          "bgco": "#ffffff"
+        }
+      },
+      "879c8137-2a54-4060-b4cf-78ac1cd8de1f": {
+        "type": "index-section-custom_html",
+        "custom_css": [
+          "#kayabanners {margin-top: 32px;}",
+          "@media (max-width: 575px) {#kayabanners {margin-top: 32px; }}"
+        ],
+        "settings": {
+          "topoffset": false,
+          "fullwidth": false,
+          "fullwidth2": false,
+          "data": "<div class=\"row\" id=\"kayabanners\">\n    <div class=\"col-12\">\n        <a href=\"\/pages\/voila-kaya\">\n        <img class=\"d-none d-md-block\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0516\/0760\/1336\/files\/Banner-entry-point-kaya-desktop_dc71af2e-3c7f-414d-ba58-7b0dbde16e04.jpg?v=1692696569\" alt=\"kaya-banner-desktop\" style=\"width: 100%\">\n        <img class=\"d-block d-md-none\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0516\/0760\/1336\/files\/banner-entry-point-mobile_1.jpg?v=1692696568\" alt=\"kaya-banner-mobile\" style=\"width: 100%\">\n        <\/a>\n    <\/div>\n<\/div>",
+          "usebgcolor": false,
+          "usebgcolorfullwidth": false,
+          "bgco": "#ffffff"
+        }
+      },
+      "offer-banner": {
+        "type": "offer-banner",
+        "blocks": {
+          "741be276-0391-4b61-867f-b2165ac3abe8": {
+            "type": "offer-banner",
+            "settings": {
+              "img-d": "shopify:\/\/shop_images\/offers_page_homepage3.jpg",
+              "img-m": "shopify:\/\/shop_images\/offers_page_homepage3-m.jpg",
+              "url-banner": "\/blogs\/promotion\/funtastic-payday"
+            }
+          },
+          "f80c9f9c-ecae-433a-bb94-e98009d12044": {
+            "type": "offer-banner",
+            "settings": {
+              "img-d": "shopify:\/\/shop_images\/offers_page_homepage4.jpg",
+              "img-m": "shopify:\/\/shop_images\/offers_page_homepage4-m.jpg",
+              "url-banner": "\/blogs\/bank-promotion"
+            }
+          },
+          "72cdb962-97a4-4005-82f9-77e9898e017f": {
+            "type": "offer-banner",
+            "settings": {
+              "img-d": "shopify:\/\/shop_images\/offers_page_homepage5_5fa30286-5880-45f7-8fb6-4570337e07c5.jpg",
+              "img-m": "shopify:\/\/shop_images\/offers_page_homepage5-m_8e1a18b3-8332-43fa-8362-1ef78985111a.jpg",
+              "url-banner": "\/blogs\/bank-promotion\/voila-digianniv"
+            }
+          }
+        },
+        "block_order": [
+          "741be276-0391-4b61-867f-b2165ac3abe8",
+          "f80c9f9c-ecae-433a-bb94-e98009d12044",
+          "72cdb962-97a4-4005-82f9-77e9898e017f"
+        ],
+        "settings": {
+        }
+      },
+      "offer-first-collection": {
+        "type": "offer-first-collection",
+        "blocks": {
+          "6c6000bb-0cf3-428d-992f-75bf21e521e2": {
+            "type": "collection",
+            "settings": {
+              "t1c": "payday-500",
+              "imgbanner": "shopify:\/\/shop_images\/offers_page_slider3.jpg",
+              "urlto": "\/collections\/payday-500"
+            }
+          },
+          "8693dff1-bc61-4c88-982e-81622cccb768": {
+            "type": "collection",
+            "settings": {
+              "t1c": "payday-1000",
+              "imgbanner": "shopify:\/\/shop_images\/offers_page_slider4.jpg",
+              "urlto": "\/collections\/payday-1000"
+            }
+          }
+        },
+        "block_order": [
+          "6c6000bb-0cf3-428d-992f-75bf21e521e2",
+          "8693dff1-bc61-4c88-982e-81622cccb768"
+        ],
+        "settings": {
+          "gridmode": false
+        }
+      },
+      "offer-second-collection": {
+        "type": "offer-second-collection",
+        "blocks": {
+          "62e577d7-9a03-4100-b485-ba8daab0ebc3": {
+            "type": "grid",
+            "settings": {
+              "imggr": "shopify:\/\/shop_images\/offers_page_hourglass.jpg",
+              "labelgr": "",
+              "titlegr": "BALENCIAGA HOURGLASS",
+              "subtitlegr": "IDR 2 MIO OFF*",
+              "urlgr": "\/collections\/balenciaga-hourglass"
+            }
+          },
+          "ae9510a8-5239-4326-b0d4-601f12997f46": {
+            "type": "grid",
+            "settings": {
+              "imggr": "shopify:\/\/shop_images\/offers_page_hugo-boss.jpg",
+              "labelgr": "",
+              "titlegr": "HUGO BOSS",
+              "subtitlegr": "IDR 200K OFF*",
+              "urlgr": "\/collections\/hugo-boss"
+            }
+          },
+          "a6e24439-978a-4efe-a178-4410a3792b95": {
+            "type": "grid",
+            "settings": {
+              "imggr": "shopify:\/\/shop_images\/offers_page_sac-de-jour.jpg",
+              "labelgr": "",
+              "titlegr": "SAC DE JOUR",
+              "subtitlegr": "IDR 1 MIO OFF*",
+              "urlgr": "\/collections\/sac-de-jour"
+            }
+          },
+          "dc98931e-f16c-4477-8d15-6c9dfefc1872": {
+            "type": "grid",
+            "settings": {
+              "imggr": "shopify:\/\/shop_images\/offers_page_malone.jpg",
+              "labelgr": "",
+              "titlegr": "MALONE SOULIERS",
+              "subtitlegr": "15% OFF*",
+              "urlgr": "\/collections\/malone-souliers"
+            }
+          }
+        },
+        "block_order": [
+          "62e577d7-9a03-4100-b485-ba8daab0ebc3",
+          "ae9510a8-5239-4326-b0d4-601f12997f46",
+          "a6e24439-978a-4efe-a178-4410a3792b95",
+          "dc98931e-f16c-4477-8d15-6c9dfefc1872"
+        ],
+        "settings": {
+          "gridmode": true
+        }
+      },
+      "offer-third-collection": {
+        "type": "offer-third-collection",
+        "settings": {
+          "gridmode": true
+        }
+      },
+      "offer-fourth-collection": {
+        "type": "offer-fourth-collection",
+        "blocks": {
+          "ca63a651-c66c-43e3-870b-c595fc2b7384": {
+            "type": "grid",
+            "settings": {
+              "imggr": "shopify:\/\/shop_images\/offers_page_bankbri.jpg",
+              "labelgr": "",
+              "titlegr": "BRI",
+              "subtitlegr": "SAVE UP TO IDR 1 MIO*",
+              "urlgr": "\/blogs\/bank-promotion\/lucky-payday-with-bri"
+            }
+          },
+          "f55469c8-d04b-47ab-bf06-132cb6d1b6fc": {
+            "type": "grid",
+            "settings": {
+              "imggr": "shopify:\/\/shop_images\/offers_page_bankdbs.jpg",
+              "labelgr": "",
+              "titlegr": "DBS Payday",
+              "subtitlegr": "SAVE UP TO IDR 1,5 MIO*",
+              "urlgr": "\/blogs\/bank-promotion\/funtastic-payday-dbs"
+            }
+          },
+          "4c8f9a77-dca7-416e-a915-77ae47c1ed52": {
+            "type": "grid",
+            "settings": {
+              "imggr": "shopify:\/\/shop_images\/offers_page_bankdbsanniv.jpg",
+              "labelgr": "",
+              "titlegr": "DBS Anniv",
+              "subtitlegr": "SAVE UP TO IDR 600K*",
+              "urlgr": "\/blogs\/bank-promotion\/voila-digianniv"
+            }
+          },
+          "af70eb81-64ce-4ac3-8ae0-25a9a2324e32": {
+            "type": "grid",
+            "settings": {
+              "imggr": "shopify:\/\/shop_images\/offers_page_bankmega.jpg",
+              "labelgr": "",
+              "titlegr": "MEGA",
+              "subtitlegr": "SAVE UP TO IDR 1,25 MIO*",
+              "urlgr": "\/blogs\/bank-promotion\/promo-bank-mega"
+            }
+          },
+          "a01cd9ce-3645-4f9b-9956-fdb65b987824": {
+            "type": "grid",
+            "settings": {
+              "imggr": "shopify:\/\/shop_images\/offers_page_bankmandiri.jpg",
+              "labelgr": "",
+              "titlegr": "MANDIRI",
+              "subtitlegr": "IDR 780K OFF*",
+              "urlgr": "\/blogs\/bank-promotion\/mandiri-independeals"
+            }
+          },
+          "b9461342-a5bf-40a0-8123-ed5a5a7ea23f": {
+            "type": "grid",
+            "settings": {
+              "imggr": "shopify:\/\/shop_images\/offers_page_bankcimb.jpg",
+              "labelgr": "",
+              "titlegr": "CIMB Niaga",
+              "subtitlegr": "SAVE UP TO 100% WITH CIMB NIAGA POINT EXTRA",
+              "urlgr": "\/blogs\/bank-promotion\/cimb-niaga-promo"
+            }
+          }
+        },
+        "block_order": [
+          "ca63a651-c66c-43e3-870b-c595fc2b7384",
+          "f55469c8-d04b-47ab-bf06-132cb6d1b6fc",
+          "4c8f9a77-dca7-416e-a915-77ae47c1ed52",
+          "af70eb81-64ce-4ac3-8ae0-25a9a2324e32",
+          "a01cd9ce-3645-4f9b-9956-fdb65b987824",
+          "b9461342-a5bf-40a0-8123-ed5a5a7ea23f"
+        ],
+        "settings": {
+          "gridmode": true
+        }
+      },
+      "offer-bestdeal": {
+        "type": "offer-bestdeal",
+        "blocks": {
+          "2113a1de-529f-4f74-8b9c-e376aaf0ad53": {
+            "type": "bestdeal",
+            "settings": {
+              "imgbest": "shopify:\/\/shop_images\/offers_page_best_deal3.jpg",
+              "urlbest": "\/collections\/extra-65?sort=number-extra-sort1-descending"
+            }
+          },
+          "fc241c57-0d2e-4de6-ac3e-6626aa968404": {
+            "type": "bestdeal",
+            "settings": {
+              "imgbest": "shopify:\/\/shop_images\/offers_page_best_deal4.jpg",
+              "urlbest": "\/collections\/luxury-watches"
+            }
+          }
+        },
+        "block_order": [
+          "2113a1de-529f-4f74-8b9c-e376aaf0ad53",
+          "fc241c57-0d2e-4de6-ac3e-6626aa968404"
+        ],
+        "settings": {
+        }
+      },
+      "offer-tabs-setting": {
+        "type": "offer-tabs-setting",
+        "settings": {
+          "tab1": false,
+          "tab2": false,
+          "tab3": true,
+          "tab4": false
         }
       }
     },
     "content_for_index": [
       "1530224149715",
-      "1647284255a481870e",
-      "1646905458a97bfb4c",
-      "dbc320e5-7d87-496a-a438-34963680f257",
-      "161209055350e9eca0",
-      "1521704967763",
+      "1521705360339",
       "1616215911af3e5bf0",
-      "1608204347fc626939",
+      "db254884-2eed-4fa0-8b3f-4b4a78c911ee",
+      "977c7537-0ccb-429a-9742-5c9014676735",
+      "8f781e12-84af-4f32-8a42-3f7c562a063e",
+      "1521704967763",
+      "16073349048014e014",
+      "879c8137-2a54-4060-b4cf-78ac1cd8de1f",
+      "1521705177678",
       "1612095521ccec02bd",
       "1612248539a49fbefa",
-      "1521705360339",
-      "1521705177678",
-      "16443032930d6f5f66",
-      "b18e5e5d-28d3-48c2-bfe2-8d582ed7a44e",
-      "164542609332ab1f61",
-      "1521705207815",
+      "164786983444ca73ce",
+      "161209055350e9eca0",
+      "16197524767f4952d2",
       "160834734286428b64",
       "1608178090f2dc0b06",
       "1521705369018",
-      "1619598001e0f32490",
+      "1612092465c79485b1",
+      "fff7265b-1d27-490f-ba60-d9294528e2f8",
+      "7a8cf20b-b867-4691-9389-083737200e92",
+      "9a6c8cc1-5497-4cb2-baa1-25babae54ec7",
       "1521705420393",
-      "2af2961a-6005-4b88-9191-5ca09a2fe0f5",
-      "6f301bd9-cb27-4b5a-b4d3-c026601a8547",
-      "f781db71-12da-49a6-9fb1-59bb11d4a6fc"
+      "1619598001e0f32490",
+      "1647869365be35b989"
     ],
     "blocks": {
+      "1631088999df3e280b": {
+        "type": "shopify:\/\/apps\/seo-manager\/blocks\/seomanager-404\/c54c366f-d4bb-4d52-8d2f-dd61ce8e7e12",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "16310889995a1b8620": {
+        "type": "shopify:\/\/apps\/seo-manager\/blocks\/seomanager\/c54c366f-d4bb-4d52-8d2f-dd61ce8e7e12",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "12429728106950981667": {
+        "type": "shopify:\/\/apps\/blocky-fraud-country-blocker\/blocks\/app-embed\/aa25b3bf-c2c5-4359-aa61-7836c225c5a9",
+        "disabled": false,
+        "settings": {
+        }
+      },
       "16548475241908962911": {
         "type": "shopify:\/\/apps\/oxi-social-login\/blocks\/social-login-embed\/24ad60bc-8f09-42fa-807e-e5eda0fdae17",
         "disabled": false,
         "settings": {
         }
       },
-      "12723626199553905971": {
-        "type": "shopify:\/\/apps\/push-sections\/blocks\/app-embed-stylesheet\/f1ea0cb9-0193-44b7-bab7-d0fd6bec6cbf",
+      "9443034808924953064": {
+        "type": "shopify:\/\/apps\/product-page-banners\/blocks\/app-embed\/9f69bb40-8180-48ba-bb74-93be03aa71d5",
         "disabled": false,
         "settings": {
         }
       },
-      "7046932070715527255": {
-        "type": "shopify:\/\/apps\/push-sections\/blocks\/app-embed-javascript\/f1ea0cb9-0193-44b7-bab7-d0fd6bec6cbf",
-        "disabled": false,
-        "settings": {
-        }
-      },
-      "26b59c2b-3e5b-4ff9-9411-fc47b717fcf8": {
-        "type": "shopify:\/\/apps\/boost-ai-search-discovery\/blocks\/boost-sd\/7fc998ae-a150-4367-bab8-505d8a4503f7",
+      "8857984110089213392": {
+        "type": "shopify:\/\/apps\/hextom-ultimate-sales-boost\/blocks\/usb-embeded-block\/00e81c42-8ae7-4b0b-b43d-99393b885fc4",
         "disabled": true,
         "settings": {
         }

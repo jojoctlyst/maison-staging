@@ -11,7 +11,7 @@
       {%- assign url = 'download_url_' | append: forloop.index -%}
       {%- assign url = footer_additional.settings[url] -%}
       {%- if img != blank -%}
-      <li>
+      <li class="download-item">
         {% if url == blank %}
         <div>
         {% else %}
@@ -39,6 +39,7 @@
 <style>
   .footer_download_list {
     margin-bottom: 16px;
+    border-bottom: 1px solid #EBECEE;
   }
   .tt-download-list {
     display: flex;
@@ -47,18 +48,15 @@
     padding: 0;
   }
   @media (max-width: 575px) {
-    .footer_download_list {
-      display: flex;
-      justify-content: center;
-    }
-    .footer_download_list .footer-additional-title {
-      display: none;
-    }
     .tt-download-list {
-      gap: 20px !important;
+      gap: 4px !important;
       flex-wrap: wrap;
       justify-content: center;
       margin: 8px 0;
+      margin-bottom: 24px;
+    }
+    .tt-download-list li.download-item {
+      margin: 10px;
     }
   }
 </style>

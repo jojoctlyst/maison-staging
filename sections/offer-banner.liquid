@@ -1,0 +1,44 @@
+<div class="voila-slider-banner-js arrow-location-tab arrow-location-banner voila-slider-init ky-mb-0" style="">
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'offer-banner' %}
+    <a class="voila-banner-block" href="{{ block.settings.url-banner }}">
+      <picture>
+        <source media="(max-width: 791px)" srcset="{{ block.settings.img-m | img_url: 'x1500' }}" />
+        <source media="(min-width: 792px)" srcset="{{ block.settings.img-d | img_url: 'x1500' }}" />
+        <img class="ky-w-full" src="{{ block.settings.img-d | img_url: 'x1500' }}" alt="Promo" />
+      </picture>
+    </a>
+  {% endcase %}
+{% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Banner Section",
+    "class": "offer-banner",
+    "blocks": [
+      {
+        "name": "Slide",
+        "type": "offer-banner",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img-d",
+            "label": "Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "img-m",
+            "label": "Mobile Image"
+          },
+          {
+            "type": "text",
+            "id": "url-banner",
+            "label": "Url"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

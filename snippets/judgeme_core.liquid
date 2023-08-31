@@ -14,17 +14,20 @@
 
 
 <script data-cfasync='false' class='jdgm-script'>
-!function(d){window.jdgm=window.jdgm||{},jdgm.CDN_HOST="https://cdn.judge.me/",
-jdgm.docReady=function(e){(d.attachEvent?"complete"===d.readyState:"loading"!==d.readyState)?
-setTimeout(e,0):d.addEventListener("DOMContentLoaded",e)},jdgm.loadCSS=function(e,t,o,a){
-!o&&jdgm.loadCSS.requestedUrls.indexOf(e)>=0||(jdgm.loadCSS.requestedUrls.push(e),
-(a=d.createElement("link")).rel="stylesheet",a.class="jdgm-stylesheet",a.media="nope!",
-a.href=e,a.onload=function(){this.media="all",t&&setTimeout(t)},d.body.appendChild(a))},
-jdgm.loadCSS.requestedUrls=[],jdgm.docReady(function(){(window.jdgmLoadCSS||d.querySelectorAll(
+!function(e){window.jdgm=window.jdgm||{},jdgm.CDN_HOST="https://cdn.judge.me/",
+jdgm.docReady=function(d){(e.attachEvent?"complete"===e.readyState:"loading"!==e.readyState)?
+setTimeout(d,0):e.addEventListener("DOMContentLoaded",d)},jdgm.loadCSS=function(d,t,o,s){
+!o&&jdgm.loadCSS.requestedUrls.indexOf(d)>=0||(jdgm.loadCSS.requestedUrls.push(d),
+(s=e.createElement("link")).rel="stylesheet",s.class="jdgm-stylesheet",s.media="nope!",
+s.href=d,s.onload=function(){this.media="all",t&&setTimeout(t)},e.body.appendChild(s))},
+jdgm.loadCSS.requestedUrls=[],jdgm.loadJS=function(e,d){var t=new XMLHttpRequest;
+t.onreadystatechange=function(){4===t.readyState&&(Function(t.response)(),d&&d(t.response))},
+t.open("GET",e),t.send()},jdgm.docReady((function(){(window.jdgmLoadCSS||e.querySelectorAll(
 ".jdgm-widget, .jdgm-all-reviews-page").length>0)&&(jdgmSettings.widget_load_with_code_splitting?
-jdgm.loadCSS(jdgm.CDN_HOST+"widget/base.css"):jdgm.loadCSS(jdgm.CDN_HOST+"shopify_v2.css"))})}(document);
+parseFloat(jdgmSettings.widget_version)>=3?jdgm.loadCSS(jdgm.CDN_HOST+"widget_v3/base.css"):
+jdgm.loadCSS(jdgm.CDN_HOST+"widget/base.css"):jdgm.loadCSS(jdgm.CDN_HOST+"shopify_v2.css"),
+jdgm.loadJS(jdgm.CDN_HOST+"loader.js"))}))}(document);
 </script>
-<script async data-cfasync="false" type="text/javascript" src="https://cdn.judge.me/loader.js"></script>
 
 <noscript><link rel="stylesheet" type="text/css" media="all" href="https://cdn.judge.me/shopify_v2.css"></noscript>
 <!-- End of Judge.me Core -->

@@ -3,14 +3,14 @@
   <div class="container">
     <div class="tt-login-form">
       <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
+        <div class="col bordered">
           <div class="tt-item">
             <div id="login">
-              <h2 class="tt-title">{{ 'customer.login.title_login' | t }}</h2>
+              <h2 class="tt-title d-none d-md-block">{{ 'customer.login.title_login' | t }}</h2>
 
               <div class="form-default form-top">
-                {% form 'customer_login' %}
-                <div class="tt-base-color">
+                {% form 'customer_login', return_to: '/' %}
+                  <div class="tt-base-color">
                 {{ form.errors | default_errors }}
                 </div>
 
@@ -31,7 +31,7 @@
                   {% if form.password_needed %}
                     <div class="row justify-content-end">
                       <div class="col-auto align-self-end">
-                        <div class="form-group">
+                        <div class="form-group last-form-group">
                           <ul class="additional-links">
                             <li><a href="#" onclick="showRecoverPasswordForm();return false;">{{ 'customer.login.forgot_password' | t }}</a></li>
                           </ul>
@@ -42,28 +42,27 @@
 
                 <div class="row justify-content-center">
                   <div class="col">
-                    <div class="form-group">
-                      <button class="btn btn-primary-green btn-lg btn-block btn-submit" type="submit" id="login-button">{{ 'customer.login.sign_in' | t }}</button>
+                    <div class="form-group last-form-group">
+                      <button class="btn btn-primary-green btn-lg btn-block btn-submit" type="submit" id="btn-login">{{ 'customer.login.sign_in' | t }}</button>
                     </div>
                   </div>
                 </div>
-
 
                 {% endform %}
 
                 <div class="social-login-container">
                   <div class="wrapper">
-                    <div class="row break-line mb-2">
+                    <div class="row break-line">
                       <div class="line"></div>
                       <h2 class="title">atau login dengan</h2>
                       <div class="line"></div>
                     </div>
-                    <div class='row oxi-social-login mb-2'></div>
+                    <div class='row oxi-social-login'></div>
                     <div class="row justify-content-center">
                       <div class="col-auto">
                         <div class="form-group register-label">
                           <div>{{ 'customer.login.new_customer_description' | t }}
-                            <a href="/account/register" class="font-weight-bold"><u>{{ 'customer.login.new_customer_continue' | t }}</u>
+                            <a href="/account/register"><u>{{ 'customer.login.new_customer_continue' | t }}</u>
                             </a>
                           </div>
                         </div>
@@ -75,33 +74,25 @@
             </div>
 
             <div id="recover-password" style="display:none;" class="wrap">
-              <h2 class="tt-title">{{ 'customer.login.reset_password' | t }}</h2>
-              {{ 'customer.login.reset_password_subtext' | t }}
+              <h2 class="tt-title mb-1 d-none d-md-block">{{ 'customer.login.reset_password' | t }}</h2>
+              <div class="mb-2">{{ 'customer.login.reset_password_subtext' | t }}</div>
 
               <div class="form-default form-top">
-                {% form 'recover_customer_password' %}
+                {% form 'recover_customer_password', return_to: '/pages/reset-password-email-send' %}
 
                 <div class="tt-base-color">
                 {{ form.errors | default_errors }}
                 </div>
 
-                <div class="form-group">
-                  <label for="loginInputName">{{ 'customer.login.email' | t }} {% if required != "" %}<sup>*</sup>{% endif %}</label>
-                  {% if required != "" %}<div class="tt-required">{{ required }}</div>{% endif %}
-                  <input value="" name="email" class="form-control" id="loginInputEmail" placeholder="{{ 'customer.login.email_field' | t }}" autocorrect="off" autocapitalize="off">
+                <div class="form-group mb-2">
+                  <input type="email" value="" name="email" class="form-control" id="loginInputEmail" placeholder=" " autocorrect="off" autocapitalize="off" required>
+                  <label for="loginInputEmail">{{ 'customer.login.email' | t }}</label>
                 </div>
                 
-                <div class="row">
-                  <div class="col-auto">
+                <div class="row justify-content-center">
+                  <div class="col">
                     <div class="form-group">
-                      <button class="btn btn-border" type="submit">{{ 'customer.login.submit_recover' | t }}</button>
-                    </div>
-                  </div>
-                  <div class="col-auto align-self-center">
-                    <div class="form-group">
-                      <ul class="additional-links">
-                        <li>&nbsp;{{ 'customer.general.or' | t }} <a href="#" onclick="hideRecoverPasswordForm();return false;">{{ 'customer.login.cancel' | t }}</a></li>
-                      </ul>
+                      <button class="btn btn-primary-green btn-lg btn-block btn-submit" type="button" id="btn-reset-password">{{ 'customer.login.submit_recover' | t }}</button>
                     </div>
                   </div>
                 </div>
@@ -116,47 +107,9 @@
   </div>
 </div>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  dataLayer.push({ ecommerce: null });
-  {% if first_time_accessed %}
-  dataLayer.push({
-    event: "purchase",
-    ecommerce: {
-      transaction_id: "{{ order.order_number }}",
-      value: {{ total_price | times: 0.01 }},
-      tax: {{ tax_price | times: 0.01 }},
-      shipping: {{ shipping_price | times: 0.01 }},
-      currency: "{{ order.currency }}",
-      items: [
-          {% for line_item in line_items %}{
-          item_id: "{{ line_item.product_id }}",
-          item_name: "{{ line_item.title | remove: "'" | remove: '"' }}",
-          currency: "{{ order.currency }}",
-          price: {{ line_item.final_price | times: 0.01 }},
-          quantity: {{ line_item.quantity }}
-        },{% endfor %}
-      ]
-    }
-  });
-  {% endif %}
-</script>
-
 <script type="text/javascript">
-  function showRecoverPasswordForm() {
-    document.getElementById('recover-password').style.display = 'block';
-    document.getElementById('login').style.display='none';
-  }
-
-  function hideRecoverPasswordForm() {
-    document.getElementById('recover-password').style.display = 'none';
-    document.getElementById('login').style.display = 'block';
-  }
-
-  if (window.location.hash == '#recover') { showRecoverPasswordForm() }
-
   const eyeButton = document.getElementById("password-eye-button");
-  eyeButton.onclick = function()  {
+  eyeButton.onclick = function () {
     const eyeOff = '{{ 'eye-close.svg' | asset_url }}';
     const eyeOn = '{{ 'eye-open.svg' | asset_url }}';
     const inputPassword = document.getElementById("loginInputPassword");
@@ -170,24 +123,126 @@
     }
   }
 
+
+  function checkIfEmail(str) {
+    // Regular expression to check if string is email
+    const regexExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
+    return regexExp.test(str);
+  }
+
+  function checkResetPasswordAttempt() {
+    const cookiesName = 'reset_password_attempt';
+    let attempt = $.cookie(cookiesName) || 0;
+    const attemptLimit = 2;
+    return {
+      attempt,
+      isAttemptReach: attempt >= attemptLimit
+    };
+  }
+
+  function showToastResetPassword(callbackBeforeHide) {
+    $.toast({
+      text: "<div class='row'><div class='col'>Anda telah mencapai batas untuk mengatur ulang password. Silakan coba lagi dalam 2 jam.</div></div>",
+      allowToastClose: false,
+      icon: 'info',
+      position: 'top-center',
+      hideAfter: 6000,
+      stack: false,
+      loader: false,
+      beforeHide: () => {
+        if (callbackBeforeHide) {
+          callbackBeforeHide();
+        }
+      },
+    });
+  }
+
+  function onLoadToastResetPassword() {
+    const attemptChecker = checkResetPasswordAttempt();
+    if (attemptChecker.isAttemptReach) {
+      showToastResetPassword();
+    }
+  }
+
+  function resetPasswordAttempt() {
+    const cookiesName = 'reset_password_attempt';
+    const attemptChecker = checkResetPasswordAttempt();
+    let attempt = attemptChecker.attempt;
+    if (!attemptChecker.isAttemptReach) {
+      attempt++;
+      $.cookie(cookiesName, attempt, {expires: 2 / 24, path: '/'});
+      return true;
+    } else {
+      showToastResetPassword();
+      return false;
+    }
+  }
+
+  function generateErrorMessage(message) {
+    const errorsContainer = $('form .tt-base-color');
+    errorsContainer.find('.errors').remove();
+    if (message) {
+      let wrapper = '<ul class="errors"></ul>';
+      wrapper = $(wrapper).append(`<li>${message}</li>`);
+      errorsContainer.append(wrapper);
+    }
+  }
+
+  function resetEmailValidation(email) {
+    let message = '', isValid = true;
+    try {
+      if (email.trim().length === 0) {
+        throw new Error('Email belum terisi');
+      }
+      if (!checkIfEmail(email)) {
+        throw new Error('Format email tidak valid');
+      }
+    } catch (e) {
+      isValid = false;
+      message = e.message;
+    }
+    generateErrorMessage(message);
+    return isValid;
+  }
+
   $(function () {
-    $('#login-button').click( function () {
-      dataLayer.push({ ecommerce: null });
+    $('#btn-reset-password').click(function () {
+      const email = $('#loginInputEmail').val();
+      const isValid = resetEmailValidation(email);
+      if (!isValid) return;
+      $.cookie('reset_password_email', email, {expires: 1 / 24, path: '/'});
+      const redirectTo = '/pages/reset-password-email-send';
+      $('#recover-password input[name=return_to]').val(redirectTo);
+      const checker = resetPasswordAttempt();
+      if (!checker) return false;
+      this.closest('form').submit();
+    });
+  });
+
+  function showRecoverPasswordForm() {
+    document.getElementById('recover-password').style.display = 'block';
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('sticky-header-title').innerHTML = 'Lupa Password';
+  }
+
+  function hideRecoverPasswordForm() {
+    document.getElementById('recover-password').style.display = 'none';
+    document.getElementById('sticky-header-title').innerHTML = 'Login';
+  }
+
+  if (window.location.hash == '#recover') {
+    showRecoverPasswordForm()
+  }
+
+  $(function () {
+    $('#btn-login').click(function () {
+      dataLayer.push({ecommerce: null});
       dataLayer.push({
         event: "login",
         ecommerce: {
           method: "email"
         }
       });
-    console.dir(dataLayer);
     });
-
-    // console.log($('.social_login'))
-
-    $("#social_login_frame").load(function (){
-      $("#social_login_frame").contents().find('.social_login').click(function () {
-        alert(this);
-      })
-    })
-  })
+  });
 </script>

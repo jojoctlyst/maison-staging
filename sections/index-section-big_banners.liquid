@@ -1,6 +1,6 @@
 {%- assign item = section.settings -%}
 <div class="{% if item.top_offset == 'none' %}nomargin {% elsif item.top_offset == 'small' %}tt-offset-small {% endif %}container-indent sectionbigbanners{{ section.id }}">
-  <div class="container">
+  <div class="container{% if item.fullwidth %}-fluid{% endif %}">
     <div class="{% if item.fullwidth %}row{% endif %} no-gutter">
 	  {%- if section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}{%- assign b_i = block.settings -%}

@@ -2,8 +2,12 @@
 Documentation - http://docs.shopify.com/support/your-website/navigation/creating-a-breadcrumb-navigation
 {%- endcomment -%}
 
-{%- unless template == 'index' or template == 'customers/login' or template == 'customers/register'   -%}
-<div class="tt-breadcrumb no-translate">
+{% if template == 'customers/login' or template == 'customers/register' or template == 'customers/reset_password' or template == 'page.forgot-password-success' or template == 'customers/addresses' %}
+  {%- assign header_hidden_class = 'hidden-header' -%}
+{% endif %}
+
+{%- unless template == 'index' -%}
+<div class="tt-breadcrumb no-translate {{ header_hidden_class }}">
   <div class="container">
     <ul>
       <li><a href="/">Home</a></li>
@@ -28,11 +32,14 @@ Documentation - http://docs.shopify.com/support/your-website/navigation/creating
       {%- elsif template == 'article' -%}
       <li><a href="{{ blog.url }}">{{ blog.title }}</a></li>
       <li>{{ article.title }}</li>
-      {%- elsif template contains 'customers' and template != "customers/account" -%}
+      {%- elsif template contains 'customers' or template == 'page.forgot-password-success' and template != "customers/account" -%}
       {%- assign account = 'customer.account.title_main' | t -%}
       <li>{{ account | capitalize | link_to: "/account" }}</li>
-      <li>{{ page_title }}</li>
-
+        {% if template == 'page.forgot-password-success' %}
+          <li>Akun</li>
+          {% else %}
+          <li>{{ page_title }}</li>
+          {% endif %}
       {%- elsif template contains 'page' -%}
       <li>{{ page.title }}</li>
 

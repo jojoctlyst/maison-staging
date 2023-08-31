@@ -1,52 +1,45 @@
-{% for block in section.blocks %}
-  {% case block.type %}
-    {% when 'faq' %}
-      <div class="question" {{ block.shopify_attributes }}>
-        Q: {{ block.settings.question }}
-      </div>
-      <div class="answer" {{ block.shopify_attributes }}>
-        A: {{ block.settings.answer }}
-      </div>
-      <hr>
-  {% endcase %}
-{% endfor %}
+<ul class="ky-font-medium ky-text-sm ky-w-full">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'faq' %}
+      <li class="ky-rounded-md {% unless forloop.last %} ky-mb-4 {% endunless %} ky-bg-white ky-border ky-border-grey3 ky-w-full">
+        <div class="ky-p-4 ky-flex ky-justify-between ky-items-center ky-cursor-pointer ky-collapse-header">
+          <p class="ky-pr-4">{{ block.settings.question }}</p>
+          <img class="ky-faq-plus-js" src="{{ 'kaya_plus.svg' | asset_url }}">
+          <svg class="ky-faq-minus-js ky-flex-none" width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 12px;">
+            <path d="M12 0H0V2H12V0Z" fill="#12784A"/>
+          </svg>
+        </div>
+        <div class="ky-text-main ky-p-4 ky-font-normal ky-border-t ky-border-grey3 ky-collapse-item" style="display:none;">
+          <p>{{ block.settings.answer }}</p>
+        </div>
+      </li>
+    {% endcase %}
+  {% endfor %}
+</ul>
 
 {% schema %}
-{
-  "name": "FAQ name",
-  "tag": "section",
-  "class": "faq",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "FAQ Title",
-      "default": "Frequently Asked Questions"
-    },
-    {
-      "type": "text",
-      "id": "xxx",
-      "label": "testing",
-      "default": "Fredds"
-    }
-  ],
-  "blocks": [
-     {
-       "name": "FAQ block",
-       "type": "faq",
-       "settings": [
-         {
-           "type": "text",
-           "id": "question",
-           "label": "Question"
-         },
-         {
-           "type": "text",
-           "id": "answer",
-           "label": "Answer"
-         }
-       ]
-     }
-   ]
-}
+  {
+    "name": "FAQ Section",
+    "class": "faqs",
+    "settings": [],
+    "blocks": [
+       {
+         "name": "FAQ",
+         "type": "faq",
+         "settings": [
+           {
+             "type": "text",
+             "id": "question",
+             "label": "Question"
+           },
+           {
+             "type": "textarea",
+             "id": "answer",
+             "label": "Answer"
+           }
+         ]
+       }
+     ]
+  }
 {% endschema %}

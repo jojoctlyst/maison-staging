@@ -1,0 +1,158 @@
+{% assign countBlock = 0 %}
+{% for block in section.blocks %}
+  {% assign countBlock = countBlock | plus: 1 %}
+{% endfor %}
+
+{% if section.settings.gridmode %}
+  <div id="tab-anchor-2" class="tab-anchor ky-grid ky-gap-4 md:ky-gap-x-6 md:ky-gap-y-8 
+    {% if countBlock == 4 %} 
+      ky-grid-cols-2 md:ky-grid-cols-4 
+    {% elsif countBlock == 2  %} 
+      ky-gridflex-2
+    {% elsif countBlock == 1 %} 
+      ky-gridflex-1
+    {% else  %} 
+      ky-grid-cols-2 md:ky-grid-cols-3
+    {% endif %}">
+{% endif %}
+
+  {%- assign index = 0 -%}
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'collection' %}
+        <div class="voila-slider initration{{index}} ky-pb-4 md:ky-py-0 {% if index == 0 %} ky-mb-4 md:ky-mb-10 tab-anchor {% endif %}" {% if index == 0 %} id="tab-anchor-2" {% endif %}>
+          <div class="voila-slider-sale-js arrow-location-tab voila-slider-init">
+            <a class="ky-inline-block" href="{{ block.settings.urlto }}">
+              <div class="ky-min-h-full md:ky-min-h-400 ky-h-full ky-bg-cover ky-bg-center" style="background-image: url({{ block.settings.imgbanner | img_url: 'large' }}); height: inherit;display: flex;width: 100%;"></div>
+            </a>
+
+            {%- assign handle = block.settings.t1c -%}
+            {% for product in collections[handle].products limit: 15 %}
+            <a class="ky-inline-block" href="{{ product.url }}">
+              <div class="ky-min-h-0 md:ky-min-h-400 ky-w-full">
+                <div class="ky-flex ky-items-center ky-min-h-155 md:ky-min-h-300 ky-mb-2 md:ky-mb-4">
+                  <picture>
+                    <source media="(max-width: 791px)" srcset="{{ product.featured_image | product_img_url: '280x310' }}" />
+                    <source media="(min-width: 792px)" srcset="{{ product.featured_image | product_img_url: '530x600' }}" />
+                    <img class="ky-w-full ky-mb-2 md:ky-mb-4" src="{{ product.featured_image | product_img_url: '530x600' }}" alt="{{ product.title | escape  }}" />
+                  </picture>
+                </div>
+                <div class="ky-text-sm">
+                    <div class="ky-text-xs md:ky-text-sm ky-font-bold ky-mb-2 voila-ellipsis1">{{ product.vendor }}</div>
+                    <div class="ky-text-xs md:ky-text-sm ky-mb-2 md:ky-mb-4 ky-text-black60 voila-ellipsis1-m2">
+                      {{ product.title }}
+                    </div>
+                    {%- assign compare-price = product.compare_at_price | money_without_currency  -%}
+                    {%- assign price = product.price | money_without_currency  -%}
+                    <div class="ky-block md:ky-flex ky-text-xs md:ky-text-base">
+                      <strong class="ky-text-primary ky-font-bold ky-mr-2 ky-mb-1 md:ky-mb-0 ky-block">IDR. {{ price }}</strong>
+                      {% if product.compare_at_price != product.price %}
+                        <div class="ky-text-black60 ky-line-through">IDR. {{ compare-price }}</div>
+                      {% endif %}
+                    </div>
+                  </div>
+              </div>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% when 'grid' %}
+        <a href="{{ block.settings.urlgr }}" class="ky-text-black90 hover:ky-text-primary">
+          <div class="ky-h-220 {% if countBlock == 4 %} md:ky-h-330 {% else %} md:ky-h-450 {% endif %} ky-bg-cover ky-bg-center" style="background-image: url({{ block.settings.imggr | img_url: 'x450' }});"></div>
+          <!-- ky-min-h-145 md:ky-min-h-150 -->
+          <div class="ky-p-3 md:ky-p-4 ky-border ky-border-grey3  ky-min-h-145 md:ky-min-h-auto">
+            <div class="ky-flex" style="display: none;">
+              <span style="display: none;" class="ky-bg-vgreen1 ky-text-primary ky-font-medium ky-text-xs2 md:ky-text-xs1 ky-px-2 ky-py-1.5 ky-mb-4 ky-inline-block ky-mr-2">{{ block.settings.labelgr }}</span>
+            </div>
+            <div class="ky-font-medium ky-text-sm md:ky-text-lg ky-mb-2 voila-ellipsis2">{{ block.settings.titlegr }}</div>
+            <div class="ky-text-xs md:ky-text-sm voila-ellipsis1 hover:ky-text-primary">{{ block.settings.subtitlegr }}</div>
+          </div>
+        </a>
+    {% endcase %}
+    {%- assign index = 0 | plus: 1 -%}
+  {% endfor %}
+
+
+{% if section.settings.gridmode %}
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Featured Brands Tab",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "gridmode",
+        "default": true,
+        "label": "Use Grid layout"
+      }
+    ],
+   "blocks": [
+      {
+         "name": "Collection",
+         "type": "collection",
+         "settings": [
+            {
+              "type": "collection",
+              "id": "t1c",
+              "label": "Select Collection"
+            },
+            {
+              "type": "image_picker",
+              "id": "imgbanner",
+              "label": "Banner"
+            },
+            {
+              "type": "text",
+              "id": "urlto",
+              "label": "Url"
+            }
+         ]
+       },
+      {
+         "name": "Grid",
+         "type": "grid",
+         "settings": [
+            {
+              "type": "image_picker",
+              "id": "imggr",
+              "label": "Image"
+            },
+            {
+              "type": "textarea",
+              "id": "labelgr",
+              "label": "Label"
+            },
+            {
+              "type": "text",
+              "id": "titlegr",
+              "label": "Title"
+            },
+            {
+              "type": "text",
+              "id": "subtitlegr",
+              "label": "Subtitle"
+            },
+            {
+              "type": "text",
+              "id": "urlgr",
+              "label": "Url"
+            }
+         ]
+       }
+    ],
+    "presets": [
+      {
+        "name": "second tab wrapper"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+

@@ -1,5 +1,9 @@
-{%- if subscribe_form != '' and subscribe_form.settings.show_content -%}
-<div class="tt-footer-custom">
+{%- assign footer_hidden = false -%}
+{% if template == 'customers/login' or template == 'customers/register' or template == 'customers/reset_password' or template == 'page.forgot-password-success' %}
+    {%- assign footer_hidden = true -%}
+{% endif %}
+{%- if footer_hidden == false and subscribe_form != '' and subscribe_form.settings.show_content -%}
+<div class="tt-footer-custom {% if template == 'cart' %} hide-footer-cart {% endif %}">
   <div class="container{% if item.fullwidth %}-fluid-custom-mobile-padding container-fluid-custom{% endif %}">
     <div class="footer-wrapper">
       <h4 class="tt-collapse-title text-first">
@@ -12,24 +16,27 @@
       <div class="tt-collapse-content">
         <div class="form-default">
           {%- if settings.use_mailchimp_form -%}
-          {%- if settings.mailchimp_form_action != "" -%}
-          <form action="{{ settings.mailchimp_form_action }}" method="post" name="mc-embedded-subscribe-form" target="_blank" class="form-inline form-default">
-            <div class="form-group custom-form">
-              <input type="email" name="EMAIL" class="form-control" placeholder="{{ subscribe_form.settings.text4 }}">
-              <button type="submit" class="btn">{{ subscribe_form.settings.text3 }}</button>
-            </div>
-          </form>
+            {%- if settings.mailchimp_form_action != "" -%}
+              <form action="{{ settings.mailchimp_form_action }}" method="post" name="mc-embedded-subscribe-form" target="_blank" class="form-inline form-default">
+                <div class="form-group custom-form">
+                  <input type="email" name="EMAIL" class="form-control" placeholder="{{ subscribe_form.settings.text4 }}">
+                  <button type="submit" class="btn">{{ subscribe_form.settings.text3 }}</button>
+                </div>
+              </form>
+            {%- else -%}
+            <strong>
+              <u>
+                <a href="{{ shop.url }}/admin/themes" style="color: black;">
+                  Add newsletter redirect link in:<br>
+                  Customize Theme / General Settings / Newsletter / MailChimp form action URL
+                </a>
+              </u>
+            </strong>
+            {%- endif -%}
           {%- else -%}
-          <strong><u><a href="{{ shop.url }}/admin/themes" style="color: black;">
-            Add newsletter redirect link in:<br>
-            Customize Theme / General Settings / Newsletter / MailChimp form action URL
-            </a></u></strong>
-          {%- endif -%}
-
-          {%- else -%}
-          {%- form 'customer' -%}
-          {{ form.errors | default_errors }}
-          {%- if form.posted_successfully? -%}
+            {%- form 'customer' -%}
+              {{ form.errors | default_errors }}
+            {%- if form.posted_successfully? -%}
 
           {%- endif -%}
           <div class="form-group custom-form ">
@@ -37,7 +44,6 @@
             <input type="email"
                    name="contact[email]"
                    class="form-control"
-                   value="{% if customer %}{{ customer.email }}{% endif %}"
                    placeholder="{{ subscribe_form.settings.text4 }}"
                    autocomplete="off"
                    autocapitalize="off"
@@ -58,11 +64,12 @@
   }
   .tt-footer-custom .footer-wrapper {
     text-align: center;
-/*     padding-top: 40px;
-    border-top: 1px solid rgba(54, 65, 88, 0.1); */
+    /* padding-top: 40px; */
+    /* border-top: 1px solid rgba(54, 65, 88, 0.1); */
     color: #364158;
   }
   .tt-footer-custom {
+    padding-top: 60px !important;
     padding-bottom: 70px !important;
     border-bottom: 1px solid rgba(54, 65, 88, 0.1);
   }
@@ -83,7 +90,7 @@
     margin: 0 auto;
     max-width: 487px;
     display: flex;
-    padding: 4px;
+    padding: 3px 4px;
     border: 1px solid #516272;
     border-radius: 4px;
   }
@@ -115,7 +122,7 @@
       margin-top: 16px;
     }
     .tt-footer-custom .custom-form .form-control, .tt-footer-custom .custom-form .footer_subscribe_btn {
-      height: 56px !important;
+      /*height: 56px !important;*/
     }
     .tt-footer-custom .custom-form .footer_subscribe_btn {
       font-size: 16px;
@@ -125,4 +132,3 @@
 
 </style>
 {%- endif -%}
-

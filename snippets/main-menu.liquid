@@ -37,7 +37,7 @@
       {%- assign level_2 = linklists[secondlevel] -%}
       {%- endif -%}
     
-    <li class="dropdown{% if link.active %} selected{% endif %}{% if submenu_type == 'menu_two_columns' %} tt-megamenu-col-02{% elsif submenu_type == 'megamenu' %} megamenu{% else %} tt-megamenu-col-01{% endif %}{% unless level_2.empty? %}{% if settings.use_submemu_arrows %} submenuarrow{% endif %}{% endunless %}" {{ block.shopify_attributes }}>
+    <li class="dropdown{% if link.active %} selected{% endif %}{% if submenu_type == 'menu_two_columns' %} tt-megamenu-col-02{% elsif submenu_type == 'megamenu' or submenu_type == 'menu_banner' %} megamenu{% else %} tt-megamenu-col-01{% endif %}{% unless level_2.empty? %}{% if settings.use_submemu_arrows %} submenuarrow{% endif %}{% endunless %}" {{ block.shopify_attributes }}>
       <a href="{{ link.url }}"><span>{{ link.title }}</span></a>
 
       {%- unless level_2.empty? -%}
@@ -52,6 +52,10 @@
       
       {%- if submenu_type == 'megamenu' -%}
       	{%- include 'main-submenu-megamenu' -%}
+      {%- endif -%}
+      
+      {%- if submenu_type == 'menu_banner' -%}
+      	{%- include 'main-submenu-megabanner' -%}
       {%- endif -%}
       
       {%- endunless -%}

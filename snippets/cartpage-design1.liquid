@@ -1,308 +1,424 @@
+<style type="text/css">
+  /* tt-shopcart-box */
+  .tt-shopcart-box .form-default textarea.form-control {
+    background: #fff;
+  }
+
+  .tt-shopcart-table01 tfoot tr th,
+  .tt-shopcart-table01 tfoot tr td{
+    padding: 6px 0;
+  }
+
+  .tt-shopcart-table01 tfoot tr th{
+    font-size: 24px;
+    font-size: 18px;
+    padding-top: 5px;
+    font-weight: 400;
+  }
+
+  .tt-shopcart-table01 tfoot tr td{
+    font-size: 18px;
+    color:{{ color_base }};
+    font-weight: {{ fontboldvalue }};
+    text-align: right;
+    padding: 0px 0;
+  }
+
+  .tt-shopcart-table-02 .tt-btn-close{
+    font-family: 'wokiee_icons';
+    color:{{ color_title }};
+    font-size: 20px;
+    line-height: 20px;
+    display: inline-block;
+    -moz-transition: color 0.2s linear;
+    -o-transition: color 0.2s linear;
+    -webkit-transition: color 0.2s linear;
+    transition: color 0.2s linear;
+  }
+
+
+  .tt-shopcart-table-02 .tt-input-counter-wrapper {
+    position: relative;
+  }
+  .tt-shopcart-table-02 .tt-input-left,
+  .tt-shopcart-table-02 .tt-input-left-mobile {
+    color: #E02D00;
+    font-size: 14px;
+    text-align: center; 
+    max-width: 132px;
+    min-width: 132px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .tt-shopcart-table-02 .tt-input-left-mobile {
+    text-align: left; 
+    justify-content: start;
+  }
+  .tt-shopcart-table-02 .tt-input-left span {
+    position: absolute;
+    top: 8px;
+  }
+  .tt-shopcart-table-02 .tt-input-left-mobile span {
+    margin-top: 8px;
+  }
+  .tt-shopcart-table-02 .tt-shopcart-btn{
+    display: -ms-flexbox;
+    margin-top: 32px;
+    margin-bottom: 30px;
+  }
+  .tt-note {
+    margin-top: 20px;
+    position: relative;
+  }
+  .tt-note textarea {
+    border: 1px solid #e9e7e7;
+    border-radius: 8px;
+  }
+  .tt-note label {
+    background-color: white;
+    width: calc( 100% - 4px );
+    font-size: 14px;
+    position: absolute;
+    padding: 12px 16px 5px;
+    top: 1px;
+    left: 16px;
+    margin-left: -14px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .tt-shopcart-col .form-control:focus {
+    border: 2px solid #12784A;
+    box-shadow: none;
+  }
+  .tt-shopcart-col .form-control:focus + label{
+    top: 2px;
+  }
+  .tt-shopcart-col .form-control {
+    height: 137px;
+    padding: 40px 16px 12px 16px;
+    font-size: 16px;
+  }
+  .tt-input-counter.style-01 .del-btn:before {
+    display: block;
+    font-family: "wokiee_icons";
+    font-size: 12px;
+    line-height: 40px;
+    content: "\e9b2";
+  }
+  .tt-input-counter.style-01 a.del-btn {
+    left: 0px;
+  }
+  .tt-input-counter.style-01 a {
+    display: inline-block;
+    font-size: 27px;
+    line-height: 1em;
+    cursor: pointer;
+    position: absolute;
+    width: 49px;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    color: var(--p-text, #212b36);
+  }
+
+  @media (min-width: 790px){
+    .tt-shopcart-table-02 table tr:first-child {
+      border-top: 0;
+      position: relative;
+    }
+    .tt-shopcart-table-02 table tr:last-child{
+      border-bottom: 0;
+    }
+    .tt-shopcart-table-02 .tt-input-left-mobile {
+      display: none;
+    }
+    .tt-shopcart-table-02 {
+      border-top: 1px solid #e9e7e7;
+    }
+  }
+
+  @media (min-width: 576px){
+    .tt-shopcart-col .tt-shopcart-box{
+      padding: 16px
+    }
+  }
+
+  @media (max-width: 575px) {
+    .tt-shopcart-col {
+      margin-top: 0;
+    }
+    .tt-shopcart-table-02 .tt-input-left-mobile {
+      font-size: 13px;
+      max-width: 80px;
+      min-width: 80px;
+    }
+  }
+  @media (max-width: 789px) {
+    .pagecart .wa-splmn-chat-btn-offset {
+      bottom: 137px;
+    }
+
+    .tt-shopcart-table-02 table td:nth-child(1) {
+      width: 121px;
+    }
+    .tt-shopcart-table-02 .tt-price-subtotal {
+      display: none;
+    }
+    .tt-shopcart-table-02 table tr td {
+      vertical-align: top;
+    }
+    .tt-shopcart-table-02 .tt-shopcart-btn{
+      display: -ms-flexbox;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .tt-shopcart-col .tt-shopcart-box{
+      position: fixed;
+      bottom: 0;
+      background-color: white;
+      z-index: 9999;
+      width: 100%;
+      margin: 0;
+      margin-left: -16px;
+      border-radius: 0;
+      border: 0;
+      box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  .tt-shopcart-col .tt-shopcart-box{
+    margin-top: 20px;
+    border-radius: 8px;
+  }
+</style>
+
 <div class="container-indent">
-    <div class="container">
-        <form action="/cart" method="post" novalidate id="updateform" class="limoniapps-discountninja-cart-root">
-            <h1 class="tt-title-subpages noborder">{{ 'cart.general.title' | t }}</h1>
-            <div class="tt-shopcart-table-02">
-                <table>
-                    <tbody>
-                    {% assign wcp_total_price = 0 %}
-                    {%- for item in cart.items -%}
-                        {% assign variants = item.variant %}
-                        {%- include 'wcp_discount' with item.product -%}
-                        {%- include 'wcp_variant' with item.variant -%}
-                        {% include 'wcp_vd_discount' with item %}
-                        {% assign wcp_custom_final_Price = item.final_price %}
-                        {% if wcp_v_price < wcp_custom_final_Price %}
-                            {% assign wcp_line_price = wcp_v_price | floor | minus: 0 | times: item.quantity %}
-                        {% else %}
-                            {% assign wcp_v_price = wcp_custom_final_Price | floor | minus: 0 %}
-                            {% assign wcp_line_price = wcp_custom_final_Price | floor | minus: 0 | times: item.quantity %}
-                        {% endif %}
-                        {% assign wcp_total_price = wcp_total_price | plus: wcp_line_price %}
-                        {{ NextDiscountHtml }}
+  <div class="container">
+    <form action="/cart" method="post" novalidate id="updateform">
+      <h1 class="tt-title-subpages noborder">{{ 'cart.general.title' | t }}</h1>
 
-                        {%- assign inv_man = item.variant.inventory_management -%}{%- assign inv_qua = item.variant.inventory_quantity | plus: 0 -%}{%- unless inv_man -%}{%- assign inv_qua = 100000 -%}{%- endunless -%}{%- if item.variant.available and inv_qua <= 0 -%}{%- assign inv_qua = 100000 -%}{%- endif -%}
-                        <tr>
-                            <td>
-                                <div class="tt-product-img">
-                                    <img src="{{ item | img_url: 'medium' }}" alt="{{ item.alt | escape }}">
-                                </div>
-                            </td>
-                            <td>
-                                <h2 class="tt-title">
-                                    <a href="{{ item.url }}">{{ item.product.title }}</a>
-                                    {%- unless item.variant.title contains 'Default' -%}
-                                        <p>
-                                            {%- for option in item.product.options -%}
-                                                {{ option }}: {{ item.variant.options[forloop.index0] }}<br/>
-                                            {%- endfor -%}
-                                        </p>
-                                    {%- endunless -%}
-                                </h2>
-                                <ul class="tt-list-parameters">
-                                    <li>
-                                        <div
-                                                class="tt-price limoniapps-discountninja-cart-item-product-price"
-                                                data-limoniapps-discountninja-cart-key="{{ item.key }}"
-                                        >
-                                            {{ wcp_v_price | money }}
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="detach-quantity-mobile"></div>
-                                    </li>
-                                    <li>
-                                        <div
-                                                class="tt-price subtotal limoniapps-discountninja-cart-item-line-price"
-                                                data-limoniapps-discountninja-cart-key="{{ item.key }}"
-                                        >
-                                            {{ wcp_line_price | money }}
-                                        </div>
-                                    </li>
-                                </ul>
-                            </td>
-                            <td>
-                                <div
-                                        class="tt-price limoniapps-discountninja-cart-item-product-price"
-                                        data-limoniapps-discountninja-cart-key="{{ item.key }}"
-                                >
-                                    {{ wcp_v_price | money }}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="detach-quantity-desctope">
-                                    <div class="tt-input-counter style-01 input-counter">
-                                        <span class="minus-btn"{% if item.quantity == 1 %} style="display: none;"{% endif %}></span>
-                                        <input{% if inv_qua == 1 %} disabled{% endif %} type="text" name="updates[]"
-                                                                                        id="updates_{{ item.id }}"
-                                                                                        value="{{ item.quantity }}"
-                                                                                        size="{{ inv_qua }}"
-                                                                                        title="{% if inv_qua < 100000 %}{{ inv_qua }} {{ 'products.product.in_stock' | t }}{% else %}{{ 'products.product.many_in_stock' | t }}{% endif %}">
-                                        <span class="plus-btn"
-                                              title="{% if inv_qua < 100000 %}{{ inv_qua }} {{ 'products.product.in_stock' | t }}{% else %}{{ 'products.product.many_in_stock' | t }}{% endif %}"
-                          {% if item.quantity == inv_qua %} style="display: none;"{% endif %}
-                          ></span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div
-                                        class="tt-price subtotal limoniapps-discountninja-cart-item-line-price"
-                                        data-limoniapps-discountninja-cart-key="{{ item.key }}"
-                                >
-                                    {{ wcp_line_price | money }}
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
-                                   class="tt-btn-close svg-icon-delete js-deleteitem-ajax btn-delete-item-cart"
-                                   title="{{ 'cart.header.button_delete' | t }}" data-line="{{ forloop.index }}">
-                                    {% include "svg-delete-icon" %}
-                                </a>
-                            </td>
-                        </tr>
-                    {%- endfor -%}
-                    </tbody>
-                </table>
+      <div class="tt-shopcart-table-02">
 
-                <div class="tt-shopcart-btn">
-                    <div class="col-left">
-                        <a class="btn-link" href="/"><i class="icon-e-09"></i>{{ 'cart.general.continue_shopping' | t }}
-                        </a>
+        <div class="tt-shopcart-btn hide">
+          <div class="col-left">
+            <a class="btn-link" href="/"><i class="icon-e-09"></i>Lanjutkan Belanja</a>
+          </div>
+          <div class="col-right">
+            <a class="btn-link svg-icon-delete-inline"
+               href="/cart/clear">
+              {% include "svg-delete-icon" %}{{ 'cart.general.clear_cart' | t }}
+            </a>
+            {% unless item.ajaxcartpage %}
+            <a class="btn-link" href="#" name="update"><i class="icon-e-17"></i>{{ 'cart.general.update' | t }}</a>
+            {% endunless %}
+          </div>
+        </div>
+
+        <table>
+          <tbody>
+            {% assign wcp_total_price = 0 %} 
+            {%- for item in cart.items -%}
+              {%- include 'wcp_discount' with item.product -%}
+              {%- include 'wcp_variant' with item.variant -%} 
+              {% include 'wcp_vd_discount' with item %} 
+              {% assign  wcp_custom_final_Price = item.final_price  %} 
+              
+              {% if wcp_v_price < wcp_custom_final_Price %}
+                {% assign wcp_line_price = wcp_v_price | floor | minus: 0 | times: item.quantity %}
+              {% else %}
+                {% assign wcp_v_price = wcp_custom_final_Price | floor | minus: 0 %}
+   	            {% assign wcp_line_price = wcp_custom_final_Price | floor | minus: 0 | times: item.quantity %}
+              {% endif %}
+
+              {% assign wcp_total_price = wcp_total_price | plus: wcp_line_price %}	
+              {{NextDiscountHtml}} 
+
+              {%- assign inv_man = item.variant.inventory_management -%}{%- assign inv_qua = item.variant.inventory_quantity | plus: 0 -%}{%- unless inv_man -%}{%- assign inv_qua = 100000 -%}{%- endunless -%}{%- if item.variant.available and inv_qua <= 0 -%}{%- assign inv_qua = 100000 -%}{%- endif -%}
+              <tr>
+                <td>
+                  <div class="tt-product-img">
+                    <img src="{{ item | img_url: 'medium' }}" alt="{{ item.alt | escape }}">
+                  </div>
+                </td>
+                <td>
+                  <h2 class="tt-title">
+                    <a href="{{ item.url }}">{{ item.product.title }}</a>
+                    {%- unless item.variant.title contains 'Default' -%}
+                    <p>
+                      {%- for option in item.product.options -%}
+                      {{ option }}: {{ item.variant.options[forloop.index0] }}<br/>
+                      {%- endfor -%}
+                    </p>
+                    {%- endunless -%}
+                  </h2>
+                  <ul class="tt-list-parameters">
+                    <li>
+                      <div class="tt-price">{{ wcp_v_price  | money}}</div>
+                    </li>
+                    <li>
+                      <div class="detach-quantity-mobile"></div>
+                      {% if inv_qua <= 1 %}
+                      <div class="tt-input-left-mobile">
+                        <span>Sisa {{ inv_qua }}</span>
+                      </div>
+                      {% endif %}
+                    </li>
+                    <li class="tt-price-subtotal">
+                      <div class="tt-price subtotal">{{ wcp_line_price  | money}}</div>
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="tt-price">{{ wcp_v_price  | money}}</div>
+                </td>
+                <td>
+                  <div class="detach-quantity-desctope tt-input-counter-wrapper">
+                    <div class="tt-input-counter style-01 input-counter {% if item.quantity == inv_qua %}max-qty-btn{% endif %}">
+                      <span class="minus-btn" {% if item.quantity == 1 %}style="display: none;"{% endif %}></span>
+                      <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="del-btn js-deleteitem-ajax" title="{{ 'cart.header.button_delete' | t }}" data-line="{{ forloop.index }}" {% if item.quantity != 1 %}style="display: none;"{% endif %}>
+                      </a>
+                      <input readonly type="text" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" size="{{ inv_qua }}" title="{% if inv_qua < 100000 %}{{inv_qua}} {{ 'products.product.in_stock' | t }}{% else %}{{ 'products.product.many_in_stock' | t }}{% endif %}">
+                      <span class="plus-btn"
+                            title="{% if inv_qua < 100000 %}{{inv_qua}} {{ 'products.product.in_stock' | t }}{% else %}{{ 'products.product.many_in_stock' | t }}{% endif %}"
+                            ></span>
                     </div>
-                    <div class="col-right">
-                        <a class="btn-link svg-icon-delete-inline"
-                           href="/cart/clear">
-                            {% include "svg-delete-icon" %}{{ 'cart.general.clear_cart' | t }}
-                        </a>
-                        {% unless item.ajaxcartpage %}
-                            <a class="btn-link" href="#" name="update"><i
-                                        class="icon-e-17"></i>{{ 'cart.general.update' | t }}</a>
-                        {% endunless %}
-                    </div>
-                </div>
+                    {% if inv_qua <= 1 %}
+                      <div class="tt-input-left">
+                        <span>Sisa {{ inv_qua }}</span>
+                      </div>
+                    {% endif %}
+                  </div>
+                </td>
+                <td>
+                  <div class="tt-price subtotal">{{ wcp_line_price  | money}}</div>
+                </td>
+                <td>
+                  <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="tt-btn-close svg-icon-delete js-deleteitem-ajax" title="{{ 'cart.header.button_delete' | t }}" data-line="{{ forloop.index }}">
+                    {% include "svg-delete-icon" %}
+                  </a>
+                </td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+
+      </div>
+      <div class="tt-shopcart-col">
+        <div class="row">
+          {%- if item.cart_shipping_enable -%}
+          <div class="col-md-6 col-lg">
+            <div class="tt-shopcart-box">
+              {%- include 'shipping-calculator' -%}
             </div>
-            <div class="tt-shopcart-col">
-                <div class="row">
-                    {%- if item.cart_shipping_enable -%}
-                        <div class="col-md-6 col-lg">
-                            <div class="tt-shopcart-box">
-                                {%- include 'shipping-calculator' -%}
-                            </div>
-                        </div>
-                    {%- endif -%}
-                    {%- if item.cart_notes_enable -%}
-                        <div class="col-md col-lg">
-                            <div class="tt-shopcart-box">
-                                <h4 class="tt-title">{{ 'cart.label.note' | t }}</h4>
-                                <p>{{ 'cart.label.note_text' | t }}</p>
-                                <div class="form-default">
-                                    <textarea id="note" name="note" class="form-control"
-                                              rows="7">{{ cart.note }}</textarea>
-                                </div>
-                            </div>
-                        </div>
-                    {%- endif -%}
-                    {%- if item.cart_notes_enable == false and item.cart_shipping_enable == false -%}
-                        <div class="col-md-6 col-lg-6">
-                        </div>
-                    {%- endif -%}
-                    <div class="col-md-6 {% if item.cart_notes_enable == false and item.cart_shipping_enable == false %}col-lg-6{% else %}col-lg{% endif %}">
-                        <div class="tt-shopcart-box tt-boredr-large">
-                            <table class="tt-shopcart-table01">
-                                <tbody>
-                                <tr id="subtotal">
-                                    <th>{{ 'cart.general.subtotal' | t }}</th>
-                                    <td>
-                                        <span class="wcp-original-cart-total limoniapps-discountninja-cart-subtotal-price">{{ cart.total_price | money }}</span>
-                                        <span class="wcp-cart-total" wcp=''></span>
-                                    </td>
-                                </tr>
-                                <tr id="tax" style="display:none">
-                                    <th>{{ 'cart.general.shipping_total' | t }}</th>
-                                    <td>{{ 0 | money }}</td>
-                                </tr>
-                                </tbody>
-                                <tfoot>
-                                <tr id="grandtotal">
-                                    <th>{{ 'cart.general.total' | t }}</th>
-                                    <td><span class="">
-                      <span class="wcp-original-cart-total limoniapps-discountninja-cart-subtotal-price">{{ cart.total_price | money }}</span>
+          </div>
+          {%- endif -%}
+          {%- if item.cart_notes_enable -%}
+          <div class="col-md col-lg">
+            <style type="text/css">
+
+            </style>
+
+            <div class="tt-note">
+              <textarea id="note" name="note" class="form-control" rows="5">{{ cart.note }}</textarea>
+              <label>Catatan</label>
+            </div>
+          </div>
+          {%- endif -%}
+          {%- if item.cart_notes_enable == false and item.cart_shipping_enable == false -%}
+          <div class="col-md-6 col-lg-6">
+          </div>
+          {%- endif -%}
+          <div class="col-md-6 {% if item.cart_notes_enable == false and item.cart_shipping_enable == false %}col-lg-6{% else %}col-lg{% endif %}">
+            <div class="tt-shopcart-box tt-boredr-large">
+              <table class="tt-shopcart-table01">
+                <tbody style="display: none;">
+                  <tr id="subtotal">
+                    <th>{{ 'cart.general.subtotal' | t }}</th>
+                    <td><span class="wcp-original-cart-total">{{ cart.total_price | money}}</span>
+                      <span class="wcp-cart-total" wcp=''></span>
+                    </td>
+                  </tr>
+                  <tr id="tax" style="display:none">
+                    <th>{{ 'cart.general.shipping_total' | t }}</th>
+                    <td>{{ 0 | money }}</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr id="grandtotal">
+                    <th>{{ 'cart.general.total' | t }}</th>
+                    <td><span class="">
+                      <span class="wcp-original-cart-total">{{ cart.total_price | money}}</span>
                       <span class="wcp-cart-total" wcp=''></span>
                       <div class="additional-notes">
                         <span class="wcp-minimums-note"></span>
                         <span class="wcp-extra-note "></span>
                       </div>{% render "wcp_multi_currency_msg" %}</span></td>
-                                </tr>
-                                </tfoot>
-                            </table>
-                            {% if settings.terms_cond_checkbox_show %}
-                                <div class="checkbox-group term-conditions-checkbox term-conditions-checkbox-js">
-                                    <input type="checkbox" id="cart-term-conditions-checkbox" value="1">
-                                    <label for="cart-term-conditions-checkbox">
-                                        <span class="check"></span>
-                                        <span class="box"></span>
-                                        {{ settings.terms_cond_checkbox_text }}
-                                    </label>
-                                </div>
-                            {% endif %}
-                            <button type="submit" class="btn btn-lg"
-                                    name="checkout"{% if settings.terms_cond_checkbox_show %} disabled{% endif %}><span
-                                        class="icon icon-check_circle"></span>{{ 'cart.general.checkout' | t }}</button>
-                            <div>
-                                {% if customer.tags contains "wpdnet" %}
-                                    {% if shop.metafields.wcp_net.isNetEnabled == "true" or shop.metafields.wcp_net.isNetEnabled == "1" %}
-                                        <div style="margin-top:30px;">
-                                            <p>{{ shop.metafields.wcp_net.netCartMsg }}</p>
-                                            <a id="wcp-30-open" class="btn">{{ shop.metafields.wcp_net.netBtnMsg }}</a>
-                                        </div>
-                                    {% endif %}
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
+                  </tr>
+                </tfoot>
+              </table>
+              {% if settings.terms_cond_checkbox_show %}
+              <div class="checkbox-group term-conditions-checkbox term-conditions-checkbox-js">
+                <input type="checkbox" id="cart-term-conditions-checkbox" value="1">
+                <label for="cart-term-conditions-checkbox">
+                  <span class="check"></span>
+                  <span class="box"></span>
+                  {{ settings.terms_cond_checkbox_text }}
+                </label>
+              </div>
+              {% endif %}
+              <button type="submit" id="btn-checkout" class="btn btn-lg" name="checkout"{% if settings.terms_cond_checkbox_show %} disabled{% endif %}><span class="icon icon-check_circle"></span>{{ 'cart.general.checkout' | t }}</button>
+              <div>
+                {% if customer.tags contains "wpdnet" %}
+                {% if shop.metafields.wcp_net.isNetEnabled == "true" or shop.metafields.wcp_net.isNetEnabled == "1" %}
+                <div style="margin-top:30px;">
+                  <p>{{shop.metafields.wcp_net.netCartMsg}}</p>
+                  <a id="wcp-30-open" class="btn">{{shop.metafields.wcp_net.netBtnMsg}}</a>
                 </div>
+                {% endif %}
+                {% endif %}
+              </div>
             </div>
-        </form>
-    </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var WPD_reloadPage = function (e) {
-            setTimeout(function () {
-                window.location.reload();
-            }, 2500);
-        };
+  document.addEventListener('DOMContentLoaded', function(){
+    var WPD_reloadPage = function(e) {};
+    function wcp_build_event(x){for (var i = 0; i < x.length; i++) {x[i].addEventListener('click', WPD_reloadPage, false);}}
+    var x=document.querySelectorAll(".tt-btn-close");wcp_build_event(x);
+    var x=document.querySelectorAll(".plus-btn");wcp_build_event(x);
+    var x=document.querySelectorAll(".minus-btn");wcp_build_event(x);
 
-        function wcp_build_event(x) {
-            for (var i = 0; i < x.length; i++) {
-                x[i].addEventListener('click', WPD_reloadPage, false);
-            }
-        }
-
-        var x = document.querySelectorAll(".tt-btn-close");
-        wcp_build_event(x);
-        var x = document.querySelectorAll(".plus-btn");
-        wcp_build_event(x);
-        var x = document.querySelectorAll(".minus-btn");
-        wcp_build_event(x);
-
-        function wcp_build_event_change(x) {
-            for (var i = 0; i < x.length; i++) {
-                x[i].addEventListener('change', WPD_reloadPage, false);
-            }
-        }
-
-        var x = document.querySelectorAll(".QuantitySelector__CurrentQuantity");
-        wcp_build_event_change(x);
-
-    }, false);
+     function wcp_build_event_change(x){for (var i = 0; i < x.length; i++) {x[i].addEventListener('change', WPD_reloadPage, false);}}
+     var x=document.querySelectorAll(".QuantitySelector__CurrentQuantity");wcp_build_event_change(x);
+    
+  }, false);
 </script>
 
-<span class='wcp_price' style='display:none'> <span class='money'>{{ wcp_total_price | money }}</span> </span>
-<span class='wcp_price_orignal' style='display:none'> <span class='money'>{{ cart.total_price | money }}</span> </span>
-{% assign cartItemsVariant = cart.items | map: 'variant' %}
-{% assign cartItemProduct = cart.items | map: 'product' %}
-
+<span class='wcp_price' style='display:none'> <span class='money'>{{wcp_total_price | money}}</span> </span>
+<span class='wcp_price_orignal' style='display:none'> <span class='money'>{{cart.total_price | money}}</span> </span>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        CurrencyConvert();
-        document.querySelector('.btn-delete-item-cart').addEventListener('click', function (){
-            // ga4Cart();
-        });
-        console.log({{ cart.items[0].product.collections | json }});
-    }, false);
-
-    function ga4Cart() {
-        {% comment %}console.log({{ cartItemProduct | json }}){% endcomment %}
-        const cartVariants = {{ cartItemsVariant | json }};
-        const cartItem = {{ cart.items | json }};
-        console.log(cartVariants);
-        // console.log(cartItem);
-        const items = cartVariants.map((item, index) => ({
-            item_id: item.barcode,
-            item_name: item.name,
-            discount: ((item.compare_at_price - item.price) / item.price * 100)/100,
-            index,
-            item_brand: cartItem[index].vendor,
-            item_category: cartItem[index].product_type,
-            item_category2: "Pants", //collection name pertama
-            item_list_id: "related_products",
-            item_list_name: "Related Products",
-            item_variant: cartItem[index].variant_title,
-            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-            price: item.price,
-            quantity: cartItem[index].quantity,
-        }))
-        console.log(items);
-        // dataLayer.push({ ecommerce: null });
-        // dataLayer.push({
-        //     event: "view_cart",
-        //     ecommerce: {
-        //         currency: "IDR",
-        //         value: 749000,
-        //         items,
-        //     }
-        // });
-    }
-
-    function CurrencyConvert() {
-        var intver = setInterval(function () {
-            if ($('.wcp-minimums-note').html() != "") {
-                $('.wcp-cart-total').hide();
-                $('.wcp-original-cart-total').addClass('money');
-                $('.wcp-original-cart-total').html($('.wcp_price_orignal').html());
-            } else {
-                if ($('.wcp-cart-total').attr('wcp') == "" && $('.wcp-cart-total').html() != "") {
-                    $('.wcp-cart-total').attr('wcp', $('.wcp-cart-total').html().replace('$', ""));
-                    $('.wcp-cart-total').html($('.wcp_price').html());
-                    $('.wcp-original-cart-total').html($('.wcp_price_orignal').html());
-                    clearInterval(intver);
-                    console.log('clear');
-                }
-            }
-        }, 1000);
-    }
-
-</script>
+	document.addEventListener('DOMContentLoaded', CurrencyConvert, false);
+	function CurrencyConvert(){
+		   var intver= setInterval(function(){
+			  if($('.wcp-minimums-note').html() != ""){
+				$('.wcp-cart-total').hide();
+				$('.wcp-original-cart-total').addClass('money');
+				$('.wcp-original-cart-total').html($('.wcp_price_orignal').html());            		
+			  }else{
+				if($('.wcp-cart-total').attr('wcp') == "" && $('.wcp-cart-total').html()!=""){
+					$('.wcp-cart-total').attr('wcp',$('.wcp-cart-total').html().replace('$',""));
+					$('.wcp-cart-total').html($('.wcp_price').html());
+					$('.wcp-original-cart-total').html($('.wcp_price_orignal').html());
+					clearInterval(intver);
+				  console.log('clear');
+				}
+			  }
+			  },1000);
+		  }
+		</script>

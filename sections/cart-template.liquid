@@ -1,8 +1,6 @@
 {%- if cart.item_count > 0 -%}
 {%- assign item = section.settings -%}
 {% case item.cart_design %}{% when 'design2' %}{% include "cartpage-design2" %}{% else %}{% include "cartpage-design1" %}{% endcase %}
-
-
 {%- if item.show_related -%}
 {%- assign items_d = '' -%}
 {%- for item in cart.items -%}
@@ -62,14 +60,14 @@
 <script>
   window.addEventListener('DOMContentLoaded', function() {
     $('.addtocart-item-js').length && $('.addtocart-item-js').removeClass('addtocart-item-js');
-    
+
     $('[name=update]').click(function(e){
       e.preventDefault();
       $('#updateform').submit();
     });
 
     $("#wrapper-response").bind("DOMNodeInserted",function(){
-      
+
       if($("#wrapper-response").find('#shipping-rates').length == 0)
         return false;
 
@@ -135,7 +133,7 @@
         var num = Math.floor(n);
         var x = Math.floor(num / group1);
         if(x > 0) {
-          x = decimalWithZero(sum, x);			 
+          x = decimalWithZero(sum, x);
           sum = x + ",";
           num -= x * group1;
         }
@@ -173,13 +171,41 @@
       }
     });
 
+    var timeoutID;
     $("input:not([type=checkbox])").change(function(){
       $("[name=update]").addClass("blink-border");
-      var v = Number($(this).val()),
-          s = Number($(this).attr('size')),
-          p = $(this).parent();
-      v <= 1 ? p.find('.minus-btn').hide() : p.find('.minus-btn').show();
-      v >= s ? p.find('.plus-btn').hide() : p.find('.plus-btn').show();
+      var v   = Number($(this).val()),
+          s   = Number($(this).attr('size')),
+          ct  = Number($(this).attr('data-counter')),
+          p   = $(this).parent(),
+          bm  = p.find('.minus-btn'),
+          bd  = p.find('.del-btn');
+
+      minusDelBtn();
+
+      if (s < ct) {
+        setToast();
+        removeToast();
+      }
+
+      function removeToast() {
+        clearTimeout(timeoutID);
+        timeoutID = setTimeout(() => {
+           toast.classList.remove("active");
+        }, 5000)
+      }
+      function setToast() {
+        toast.classList.add("active");
+      }
+      function minusDelBtn() {
+        if (v == 1) {
+          bm.hide()
+          bd.show()
+        } else {
+          bm.show()
+          bd.hide()
+        }
+      }
     });
     $("textarea").change(function(){
       $("[name=update]").addClass("blink-border");
@@ -190,6 +216,8 @@
 {%- if item.ajaxcartpage -%}
 <script>
   window.addEventListener('DOMContentLoaded', function(){
+    sendToGA4Ecommerce('view_cart', GA_TYPE.CART);
+
     $('body').on('click', '[href$="quantity=0"]', function(e){
       $('[href$="quantity=0"]').length && $('[href$="quantity=0"]').css('pointer-events', 'none');
 
@@ -206,15 +234,15 @@
           lineItem.fadeOut(400, function() {
             $(this).remove();
             var _ = $('[href$="quantity=0"]');
-            
+
             if(data.item_count == 0){
               $('.line-items-box-js').remove();
               $('.tt-empty-cart-js').removeClass('hide');
             }
-            
+
             $('[href$="quantity=0"]').length && $('[href$="quantity=0"]').css('pointer-events', 'unset');
-            
             updatePrices(data);
+            cartUpdateDeleteData(data, index-1);
           });
         },
         error: function(XMLHttpRequest, textStatus) {
@@ -224,7 +252,7 @@
       }
       $.ajax(params);
     })
-    
+
     $("textarea").change(function(){
       var note = $(this).val();
       $.ajax({
@@ -235,7 +263,7 @@
         cache: false
       })
     });
-    
+
     var timercount = [];
     $("input:not([type=checkbox])").change(function(){
       var _ = $(this),
@@ -245,27 +273,6 @@
         timercount[index] = null;
       }
       timercount[index] = setTimeout(updateInputValue.bind(null, _), 500);
-    });
-
-    $('.js-deleteitem-ajax').click(function () {
-      var index = $(this).closest('tr').index(),
-              indexget = index+1;
-
-      var params = {
-        type: "get",
-        dataType: "json",
-        url: '/cart/change?line='+indexget+'&quantity=0',
-        success: function(data){
-          // var m = Shopify.formatMoney(data.items[index].line_price, money_format),
-          //         o = _.closest('tr').find('.subtotal');
-          // o.length && o.empty().append(m);
-          updatePrices(data);
-        },
-        error: function(XMLHttpRequest, textStatus) {
-          console.log('some ajax error with count');
-        }
-      }
-      $.ajax(params);
     });
 
     function updateInputValue(_){
@@ -280,6 +287,7 @@
               o = _.closest('tr').find('.subtotal');
           o.length && o.empty().append(m);
           updatePrices(data);
+          cartUpdateData(data);
         },
         error: function(XMLHttpRequest, textStatus) {
           console.log('some ajax error with count');
@@ -287,9 +295,14 @@
       }
       $.ajax(params);
     }
-    
+
+    $('#updateform').submit(function () {
+      sendToGA4Ecommerce('begin_checkout', GA_TYPE.CART);
+    })
+
     function updatePrices(data){
       var m = Shopify.formatMoney(data.total_price, money_format);
+      totalPrice =  data.total_price;
       if($('#grandtotal').length){
         if($('#grandtotal .money').length){
           $('#grandtotal .money').replaceWith('<span class="csapps-cart-original-total">'+m+'</span>');
@@ -321,7 +334,12 @@
   });
 </script>
 {%- endif -%}
-
+{% else %}
+  <script>
+    window.addEventListener('DOMContentLoaded', function(){
+      sendToGA4Ecommerce('view_cart', GA_TYPE.CART)
+    });
+  </script>
 {%- endif -%}
 
 {% schema %}

@@ -17,7 +17,7 @@
           </div>
         </div>{%- endif -%}
 
-        {%- if settings.banner_collectionimage != '' and settings.show_collectionbanner -%}
+        {%- if settings.banner_collectionimage != '' and settings.show_collectionbanner and collection.description == blank -%}
         <div class="content-indent">
           <div class="row tt-layout-promo-box">
             <div class="col-md-12">

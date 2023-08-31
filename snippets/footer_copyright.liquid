@@ -1,4 +1,4 @@
-<div id="footer_copyright" class="footer_copyright tt-color-scheme-04">
+<div id="footer_copyright" class="footer_copyright tt-color-scheme-04 {% if template == 'cart' %}hide-footer-cart{% endif %}">
   <div class="container{% if item.fullwidth %}-fluid-custom-mobile-padding container-fluid-custom{% endif %}">
     <div class="tt-row">
       {% if item.footer_col %}
@@ -18,9 +18,7 @@
           </div>
           {%- endif -%}
       </div>
-
       {% else %}
-
       <div class="tt-col-left">
         {%- if item.show_logoblock -%}
         <div class="tt-col-item tt-logo-col">
@@ -37,10 +35,7 @@
         </div>
         {%- endif -%}
       </div>
-
-
       {% endif %}
-
     </div>
   </div>
 </div>
@@ -52,10 +47,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000;
-    color: #fff
+    background: #000 !important;
+    color: #fff !important;
   }
   .footer_copyright .tt-box-copyright {
+    font-size: 12px;
     text-align: center;
+    color: #fff !important;
+  }
+  @media (max-width: 575px) {
+    .footer_copyright .tt-box-copyright {
+      font-size: 10px;
+    }
+    .hide-footer-cart {
+      display: none;
+    }
   }
 </style>

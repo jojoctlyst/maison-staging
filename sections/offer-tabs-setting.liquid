@@ -1,0 +1,53 @@
+<div  id="tabs" class="ky-flex ky-justify-center">
+  <div class="nav-tab-wrap ky-inline-block ky-justify-center ky-bg-grey3 ky-p-2.5 ky-rounded-full">
+    <ul class="nav-tabs ky-flex ky-gap-2 md:ky-gap-x-6 ky-text-xs md:ky-text-sm ky-w-full md:ky-w-auto ky-relative">
+      <li class="nav-item" {% if section.settings.tab1 %} style="display: none;" {% endif %}>
+        <div data-store="1" class="ky-tab-btn ky-w-full ky-text-xs md:ky-text-sm ky-text-center ky-py-3 ky-px-2 md:ky-px-2 md:ky-py-2 md:ky-text-base ky-rounded-full ky-flex ky-justify-center md:ky-leading-4 active">Special Promos</div>
+      </li>
+      <li class="nav-item" {% if section.settings.tab2 %} style="display: none;" {% endif %}>
+        <div data-store="2" class="ky-tab-btn ky-w-full ky-text-xs md:ky-text-sm ky-text-center ky-py-3 ky-px-2 md:ky-px-2 md:ky-py-2 md:ky-text-base ky-rounded-full ky-flex ky-justify-center md:ky-leading-4">Featured Brands</div>
+      </li>
+      <li class="nav-item" {% if section.settings.tab3 %} style="display: none;" {% endif %}>
+        <div data-store="3" class="ky-tab-btn ky-w-full ky-text-xs md:ky-text-sm ky-text-center ky-py-3 ky-px-2 md:ky-px-2 md:ky-py-2 md:ky-text-base ky-rounded-full ky-flex ky-justify-center md:ky-leading-4">Boutique Deals</div>
+      </li>
+      <li class="nav-item" {% if section.settings.tab4 %} style="display: none;" {% endif %}>
+        <div data-store="4" class="ky-tab-btn ky-w-full ky-text-xs md:ky-text-sm ky-text-center ky-py-3 ky-px-2 md:ky-px-2 md:ky-py-2 md:ky-text-base ky-rounded-full ky-flex ky-justify-center md:ky-leading-4">Bank Offers</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Tabs Setting",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "tab1",
+        "default": false,
+        "label": "Hide Specials Promo Tab"
+      },{
+        "type": "checkbox",
+        "id": "tab2",
+        "default": false,
+        "label": "Hide Featured Brands Tab"
+      },{
+        "type": "checkbox",
+        "id": "tab3",
+        "default": true,
+        "label": "Hide Boutique Deals Tab"
+      },{
+        "type": "checkbox",
+        "id": "tab4",
+        "default": false,
+        "label": "Hide Bank Offers Tab"
+      }
+    ],
+    "presets": [
+      {
+        "name": "tab wrapper"
+      }
+    ]
+  }
+{% endschema %}
+

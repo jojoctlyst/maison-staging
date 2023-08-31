@@ -1,0 +1,51 @@
+<script src="{{ 'ga4-push.js' | asset_url }}"></script>
+{% if template contains 'product' %}
+    <script>
+        const isProductAvailable = '{{ product.available }}' === 'true';
+        const ecommerceItems = {
+            item_id: "{{ product.selected_variant.barcode }}",
+            item_name: "{{ product.title }}",
+            compared_at_price: "{{ product.compare_at_price }}",
+            item_brand: "{{ product.vendor }}",
+            item_category: "{{ product.type }}",
+            item_list_id: "{{ collection.id }}",
+            item_list_name: "{{ collection.title }}",
+            item_variant: "{{ product.selected_variant.title }}",
+            price: Number("{{ product.price }}"),
+            quantity: isProductAvailable ? 1 : 0,
+            collections: "{{ product.collections | map: 'title' | join: ', ' }}".split(', '),
+        };
+
+        $(function () {
+            ga4EcommerceDataPDP.ecommerce.items = ecommerceItems;
+        });
+    </script>
+{% endif %}
+<script>
+    let totalPriceCart = Number('{{ cart.total_price }}');
+    let ecommerceCartItems = [
+        {% for item in cart.items %}
+        {
+            item_id: "{{ item.variant.barcode }}",
+            item_name: "{{ item.product.title }}",
+            discount: 0,
+            index: Number("{{ forloop.index0 }}"),
+            item_brand: "{{ item.vendor }}",
+            item_category: "{{ item.product.type }}",
+            item_list_id: "",
+            item_list_name: "",
+            item_variant: "{{ item.variant.title }}",
+            location_id: "",
+            price: Number("{{ item.price }}"),
+            quantity: Number("{{ item.quantity }}"),
+            compare_at_price: Number("{{ item.product.compare_at_price }}"),
+            collections: "{{ item.product.collections | map: 'title' | join: ', ' }}".split(', '),
+        }
+        {% unless forloop.last %},{% endunless -%}
+        {% endfor %}
+    ];
+
+    $(function () {
+        updateGa4Cart();
+    });
+</script>

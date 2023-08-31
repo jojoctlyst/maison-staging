@@ -109,7 +109,7 @@
         {%- assign b_i = section.blocks[0].settings -%}
         <div class="contbanslider arrow-location-tab slick-animated-show-js" data-slick='{"autoplay": {{ item.module_autoplay }}, "autoplaySpeed": {{ item.delay_time }}}'>
           {% include 'section-banner-item' %}
-          
+
           {%- for block in section.blocks offset: 4 -%}
           {%- assign b_i = block.settings -%}
           {% include 'section-banner-item' %}
@@ -141,13 +141,13 @@
         {%- capture img_size -%}{% if item.fullwidth %}1024x{% else %}600x{% endif %}{%- endcapture -%}
         {% if section.blocks.size > 0 %}{%- assign b_i = section.blocks[0].settings -%}{% include 'section-banner-item' %}{% endif %}
       </div>
-      
+
       <div class="col-xs-6 col-sm-6 col-md-6 col-6-440width gender-banner-custom gap-l banner-card-mobile">
         {%- capture info_image_size -%}930x300px{%- endcapture -%}
         {%- capture img_size -%}{% if item.fullwidth %}1024x{% else %}600x{% endif %}{%- endcapture -%}
         {% if section.blocks.size > 1 %}{%- assign b_i = section.blocks[1].settings -%}{% include 'section-banner-item' %}{% endif %}
       </div>
-      
+
       <div class="col-xs-6 col-sm-12 col-md-12 col-12-440width gender-banner-custom last-card">
         {%- capture info_image_size -%}1024x200px{%- endcapture -%}
         {%- capture img_size -%}{% if item.fullwidth %}1024x{% else %}600x{% endif %}{%- endcapture -%}
@@ -155,12 +155,12 @@
       </div>
 
       {%- else -%}
-      
+
       {%- assign b_i = section.blocks[0].settings -%}
       <div class="col-sm-6 col-md-6 col-12-440width">
         <div class="contbanslider arrow-location-tab slick-animated-show-js" data-slick='{"autoplay": {{ item.module_autoplay }}, "autoplaySpeed": {{ item.delay_time }}}'>
           {% include 'section-banner-item' %}
-          
+
           {%- for block in section.blocks offset: 2 -%}
           {%- assign b_i = block.settings -%}
           {% include 'section-banner-item' %}
@@ -182,18 +182,18 @@
 </div>
 <style>
   {%- assign arrco = item.arrco -%}
-  
+
   {%- assign bg_alpha = item.bg_alpha | divided_by: 100.00 -%}
   {%- assign bgco = item.bgco | color_modify: 'alpha', bg_alpha -%}
-  
+
   {%- assign arrcoa = item.arrcoa -%}
-  
+
   {%- assign bg_alphaa = item.bg_alphaa | divided_by: 100.00 -%}
   {%- assign bgcoa = item.bgcoa | color_modify: 'alpha', bg_alphaa -%}
-  
+
   {%- assign overlay_alpha = item.overlay_alpha | divided_by: 100.00 -%}
   {%- assign bg_overlay = item.bg_overlay | color_modify: 'alpha', overlay_alpha -%}
-  
+
   .sectionconstbann{{ section.id }} .arrow-location-tab .slick-arrow{
     background:{{ bgco }};
     color:{{ arrco }};
@@ -207,7 +207,7 @@
     padding: 0;
   }
 
-  
+
   @media (max-width: 575px) {
   	.sectionconstbann{{ section.id }} .gender-banner-custom {
   	  padding: 0;
@@ -232,7 +232,7 @@
       object-fit: cover;
     }
   }
-  
+
 </style>
 
 {% schema %}

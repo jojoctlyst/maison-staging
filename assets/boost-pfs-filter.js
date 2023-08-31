@@ -12,10 +12,11 @@ if (typeof theme !== 'undefined' && theme.hasOwnProperty('settings')) theme.sett
 var boostPFSFilterConfig = {
 	general: {
 		limit: boostPFSThemeConfig.custom.products_per_page,
-        paginationType: 'infinite',
 		/* Optional */
 		loadProductFirst: false,
-		// Placeholder
+        // 'default' 'infinite' 'load_more' false
+        paginationType: 'infinite',
+		// Placeholder  
 		showPlaceholderProductList: true,
 		placeholderProductPerRow: 3,
 		placeholderProductGridItemClass: 'boost-pfs-filter-product-item boost-pfs-filter-product-item-grid boost-pfs-filter-grid-width-3 boost-pfs-filter-grid-width-mb-2',
@@ -24,13 +25,17 @@ var boostPFSFilterConfig = {
 		aspect_ratio: boostPFSThemeConfig.custom.aspect_ratio,
 		cropImagePossitionEqualHeight: boostPFSThemeConfig.custom.product_img_crop,
 		defaultDisplay: boostPFSThemeConfig.custom.product_item_type,
-    enableAjaxCart: true,
+        enableAjaxCart: true,
 		ajaxCartStyle: 'slide', // 'slide' or 'popup'
 		showAjaxCartOnAdd: true, // Opens the ajax cart after add to cart
 		autoCloseMiniCart: false, // Auto close the cart after add to cart > open cart > close cart
 		autoCloseMiniCartDuration: 2000,
 		selectOptionInProductItem: true, // Append the product's option inside the product item when clicking "select option"
 		selectOptionContainer: '.boost-pfs-filter-product-item-image',  // CSS selector to append the product option, if left empty it will append to the product item
+        enableKeepScrollbackPosition: true,
+        keepScrollbackPositionType: 'history', // Where to save the scrollback position data: 'sessionStorage' or 'history'
+        sessionStorageScrollbackPosition: 'boostPFSScrollbackPostion', // Array - List of scrollback data
+  
   },
 	selector: {
 		otpButtons: '.boost-pfs-filter-product-item-image'
@@ -72,43 +77,54 @@ var boostPFSFilterConfig = {
 				}
 			}
 		}
-        console.log(data);
-		//Buid the collectionHandles variable used by Discount Ninja
-		data.collectionHandles = data.collections == null ? '' : data.collections.map(function(collection) { return collection.handle }).join(',');
 		return data;
 	}
 
-    function renderTagNew(data) {
-      var now = new Date();
-      var published = new Date(data);
-      var difference = (now.getTime() - published.getTime()) / 1000;
+  function renderTagNew(data) {
+    var now = new Date();
+    var published = new Date(data);
+    var difference = (now.getTime() - published.getTime()) / 1000;
 
-      if (difference < 86400) {
-        return '<div class="new boost-pfs-filter-label">BARU</div>';
-      }
-
-      return '';
+    if (difference < 432000) { // 5 days
+      return '<div class="new boost-pfs-filter-label">New</div>';
     }
 
-    function renderVendorSlug(vendor, collections) {
-		const vendorSlug = Utils.slugify(vendor);
-		if (collections.includes(vendorSlug)) {
-			return vendorSlug;
-		} else {
-			return `all/${vendorSlug}`;
-		}
-	}
+    return '';
+  }
+
+  function renderTagPreorder(tags) {
+    if (tags.includes('preorder')) {
+      return '<div class="new boost-pfs-filter-label preorder-label">Pre Order</div>';
+    }
+    return '';
+  }
+  
+  function renderPreloved(tags, collection) {
+    if (tags.includes('preloved') && collection !== 'preloved') {
+      return '<div class="new boost-pfs-filter-label preloved-label">Preloved</div>';
+    }
+    return '';
+  }
+
+  function renderVendorSlug(vendor, collections) {
+    var vendorSlug = Utils.slugify(vendor);
+    if (collections.filter(c => c.handle === vendorSlug).length > 0) {
+        return vendorSlug;
+    } else {
+        return `all/${vendorSlug}`;
+    }
+  }
 
 	/************************** END CUSTOMIZE DATA BEFORE BUILDING PRODUCT ITEM **************************/
 	/************************** BUILD PRODUCT LIST **************************/
 	// Build Product Grid Item
 	ProductGridItem.prototype.compileTemplate = function(data, collection) {
 		if (!data) data = this.data;
-     	if (!collection) collection = buildCollectionUrl();
-
+        if (!collection) collection = buildCollectionUrl();
+        
 		// Customize API data to get the Shopify data
 		data = prepareShopifyData(data);
-
+      
 		// Get Template
 		var itemHtml = boostPFSTemplate.productGridItemHtml;
 		// Add Custom class
@@ -145,42 +161,21 @@ var boostPFSFilterConfig = {
 		// Add Color Swatches
 		itemHtml = itemHtml.replace(/{{itemSwatches}}/g, buildProductOptionSwatches(data));
 
-      	// Discount ninja integration
-    	var comparePrice = data.compare_at_price_max || 0;
-    	itemHtml = itemHtml.replace(/{{itemCompareAtPriceMax}}/g, comparePrice);
-    	itemHtml = itemHtml.replace(/{{itemHandle}}/g, data.handle);
-    	itemHtml = itemHtml.replace(/{{itemPriceMin}}/g, data.price_min);
-
-  	// Discount ninja integration
-		var comparePrice = data.compare_at_price_max || 0;
-		itemHtml = itemHtml.replace(/{{itemCompareAtPriceMax}}/g, comparePrice);
-		itemHtml = itemHtml.replace(/{{itemHandle}}/g, data.handle);
-		itemHtml = itemHtml.replace(/{{itemPriceMin}}/g, data.price_min);
-
 		// Add main attribute (Always put at the end of this function)
 		itemHtml = itemHtml.replace(/{{itemId}}/g, data.id);
 		itemHtml = itemHtml.replace(/{{itemTitle}}/g, data.title);
 		itemHtml = itemHtml.replace(/{{itemHandle}}/g, data.handle);
 		itemHtml = itemHtml.replace(/{{itemVendorLabel}}/g, data.vendor);
 		itemHtml = itemHtml.replace(/{{itemUrl}}/g, Utils.buildProductItemUrl(data));
-    itemHtml = itemHtml.replace(/{{itemVendorSlug}}/g, renderVendorSlug(data.vendor, data.collectionHandles));
-    itemHtml = itemHtml.replace(/{{itemTagNew}}/g, renderTagNew(data.published_at));
-
-		// Replace variables used by Discount Ninja
-		itemHtml = itemHtml.replace(/{{itemHandle}}/g, data.handle);
-		itemHtml = itemHtml.replace(/{{itemCollections}}/g, data.collectionHandles);
-		itemHtml = itemHtml.replace(/{{itemAvailable}}/g, data.available);
-		itemHtml = itemHtml.replace(/{{itemPrice}}/g, data.price_min * 100);
-		itemHtml = itemHtml.replace(/{{itemCompareAtPriceMax}}/g, (data.compare_at_price_max || data.price_min) * 100);
-		itemHtml = itemHtml.replace(/{{itemPriceVaries}}/g, data.price_varies);
-		itemHtml = itemHtml.replace(/{{itemPriceMin}}/g, data.price_min * 100);
-		itemHtml = itemHtml.replace(/{{itemTags}}/g, data.tags);
+        itemHtml = itemHtml.replace(/{{itemVendorSlug}}/g, renderVendorSlug(data.vendor, data.collections));
+        itemHtml = itemHtml.replace(/{{itemTagPreorder}}/g, renderTagPreorder(data.tags));
+        itemHtml = itemHtml.replace(/{{itemPreloved}}/g, renderPreloved(data.tags, collection));
+        itemHtml = itemHtml.replace(/{{itemTagNew}}/g, renderTagNew(data.published_at));
 		return itemHtml;
 	};
 	// Build Product List Item
 	ProductListItem.prototype.compileTemplate = function(data) {
 		if (!data) data = this.data;
-
 		// Customize API data to get the Shopify data
 		data = prepareShopifyData(data);
 
@@ -242,7 +237,7 @@ var boostPFSFilterConfig = {
 
 	/************************** END BUILD PRODUCT LIST **************************/
 	/************************** BUILD PRODUCT ITEM ELEMENTS **************************/
-    function buildCollectionUrl() {
+  	function buildCollectionUrl() {
       var colUrl = Utils.buildProductItemUrl('');
       var colProductUrl = colUrl.split("/collections/")[1];
       return colProductUrl.split("/products/")[0];
@@ -351,63 +346,63 @@ var boostPFSFilterConfig = {
 
 	function buildPrice(data) {
 		var html = '';
+		if (data.tags.includes('preorder')){
+			html = '<div class="tt-preorder">Start from</div>'
+		}
 		if (boostPFSThemeConfig.custom.hasOwnProperty('show_price') &&
 			boostPFSThemeConfig.custom.show_price) {
-			html = `<p
-				class="boost-pfs-filter-product-item-price limoniapps-discountninja-productprice"
-				data-limoniapps-discountninja-product-handle="{{itemHandle}}"
-				data-limoniapps-discountninja-product-collections="{{itemCollections}}"
-				data-limoniapps-discountninja-product-available="{{itemAvailable}}"
-				data-limoniapps-discountninja-product-price="{{itemPrice}}"
-				data-limoniapps-discountninja-product-compareatprice="{{itemCompareAtPriceMax}}"
-				data-limoniapps-discountninja-product-pricevaries="{{itemPriceVaries}}"
-				data-limoniapps-discountninja-product-pricemin="{{itemPriceMin}}"
-				data-limoniapps-discountninja-product-tags="{{itemTags}}"
-			>`;
+			html += '<p class="boost-pfs-filter-product-item-price">';
 			if (onSale) {
 
 				html += '<span class="boost-pfs-filter-product-item-sale-price">' + Utils.formatMoney(data.price_min) + '</span>';
 				html += '<s>' + Utils.formatMoney(data.compare_at_price_min) + '</s> ';
 			} else {
 				if (priceVaries) {
-					html += '<span class="`1`-from-text">' + (boostPFSThemeConfig.label_basic.from) + ' ' + '</span>';
+					html += '<span class="boost-pfs-filter-product-item-price-from-text">' + (boostPFSThemeConfig.label_basic.from) + ' ' + '</span>';
 				}
 				html += '<span class="boost-pfs-filter-product-item-regular-price">' + Utils.formatMoney(data.price_min) + '</span>';
 			}
 			html += '</p>';
 		}
+      	if (data.price_min === 1) {
+			html = `
+			<p class="boost-pfs-filter-product-item-price price-upon-request">
+				<span>
+					<i class="icon-all-brand"></i>
+					Price Upon Request
+				</span>
+			</p>`;
+		}
 		return html;
 	}
 
 	function buildLabels(data, collection) {
-      	var collectionWithSales = [
-          'sale-all-items',
-          'clothes-sale',
-          'bags-sale',
-          'shoes-sale',
-          'curated-for-you'
-        ];
-		// Build Sold out label
-		var soldOutLabel = '';
-		if (boostPFSThemeConfig.custom.hasOwnProperty('sold_out_enable') &&
-			boostPFSThemeConfig.custom.sold_out_enable && soldOut) {
-			soldOutLabel = boostPFSTemplate.soldOutLabelHtml.replace(/{{style}}/g, '');
-		}
-		// Build Sale label
-		var saleLabel = '';
-    	var salePercent = '';
-        if (collectionWithSales.includes(collection)) {
-          if (boostPFSThemeConfig.custom.sale_label_enable && onSale && !soldOut) {
-            if (boostPFSThemeConfig.custom.sale_label_display == 'sale_percent'){
-              salePercent = Math.round((data.compare_at_price_min - data.price_min) * 100 / data.compare_at_price_max);
-            }
-            saleLabel = boostPFSTemplate.saleLabelHtml.replace(/{{style}}/g, '');
-            saleLabel = boostPFSTemplate.saleLabelHtml.replace(/percent/g, '-' + salePercent + '%');
-          }
+      var collectionWithSales = ["sale", "clothes-sale", "bags-sale", "shoes-sale", "curated-for-you",
+			"last-chance", "women-apparel-last-chance", "women-apparel-xxxs-xxs", "women-apparel-xs", "women-apparel-s",
+			"women-apparel-m", "women-apparel-l", "women-apparel-xl-xxl", "women-footwear-last-chance", "women-footwear-35",
+			"women-footwear-36", "women-footwear-37", "women-footwear-38", "woman-footwear-39-41", "men-apparel-last-chance",
+			"men-apparel-xxs-xs", "men-apparel-s", "men-apparel-m", "men-apparel-l", "men-apparel-xl", "men-apparel-xxl-xxxl",
+			"men-footwear-last-chance", "men-footwear-40", "men-footwear-41", "men-footwear-42", "men-footwear-43",
+			"men-footwear-44-45","last-chance-grab-items","mega-sale-up-to-20","mega-sale-up-to-30","mega-sale-up-to-50",
+            "mega-sale-up-to-70"];
+      // Build Sold out label
+      var soldOutLabel = '';
+      if (boostPFSThemeConfig.custom.hasOwnProperty('sold_out_enable') &&
+          boostPFSThemeConfig.custom.sold_out_enable && soldOut) {
+          soldOutLabel = boostPFSTemplate.soldOutLabelHtml.replace(/{{style}}/g, '');
+      }
+      // Build Sale label
+      var saleLabel = '';
+      var salePercent = '';
+      if (onSale && !soldOut) {
+        if (boostPFSThemeConfig.custom.sale_label_display == 'sale_percent'){
+          salePercent = Math.round((data.compare_at_price_min - data.price_min) * 100 / data.compare_at_price_min);
         }
-
-		// Build Labels
-		return soldOutLabel + saleLabel;
+        saleLabel = boostPFSTemplate.saleLabelHtml.replace(/{{style}}/g, '');
+        saleLabel = boostPFSTemplate.saleLabelHtml.replace(/percent/g, '-' + salePercent + '%');
+      }
+      // Build Labels
+      return soldOutLabel + saleLabel;
 	}
 
 	// BUILD LABEL PRODUCT WITH TAGS
@@ -461,7 +456,7 @@ var boostPFSFilterConfig = {
           countSwatch = 0,
           swatchValues = [],
           swatchLimit = 4;
-
+      
           var dataImgSize = '360',
             bgSize = '50x',
             dataImgSrc = Utils.getFeaturedImage(data.images_info, dataImgSize + 'x'),
@@ -490,7 +485,7 @@ var boostPFSFilterConfig = {
                 if (sImageIndex != '') {
                   dataImgSrc = Utils.optimizeImage(data.images[sImageIndex], dataImgSize + 'x') + ' ' + dataImgSize + 'w';
                 }
-
+                
                 if (swatchType) {
                   switch (swatchType) {
                     case 'img':
@@ -538,7 +533,7 @@ var boostPFSFilterConfig = {
             }
           }
         }
-
+        
       }
     }
     return swatchesProductOptionHtml;
@@ -587,6 +582,19 @@ var boostPFSFilterConfig = {
 		return '';
 	}
 
+	function replaceSearchConter() {
+	  var bread = document.querySelector('.tt-breadcrumb ul li:last-child');
+	  var breadConter = bread.innerText.match(/: (\d+)/);
+
+	  setTimeout(function(){
+	  	var oldBread = bread.innerText;
+	    //var title = document.title;
+	    var title = document.querySelector('.boost-pfs-filter-total-product').innerText;
+	    var counter = title.match(/(\d+)/);
+	    bread.innerText = oldBread.replace(breadConter[1], counter[0]);
+	  }, 100);
+
+	}
 
 
 	/************************** END BUILD PRODUCT ITEM ELEMENTS **************************/
@@ -716,7 +724,7 @@ var boostPFSFilterConfig = {
 	};
 	// For Toolbar - Build Display type
 	ProductDisplayType.prototype.compileTemplate = function() {
-
+    
 		var itemHtml = '<span>' + boostPFSThemeConfig.label.toolbar_viewas + '</span>';
 		if (boostPFSThemeConfig.custom.product_item_type == 'grid') {
 			if (boostPFSThemeConfig.custom.view_as_type == 'view_as_type_list_grid_multi_col' && !Utils.isMobile()) {
@@ -771,7 +779,7 @@ var boostPFSFilterConfig = {
 					var $cssNames = jQ('.boost-pfs-filter-top-display-type').attr('class').split(' ');
 					var $activeClass = $cssNames[$cssNames.length - 1];
 					var indexCurrentColumn = $activeClass.split('-')[$activeClass.split('-').length - 1];
-
+					
 					if($parent.hasClass('boost-pfs-filter-view-as-click') && jQ(this).data('view') == $activeClass){
 							jQ(this).addClass('active');
 
@@ -787,7 +795,7 @@ var boostPFSFilterConfig = {
 							// jQ('.boost-pfs-filter-product-item').className = jQ('.boost-pfs-filter-product-item').className.replace(/(^|\s)boost-pfs-filter-grid-width-\S+/g , '');
 							// jQ('.boost-pfs-filter-product-item').addClass('boost-pfs-filter-grid-width-' + indexCurrentColumn);
 
-					} else if(!$parent.hasClass('boost-pfs-filter-view-as-click') && jQ(this).data('view').split('-')[1] == curentGridColumn) {
+					} else if(!$parent.hasClass('boost-pfs-filter-view-as-click') && jQ(this).data('view').split('-')[1] == curentGridColumn) {    
 							jQ(this).addClass('active');
 					}
 				});
@@ -856,10 +864,7 @@ var boostPFSFilterConfig = {
 
 	// Build additional elements
 	Filter.prototype.afterRender = function(data) {
-		// Discount Ninja integration
-		if (typeof discountNinja != 'undefined') {
-			discountNinja.DynamicPricing.UpdatePrice();
-		}
+		replaceSearchConter();
 
 		if (!data) data = this.data;
 
@@ -909,7 +914,7 @@ var boostPFSFilterConfig = {
 			boostRemoveImageLoadingAnimation(jQ(Selector.products).find('[data-boost-image-loading-animation]'));
 		}
 
-    // Filter Sticky
+    // Filter Sticky 
     if (boostPFSThemeConfig.custom.hasOwnProperty('enable_filter_sticky_d') && boostPFSThemeConfig.custom.enable_filter_sticky_d && !Utils.isMobile()) {
       if(jQ('.boost-pfs-filter-left-col-inner').length > 0){
         var stickyElemet = '.boost-pfs-filter-left-col-inner';
@@ -935,44 +940,39 @@ var boostPFSFilterConfig = {
 		if (boostPFSThemeConfig.custom.hasOwnProperty('layout_type') && boostPFSThemeConfig.custom.layout_type == 'fullwidth' && !Utils.isMobile()) {
 			jQ('body').addClass('boost-pfs-filter-fullwidth-page');
 		}
-
-      // Discount Ninja integration
-    	if (typeof discountNinja != 'undefined') {
-      		discountNinja.DynamicPricing.UpdatePrice();
-    	}
 	};
 
   // Filter Sticky
   jQ.fn.stickTo = function(startElement, stickyElementParent) {
-    /* constants */
+    /* constants */    
     var showingHeader = false;
     var headerHeight = 0; /* change the header height here */
-    var headerSelector = '';
-    var $window = jQ(window);
-    var $startElement = jQ(startElement);
-    var _this = this;
+    var headerSelector = '';  
+    var $window = jQ(window);  
+    var $startElement = jQ(startElement);               
+    var _this = this;          
 
     /* variables */
-    var lastScrollTop = window.pageYOffset || document.body.scrollTop;
+    var lastScrollTop = window.pageYOffset || document.body.scrollTop;  
 
     /* sticky method */
     var setPosition = function() {
       /* declarations */
       var width = jQ(stickyElementParent).outerWidth();
       var $windowHeight = $window.height();
-      var $contentHeight = $startElement.outerHeight(true);
-      var $contentTop = $startElement.offset().top;
+      var $contentHeight = $startElement.outerHeight(true);     
+      var $contentTop = $startElement.offset().top;      
 
       var sidebarHeight = _this.outerHeight();
       var sidebarTop = _this.offset().top;
       var sidebarBottom = sidebarTop + sidebarHeight;
 
-      var scrollTop = window.pageYOffset || document.body.scrollTop;
-      var scrollBottom = scrollTop + $windowHeight;
+      var scrollTop = window.pageYOffset || document.body.scrollTop;                        
+      var scrollBottom = scrollTop + $windowHeight;  
       var isScrollingDown = (scrollTop > lastScrollTop);
 
       var endPos = $contentTop + $contentHeight;
-
+      
       /* Match Header Height Sticky */
       if(jQ('.site-header-wrapper .action-area').length > 0){
       /* For the Boundless theme */
@@ -1001,7 +1001,7 @@ var boostPFSFilterConfig = {
 
       if (sidebarHeight > $contentHeight) {
         _this.removeClass('boost-pfs-filter-stick');
-        jQ('body').removeClass('boost-pfs-filter-stick-vertical-body');
+        jQ('body').removeClass('boost-pfs-filter-stick-vertical-body');           
         _this.css({
         position: 'initial'
         });
@@ -1010,44 +1010,44 @@ var boostPFSFilterConfig = {
 
       if (scrollTop <= $contentTop) { /* Initial Position */
         _this.removeClass('boost-pfs-filter-stick');
-        jQ('body').removeClass('boost-pfs-filter-stick-vertical-body');
+        jQ('body').removeClass('boost-pfs-filter-stick-vertical-body');          
         _this.css({
           position: 'initial',
           width: '100%'
         });
         return;
-      }
+      }      
 
-      if ((scrollBottom >= endPos)) { /* End Position  */
+      if ((scrollBottom >= endPos)) { /* End Position  */          
         var absolutePos = endPos - sidebarHeight - $contentTop;
         if (absolutePos > 0) {
           _this.removeClass('boost-pfs-filter-stick');
-          jQ('body').removeClass('boost-pfs-filter-stick-vertical-body');
+          jQ('body').removeClass('boost-pfs-filter-stick-vertical-body');            
           _this.css({
             position: 'absolute',
             top: absolutePos,
             bottom: 'unset',
             width: width
           });
-        }
+        } 
         return;
       }
-      /* when scrolling down */
-      if (isScrollingDown) {
+      /* when scrolling down */  
+      if (isScrollingDown) {          
         if (scrollBottom < sidebarBottom) { /* Until reach the sidebar bottom  */
           if (_this.css('position') !== 'relative') {
             _this.removeClass('boost-pfs-filter-stick');
-            jQ('body').removeClass('boost-pfs-filter-stick-vertical-body');
+            jQ('body').removeClass('boost-pfs-filter-stick-vertical-body');          
             _this.css({
               position: 'relative',
               top: sidebarTop - $contentTop,
               bottom: 'unset',
               width: '100%'
-            });
+            });          
           }
-        } else if (scrollBottom >= sidebarBottom && scrollTop > $contentTop) { /* Sticky sidebar */
+        } else if (scrollBottom >= sidebarBottom && scrollTop > $contentTop) { /* Sticky sidebar */                
           _this.addClass('boost-pfs-filter-stick');
-          jQ('body').addClass('boost-pfs-filter-stick-vertical-body');
+          jQ('body').addClass('boost-pfs-filter-stick-vertical-body');                        
 
           _this.css({
             position: 'fixed',
@@ -1057,21 +1057,21 @@ var boostPFSFilterConfig = {
             left: 'auto'
           });
         }
-      } else { /* when scrolling up */
-        if ((scrollTop - headerHeight) > sidebarTop) {  /* Until reach the sidebar top  */
+      } else { /* when scrolling up */     
+        if ((scrollTop - headerHeight) > sidebarTop) {  /* Until reach the sidebar top  */   
           if (_this.css('position') !== 'relative') {
             _this.removeClass('boost-pfs-filter-stick');
-            jQ('body').removeClass('boost-pfs-filter-stick-vertical-body');
+            jQ('body').removeClass('boost-pfs-filter-stick-vertical-body');           
             _this.css({
               position: 'relative',
               top: sidebarTop - $contentTop,
               bottom: 'unset',
               width: '100%'
-            });
+            });          
           }
         } else if (scrollTop <= (endPos - sidebarHeight)) { /* Sticky sidebar */
           _this.addClass('boost-pfs-filter-stick');
-          jQ('body').addClass('boost-pfs-filter-stick-vertical-body');
+          jQ('body').addClass('boost-pfs-filter-stick-vertical-body');                        
 
           _this.css({
             position: 'fixed',
@@ -1082,13 +1082,13 @@ var boostPFSFilterConfig = {
           });
         }
       }
-      /* End when scrolling down */
+      /* End when scrolling down */ 
       /* save last scroll position */
       lastScrollTop = window.pageYOffset || document.body.scrollTop;
     };
 
     /* on window resize */
-    jQ(window).resize(function() {
+    jQ(window).resize(function() {        
       setPosition();
     });
 
@@ -1097,7 +1097,7 @@ var boostPFSFilterConfig = {
       setPosition();
     });
     setPosition();
-
+    
     jQ(document).on('click', '.boost-pfs-filter-button.boost-pfs-filter-option-title-heading', function() {
         setTimeout(setPosition, 400);
     });
@@ -1118,7 +1118,7 @@ var boostPFSFilterConfig = {
 
     // Do your custom code after the original function has run
     /*  View As Type 2/3/4/5/6 */
-
+    
     if (boostPFSThemeConfig.custom.view_as_type == 'view_as_type_list_grid_multi_col' && !Utils.isMobile()) {
         jQ('.boost-pfs-filter-top-display-type').addClass('boost-pfs-filter-view-as-click');
 				var currentClass = jQ(event.target).data('view');
@@ -1341,7 +1341,7 @@ var boostPFSFilterConfig = {
       if(jQ('.boost-pfs-filter-wrapper').length > 0){
         divTop = jQ('.boost-pfs-filter-wrapper').offset().top;
       }
-
+          
       if (windowTop > divTop) {
         jQ('body').addClass('boost-pfs-filter-horizontal-sticky-body');
       } else {
@@ -1350,4 +1350,77 @@ var boostPFSFilterConfig = {
     }
   }
 
+  	ProductList.prototype._scrollBackToItem = function(scrollData) {
+		// Scroll back to item
+		if (
+			scrollData 
+			&& scrollData.hasOwnProperty('page') 
+			&& scrollData.hasOwnProperty('productId') 
+			&& scrollData.hasOwnProperty('position') 
+			&& scrollData.hasOwnProperty('url')
+		) {
+			// Check if the current url is the same with scroll data url
+			var cloneQueryParams = JSON.parse(JSON.stringify(Globals.queryParams));
+			var scrollUrlQueryString = typeof scrollData.url == 'string' && scrollData.url.split('?').length == 2 ? scrollData.url.split('?')[1] : '';
+			const urlParams = new URLSearchParams(scrollUrlQueryString);
+			var page = urlParams.get('page');
+			if (page) {
+				cloneQueryParams.page = page;
+			}
+
+			var url = Navigation.buildAddressBarUrl(cloneQueryParams);
+			var paginationType = Settings.getSettingValue('general.paginationType');
+			var $selectedProduct = this.$element.find('[data-id="' + scrollData.productId + '"]').first();
+			var self = this;
+
+			if (!$selectedProduct.length || url != scrollData.url) {
+				self.parent._changeProductListGobackPreviousPositionStatus(false);
+				return;
+			}
+
+            if (page === null) {
+                window.scrollTo({
+                    top: scrollData.position,
+                    behavior: 'smooth'
+                });
+            } else {
+    			// Default pagination or first page: scroll to position
+    			if (paginationType == ProductPagination.Type.DEFAULT) {
+    				window.scrollTo({
+    					top: scrollData.position,
+    					behavior: 'smooth'
+    				});
+    
+    			// Infinite, load more: scroll to product
+    			} else {
+    				// Get the selected product element
+    				var $selectedProduct = this.$element.find('[data-id="' + scrollData.productId + '"]').first();
+    				var scrollPos = $selectedProduct.offset().top - scrollData.offset;
+    
+    				window.scrollTo({
+    					top: scrollPos,
+    					behavior: 'smooth'
+    				});
+    
+    				if (window.IntersectionObserver) {
+    					var intersectionObserver = new IntersectionObserver(function (entries, observer) {
+    						for (var entry of entries) {
+    							if (entry.isIntersecting) {
+    								self.parent._changeProductListGobackPreviousPositionStatus(false);
+    								observer.disconnect();
+    							}
+    						}
+    					});
+    
+    					intersectionObserver.observe($selectedProduct[0]);
+    				} else {
+    					setTimeout(() => {
+    						self.parent._changeProductListGobackPreviousPositionStatus(false);
+    					}, 500);
+    				}
+    			}
+              
+            }
+		}
+	}
 })();

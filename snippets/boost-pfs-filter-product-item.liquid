@@ -63,6 +63,7 @@
 {%- endif -%}
 {%- capture sale_label -%}
 {%- if on_sale == true and sale_label_enable == true -%}
+	{%- assign sale_number = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price -%}
 	{%- if sale_label_display == 'sale_percent' -%}
 		{%- assign salePercent = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price | append: '%' | prepend: '-' -%}
     {%- assign label_sale_percent = label_sale_percent | replace: '{{', '' -%}
@@ -103,7 +104,7 @@
 {%- assign date_difference = date_now | minus: date_published -%}
 {%- assign date_limit = 86400 | times: settings.new_product_period -%}
 {%- if date_difference < date_limit -%}
-  <div class="new boost-pfs-filter-label">BARU</div>
+  <div class="new boost-pfs-filter-label">New</div>
 {%- endif -%}
 {%- endcapture -%}
 
@@ -357,15 +358,15 @@
 		<div class="boost-pfs-filter-product-bottom">
 			<div class="boost-pfs-filter-product-bottom-inner">
         {%- if settings.show_product_vendor -%}
-          <a href="/collections/{{- product.vendor | handle -}}" class="product-vendor">
+          <a href="/collections/{% if collection == blank %}all{% else %}{{ collection.handle }}{% endif %}/{{- product.vendor | handle -}}" class="product-vendor">
             {{- product.vendor -}}
           </a>
         {%- endif -%}
-			<a href="{{- product_url -}}#" class="boost-pfs-filter-product-item-title">{{- product.title -}}</a>
-			{{- product_review -}}
-			{{- product_price -}}
-			{%- if product_item_type == 'list' -%}
-			<p class="boost-pfs-filter-des">{{- product.content | strip_html | truncatewords: 40 -}}</p>
+				<a href="{{- product_url -}}#" class="boost-pfs-filter-product-item-title">{{- product.title -}}</a>{% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
+				{{- product_review -}}
+				{{- product_price -}}
+				{%- if product_item_type == 'list' -%}
+				<p class="boost-pfs-filter-des">{{- product.content | strip_html | truncatewords: 40 -}}</p>
 				{%- endif -%}
         {%- if swatch_enable -%}
 				  {{- product_swatch -}}

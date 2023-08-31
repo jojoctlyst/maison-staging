@@ -11,7 +11,7 @@
       {%- assign url = 'store_url_' | append: forloop.index -%}
       {%- assign url = footer_additional.settings[url] -%}
       {%- if img != blank -%}
-      <li>
+      <li class="store-item">
         {% if url == blank %}
         <div>
         {% else %}
@@ -46,15 +46,18 @@
     gap: 14px;
     list-style: none;
     padding: 0;
+    flex-wrap: wrap;
   }
   @media (max-width: 575px) {
     .footer-additional-title {
       text-align: center;
     }
     .tt-store-list {
-      gap: 20px !important;
-      flex-wrap: wrap;
+      gap: 4px !important;
       justify-content: center;
+    }
+    .tt-store-list li.store-item {
+      margin: 10px;
     }
   }
 </style>

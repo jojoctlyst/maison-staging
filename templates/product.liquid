@@ -24,7 +24,7 @@
       {%- if variant.sku != blank -%}
       <meta itemprop="sku" content="{{ variant.sku }}">
       {%- endif -%}
-      <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+      <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
       <meta itemprop="price" content="{{ wcp_v_price | divided_by: 100.00 }}">
       <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
       <link itemprop="url" href="{{ shop.url | append: variant.url }}">
@@ -54,9 +54,7 @@
     
   {% if product.available and settings.satc_show %}
     window.addEventListener('DOMContentLoaded', function() {
-      $(document).ready(function(){
-        $('.btn-addtocart').length && $('.tt-fixed-product-wrapper').length && initStickyAddToCart();
-      })
+      $('.btn-addtocart').length && $('.tt-fixed-product-wrapper').length && initStickyAddToCart();
     });
 
     function initStickyAddToCart(){
@@ -70,6 +68,7 @@
 
       $(window).resize(isatcResize);
       $(window).scroll(isatcScrollHandler);
+      init();
       isatcResize();
       isatcScrollHandler();
 
@@ -105,6 +104,15 @@
         }, 200)
       })
       
+      function init(){
+        setTimeout(function(){
+          var s = q.find('.tt-title-options .current_option_name').first().text();
+          if (s)  {
+            $(".tt-size-js").text(s);
+          }
+        }, 1000)
+      }
+
       function isatcResize(){
         if($('.select_options').length) return false;
         var h = p.innerHeight() - 4;
@@ -119,6 +127,13 @@
           p.find('.btn').replaceWith($('.btn-addtocart').first().clone().removeClass('btn-lg btn-addtocart addtocart-js').addClass('stickyaddtocart').css('background', '#12784A'));
           $('.tt-promo-fixed').length && $('.tt-promo-fixed').css('bottom', p.innerHeight()+20);
           p.fadeIn(200);
+
+          setTimeout(function(){
+            var s = q.find('.tt-title-options .current_option_name').first().text();
+            if (s)  {
+              $(".tt-size-js").text(s);
+            }
+          }, 200)
         }
         else{
           if(!p.hasClass('atdshowed') || $('.select_options').length) return false;
@@ -325,7 +340,6 @@
     });
   });
 </script>
-
 <div class="aiod-bundle-discount-wrap" ></div>
 {% assign wcp_prd_var = product %}
 {% unless wcp_prd_var == empty %}

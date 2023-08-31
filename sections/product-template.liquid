@@ -58,6 +58,7 @@ date_difference = 60 * 60 * 24 * day counter, this is new product period in seco
 {%- assign upsellcollection = upsellcollection | strip -%}
 {{ upsellcollection }}
 
+
 {%- if item.show_custom_related -%}
 {%- assign product_meta = product.metafields.description -%}
 {%- unless product_meta.related_collection == blank -%}

@@ -1,0 +1,1338 @@
+<style type="text/css">
+	html {
+     scroll-behavior: smooth;
+  }
+  .voila-template * {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+    scroll-behavior: smooth;
+  }
+
+  .voila-template h1,
+  .voila-template h2,
+  .voila-template h3,
+  .voila-template h4,
+  .voila-template h5,
+  .voila-template h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  /*
+  Reset links to optimize for opt-in styling instead of opt-out.
+  */
+
+  .voila-template a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  /*
+  Add the correct font weight in Edge and Safari.
+  */
+
+  .voila-template b,
+  .voila-template strong {
+    font-weight: bold;
+  }
+
+
+  /*
+  Add the correct font size in all browsers.
+  */
+
+  .voila-template small {
+    font-size: 80%;
+  }
+
+  /*
+  Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+  */
+
+  /*
+  Removes the default spacing and border for appropriate elements.
+  */
+
+  .voila-template blockquote,
+  .voila-template dl,
+  .voila-template dd,
+  .voila-template h1,
+  .voila-template h2,
+  .voila-template h3,
+  .voila-template h4,
+  .voila-template h5,
+  .voila-template h6,
+  .voila-template hr,
+  .voila-template figure,
+  .voila-template p,
+  .voila-template pre {
+    margin: 0;
+  }
+
+
+  .voila-template ol {
+    padding-left: 16px;
+  }
+  .voila-template ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .voila-template img,
+  .voila-template svg {
+    display: block;
+    /* 1 */
+    vertical-align: middle;
+    /* 2 */
+  }
+
+  /*
+  Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+  */
+
+  .voila-template img,
+  .voila-template video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /*HERE*/
+  .voila-template :is(.ky-relative){
+    position: relative;
+  }
+
+  .voila-template :is(.ky-mb-0){
+    margin-bottom: 0px;
+  }
+
+  .voila-template :is(.ky-mb-1){
+    margin-bottom: 0.25rem;
+  }
+
+  .voila-template :is(.ky-mb-12){
+    margin-bottom: 3rem;
+  }
+
+  .voila-template :is(.ky-mb-2){
+    margin-bottom: 0.5rem;
+  }
+
+  .voila-template :is(.ky-mb-2\.5){
+    margin-bottom: 0.625rem;
+  }
+
+  .voila-template :is(.ky-mb-3){
+    margin-bottom: 0.75rem;
+  }
+
+  .voila-template :is(.ky-mb-4){
+    margin-bottom: 1rem;
+  }
+
+  .voila-template :is(.ky-mb-5){
+    margin-bottom: 1.25rem;
+  }
+
+  .voila-template :is(.ky-mb-6){
+    margin-bottom: 1.5rem;
+  }
+
+  .voila-template :is(.ky-mb-8){
+    margin-bottom: 2rem;
+  }
+
+  .voila-template :is(.ky-mb-9){
+    margin-bottom: 2.25rem;
+  }
+
+  .voila-template :is(.ky-mr-1){
+    margin-right: 0.25rem;
+  }
+
+  .voila-template :is(.ky-mr-2){
+    margin-right: 0.5rem;
+  }
+
+  .voila-template :is(.ky-mr-2\.5){
+    margin-right: 0.625rem;
+  }
+
+  .voila-template :is(.ky-mr-4){
+    margin-right: 1rem;
+  }
+
+  .voila-template :is(.ky-mt-4){
+    margin-top: 1rem;
+  }
+
+  .voila-template :is(.ky-mt-8){
+    margin-top: 2rem;
+  }
+
+  .voila-template :is(.ky-block){
+    display: block;
+  }
+
+  .voila-template :is(.ky-inline-block){
+    display: inline-block;
+  }
+
+  .voila-template :is(.ky-flex){
+    display: flex;
+  }
+
+  .voila-template :is(.ky-inline-flex){
+    display: inline-flex;
+  }
+
+  .voila-template :is(.ky-grid){
+    display: grid;
+  }
+
+  .voila-template :is(.ky-h-220){
+    height: 220px;
+  }
+
+  .voila-template :is(.ky-h-8){
+    height: 2rem;
+  }
+
+  .voila-template :is(.ky-h-full){
+    height: 100%;
+  }
+
+  .voila-template :is(.ky-min-h-0){
+    min-height: 0px;
+  }
+
+  .voila-template :is(.ky-min-h-145){
+    min-height: 90px;
+  }
+
+  .voila-template :is(.ky-min-h-155){
+    min-height: 155px;
+  }
+
+  .voila-template :is(.ky-min-h-full){
+    min-height: 100%;
+  }
+
+  .voila-template :is(.ky-w-4){
+    width: 1rem;
+  }
+
+  .voila-template :is(.ky-w-8){
+    width: 2rem;
+  }
+
+  .voila-template :is(.ky-w-full){
+    width: 100%;
+  }
+
+  .voila-template :is(.ky-flex-none){
+    flex: none;
+  }
+
+  .voila-template :is(.ky-flex-grow){
+    flex-grow: 1;
+  }
+
+  .voila-template :is(.ky-grid-cols-2){
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .voila-template :is(.ky-grid-cols-3){
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .voila-template :is(.ky-flex-row){
+    flex-direction: row;
+  }
+
+  .voila-template :is(.ky-items-start){
+    align-items: flex-start;
+  }
+
+  .voila-template :is(.ky-items-center){
+    align-items: center;
+  }
+
+  .voila-template :is(.ky-justify-start){
+    justify-content: flex-start;
+  }
+
+  .voila-template :is(.ky-justify-center){
+    justify-content: center;
+  }
+
+  .voila-template :is(.ky-gap-2){
+    gap: 0.5rem;
+  }
+
+  .voila-template :is(.ky-gap-4){
+    gap: 1rem;
+  }
+
+  .voila-template :is(.ky-gap-6){
+    gap: 1.5rem;
+  }
+
+  .voila-template :is(.ky-rounded){
+    border-radius: 0.25rem;
+  }
+
+  .voila-template :is(.ky-rounded-full){
+    border-radius: 9999px;
+  }
+
+  .voila-template :is(.ky-rounded-lg){
+    border-radius: 0.5rem;
+  }
+
+  .voila-template :is(.ky-border){
+    border-width: 1px;
+  }
+
+  .voila-template :is(.ky-border-2){
+    border-width: 2px;
+  }
+
+  .voila-template :is(.ky-border-grey3){
+    --tw-border-opacity: 1;
+    border-color: rgb(238 238 238 / var(--tw-border-opacity));
+  }
+
+  .voila-template :is(.ky-border-primary){
+    --tw-border-opacity: 1;
+    border-color: rgb(18 120 74 / var(--tw-border-opacity));
+  }
+
+  .voila-template :is(.ky-bg-black){
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  }
+
+  .voila-template :is(.ky-bg-grey1){
+    --tw-bg-opacity: 1;
+    background-color: rgb(153 153 153 / var(--tw-bg-opacity));
+  }
+
+  .voila-template :is(.ky-bg-grey3){
+    --tw-bg-opacity: 1;
+    background-color: rgb(238 238 238 / var(--tw-bg-opacity));
+  }
+
+  .voila-template :is(.ky-bg-grey4){
+    --tw-bg-opacity: 1;
+    background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+  }
+
+  .voila-template :is(.ky-bg-vgreen1){
+    --tw-bg-opacity: 1;
+    background-color: rgb(227 249 227 / var(--tw-bg-opacity));
+  }
+
+  .voila-template :is(.ky-bg-white){
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .voila-template :is(.ky-bg-cover){
+    background-size: cover;
+  }
+
+  .voila-template :is(.ky-bg-center){
+    background-position: center;
+  }
+
+  .voila-template :is(.ky-fill-current){
+    fill: currentColor;
+  }
+
+  .voila-template :is(.ky-p-2){
+    padding: 0.5rem;
+  }
+
+  .voila-template :is(.ky-p-2\.5){
+    padding: 0.625rem;
+  }
+
+  .voila-template :is(.ky-p-3){
+    padding: 0.75rem;
+  }
+
+  .voila-template :is(.ky-px-2){
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .voila-template :is(.ky-px-4){
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .voila-template :is(.ky-px-6){
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .voila-template :is(.ky-py-0){
+    padding-top:0;
+    padding-bottom:0;
+  }
+
+  .voila-template :is(.ky-py-1){
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .voila-template :is(.ky-py-1\.5){
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+  }
+
+  .voila-template :is(.ky-py-2){
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .voila-template :is(.ky-py-2\.5){
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+
+  .voila-template :is(.ky-py-3){
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .voila-template :is(.ky-py-4){
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .voila-template :is(.ky-py-5){
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .voila-template :is(.ky-py-8){
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .voila-template :is(.ky-pt-6){
+    padding-top: 1.5rem;
+  }
+
+  .voila-template :is(.ky-text-center){
+    text-align: center;
+  }
+
+  .voila-template :is(.ky-font-prim){
+    font-family: Poppins, sans-serif;
+  }
+
+  .voila-template :is(.ky-text-base){
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .voila-template :is(.ky-text-lg){
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .voila-template :is(.ky-text-sm){
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .voila-template :is(.ky-text-xs){
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .voila-template :is(.ky-text-xs2){
+    font-size: 0.6875rem;
+  }
+
+  .voila-template :is(.ky-font-bold){
+    font-weight: 700;
+  }
+
+  .voila-template :is(.ky-font-medium){
+    font-weight: 500;
+  }
+
+  .voila-template :is(.ky-font-normal){
+    font-weight: 400;
+  }
+
+  .voila-template :is(.ky-italic){
+    font-style: italic;
+  }
+
+  .voila-template :is(.ky-text-black60){
+    --tw-text-opacity: 1;
+    color: rgb(102 102 102 / var(--tw-text-opacity));
+  }
+
+  .voila-template :is(.ky-text-black90){
+    --tw-text-opacity: 1;
+    color: rgb(25 25 25 / var(--tw-text-opacity));
+  }
+
+  .voila-template :is(.ky-text-primary){
+    --tw-text-opacity: 1;
+    color: rgb(18 120 74 / var(--tw-text-opacity));
+  }
+
+  .voila-template :is(.ky-text-white){
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .voila-template :is(.ky-underline){
+    text-decoration-line: underline;
+  }
+
+  .voila-template :is(.ky-line-through){
+    text-decoration-line: line-through;
+  }
+
+  .voila-template a, .voila-template .trans {
+    transition: all 0.3s linear;
+  }
+
+  .voila-template .ky-tab-btn{
+    display: inline-block;
+    --tw-text-opacity: 1;
+    color: rgb(153 153 153 / var(--tw-text-opacity));
+    cursor: pointer;
+  }
+
+  .voila-template .ky-tab-btn.active{
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+    background-color: white;
+  }
+
+  .voila-template .ky-section-container {
+    width: 100%;
+    max-width: 1168px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .voila-template :is(.hover\:ky-bg-primary:hover){
+    --tw-bg-opacity: 1;
+    background-color: rgb(18 120 74 / var(--tw-bg-opacity));
+  }
+
+  .voila-template :is(.hover\:ky-text-black:hover){
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+  }
+
+  .voila-template :is(.hover\:ky-text-primary:hover){
+    --tw-text-opacity: 1;
+    color: rgb(18 120 74 / var(--tw-text-opacity));
+  }
+
+  .voila-template :is(.hover\:ky-text-white:hover){
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .voila-template :is(.hover\:ky-underline:hover){
+    text-decoration-line: underline;
+  }
+
+  @media (min-width: 768px){
+    .voila-template :is(.md\:ky-mx-6){
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    .voila-template :is(.md\:ky-mb-0){
+      margin-bottom: 0px;
+    }
+
+    .voila-template :is(.md\:ky-mb-10){
+      margin-bottom: 2.5rem;
+    }
+
+    .voila-template :is(.md\:ky-mb-2){
+      margin-bottom: 0.5rem;
+    }
+
+    .voila-template :is(.md\:ky-mb-4){
+      margin-bottom: 1rem;
+    }
+
+    .voila-template :is(.md\:ky-mb-8){
+      margin-bottom: 2rem;
+    }
+
+    .voila-template :is(.md\:ky-mr-4){
+      margin-right: 1rem;
+    }
+
+    .voila-template :is(.md\:ky-mr-6){
+      margin-right: 1.5rem;
+    }
+
+    .voila-template :is(.md\:ky-mt-0){
+      margin-top: 0px;
+    }
+
+    .voila-template :is(.md\:ky-flex){
+      display: flex;
+    }
+
+    .voila-template :is(.md\:ky-h-330){
+      height: 330px;
+    }
+
+    .voila-template :is(.md\:ky-h-450){
+      height: 450px;
+    }
+
+    .voila-template :is(.md\:ky-h-9){
+      height: 2.25rem;
+    }
+
+    .voila-template :is(.md\:ky-min-h-150){
+      min-height: 120px;
+    }
+
+    .voila-template :is(.md\:ky-min-h-300){
+      min-height: 300px;
+    }
+    .voila-template :is(.md\:ky-min-h-400){
+      min-height: 400px;
+    }
+
+    .voila-template :is(.md\:ky-w-1\/2){
+      width: 50%;
+    }
+
+    .voila-template :is(.md\:ky-w-1\/3){
+      width: 33.333333%;
+    }
+
+    .voila-template :is(.md\:ky-w-100){
+      width: 25rem;
+    }
+
+    .voila-template :is(.md\:ky-w-5){
+      width: 1.25rem;
+    }
+
+    .voila-template :is(.md\:ky-w-9){
+      width: 2.25rem;
+    }
+
+    .voila-template :is(.md\:ky-w-auto){
+      width: auto;
+    }
+
+    .voila-template :is(.md\:ky-flex-none){
+      flex: none;
+    }
+
+    .voila-template :is(.md\:ky-grid-cols-3){
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .voila-template :is(.md\:ky-grid-cols-4){
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .voila-template :is(.md\:ky-flex-col){
+      flex-direction: column;
+    }
+
+    .voila-template :is(.md\:ky-items-center){
+      align-items: center;
+    }
+
+    .voila-template :is(.md\:ky-justify-between){
+      justify-content: space-between;
+    }
+
+    .voila-template :is(.md\:ky-gap-4){
+      gap: 1rem;
+    }
+
+    .voila-template :is(.md\:ky-gap-6){
+      gap: 1.5rem;
+    }
+
+    .voila-template :is(.md\:ky-gap-x-6){
+      -moz-column-gap: 1.5rem;
+           column-gap: 1.5rem;
+    }
+
+    .voila-template :is(.md\:ky-gap-y-8){
+      row-gap: 2rem;
+    }
+
+    .voila-template :is(.md\:ky-bg-white){
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    }
+
+    .voila-template :is(.md\:ky-p-4){
+      padding: 1rem;
+    }
+
+    .voila-template :is(.md\:ky-px-6){
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .voila-template :is(.md\:ky-py-0){
+      padding-top:0;
+      padding-bottom:0;
+    }
+
+    .voila-template :is(.md\:ky-py-1){
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+
+    .voila-template :is(.md\:ky-py-1\.5){
+      padding-top: 0.375rem;
+      padding-bottom: 0.375rem;
+    }
+
+    .voila-template :is(.md\:ky-py-3\.5){
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+    }
+
+    .voila-template :is(.md\:ky-py-10){
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .voila-template :is(.md\:ky-py-12){
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .voila-template :is(.md\:ky-py-16){
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .voila-template :is(.md\:ky-py-2){
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .voila-template :is(.md\:ky-py-2\.5){
+      padding-top: 0.625rem;
+      padding-bottom: 0.625rem;
+    }
+
+    .voila-template :is(.md\:ky-py-3){
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .voila-template :is(.md\:ky-py-6){
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .voila-template :is(.md\:ky-py-8){
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .voila-template :is(.md\:ky-pb-0){
+      padding-bottom: 0px;
+    }
+
+    .voila-template :is(.md\:ky-pr-20){
+      padding-right: 5rem;
+    }
+
+    .voila-template :is(.md\:ky-pt-8){
+      padding-top: 2rem;
+    }
+
+    .voila-template :is(.md\:ky-pt-20){
+      padding-top: 5rem;
+    }
+
+    .voila-template :is(.md\:ky-text-center){
+      text-align: center;
+    }
+
+    .voila-template :is(.md\:ky-text-2xl){
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .voila-template :is(.md\:ky-text-base){
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .voila-template :is(.md\:ky-text-lg){
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    .voila-template :is(.md\:ky-text-sm){
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .voila-template :is(.md\:ky-text-xl){
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .voila-template :is(.md\:ky-text-xs1){
+      font-size: 0.625rem;
+    }
+
+    .voila-template :is(.md\:ky-leading-4){
+      line-height: 1rem;
+    }
+  }
+</style>
+<style type="text/css">
+	* {
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	}
+	img {
+	  max-width: 100%;
+	  height: auto;
+	}
+	.tt-breadcrumb {
+		display: none;
+	}
+	.voila-template .ky-desktop {
+	  display: block;
+	}
+	.voila-template .ky-mobile {
+	  display: none;
+	}
+
+
+	.voila-template .voila-slider-init {
+    visibility: hidden;
+    transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+  }
+	.voila-template .arrow-location-tab .slick-arrow {
+	  top: calc( 50% - 1rem );
+	}
+	.voila-template .arrow-location-tab .slick-arrow.slick-disabled {
+	  display: none!important;
+	}
+	.voila-template .slick-slider .slick-track {
+	  display: flex;
+	}
+	.voila-template .slick-dot-style .slick-dots {
+	  margin-top: 16px;
+	}
+	.voila-template .slick-dot-style .slick-dots li button {
+	  width: 8px;
+	  height: 8px;
+	  padding: 0;
+	  background:#CCCCCC;
+	}
+	.voila-template .slick-dot-style .slick-dots li.slick-active button {
+	  background:#12784A;
+	}
+
+	/* Slider Sale */
+	.voila-template .kaya-slider-init {
+	  visibility: hidden;
+	  transition: all 0.2s linear;
+	  -ms-transition: all 0.2s linear;
+	  -webkit-transition: all 0.2s linear;
+	  -o-transition: all 0.2s linear;
+	}
+	.voila-template .arrow-location-tab {
+	   margin-top: 0;
+	}
+	.voila-template .voila-slider-sale-js .slick-slide {
+	  margin: 0 12px;
+	}
+	.voila-template .voila-slider-sale-js .slick-list {
+	  margin: 0 -12px;
+	}
+	/*.voila-template .voila-slider-sale-js {
+	  margin-left: -12px;
+	  margin-right: -12px;
+	}*/
+	.voila-template .voila-slider-sale-js.arrow-location-tab .slick-next  {
+	  right: -50px;
+	}
+	.voila-template .voila-slider-sale-js.arrow-location-tab .slick-prev  {
+	  left: -50px;
+	}
+
+	/* Slider Banner */
+	.voila-template  .slick-dotted.slick-slider {
+	  margin-bottom: 0;
+	}
+	.voila-template .slick-slider .slick-dots {
+	  bottom: 23px;
+	  display: flex;
+	  background-color: #00000066;
+	  padding: 10px;
+	  width: auto;
+	  left: calc(50% - 34px);
+	  border-radius: 999px;
+	}
+	.voila-template .slick-slider .slick-dots li button {
+	  width: 8px;
+	  height: 8px;
+	  background: #999;
+	  padding: 0;
+	}
+	.voila-template .slick-slider .slick-dots li.slick-active button {
+	  background-color: #12784A;
+	  width: 10px;
+	  height: 10px;
+	}
+	.voila-template .slick-slider .slick-dots li button:before {
+	  width: 10px;
+	  height: 10px;
+	  font-size: 0px;
+	}
+	.voila-template .slick-slider .slick-dots li {
+	  width: 10px;
+	  height: 10px;
+	  margin: 0 4px;
+	  padding: 0;
+	  display: flex;
+	    align-items: center;
+	}
+	.voila-template .arrow-location-banner .slick-arrow:before {
+	    color: white;
+	    font-weight: bold;
+	    font-size: 22px;
+	}
+	.voila-template .arrow-location-banner .slick-arrow {
+	  width: 44px;
+	  height: 44px;
+	  background: #00000066;
+	  top: calc( 50% - 3px );
+	}
+	.voila-template .arrow-location-banner .slick-next  {
+	  right: 36px;
+	}
+	.voila-template .arrow-location-banner .slick-prev  {
+	  left: 36px;
+	}
+	.voila-template .voila-banner-block {
+	  display: block!important;
+	}
+	/* Stiky nav */
+	.voila-sticky {
+	  position: fixed;
+	  left: 0;
+	  background-color: white;
+	  display: flex;
+	  justify-content: center;
+	  padding: 8px 16px;
+	  width: 100%;
+	  z-index: 99999;
+	  box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.12);
+	}
+
+	/* Utils */
+	.voila-template .voila-ellipsis1-m2,
+	.voila-template .voila-ellipsis1 {
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  display: -webkit-box;
+	  -webkit-line-clamp: 1;
+	  -webkit-box-orient: vertical;
+	}
+	.voila-template .voila-ellipsis2 {
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  display: -webkit-box;
+	  -webkit-line-clamp: 2;
+	  -webkit-box-orient: vertical;
+	}
+
+	.voila-template .tab-anchor {
+		scroll-margin-top: calc(64px + 220px);
+	}
+
+
+  .nav-tabs .slider {
+    display:inline-block;
+    width:149px;
+    height:48px;
+    border-radius:999px;
+    background-color:white;
+    position:absolute;
+    z-index:0;
+    bottom:0;
+    transition:all .2s linear;
+  }
+  .nav-tabs .nav-item {
+    z-index:1;
+  }
+
+  .voila-template .ky-gridflex-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 calc(15% + 24px);
+  }
+  .voila-template .ky-gridflex-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding: 0 33%;
+  }
+
+	@media (max-width: 1230px){
+      
+    }
+	@media (max-width: 1025px){
+      .voila-template .ky-gridflex-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 0 calc(5% + 24px);
+      }
+      .voila-template .ky-gridflex-1 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding: 0 30%;
+      }
+    }
+	@media (max-width: 791px){
+      .voila-template .ky-gridflex-1,
+      .voila-template .ky-gridflex-2 {
+        grid-template-columns: repeat(2, minmax(0, 2fr));
+        padding: 0;
+      }
+    .tt-footer-custom .footer-wrapper {
+      padding-top: 10px;
+     }
+    .nav-tab-wrap {
+      margin-bottom: 2px;
+    }
+    .voila-sticky {
+      padding: 12px 16px;
+    }
+    .voila-sticky .nav-tab-wrap {
+      padding: 0;
+      background-color: white;
+    }
+    .voila-sticky .ky-tab-btn {
+      border:  1px solid #CCC;
+      padding: 12px;
+    }
+    /*.voila-sticky .ky-tab-btn:hover {
+      border:  1px solid #12784a;
+    }*/
+    .voila-sticky .ky-tab-btn.active {
+      border: 1px solid #12784a;
+    }
+
+    .nav-tabs .slider {
+      height:40px;
+    }
+		.voila-template .tab-anchor {
+			scroll-margin-top: 140px;
+		}
+		footer {
+		  margin-top: 0!important;
+		}
+	  .voila-template .voila-slider-sale-js {
+	    padding-right: 0;
+	    padding-left: 0;
+	    margin-right: -1rem;
+	    margin-left: -1rem;
+	  }
+	  .voila-template .voila-slider-sale-js .slick-list {
+	    margin: 0 -8px;
+	    padding-right: 16px;
+	    padding-left: 16px;
+      padding: 0 17% 0px 16px;
+	  }
+	  .voila-template .voila-slider-sale-js .slick-slide {
+	    margin: 0 8px;
+	    height: inherit;
+	    display: flex;
+	  }
+	  .voila-template .voila-slider-sale-js .slick-slide:first-child {
+	    margin-left: 8px;
+	  }
+	  .voila-template .voila-slider-sale-js .slick-slide > div {
+	    /*height: inherit;
+	    display: flex;
+	    width: 100%;*/
+	  }
+
+	  .voila-template .voila-ellipsis1-m2 {
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    display: -webkit-box;
+	    -webkit-line-clamp: 2;
+	    -webkit-box-orient: vertical;
+	  }
+	  .voila-template .ky-desktop {
+	    display: none;
+	  }
+	  .voila-template .ky-mobile {
+	    display: block;
+	  }
+    .voila-template .voila-sticky .nav-tabs {
+      gap: 0.375rem;
+    }
+    .voila-template .voila-sticky .ky-tab-btn {
+      padding: 8px;
+    }
+	}
+  @media (max-width: 575px){
+    .tt-footer-custom .footer-wrapper {
+      padding-top: 10px!important;
+    }
+  }
+</style>
+
+{%- assign special_promo_sub 		= "Get your hands fast on these curated items, at the best price only for a limited time." -%}
+{%- assign featured_brands_sub 	= "Irresistible offers from these renowned brands you’d sure to love." -%}
+{%- assign boutique_deals_sub 	= "More deals for you to enjoy, exclusive for offline in-Boutique purchases." -%}
+{%- assign bank_offers_sub 			= "Save up with these offers brought to you by our payment partners." -%}
+{%- assign best_deal_sub 				= "Check out these deals we’ve prepared so you can shop more and spend less." -%}
+<style type="text/css">
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  transition-delay: 10ms;
+}
+</style>
+<div class="voila-template">
+  <div class="ky-font-prim ky-text-black90 ky-font-normal">
+  	<section id="banner" class="ky-mb-5 md:ky-mb-0">
+  		{% section 'offer-banner' %}
+  	</section>
+  	<section id="tabs-sale">
+      <div class="ky-section-container">
+      	<div class="ky-py-2 md:ky-py-8">
+          {% section 'offer-tabs-setting' %}
+
+	        <div id="tabs-1" class="ky-tab">
+		        <div class="ky-py-4 ky-mb-4 md:ky-mb-0 md:ky-py-10">
+			        <h1 class="tt-title ky-text-lg md:ky-text-2xl ky-font-bold ky-mb-2 ky-text-left md:ky-text-center">Special Promos</h1>
+			        <p class="ky-text-xs md:ky-text-base ky-text-black60 ky-text-left md:ky-text-center">{{ special_promo_sub }}</p>
+		        </div>
+		        <!-- Tab 1 -->
+            {% section 'offer-first-collection' %}
+	        </div>
+	        <div id="tabs-2" class="ky-tab" style="display: none;">
+  	        <div class="ky-py-4 md:ky-py-10">
+  		        <h1 class="tt-title ky-text-lg md:ky-text-2xl ky-font-bold ky-mb-2 ky-text-left md:ky-text-center">Featured Brands</h1>
+  		        <p class="ky-text-xs md:ky-text-base ky-text-black60 ky-text-left md:ky-text-center">{{ featured_brands_sub }}</p>
+  	        </div>
+            <!-- Tab 2 -->
+            {% section 'offer-second-collection' %}
+	        </div>
+
+	        <div id="tabs-3" class="ky-tab" style="display: none;">
+	        	<div class="ky-py-4 md:ky-py-10">
+							<h1 class="tt-title ky-text-lg md:ky-text-2xl ky-font-bold ky-mb-2 ky-text-left md:ky-text-center">Boutique Deals</h1>
+							<p class="ky-text-xs md:ky-text-base ky-text-black60 ky-text-left md:ky-text-center">{{ boutique_deals_sub }}</p>
+						</div>
+            <!-- Tab 3 -->
+            {% section 'offer-third-collection' %}
+	        </div>
+
+	        <div id="tabs-4" class="ky-tab" style="display: none;">
+	        	<div class="ky-py-4 md:ky-py-10">
+							<h1 class="tt-title ky-text-lg md:ky-text-2xl ky-font-bold ky-mb-2 ky-text-left md:ky-text-center">Bank Offers</h1>
+							<p class="ky-text-xs md:ky-text-base ky-text-black60 ky-text-left md:ky-text-center">{{ bank_offers_sub }}</p>
+						</div>
+						<!-- Tab 4 -->
+            {% section 'offer-fourth-collection' %}
+	        </div>
+
+	      </div>
+	  	</div>
+  	</section>
+  	<section id="best-deal">
+  		<div class="ky-section-container ky-mb-9 md:ky-mb-0">
+      	<div class="ky-pt-6 md:ky-pt-20">
+      		  <div class="ky-mb-4 md:ky-mb-8">
+			        <h1 class="tt-title ky-text-lg md:ky-text-2xl ky-font-bold ky-mb-2 ky-text-left md:ky-text-center">Best Deals For You</h1>
+			        <p class="ky-text-xs md:ky-text-base ky-text-black60 ky-text-left md:ky-text-center">{{ best_deal_sub }}</p>
+		        </div>
+		        {% section 'offer-bestdeal' %}
+      	</div>
+      </div>
+  	</section>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.voila-slider-init').css('visibility', 'visible');
+
+		function reloadSlick() {
+			$('.voila-slider-sale-js').slick('refresh')
+			//$('.voila-slider-banner-js').slick('refresh')
+		}
+		function headerHeight() {
+			var hh = $(".voila-slider-banner-js img").height();
+
+			if($(window).width() < 576) {
+	    	hh += $("#header_mobile_inline").height() - 145
+			} else {
+				hh += $(".tt-desktop-header").height() - $(".tt-header-row ").height() - 70
+			}
+
+			return hh
+		}
+		// Nav sticky
+		var tabs = $("#tabs");
+		    sticky = "voila-sticky";
+		    tabsSale = $("#tabs-sale");
+
+        function toggleSticky(type) {
+          var stack = $('.tt-stuck-nav .tt-header-row ')
+          if (type == 'add') {
+            tabs.addClass(sticky);
+            stack.css('height','60px');
+          } else {
+            tabs.removeClass(sticky);
+            stack.css('height','inherit');
+          }
+        }
+
+		if($(window).width() < 1024) {
+    	$(tabs).css('top', 75)
+		} else {
+			$(tabs).css('top', 64)
+		}
+
+		$(window).scroll(function() {
+      
+          if($(window).width() < 1024) {
+            $(tabs).css('top', 75 + $("#epb_background").height())
+          } else {
+            $(tabs).css('top', 64 + $("#epb_background").height())
+          }
+          
+		  if( $(this).scrollTop() > headerHeight() ) {
+		    toggleSticky('add')
+		    if($(window).width() < 576) {
+		    	tabsSale.css('padding-top', 30)
+				} else {
+					tabsSale.css('padding-top', 0)
+				}
+		  } else {
+		    toggleSticky('remove')
+		    tabsSale.css('padding-top', 0)
+        //setTimeout(function(){
+          //silderPos($( "#tabs .ky-tab-btn.active" ))
+        //}, 200);
+		  }
+		});
+
+		// Tabs
+	  $(".ky-tab-btn").on('click',function(e) {
+	    e.preventDefault()
+	    const store = $(this).attr('data-store');
+
+	    $('.ky-tab-btn').removeClass('active');
+	    $(this).addClass('active');
+
+
+	    $('.ky-tab').hide();
+	    $('#tabs-'+store).show();
+
+      if ($(this).closest('.voila-sticky').length) {
+        setTimeout(() => {
+          document.getElementById('tab-anchor-'+store).scrollIntoView();
+        }, 10);
+      }
+
+	    reloadSlick();
+	  });
+
+    // $("#tabs .ky-tab-btn").click(function() {
+    //   silderPos($(this))
+    // });
+    // var actWidth = $("#tabs-sale .nav-tabs").find(".active").parent("li").width();
+    // var actPosition = $("#tabs-sale .nav-tabs .active").position();
+    // $("#tabs-sale .slider").css({"left":+ actPosition.left,"width": actWidth});
+
+    // function silderPos($this) {
+    //   var position = $this.parent().position();
+    //   var width = $this.parent().width();
+    //   $("#tabs-sale .slider").css({"left":+ position.left,"width":width});
+    // }
+
+	  $('.voila-slider-sale-js').slick({
+	    dots: false,
+	    centerMode: false,
+	    touchThreshold: 30,
+	    infinite: true,
+	    slidesToShow: 4,
+	    slidesToScroll: 4,
+      touchThreshold: 30,
+	    responsive: [
+	      {
+	        breakpoint: 767,
+	        settings: {
+  	          infinite: true,
+	          slidesToShow: 2,
+	          slidesToScroll: 2,
+	          arrows: false,
+	          variableWidth: false,
+	        }
+	      }
+	    ]
+	  });
+
+	  $('.voila-slider-banner-js').slick({
+	    dots: true,
+	    centerMode: false,
+	    touchThreshold: 30,
+	    infinite: true,
+	    slidesToShow: 1,
+      //fade: true,
+	    slidesToScroll: 1,
+      touchThreshold: 30,
+	    responsive: [
+	      {
+	        breakpoint: 767,
+	        settings: {
+	        	infinite: true,
+	          slidesToShow: 1,
+	          slidesToScroll: 1,
+	          arrows: false,
+	          variableWidth: false,
+	        }
+	      }
+	    ]
+	  });
+
+
+  })
+</script>

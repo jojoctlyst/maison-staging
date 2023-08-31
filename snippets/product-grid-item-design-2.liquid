@@ -1,7 +1,7 @@
 
 {%- include 'wcp_discount' with product -%}
 {% include 'wcp_variant' with product.selected_or_first_available_variant %}
-<div class="respimgsize element-item product-parent options-js{% if masonrydoublesize == 'double-size' %} double-size{% endif %}">
+<div class="respimgsize element-item product-grid-item product-parent options-js{% if masonrydoublesize == 'double-size' %} double-size{% endif %}">
   <div class="tt-product-design02{% if settings.center_product_information %} thumbprod-center{% endif %}">
     <div class="tt-image-box">
 
@@ -16,6 +16,7 @@
                data-mainimage="{{ product.featured_image | product_img_url: '100x100' | replace: '100x100', 'respimgsize' }}"
                alt="{{ product.featured_image.alt | escape }}"/>
         </span>
+
         <span class="tt-label-location">
           {%- if product_meta.icon_new != 'disable' -%}
             {%- if date_difference < date_limit or product_meta.icon_new == 'always' -%}
@@ -26,11 +27,11 @@
 
           {%- if product_meta.icon_sale != 'disable' and settings.show_sale_badge_product -%}
             {%- if sale_on -%}
-              {%- assign mc = wcp_v_compare_at_price | money_without_currency | replace: ',', '' -%}
-              {%- assign mo = wcp_v_price | money_without_currency | replace: ',', '' -%}
+              {%- assign mc = wcp_v_compare_at_price | money_without_currency | replace: ',', '' | replace: '.', '' -%}
+              {%- assign mo = wcp_v_price | money_without_currency | replace: ',', '' | replace: '.', '' -%}
               {%- assign percent = mc | minus: mo | times: 100.0 | divided_by: mc | round | append: '%' -%}
             {%- endif -%}
-            <span class="tt-label-sale"{% unless sale_on %} style="display: none;"{% endunless %}>{{ 'products.general.sale_html' | t }} <span class="thumb_percent">{{ percent }}</span></span>
+            <!-- <span class="tt-label-sale"{% unless sale_on %} style="display: none;"{% endunless %}>{{ 'products.general.sale_html' | t }} <span class="thumb_percent">{{ percent }}</span></span> -->
           {%- endif -%}
 
           {%- unless product.available -%}
@@ -99,10 +100,19 @@
       {%- endif -%}
 
       {%- unless settings.catalogue_mode -%}
-      {%- if sale_on -%}
-      <div class="tt-price"><span class="new-price">{{ wcp_v_price | money }}</span><span class="old-price">{{ wcp_v_compare_at_price | money }}</span></div>
+      {%- if wcp_v_price == 100 -%}
+        <p class="boost-pfs-filter-product-item-price price-upon-request">
+          <span>
+            <i class="icon-all-brand"></i>
+            Price Upon Request
+          </span>
+        </p>
       {%- else -%}
-      <div class="tt-price"><span>{{ wcp_v_price | money }}</span><span class="old-price hide"></span></div>
+        {%- if sale_on -%}
+        <div class="tt-price"><span class="new-price">{{ wcp_v_price | money }}</span><span class="old-price">{{ wcp_v_compare_at_price | money }}</span></div>
+        {%- else -%}
+        <div class="tt-price"><span>{{ wcp_v_price | money }}</span><span class="old-price hide"></span></div>
+        {%- endif -%}
       {%- endif -%}
       {%- endunless -%}
 
@@ -184,4 +194,3 @@
   <div class="tt-description onerowactions">
   </div>
 </div>
-

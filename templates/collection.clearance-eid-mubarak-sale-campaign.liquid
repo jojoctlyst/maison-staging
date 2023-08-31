@@ -1,0 +1,532 @@
+{% assign limit = 16 %}
+<div class="tt-offset-small eid-mubarak-sale">
+  <div class="container nopadding" style="padding: 0">
+    <div class="banner-wrapper">
+      <a href="/blogs/promotion/eid-mubarak-sale">
+        <img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/slider-collection.jpg?v=1681133161" class="ls-is-cached lazyloaded" width="100%" />
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="collection-list">
+      <h5 class="d-none d-md-block">Bags</h5>
+      <div class="d-block d-md-none">
+        <div class="custom-block-title text-left">
+          <div>
+            <h5 class="ct-title no-translate">Bags</h5>
+          </div>
+          <a href="/collections/mubarak-sale-bags?sort=relevance" class="link-see-all" title="See All">See All</a>
+        </div>
+      </div>
+      <div class="{% if item.boxed_buttons and item.fullwidth %}slboxedbuttons {% endif %}tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js special-pick desktop-slider">
+        {%- for product in collections['mubarak-sale-bags'].products limit: limit -%}
+        <div class="forsliders-margins">
+          {%- include "product-grid-item" -%}
+        </div>
+        {%- endfor -%}
+      </div>
+      <div class="mobile-only row tt-layout-product-item{% if item.items_always_in_center %} justify-content-center{% endif %}">
+        {%- for product in collections['mubarak-sale-bags'].products limit: limit -%}
+        <div class="col-5 col-md-4 {% if grid == '5' %}col-5-inrow-lg{% else %}col-lg-{{ grid }}{% endif %}">
+          {%- include "product-grid-item" -%}
+        </div>
+        {%- endfor -%}
+      </div>
+      <div class="text-center d-none d-md-block">
+        <a href="/collections/mubarak-sale-bags?sort=relevance" class="btn btn-border btn-top button-see-collection">See All</a>
+      </div>
+    </div>
+
+    <div class="collection-list">
+      <h5 class="d-none d-md-block">Shoes</h5>
+      <div class="d-block d-md-none">
+        <div class="custom-block-title text-left">
+          <div>
+            <h5 class="ct-title no-translate">Shoes</h5>
+          </div>
+          <a href="/collections/mubarak-sale-shoes?sort=relevance" class="link-see-all" title="See All">See All</a>
+        </div>
+      </div>
+      <div class="{% if item.boxed_buttons and item.fullwidth %}slboxedbuttons {% endif %}tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js special-pick desktop-slider">
+        {%- for product in collections['mubarak-sale-shoes'].products limit: limit -%}
+        <div class="forsliders-margins">
+          {%- include "product-grid-item" -%}
+        </div>
+        {%- endfor -%}
+      </div>
+      <div class="mobile-only row tt-layout-product-item{% if item.items_always_in_center %} justify-content-center{% endif %}">
+        {%- for product in collections['mubarak-sale-shoes'].products limit: limit -%}
+        <div class="col-5 col-md-4 {% if grid == '5' %}col-5-inrow-lg{% else %}col-lg-{{ grid }}{% endif %}">
+          {%- include "product-grid-item" -%}
+        </div>
+        {%- endfor -%}
+      </div>
+      <div class="text-center d-none d-md-block">
+        <a href="/collections/mubarak-sale-shoes?sort=relevance" class="btn btn-border btn-top button-see-collection">See All</a>
+      </div>
+    </div>
+
+    <div class="collection-list">
+      <h5 class="d-none d-md-block">Clothing</h5>
+      <div class="d-block d-md-none">
+        <div class="custom-block-title text-left">
+          <div>
+            <h5 class="ct-title no-translate">Clothing</h5>
+          </div>
+          <a href="/collections/mubarak-sale-clothes?sort=relevance" class="link-see-all" title="See All">See All</a>
+        </div>
+      </div>
+      <div class="{% if item.boxed_buttons and item.fullwidth %}slboxedbuttons {% endif %}tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js special-pick desktop-slider">
+        {%- for product in collections['mubarak-sale-clothes'].products limit: limit -%}
+        <div class="forsliders-margins">
+          {%- include "product-grid-item" -%}
+        </div>
+        {%- endfor -%}
+      </div>
+      <div class="mobile-only row tt-layout-product-item{% if item.items_always_in_center %} justify-content-center{% endif %}">
+        {%- for product in collections['mubarak-sale-clothes'].products limit: limit -%}
+        <div class="col-5 col-md-4 {% if grid == '5' %}col-5-inrow-lg{% else %}col-lg-{{ grid }}{% endif %}">
+          {%- include "product-grid-item" -%}
+        </div>
+        {%- endfor -%}
+      </div>
+      <div class="text-center d-none d-md-block">
+        <a href="/collections/mubarak-sale-clothes?sort=relevance" class="btn btn-border btn-top button-see-collection">See All</a>
+      </div>
+    </div>
+
+    <div class="collection-list">
+      <h5 class="d-none d-md-block">Accessories</h5>
+      <div class="d-block d-md-none">
+        <div class="custom-block-title text-left">
+          <div>
+            <h5 class="ct-title no-translate">Accessories</h5>
+          </div>
+          <a href="/collections/mubarak-sale-accessories?sort=relevance" class="link-see-all" title="See All">See All</a>
+        </div>
+      </div>
+      <div class="{% if item.boxed_buttons and item.fullwidth %}slboxedbuttons {% endif %}tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js special-pick desktop-slider">
+        {%- for product in collections['mubarak-sale-accessories'].products limit: limit -%}
+        <div class="forsliders-margins">
+          {%- include "product-grid-item" -%}
+        </div>
+        {%- endfor -%}
+      </div>
+      <div class="mobile-only row tt-layout-product-item{% if item.items_always_in_center %} justify-content-center{% endif %}">
+        {%- for product in collections['mubarak-sale-accessories'].products limit: limit -%}
+        <div class="col-5 col-md-4 {% if grid == '5' %}col-5-inrow-lg{% else %}col-lg-{{ grid }}{% endif %}">
+          {%- include "product-grid-item" -%}
+        </div>
+        {%- endfor -%}
+      </div>
+      <div class="text-center d-none d-md-block">
+        <a href="/collections/mubarak-sale-accessories?sort=relevance" class="btn btn-border btn-top button-see-collection">See All</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div style="position: relative;">
+    <div id="brand-voucher"></div>
+  </div>
+
+  <div class="container nopadding" style="padding: 0">
+    <div class="banner-wrapper">
+      <a href="/blogs/promotion/eid-mubarak-sale">
+        <img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/global-banner-brand.jpg?v=1681485585" class="ls-is-cached lazyloaded" width="100%" />
+      </a>
+    </div>
+    <div class="brand-list">
+      <div class="mobile-only grid-5-brand">
+        <a href="/collections/van-cleef-arpels" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/VCA.png?v=1681009615" style="max-width: 100%" /></a>
+        <a href="/collections/celine" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/celine.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/longchamp" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/longchamp.png?v=1681009614" style="max-width: 100%" /></a>
+        
+        <a href="/collections/hublot" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/hublot.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/saint-laurent" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/saint-lurent.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/tory-burch" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/tory-burch.png?v=1681009614" style="max-width: 100%" /></a>
+        
+        <a href="/collections/franck-muller" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/FM.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/bottega-veneta" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/bottega-veneta.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/michael-kors" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/michael-kors.png?v=1681009614" style="max-width: 100%" /></a>
+        
+        <a href="/collections/panerai" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/panerai.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/christian-louboutin" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/christian-louboutin.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/veja-1" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/veja.png?v=1681009614" style="max-width: 100%" /></a>
+  
+        <a href="/collections/tudor" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/tudor.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/alexander-mcqueen" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/alexander-mcqueen.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/calvin-klein" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/calvin-klein.png?v=1681009614" style="max-width: 100%" /></a>
+      </div>
+  
+      <div class="desktop-only grid-5-brand">
+        <a href="/collections/van-cleef-arpels" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/VCA.png?v=1681009615" style="max-width: 100%" /></a>
+        <a href="/collections/hublot" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/hublot.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/franck-muller" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/FM.png?v=1681009614" style="max-width: 100%" /></a>
+  
+        <a href="/collections/panerai" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/panerai.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/tudor" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/tudor.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/celine" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/celine.png?v=1681009614" style="max-width: 100%" /></a>
+  
+        <a href="/collections/saint-laurent" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/saint-lurent.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/bottega-veneta" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/bottega-veneta.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/christian-louboutin" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/christian-louboutin.png?v=1681009614" style="max-width: 100%" /></a>
+  
+        <a href="/collections/alexander-mcqueen" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/alexander-mcqueen.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/longchamp" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/longchamp.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/tory-burch" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/tory-burch.png?v=1681009614" style="max-width: 100%" /></a>
+        
+        <a href="/collections/michael-kors" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/michael-kors.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/veja-1" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/veja.png?v=1681009614" style="max-width: 100%" /></a>
+        <a href="/collections/calvin-klein" rel="noopener noreferrer"><img src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/calvin-klein.png?v=1681009614" style="max-width: 100%" /></a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="brand-line" />
+
+  <div class="container collection-list">
+   <h5 class="mb-4">BANK PROMOTION</h5>
+   <div class="row desktop-slider justify-content-center">
+     <div class="col-12 col-lg-4 d-flex justify-content-center mb-3 pr-4">
+       <a href="/blogs/bank-promotion/promo-bni" rel="noopener noreferrer">
+        <img style="max-width: 100%" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/Banner-BNI.jpg?v=1681119868">
+      </a>
+     </div>
+     <div class="col-12 col-lg-4 d-flex justify-content-center mb-3 pr-4">
+       <a href="/blogs/bank-promotion/shop-with-digibank-by-dbs" rel="noopener noreferrer">
+        <img style="max-width: 100%" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/Banner-DBS.jpg?v=1681119412">
+      </a>
+     </div>
+   </div>
+    <div class="row mobile-only tt-layout-product-item">
+      <div class="col-9 col-lg-4 d-flex justify-content-center mb-3 pr-4">
+        <a href="/blogs/bank-promotion/promo-bni" target="_blank" rel="noopener noreferrer">
+          <img style="max-width: 100%" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/Banner-BNI.jpg?v=1681119868">
+        </a>
+      </div>
+      <div class="col-9 col-lg-4 d-flex justify-content-center mb-3 pr-4">
+        <a href="/blogs/bank-promotion/shop-with-digibank-by-dbs" target="_blank" rel="noopener noreferrer">
+          <img style="max-width: 100%" src="https://cdn.shopify.com/s/files/1/0516/0760/1336/files/Banner-DBS.jpg?v=1681119412">
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  #brand-voucher  {
+    top:-120px;position: absolute;
+  }
+
+  .eid-mubarak-sale {
+    margin-bottom: 70px !important;
+  }
+
+  .brand-line {
+    margin: 0 96px 0 96px;
+  }
+
+  .collection-list .button-see-collection {
+    min-width: 300px;
+    height: 42px;
+    border: 1px solid #12784A !important;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #12784A !important;
+    margin-top: 26px;
+  }
+
+  .collection-list .button-see-collection:hover {
+    background: #12784A !important;
+    color: #fff !important;
+  }
+
+  .brand-list .desktop-only {
+    display: grid;
+  }
+
+  .brand-list .mobile-only {
+    display: none;
+  }
+  
+  .brand-list .grid-5-brand {
+    margin-top: 90px;
+    padding-bottom: 90px;
+    {% comment %} border-bottom: 1px solid rgba(54, 65, 88, 0.1); {% endcomment %}
+    {% comment %} display: grid; {% endcomment %}
+    grid-template-columns: repeat(5,minmax(0,1fr));
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+  }
+
+  @media (max-width: 575px) {
+    #brand-voucher {
+      top:-200px;position: absolute;
+      /*top:-80px;position: absolute;*/
+    }
+
+    .brand-list .desktop-only {
+      display: none;
+    }
+
+    .brand-list .mobile-only {
+      display: grid;
+    }
+    
+    .brand-list .grid-5-brand {
+      margin-top: 0px;
+      padding: 30px 16px 30px 16px;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+    }
+
+    .brand-line {
+      margin: 0 16px 0 16px;
+    }
+  }
+
+.nav-gender {
+  margin-top: 70px;
+}
+.nav-gender .btn-gender {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  color: #8C8C8C;
+  cursor: pointer;
+  font-size: 14px;
+}
+.nav-gender .btn-gender.active {
+  color: #12784A;
+  border-color: #12784A;
+  font-weight: 700;
+}
+.collection-list {
+  margin-top: 70px;
+}
+.collection-list h5 {
+  font-size: 24px !important;
+  line-height: 31px !important;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.collection-list .arrow-location-tab {
+  margin-top: -38px;
+}
+.collection-container {
+  margin: 0 10px;
+  cursor: pointer;
+}
+.collection-list .mobile-only {
+  display: none;
+}
+.nopadding {
+  padding: 0;
+}
+.collection-list .custom-block-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.custom-block-title a {
+  color: #12784A;
+  font-weight: 500;
+}
+.custom-block-title h5.ct-title {
+  padding: 0 !important;
+  margin: 0;
+}
+@media (min-width: 1025px){
+  .collection-list .arrow-location-tab .slick-arrow{
+    top: 43%;
+  }
+  .collection-list .arrow-location-tab.no-title .slick-arrow{
+    top: 43%;
+  }
+  .collection-list .arrow-location-tab .slick-prev{
+    left: -42px;
+  }
+  .collection-list .arrow-location-tab .slick-next{
+    right: -42px;
+  }
+}
+
+@media (max-width: 1024px){
+  .collection-list .arrow-location-tab .slick-arrow{
+    top: 43%;
+  }
+  .collection-list .arrow-location-tab .slick-prev{
+    left: 0px;
+  }
+  .collection-list .arrow-location-tab .slick-next{
+    right: 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  .eid-mubarak-sale {
+    margin-bottom: 30px;
+  }
+
+  .collection-list h5 {
+    text-align: left;
+    font-size: 20px !important;
+  }
+  .collection-container {
+    margin: 0;
+  }
+  .collection-container img {
+    width: 140px;
+  }
+  .dummy-box {
+    padding: 41% 0;
+  }
+  .nav-gender {
+    margin-top: 0;
+  }
+
+  .collection-list {
+    margin-top: 20px;
+  }
+
+  .collection-list .tt-layout-product-item .tt-description {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+  .collection-list .tt-price span:first-child {
+    color: #12784A;
+    width: 100%;
+  }
+  .collection-list .tt-product .tt-description .tt-price {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+  .collection-list .tt-price .old-price {
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 15px;
+    margin-top: 6px;
+  }
+  .collection-list .tt-layout-product-item::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+  .collection-list .tt-layout-product-item::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  .collection-list .tt-layout-product-item {
+    justify-content: flex-start;
+    overflow: auto;
+    width: 100vw;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    margin-top: 20px;
+  }
+  .custom-block-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .collection-list .mobile-only {
+    display: flex;
+  }
+  .collection-list .desktop-slider {
+    display: none;
+  }
+  .collection-list .tt-layout-product-item .tt-product {
+    margin-top: 0;
+  }
+}
+
+</style>
+
+<script>
+
+var slickOpt = {
+  dots: false,
+  arrows: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 1025,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    },
+    {
+      breakpoint: 791,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    }
+  ]
+};
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  // window.onunload = () => {
+  //   sessionStorage.setItem("voila-brand-voucher", true);
+  // };
+
+  // let vb = sessionStorage.getItem("voila-brand-voucher");
+  // let cleanVb = JSON.parse(vb);
+  let hash = window.location.hash.substr(1);
+
+  if (hash == "brand-voucher") {
+    //setTimeout(() => {}, 2300);
+    // if (cleanVb) {
+    //   document.getElementById("brand-voucher").style.top = "-200px";
+    //   sessionStorage.setItem("voila-brand-voucher", false);
+    // } 
+    history.scrollRestoration = "manual";
+    document.getElementById("brand-voucher").scrollIntoView();
+  } 
+
+  $('#genderWomen').click(function() {
+    if (!$(this).hasClass('active')) {
+      var womenDeals = $('#womenDeals');
+      var menDeals = $('#menDeals');
+      $('#genderMen').removeClass('active');
+      $(this).addClass('active');
+      womenDeals.removeClass('hide');
+      womenDeals.addClass('active');
+      menDeals.removeClass('active');
+      menDeals.addClass('hide');
+      $('.tt-carousel-products-js').slick('setPosition');
+    }
+  });
+
+  $('#genderMen').click(function() {
+    if (!$(this).hasClass('active')) {
+      var womenDeals = $('#womenDeals');
+      var menDeals = $('#menDeals');
+      $('#genderWomen').removeClass('active');
+      $(this).addClass('active');
+      menDeals.removeClass('hide');
+      menDeals.addClass('active');
+      womenDeals.removeClass('active');
+      womenDeals.addClass('hide');
+      $('.tt-carousel-products-js').slick('setPosition');
+    }
+  });
+  $('.tt-carousel-products-js').slick(slickOpt);
+});
+</script>

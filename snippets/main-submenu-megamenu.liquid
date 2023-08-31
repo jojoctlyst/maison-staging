@@ -180,8 +180,8 @@
                 {%- if product_meta.icon_new != 'disable' -%}{%- if date_difference < date_limit or product_meta.icon_new == 'always' -%}<span class="tt-label-new">{{ 'products.general.new' | t }}</span>{%- assign shownewicon = true -%}{%- endif -%}{%- endif -%}
 
                 {%- if sale_on and product_meta.icon_sale != 'disable' -%}
-                {%- assign mc = product.selected_or_first_available_variant.compare_at_price | money_without_currency | replace: ',', '' -%}
-                {%- assign mo = product.selected_or_first_available_variant.price | money_without_currency | replace: ',', '' -%}
+                {%- assign mc = product.selected_or_first_available_variant.compare_at_price | money_without_currency | replace: ',', '' | replace: '.', '' -%}
+                {%- assign mo = product.selected_or_first_available_variant.price | money_without_currency | replace: ',', '' | replace: '.', '' -%}
                 {%- assign percent = mc | minus: mo | times: 100.0 | divided_by: mc | round -%}
                 {%- if percent > 19 and collection.handle == 'sale' -%}
                 <span class="tt-label-sale">{{ 'products.general.sale_html' | t }}{{ percent }}%</span>
@@ -197,6 +197,14 @@
             </div>
             <div class="tt-description">
               <h2 class="tt-title">{{ product.title }}</h2>
+              {%- if product.selected_or_first_available_variant.price == 100 -%}
+                <p class="boost-pfs-filter-product-item-price price-upon-request">
+                  <span>
+                    <i class="icon-all-brand"></i>
+                    Price Upon Request
+                  </span>
+                </p>
+              {%- else -%}
               <div class="tt-price">
                 {%- if sale_on -%}
                 <div class="tt-price"><span class="new-price">{{ product.selected_or_first_available_variant.price | money }}</span><span class="old-price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span></div>
@@ -204,6 +212,7 @@
                 <div class="tt-price">{{ product.selected_or_first_available_variant.price | money }}</div>
                 {%- endif -%}
               </div>
+              {%- endif -%}
             </div>
           </a>
         </div>

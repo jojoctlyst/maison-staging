@@ -11,7 +11,7 @@
       {%- assign url = 'shipping_url_' | append: forloop.index -%}
       {%- assign url = footer_additional.settings[url] -%}
       {%- if img != blank -%}
-      <li>
+      <li class="shipping-item">
         {% if url == blank %}
         <div>
         {% else %}
@@ -48,16 +48,16 @@
     padding: 0;
   }
   @media (max-width: 575px) {
-    .footer_shipping_list {
-      border-bottom: none;
-    }
     .footer-additional-title {
       text-align: center;
     }
     .tt-shipping-list {
-      gap: 20px !important;
+      gap: 4px !important;
       flex-wrap: wrap;
       justify-content: center;
+    }
+    .tt-shipping-list li.shipping-item {
+      margin: 10px;
     }
   }
 </style>

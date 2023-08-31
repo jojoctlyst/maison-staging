@@ -5,7 +5,7 @@
 	{%- assign boost_pfs_suggestion_no_result = '' -%}
 {%- endif -%}
 
-{%- assign boost_pfs_product_list = boost_pfs_suggestion_no_result | split: 'products":' | last | split: ':[' | last | split: ']' | first | replace: '"', '' | split: ',' -%}
+{%- assign boost_pfs_product_list = boost_pfs_suggestion_no_result | split: 'data":[' | last | split: ']' | first | replace: '"', '' | split: ',' -%}
 {%- assign boost_pfs_suggest_list_temp = boost_pfs_suggestion_no_result | split: 'search_terms":' | last | split: ']' | first | split: ':[' -%}
 {%- assign boost_pfs_suggest_list = boost_pfs_suggest_list_temp[1] | replace: '"', '' | split: ',' -%}
 

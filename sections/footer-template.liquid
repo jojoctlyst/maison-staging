@@ -1,7 +1,25 @@
 {%- assign item = section.settings -%}
-
-{% if template == 'customers/login' or template == 'customers/register' %}
+  {% 
+    if template == 'customers/login' 
+      or template == 'customers/register' 
+      or template == 'customers/reset_password' 
+      or template == 'page.forgot-password-success' 
+      or request.path == '/account/subscribe' 
+      or template == 'product'
+      or template == 'collection'
+      or template == 'search'
+      or blog.url == '/blogs/inspiration'
+      or blog.url == '/blogs/bank-promotion'
+  %}
   {%- assign footer_hidden_class = 'hidden-footer' -%}
+{% endif %}
+ 
+{% if request.path == '/account/subscribe' %}
+  {%- assign hide_on_page = 'hide' -%}
+{% endif %}
+
+{% if template == 'index' %}
+  {%- assign index_class = 'borderless' -%}
 {% endif %}
 
 {%- capture image_size -%}{{ item.logo_max_width }}x{%- endcapture -%}
@@ -35,10 +53,21 @@
   {%- endif -%}
 {%- endfor -%}
 
-<footer {% if item.top_offset == 'none' and template == 'index' %} class="nomargin {{ footer_hidden_class }}"{% elsif item.top_offset == 'small' and template == 'index' %} class="tt-offset-small {{ footer_hidden_class }}" {% else %} class="{{ footer_hidden_class }}"{% endif %}>
-  {%- include "footer_subscribe" -%}
-  <div class="footer-complate {{ footer_hidden_class }}">
+{% if template == 'product' %}
+<div class="shopify-section grating-pdp">
+  <div class="container-indent" style="margin-top: 70px;">
     <div class="container">
+      <!-- <div class="elfsight-sapp-d597a1d1-d2fe-4dec-969a-1edb1feb4566"></div> -->
+      <div class="elfsight-sapp-d597a1d1-d2fe-4dec-969a-1edb1feb4566"></div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<footer {% if item.top_offset == 'none' and template == 'index' %} class="nomargin {{ footer_hidden_class }} {{ index_class }}"{% elsif item.top_offset == 'small' and template == 'index' %} class="tt-offset-small {{ footer_hidden_class }} {{ index_class }}" {% else %} class="{{ footer_hidden_class }} {{ index_class }} {{hide_on_page}}"{% endif %}>
+  {%- include "footer_subscribe" -%}
+  <div class="footer-complate {{ footer_hidden_class }} {% if template == 'cart' %}hide-footer-padding{% endif %}">
+    <div class="container {% if template == 'cart' %}hide-footer-cart{% endif %}">
       <div class="row">
         <div class="col-md-3">
           {%- include "footer_description" -%}
@@ -56,7 +85,7 @@
 </footer>
 <style>
   .footer-complate {
-    padding: 48px 0;
+    padding-top: 48px;
   }
   .footer-complate .container h3.footer-additional-title {
     font-weight: 500;
@@ -67,11 +96,20 @@
   }
   @media (max-width: 575px) {
     .footer-complate {
-      padding: 24px 0;
+      padding-top: 24px;
     }
-
-    .hidden-footer {
-      display: none;
+    .shopify-section.grating-pdp {
+      margin-bottom: 40px;
+    }
+    #shopify-section-footer-template {
+      padding-bottom: 40px;
+    }
+    .boost-pfs-filter-bottom-pagination-default {
+      padding-top: 0!important;
+      padding-bottom: 0!important;
+    }
+    .boost-pfs-filter-load-more {
+      padding: 0!important;
     }
   }
 </style>
@@ -268,7 +306,7 @@
           {
             "type": "text",
             "id": "additional_payment_title",
-			      "label": "Payment Title",
+			"label": "Payment Title",
             "default": "Payment Method"
           },
           {
@@ -330,6 +368,18 @@
             "type": "image_picker",
             "id": "pay_icon_9",
             "label": "Payment Icon 9",
+            "info": "32x21px"
+          },
+		  {
+            "type": "image_picker",
+            "id": "pay_icon_10",
+            "label": "Payment Icon 10",
+            "info": "32x21px"
+          },
+          {
+            "type": "image_picker",
+            "id": "pay_icon_11",
+            "label": "Payment Icon 11",
             "info": "32x21px"
           },
           {
@@ -409,13 +459,24 @@
             "label": "Store Link 6"
           },
           {
+            "type": "image_picker",
+            "id": "store_icon_7",
+            "label": "Store Icon 7",
+            "info": "32x21px"
+          },
+          {
+            "type": "url",
+            "id": "store_url_7",
+            "label": "Store Link 7"
+          },
+          {
             "type": "header",
             "content": "Shipping List"
           },
           {
             "type": "text",
             "id": "additional_shipping_title",
-			      "label": "Shipping Title",
+			"label": "Shipping Title",
             "default": "Shipping"
           },
           {
@@ -493,7 +554,7 @@
           {
             "type": "text",
             "id": "additional_social_title",
-			      "label": "Social Media Title",
+			"label": "Social Media Title",
             "default": "Follow Us"
           },
           {
@@ -512,6 +573,12 @@
             "type": "url",
             "id": "youtube_url",
             "label": "Youtube",
+            "info": "If url is empty? Link will be hidden"
+          },
+          {
+            "type": "url",
+            "id": "tiktok_url",
+            "label": "Tiktok",
             "info": "If url is empty? Link will be hidden"
           }
         ]

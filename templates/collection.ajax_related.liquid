@@ -31,8 +31,8 @@
         {%- if product_meta.icon_new != 'disable' -%}{%- if date_difference < date_limit or product_meta.icon_new == 'always' -%}<span class="tt-label-new">{{ 'products.general.new' | t }}</span>{%- assign shownewicon = true -%}{%- endif -%}{%- endif -%}
 
         {%- if sale_on and product_meta.icon_sale != 'disable' -%}
-        {%- assign mc = wcp_v_compare_at_price | money_without_currency | replace: ',', '' -%}
-        {%- assign mo = wcp_v_price | money_without_currency | replace: ',', '' -%}        
+        {%- assign mc = wcp_v_compare_at_price | money_without_currency | replace: ',', '' | replace: '.', '' -%}
+        {%- assign mo = wcp_v_price | money_without_currency | replace: ',', '' | replace: '.', '' -%}        
         {%- assign percent = mc | minus: mo | times: 100.0 | divided_by: mc | round | append: '%' -%}
         <span class="tt-label-sale">{{ 'products.general.sale_html' | t: percent:percent }}</span>
         {%- endif -%}

@@ -1,3 +1,14 @@
+<style type="text/css">
+  .mobile-only {
+    display: none;
+  }
+  @media (max-width: 575px){
+    .mobile-only {
+      display: block;
+    }
+  }
+</style>
+
 {%- assign op_group = false -%}
 {%- assign product_meta_g = product.metafields.productgallery -%}
 {%- if product_meta_g.group != blank -%}
@@ -103,7 +114,9 @@
 </div>
 
 {%- when 'mobile' -%}
-<div class="tt-mobile-product-slider visible-xs arrow-location-center slick-animated-show-js{% if op_group != false %} withfiltres{% endif %}" data-slickdots="{{ item.mobiledots }}">
+
+<div class="cd tt-mobile-product-slider visible-xs arrow-location-center slick-animated-show-js{% if op_group != false %} withfiltres{% endif %}" data-slickdots="{{ item.mobiledots }}">
+
   {%- assign vfilter = '' -%}
   {% for media in product.media %}
   	{%- if op_group != false -%}{%- assign _v = 'filter' | append: op_group[forloop.index0] | replace: ' ', '_' -%}{%- endif -%}
@@ -121,7 +134,8 @@
 </div>
 {%- else -%}
 <div class="col-6 hidden-xs">
-  {% if item.stickygallery %}<div class="stickprcol-js">{% endif %}
+
+  {% if item.stickygallery %}<div class="stickprcol-js-disable">{% endif %}
     <div class="tt-product-single-img{% unless item.gallery_no_zoom %} no-zoom{% endunless %}" data-scrollzoom="{{ item.gallery_scroll }}">
       {%- if item.show_thumbnails and product.media.size > 1 and item.show_thumbnails_arrows -%}
       <div id="custom-product-item">

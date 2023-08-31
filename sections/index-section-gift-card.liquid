@@ -9,7 +9,6 @@
 <div class="gift-card {% if item.top_offset == 'none' %}nomargin {% elsif item.top_offset == 'small' %}tt-offset-small {% endif %}container-indent {{ item.custom_classes }}">
   {% if item.nopaddings %}<div class="nopaddingspr">{% endif %}
   <div class="container{% if item.fullwidth %}-fluid-custom{% endif %} container-fluid-custom-mobile-padding" data-sectionname="index_sectionproducts">
-    {% render 'limoniapps-discountninja-stickybar' %}
     {%- if item.show_title -%}
       <div class="custom-block-title hide-desktop tt-block-title{% if item.title_to_left %} text-left{% endif %}{% if item.boxed_title and item.fullwidth %} container{% endif %}">
         <div>
@@ -27,9 +26,7 @@
 
     {%- if item.default_carousel -%}
     {%- assign slider_mode = true -%}
-    <div
-      class="{% if item.boxed_buttons and item.fullwidth %}slboxedbuttons {% endif %}tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js"
-      data-slick='{"slidesToShow": {{ item.toshow }}, "slidesToScroll": {{ item.step }}, "autoplay": {{ item.module_autoplay }}, "autoplaySpeed": {{ item.delay_time }}}'>
+    <div class="{% if item.boxed_buttons and item.fullwidth %}slboxedbuttons {% endif %}tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js" data-slick='{"slidesToShow": {{ item.toshow }}, "slidesToScroll": {{ item.step }}, "autoplay": {{ item.module_autoplay }}, "autoplaySpeed": {{ item.delay_time }}}'>
       {%- for product in collection.products limit: length -%}
       <div class="forsliders-margins">
         {%- include "product-grid-item" -%}
@@ -68,9 +65,6 @@
 </div>
 
 <style>
-  .gift-card .limoniapps-stick-to-top, .gift-card .limoniapps-stick-to-top_page_sticky {
-    position: relative !important;
-  }
   .gift-card h2.prod-thumb-title-color {
     display: none;
   }

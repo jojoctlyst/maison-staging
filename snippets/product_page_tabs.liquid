@@ -1,10 +1,13 @@
-{%- capture html_tabs -%}  
+{%- capture html_tabs -%}
 {%- for block in section.blocks -%}
 {%- assign b_i = block.settings -%}
 {%- case block.type -%}
   {%- when 'tab_desc' -%}
     <div class="tt-item{% if b_i.open_tab_by_default %} active{% endif %}">
-      <div class="tt-collapse-title"{% if b_i.title == "" %} style="pointer-events: none; padding-bottom: 0px;"{% endif %}>{{ b_i.title }}</div>
+      <div class="tt-collapse-title d-flex justify-between justify-content-between align-items-center"{% if b_i.title == "" %} style="pointer-events: none; padding-bottom: 0px;"{% endif %}>
+        <span>{{ b_i.title }}</span>
+        <i class="icon-g-09"></i>
+      </div>
       <div class="tt-collapse-content">{{ product.description }}</div>
     </div>
   {%- when 'tab_same_html' -%}
@@ -28,7 +31,7 @@
         <div id="shopify-ali-review" product-id="{{ product.id }}"> {{ shop.metafields.review_collector.review_code }}</div>
         {%- endunless -%}
         {%- else %}
-        
+
 {% comment %}Start automatically added Judge.me widget{% endcomment %}
   {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product %}
 {% comment %}End automatically added Judge.me widget{% endcomment %}
@@ -44,3 +47,9 @@
 {%- if html_tabs != '' -%}
 <div class="tt-collapse-block prpage-tabs no-translate">{{ html_tabs }}</div>
 {%- endif -%}
+
+<style>
+  .tt-item .tt-collapse-content {
+    text-align: left;
+  }
+</style>

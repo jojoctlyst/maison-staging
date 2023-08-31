@@ -7,7 +7,7 @@
     <div class="boost-pfs-filter-product-item-inner">
         <div class="boost-pfs-filter-product-item-image">
             {{itemImages}}
-            <div class="boost-pfs-filter-product-item-label">{{itemLabels}}{{itemTagLabels}}{{itemTagNew}}</div>
+            <div class="boost-pfs-filter-product-item-label">{{itemLabels}}{{itemTagLabels}}{{itemTagPreorder}}{{itemPreloved}}{{itemTagNew}}</div>
         </div>
 
         <div class="boost-pfs-filter-product-bottom">
@@ -16,16 +16,8 @@
               {{itemVendorLabel}}
             </a>
             <a href="{{itemUrl}}#" class="boost-pfs-filter-product-item-title">{{itemTitle}}</a>
-              {{itemReviews}}
-            <div class="product-item--price"
-              data-limoniapps-discounturl-product-handle="[[itemHandle]]"
-              data-limoniapps-discounturl-product-price="[[itemPriceMin]]"
-              data-limoniapps-discounturl-product-compareatprice="[[itemCompareAtPriceMax]]"
-            >
-              <span class="limoniapps-discount-url-productprice">
-                [[itemPrice]]
-              </span>
-            </div>
+            {{itemReviews}}
+            {{itemPrice}}
             {{itemSwatches}}
           </div>
         </div>
@@ -38,7 +30,7 @@
   <div class="boost-pfs-filter-product-item-inner">
     <div class="boost-pfs-filter-product-item-image">
         {{itemImages}}
-        <div class="boost-pfs-filter-product-item-label">{{itemLabels}}{{itemTagLabels}}{{itemTagNew}}</div>
+        <div class="boost-pfs-filter-product-item-label">{{itemLabels}}{{itemTagLabels}}{{itemTagPreorder}}{{itemPreloved}}{{itemTagNew}}</div>
     </div>
     <div class="boost-pfs-filter-product-bottom">
       <div class="boost-pfs-filter-product-bottom-inner">

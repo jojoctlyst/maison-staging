@@ -1,6 +1,6 @@
 {%- assign item = section.settings -%}
 {%- assign show_sticky_header = false -%}
-{% if template == 'customers/login' or template == 'customers/register' %}
+{% if template == 'customers/login' or template == 'customers/register' or template == 'customers/reset_password' or template == 'page.forgot-password-success' or template == 'customers/addresses' %}
   {%- assign header_hidden_class = 'hidden-header' -%}
   {%- assign show_sticky_header = true -%}
   {% render 'header-sticky', show: show_sticky_header %}
@@ -89,15 +89,19 @@
 
   <!-- tt-desktop-header -->
   <div class="tt-desktop-header{% if settings.header_position and template == 'index' %} tt-header-static{% endif %}">
-    <div class="container{% if item.header_fullwidth %}-fluid{% endif %}">
-      <div id="logo" class="tt-secondary-nav-logo">
-        <div class="allinlinelogocenter" itemscope itemtype="http://schema.org/Organization">
-          {%- include "header_logo" -%}
-        </div>
-        <div id="menu-action" class="{{ optionsposition }}">
-          {%- include "header_options" -%}
+    <div class="header-green">
+      <div class="container{% if item.header_fullwidth %}-fluid{% endif %}">
+        <div id="logo" class="tt-secondary-nav-logo">
+          <div class="allinlinelogocenter" itemscope itemtype="http://schema.org/Organization">
+            {%- include "header_logo" -%}
+          </div>
+          <div id="menu-action" class="{{ optionsposition }}">
+            {%- include "header_options" -%}
+          </div>
         </div>
       </div>
+    </div>
+    <div class="container{% if item.header_fullwidth %}-fluid{% endif %}">
       <div class="tt-header-holder"{% if item.logo_bar =="allinlinelogocenter" %} style="height: {{ item.headerheightcenter }}px"{% endif %}>
         <!-- {% if item.logo_bar =="allinlinelogocenter" %}
         <div class="tt-desctop-parent-menu tt-parent-box tt-obj-menu">
@@ -117,7 +121,7 @@
         {%- if item.logo_bar == 'allinline' and item.menu_design == 'tt-menu-small' -%}
         <div id="main-menu" class="tt-col-obj tt-obj-menu {{ menuposition }}"{% if item.menu_bar == 'menucenter' and item.menupadding != '' %} style="padding-right: {{ item.menupadding }}px;"{% endif %}>
           <!-- tt-menu -->
-          <div class="tt-desctop-parent-menu tt-parent-box">
+          <div class="tt-desctop-parent-menu tt-parent-box tt-parent-box-padding">
             <div class="tt-desctop-menu">
               {%- include "main-menu" -%}
             </div>
@@ -135,7 +139,7 @@
       <div class="container{% if item.header_fullwidth %}-fluid{% endif %} single-menu">
         <div class="tt-header-holder">
           <div class="tt-obj-menu {{ menuposition }}">
-            <div class="tt-desctop-parent-menu tt-parent-box">
+            <div class="tt-desctop-parent-menu tt-parent-box tt-parent-box-padding">
               <div class="tt-desctop-menu {{ item.menu_design }}">
                 {%- include "main-menu" -%}
               </div>
@@ -147,43 +151,47 @@
     {%- endif -%}
     {%- endif -%}
   </div>
+
   <!-- stuck nav -->
   <div style="display: none !important; " id="second-nav" class="tt-stuck-nav{% unless item.header_sticky_header %} disabled{% endunless %}{% if settings.use_header_inline %} notshowinmobile{% endif %}">
-    <div class="container{% if item.header_fullwidth %}-fluid{% endif %}">
-      <div class="tt-header-row ">
-        {%- if item.showsucklogodesktop -%}
-        <div class="tt-stuck-parent-logo{% if item.logo_bar =="allinlinelogocenter" %} allinlinelogocenter{% endif %}">
-          <a href="/" class="tt-logo" itemprop="url">
-            {%- if headerlogo contains "title_" -%}
-              <h2 class="tt-title">{{ headerlogo | split:"title_" | last }}</h2>
-            {%- else -%}
-              <img
-                src="{{ sheaderlogo }}"
-                srcset="{{ sheaderlogo }} 1x, {{ sheaderlogoretina }} 2x"
-                alt="{{ headerlogoalt }}"
-                class="tt-retina" itemprop="logo" style="top:{{ item.logo_margin_top }}px"
-              />
-            {%- endif -%}
-          </a>
-        </div>
-        {%- endif -%}
-        <div class="tt-stuck-parent-menu"></div>
-        <div class="menu-action-wrap">
-          <div class="tt-stuck-parent-search tt-parent-box"></div>
-          {%- unless settings.catalogue_mode -%}
-          {%- if template != "cart" -%}
-            <div class="tt-stuck-parent-cart tt-parent-box"></div>
-          {%- endif -%}
-          {%- endunless -%}
-          {%- if item.show_customer_links -%}
-            <div class="tt-stuck-parent-account tt-parent-box"></div>
-          {%- endif -%}
-          {%- if item.show_options_links -%}
-            <div class="tt-stuck-parent-multi tt-parent-box"></div>
-          {%- endif -%}
+    <div class="container-fluid" style="padding: 0">
+      <div class="header-green">
+        <div class="container{% if item.header_fullwidth %}-fluid{% endif %}">
+          <div id="logo" class="tt-secondary-nav-logo">
+            <div class="allinlinelogocenter" itemscope itemtype="http://schema.org/Organization">
+              {%- include "header_logo" -%}
+            </div>
+            <div class="menu-action-wrap">
+            <div class="tt-stuck-parent-search tt-parent-box tt-search-base tt-parent-box-padding"></div>
+              {%- unless settings.catalogue_mode -%}
+              {%- if template != "cart" -%}
+                <div class="tt-stuck-parent-cart tt-parent-box js-on-hover js-tt-cart tt-parent-box-padding" data-link="/cart"></div>
+              {%- endif -%}
+              {%- endunless -%}
+              {%- if item.show_customer_links -%}
+                <div class="tt-stuck-parent-account tt-parent-box js-on-hover tt-parent-box-padding cls {%- if shop.customer_accounts_enabled and customer -%}cls js-tt-account{%- endif -%}" 
+                  {%- if shop.customer_accounts_enabled and customer -%}
+                    data-link="/account"
+                  {%- else -%}
+                    data-link="/account/login"
+                  {%- endif -%}
+                ></div>
+              {%- endif -%}
+              {%- if item.show_options_links -%}
+                <div class="tt-stuck-parent-multi tt-parent-box tt-parent-box-padding"></div>
+              {%- endif -%}
+            </div>
+          </div>
         </div>
       </div>
+    
+    <div class="container{% if item.header_fullwidth %}-fluid{% endif %}">
+     <div class="tt-header-row ">
+        <div class="tt-stuck-parent-menu"></div>
+      </div>
+      </div>
     </div>
+    
     {%- if item.showsucklogomobile and settings.use_header_inline == false -%}
     <div class="tt-mobile-header">
       <div class="container-fluid tt-top-line">
@@ -210,7 +218,7 @@
 
 <style>
   .tt-desktop-header {
-    padding: 16px 0;
+    padding-bottom: 16px;
     background: #FCFCFC;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.12);
   }
@@ -228,7 +236,8 @@
     margin: 8px 0;
   }
   .tt-logo img {
-    width: 120px;
+    height: 40px;
+    object-fit: contain;
   }
   .tt-secondary-nav-logo {
     position: relative;
@@ -241,8 +250,11 @@
     margin: 0 !important;
   }
   .menu-action-wrap {
-    padding-left: 12px;
-    border-left: 2px solid #364158;
+    position: absolute;
+    right: 0;
+    color: #fff;
+/*     padding-left: 12px;
+    border-left: 2px solid #777; */
   }
   .menu-action-wrap .tt-dropdown-obj {
     margin-top: 0;
@@ -256,6 +268,30 @@
     display: flex;
     justify-content: center;
   }
+ .tt-stuck-parent-menu {
+    display: flex;
+    justify-content: center;
+  }
+  .header-green {
+    background: #12784A;
+    padding: 12px 0;
+  }
+  #header_mobile_inline .header-green {
+    padding: 0;
+  }
+  #header_mobile_inline .tt-menu-toggle svg {
+    fill: #fff;
+  }
+  #header_mobile_inline .tt-menu-toggle svg path {
+    fill: #fff;
+  }
+  header .tt-dropdown-obj .tt-dropdown-toggle {
+    color: #fff;
+  }
+  header .tt-dropdown-obj .tt-dropdown-toggle:hover {
+    color: #191919;
+  }
+  
 
   .slideUp {
     opacity: 0;
@@ -272,36 +308,11 @@
   }
   @media (max-width: 575px) {
     .tt-logo img {
-      width: 85px;
-    }
-
-    .hidden-header {
-      display: none;
+      height: 40px;
+      object-fit: contain;
     }
   }
 </style>
-
-<script>
-  var new_scroll_position = 0;
-  var last_scroll_position;
-  var header = document.getElementById("logo");
-
-  window.addEventListener('scroll', function(e) {
-    last_scroll_position = window.scrollY;
-
-    if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
-      header.classList.remove("slideDown");
-      header.classList.add("slideUp");
-
-    } else if (new_scroll_position > last_scroll_position) {
-      header.classList.remove("slideUp");
-      header.classList.add("slideDown");
-    }
-
-    new_scroll_position = last_scroll_position;
-  });
-</script>
-
 
 {% schema %}
   {
@@ -1150,6 +1161,125 @@
             "id": "color_22",
             "label": "Title 2 Color",
             "default": "#ffffff"
+          }
+        ]
+      },
+	  {
+        "type": "menu_banner",
+        "name": "Megamenu with Banner",
+        "settings": [
+		  {
+            "type": "paragraph",
+			"content": "Use only item names from the main menu. DO NOT INSERT HERE A LINK FROM THE ADMIN PANEL WITH THE MAIN MENU !!!!!"
+		  },
+          {
+            "type": "link_list",
+            "id": "linklist",
+            "label": "Select Menu Item",
+			"info": "Works with the old method from the menu. Creating navigation with documentation. Select an item with a mega menu. Do not use the new drag control panel menu. Dropdown = 4"
+          },
+          {
+            "type": "textarea",
+            "id": "newnavigation_item",
+            "label": "Main Menu Item Full Name",
+			"info": "Work with the new admin panel drag and drop menu. Copy and paste the full name of the item from the main menu. Dropdown = 2"
+          },
+          {
+            "type": "select",
+            "id": "grid",
+            "label": "Items In Row",
+            "options": [
+              {
+                "value": "2",
+                "label": "6"
+              },
+              {
+                "value": "3",
+                "label": "4"
+              },
+              {
+                "value": "4",
+                "label": "3"
+              },
+              {
+                "value": "6",
+                "label": "2"
+              }
+            ],
+            "default": "4"
+          },
+		  {
+            "type": "header",
+            "content": "Widgets"
+          },
+          {
+            "type": "radio",
+            "id": "widget",
+            "label": "Widget In the Submenu",
+            "options": [
+              {
+                "value": "banner",
+                "label": "Banner"
+              }
+            ],
+            "default": "banner"
+          },
+          {
+            "type": "header",
+            "content": "Widget > Banner"
+          },
+          {
+            "type": "url",
+            "id": "widgetbanner_url",
+            "label": "Banner Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "widgetbanner_img",
+            "label": "Image",
+            "info": "Image must be JPG"
+          },
+          {
+            "type": "textarea",
+            "id": "widgetbanner_title",
+            "label": "Heading",
+            "default": "SALE"
+          },
+          {
+            "type": "textarea",
+            "id": "widgetbanner_title2",
+            "label": "Title",
+            "default": "70% OFF"
+          },
+          {
+            "type": "color",
+            "id": "widgetbanner_color",
+            "label": "Heading Color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "widgetbanner_color2",
+            "label": "Title Color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "widgetbanner_color4",
+            "label": "Button Color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "checkbox",
+            "id": "widgetbanner_btn",
+            "label": "Show Button",
+            "default": true
+          },
+          {
+            "type": "text",
+            "id": "widgetbanner_btnname",
+            "label": "Button Name",
+            "default": "SHOP NOW!"
           }
         ]
       }

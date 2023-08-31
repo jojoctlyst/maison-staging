@@ -1,204 +1,277 @@
+<style type="text/css">
+  #shopify-section-footer-template .tt-footer-custom  {
+    display: none;
+  }
+  @media (max-width: 575px) {
+    .footer-complate {
+      display: none;
+    }
+    body {
+      background-color: #FAFAFA;
+    }
+  }
+</style>
 {% paginate customer.addresses by 20 %}
-<div class="container-indent">
+<div class="tt-custom-address-voila" id="alamat-saya">
+  <div id="address_pages" data-pages="Alamat Saya"></div>
   <div class="container">
-    <h1 class="tt-title-subpages noborder">{{ 'customer.account.title_main' | t }}</h1>
     <div class="tt-shopping-layout">
-      <h2 class="tt-title">{{ 'customer.addresses.title' | t }}</h2>
-      <div class="tt-wrapper">
-        <a href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;" class="btn ttbtnmainstyle">{{ 'customer.addresses.add_new' | t }}</a><br>
-        <a href="/account" class="tt-link-back">
-          <i class="icon-e-19"></i> {{ 'customer.general.return' | t }}
+      <a href="/account" class="tt-link-back tt-pages-addressList hidden-header">
+        <i class="icon-e-19"></i> Kembali ke Account
+      </a>
+      
+      <div class="tt-header-wrapper tt-pages-addressList hidden-header">
+        <h2 class="tt-title">Alamat Saya</h2>
+        <a href="#" class="address-btn js-new-address">
+          <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.5 4.94H7.5V0H5.5V4.94H0.5V6.94H5.5V12H7.5V6.94H12.5V4.94Z"/>
+          </svg>
+          Tambah Alamat Baru
         </a>
       </div>
       
-      <div id="add_address" class="tt-wrapper" style="display:none;">
-        <h6 class="tt-title">{{ 'customer.addresses.add_new' | t }}</h6>
+      <div id="add_address" class="tt-wrapper tt-pages-addressNew tt-login-form tt-wrapper-maxwidth xhidden">
+        <div class="tt-header-wrapper">
+          <h6 class="tt-title">Tambah Alamat Baru</h6>
+        </div>
         <div class="form-default">
-          
+
           {% form 'customer_address', customer.new_address %}
+          <div class="form-id" data-form="{{address.id}}" style="display:none;"></div>
           <div class="form-group">
-            <label for="address_first_name_new">{{ 'customer.addresses.first_name' | t }}</label>
-            <input type="text" class="form-control" name="address[first_name]" value="{{form.first_name}}">
+            <input type="text" class="form-control custom-address-required" name="address[company]" value="{{form.company}}" placeholder=" " id="address_label_new">
+            <label for="address_label_new">Label Alamat</label>
+            <small class="default">Contoh: Rumah, Kantor, dll.</small>
+            <small class="danger">Masukkan label alamat</small>
+          </div>
+          <div class="row">
+            <div class="col-full col-md js-customFullName">
+              <div class="form-group">
+                <input type="text" class="form-control custom-address-required" name="address[name]" value="{{form.name}}" placeholder=" " id="address_name_new">
+                <label for="address_name_new">Nama Lengkap</label>
+                <small class="danger">Masukkan nama lengkap</small>
+              </div>
+            </div>
+            <div class="col-full col-md">
+              <div class="form-group">
+                <input type="text" class="form-control custom-address-required int-only" name="address[phone]" value="{{form.phone}}" placeholder=" " id="address_phone_new">
+                <label for="address_phone_new">No. Handphone</label>
+                <small class="danger">Masukkan No. Handphone</small>
+              </div>
+            </div> 
+          </div>
+          <div class="row">
+            <div class="col-full col-md">
+              <div class="form-group">
+                <select id="address_country_new" class="form-control form-select" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
+                <label for="address_country_new">Negara</label>
+              </div>
+            </div>
+            <div class="col-full col-md">
+              <div id="address_province_container_new" style="display:none" class="form-group">
+                <select id="address_province_new" class="form-control form-select" name="address[province]" data-default="{{ form.province }}"></select>
+                <label for="address_province_new">Provinsi</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-full col-md">
+              <div class="form-group">
+                <input type="text" class="form-control custom-address-required" name="address[city]" value="{{form.city}}" placeholder=" " id="address_city_new">
+                <label for="address_city_new">Kota dan Kecamatan</label>
+                <small class="danger">Masukkan kota dan kecamatan</small>
+              </div>
+            </div>
+            <div class="col-full col-md">
+              <div class="form-group">
+                <input type="text" class="form-control custom-address-required int-only" name="address[zip]" value="{{form.zip}}" placeholder=" " id="address_zip_new">
+                <label for="address_zip_new">Kode Pos</label>
+                <small class="danger">Masukkan kode ZIP/pos</small>
+              </div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="address_last_name_new">{{ 'customer.addresses.last_name' | t }}</label>
-            <input type="text" class="form-control" name="address[last_name]" value="{{form.last_name}}">
+            <input type="text" class="form-control custom-address-required" name="address[address1]" value="{{form.address1}}" placeholder=" " id="address_address1_new">
+            <label for="address_address1_new">Alamat Lengkap</label>
+            <small class="default">Tulis alamat lengkap (jalan, no. rumah, blok, RT/RW).</small>
+            <small class="danger">Masukkan alamat lengkap</small>
           </div>
           <div class="form-group">
-            <label for="address_company_new">{{ 'customer.addresses.company' | t }}</label>
-            <input type="text" class="form-control" name="address[company]" value="{{form.company}}">
-          </div>
-          <div class="form-group">
-            <label for="address_address1_new">{{ 'customer.addresses.address1' | t }}</label>
-            <input type="text" class="form-control" name="address[address1]" value="{{form.address1}}">
-          </div>
-          <div class="form-group">
-            <label for="address_address2_new">{{ 'customer.addresses.address2' | t }}</label>
-            <input type="text" class="form-control" name="address[address2]" value="{{form.address2}}">
-          </div>
-          <div class="form-group">
-            <label for="address_city_new">{{ 'customer.addresses.city' | t }}</label>
-            <input type="text" class="form-control" name="address[city]" value="{{form.city}}">
-          </div>
-          <div class="form-group">
-            <label for="address_country_new">{{ 'customer.addresses.country' | t }}</label>
-            <select id="address_country_new" class="form-control" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
-          </div>
-          <div id="address_province_container_new" style="display:none" class="form-group">
-            <label for="address_province_new">{{ 'customer.addresses.province' | t }}</label>
-            <select id="address_province_new" class="form-control" name="address[province]" data-default="{{ form.province }}"></select>
+            <input type="text" class="form-control" name="address[address2]" value="{{form.address2}}" placeholder=" " id="address_address2_new">
+            <label for="address_address2_new">Catatan untuk kurir (Optional)</label>
+            <small class="default">Warna rumah, titik referensi, instruksi khusus, dll.</small>
           </div>
 
-          <div class="form-group">
-            <label for="address_zip_new">{{ 'customer.addresses.zip' | t }}</label>
-            <input type="text" class="form-control" name="address[zip]" value="{{form.zip}}">
-          </div>
-          <div class="form-group">
-            <label for="address_phone_new">{{ 'customer.addresses.phone' | t }}</label>
-            <input type="text" class="form-control" name="address[phone]" value="{{form.phone}}">
-          </div>
-          
           <div class="checkbox-group">
             <input type="checkbox" id="address_default_address_{{ address.id }}" name="address[default]" value="1">
             <label for="address_default_address_{{ address.id }}">
               <span class="check"></span>
               <span class="box"></span>
-              {{ 'customer.addresses.set_default' | t }}
+              Atur sebagai alamat utama
             </label>
           </div>
 
-          <div class="row tt-offset-21">
-            <div class="col-auto">
-              <button type="submit" class="btn">{{ 'customer.addresses.add' | t }}</button>
+          <div class="row tt-custom-address-wrapper">
+            <div class="col-auto align-self-end ml-auto hidden-header">
+              <div class="btn btn-primary-white btn-block btn-submit js-batal" data-pages="" style="cursor: pointer;">Batal</div>
             </div>
-            <div class="col-auto align-self-center">
-              {{ 'customer.general.or' | t }} <a href="#" onclick="Shopify.CustomerAddress.toggleForm({{form.id}}); return false;" class="tt-link">{{ 'customer.addresses.cancel' | t }}</a>
+            <div class="col col-sm-auto align-self-end">
+              <button type="submit" class="btn btn-primary-green btn-block btn-submit js-submit" data-type="new" data-form="{{form.id}}">
+                <svg class="animate-spin js-submit-loading-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle style="opacity: 0.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path style="opacity: 0.75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Simpan</span>
+              </button>
             </div>
           </div>
           {% endform %}
           
         </div>
       </div>
-      
-      {% if customer.addresses.size > 0 %}
-      {% for address in customer.addresses %}
-      
-      <div id="view_address_{{address.id}}" class="tt-wrapper">
-        <h3 class="tt-title">{{ address.street }}{% if address == customer.default_address %}<span>{{ 'customer.addresses.default' | t }}</span>{% endif %}</h3>
-        <div class="tt-table-responsive">
-          <table class="tt-table-shop-02">
-            <tbody>
-              <tr>
-                <td>{{ 'customer.account.name' | t }}</td>
-                <td>{{ address.first_name }} {{address.last_name }}</td>
-              </tr>
-              <tr>
-                <td>{{ 'customer.account.email' | t }}</td>
-                <td>{{ customer.email }}</td>
-              </tr>
-              <tr>
-                <td>{{ 'customer.account.company' | t }}</td>
-                <td>{{ address.company }}</td>
-              </tr>
-              <tr>
-                <td>{{ 'customer.account.address' | t }}</td>
-                <td>{{ address.street }}</td>
-              </tr>
-              <tr>
-                <td>{{ 'customer.account.country' | t }}</td>
-                <td>{{ address.country }}, {{ address.city }} {% if address.province_code %}, {{ address.province_code }}{% endif %}</td>
-              </tr>
-              <tr>
-                <td>{{ 'customer.account.zip' | t }}</td>
-                <td>{{ address.zip }}</td>
-              </tr>
-              <tr>
-                <td>{{ 'customer.account.phone' | t }}</td>
-                <td>{{ address.phone }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="tt-shop-btn">
-          <a href="#" onclick="Shopify.CustomerAddress.toggleForm({{ address.id }});return false"
-             class="btn-link svg-icon-pencil-inline">
-            {% include "svg-pencil" %}{{ 'customer.addresses.edit' | t }}
-          </a>
-          <a href="#" onclick="Shopify.CustomerAddress.destroy({{ address.id }}, 'Are you sure you wish to delete this address?');return false"
-             class="btn-link svg-icon-delete-inline">
-            {% include "svg-delete-icon" %}{{ 'customer.addresses.delete' | t }}
-          </a>
-        </div>
-      </div>
-      
-      <div id="edit_address_{{address.id}}" class="tt-wrapper" style="display:none;">
-        <div class="form-default">
-          {% form 'customer_address', address %}
-          <div class="form-group">
-            <label for="shopInputFirstName" class="control-label">{{ 'customer.addresses.first_name' | t }}</label>
-            <input type="text" class="form-control" name="address[first_name]" value="{{form.first_name}}" id="shopInputFirstName">
-          </div>
-          <div class="form-group">
-            <label for="shopInputLastName" class="control-label">{{ 'customer.addresses.last_name' | t }}</label>
-            <input type="text" class="form-control" name="address[last_name]" value="{{form.last_name}}" id="shopInputLastName">
-          </div>
-          <div class="form-group">
-            <label for="shopCompanyName" class="control-label">{{ 'customer.addresses.company' | t }}</label>
-            <input type="text" class="form-control" name="address[company]" value="{{form.company}}" id="shopCompanyName">
-          </div>
-          <div class="form-group">
-            <label for="shopAddress" class="control-label">{{ 'customer.addresses.address1' | t }}</label>
-            <input type="text" class="form-control" name="address[address1]" value="{{form.address1}}" id="shopAddress">
-          </div>
-          <div class="form-group">
-            <label for="shopAddress2" class="control-label">{{ 'customer.addresses.address2' | t }}</label>
-            <input type="text" class="form-control" name="address[address2]" value="{{form.address2}}" id="shopAddress2">
-          </div>
-          <div class="form-group">
-            <label for="shopTown" class="control-label">{{ 'customer.addresses.city' | t }}</label>
-            <input type="text" class="form-control" name="address[city]" value="{{form.city}}" id="shopTown">
-          </div>
-          <div class="form-group">
-            <label for="address_country_{{form.id}}">{{ 'customer.addresses.country' | t }}</label>
-            <select id="address_country_{{form.id}}" class="form-control" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
-          </div>
-          <div id="address_province_container_{{form.id}}" style="display:none" class="form-group">
-            <label for="address_province_{{form.id}}">{{ 'customer.addresses.province' | t }}</label>
-            <select id="address_province_{{form.id}}" class="form-control" name="address[province]" data-default="{{ form.province }}"></select>
-          </div>
-          <div class="form-group">
-            <label for="shopPostCode" class="control-label">{{ 'customer.addresses.zip' | t }}</label>
-            <input type="text" class="form-control" name="address[zip]" value="{{form.zip}}" id="shopPostCode">
-          </div>
-          <div class="form-group">
-            <label for="shopPhone" class="control-label">{{ 'customer.addresses.phone' | t }}</label>
-            <input type="text" class="form-control" name="address[phone]" value="{{form.phone}}" id="shopPhone">
-          </div>
-          
-          <div class="checkbox-group">
-            <input type="checkbox" id="address_default_address_{{ address.id }}" name="address[default]" value="1">
-            <label for="address_default_address_{{ address.id }}">
-              <span class="check"></span>
-              <span class="box"></span>
-              {{ 'customer.addresses.set_default' | t }}
-            </label>
-          </div>
 
-          <div class="row tt-offset-21">
-            <div class="col-auto">
-              <button type="submit" class="btn ttbtnmainstyle">{{ 'customer.addresses.update' | t }}</button>
-            </div>
-            <div class="col-auto align-self-center">
-             {{ 'customer.general.or' | t }} <a href="#" onclick="Shopify.CustomerAddress.toggleForm({{form.id}}); return false;" class="tt-link">{{ 'customer.addresses.cancel' | t }}</a>
+      
+        {% if customer.addresses.size > 0 %}
+        {% for address in customer.addresses %}
+          <div class="tt-addrlist-parent">
+            <div id="view_address_{{address.id}}" class="tt-wrapper-addrlist tt-pages-addressList {% if address == customer.default_address %} tt-addrlist-default-list {% endif %}">
+              <div class="tt-addrlist-t">
+                <div class="d-flex align-items-center tt-addrlist-title-wrapper">
+                  <div class="tt-addrlist-title">{{ address.company }}</div>
+                  {% if address == customer.default_address %}
+                    <span class="tt-addrlist-default">Alamat Utama</span>
+                  {% endif %}
+                </div>
+                <div class="tt-addrlist-name">{{ address.name }}</div>
+                <div class="tt-addrlist-text tt-addrlist-phone">{{ address.phone }}</div>
+                <div class="tt-addrlist-text">{{ address.address1 }} ({{ address.address2 }}) <br/><span style="text-transform: uppercase;">KOTA {{ address.city }}, {{ address.province }}, {{ address.country_code }}, {{ address.zip }}</span> </div>
+              </div>
+              <div class="tt-addrlist-b">
+                <a href="#" class="js-edit-address btn-link svg-icon-pencil-inline" data-form="{{ address.id }}">
+                  {% include "svg-pencil" %}Ubah
+                </a>
+                <a href="#" onclick="Shopify.CustomerAddress.destroy({{ address.id }}, 'Are you sure you wish to delete this address?');return false"
+                   class="btn-link svg-icon-delete-inline">
+                  {% include "svg-delete-icon" %}Hapus
+                </a>
+              </div>
             </div>
           </div>
           
-          {% endform %}
-        </div>
-      </div>
+          <div id="edit_address_{{address.id}}" class="tt-wrapper tt-login-form tt-wrapper-maxwidth tt-pages-addressEdit xhidden">
+            <div class="tt-header-wrapper">
+              <h6 class="tt-title">Ubah Alamat</h6>
+            </div>
+            <div class="form-default">
+              {% form 'customer_address', address %}
+              <div class="form-id" data-form="{{address.id}}" style="display:none;"></div>
+              <div class="form-group">
+                <input type="text" class="form-control custom-address-required" name="address[company]" value="{{form.company}}" placeholder=" " id="address_label_{{form.id}}">
+                <label for="address_label_{{form.id}}">Label Alamat</label>
+                <small class="default">Contoh: Rumah, Kantor, dll.</small>
+                <small class="danger">Masukkan label alamat</small>
+              </div>
 
-      {% endfor %}
-      {% endif %}
+              <div class="row">
+                <div class="col-full col-md">
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-address-required" name="address[name]" value="{{ form.first_name }} {{ form.last_name }}" placeholder=" " id="address_name_{{form.id}}">
+                    <label for="address_name_{{form.id}}">Nama Lengkap</label>
+                    <small class="danger">Masukkan nama lengkap</small>
+                  </div>
+                </div>
+                <div class="col-full col-md">
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-address-required int-only" name="address[phone]" value="{{form.phone}}" placeholder=" " id="address_phone_{{form.id}}">
+                    <label for="address_phone_{{form.id}}">No. Handphone</label>
+                    <small class="danger">Masukkan No. Handphone</small>
+                  </div>
+                </div> 
+              </div>
+
+              <div class="row">
+                <div class="col-full col-md">
+                  <div class="form-group">
+                    <select id="address_country_{{form.id}}" class="form-control form-select" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
+                    <label for="address_country_{{form.id}}">Negara</label>
+                  </div>
+                </div>
+                <div class="col-full col-md">
+                  <div id="address_province_container_{{form.id}}" style="display:none" class="form-group">                    
+                    <select id="address_province_{{form.id}}" class="form-control form-select" name="address[province]" data-default="{{ form.province }}"></select>
+                    <label for="address_province_{{form.id}}">Provinsi</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-full col-md">
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-address-required" name="address[city]" value="{{form.city}}" placeholder=" " id="address_city_{{form.id}}">
+                    <label for="address_city_{{form.id}}">Kota dan Kecamatan</label>
+                    <small class="danger">Masukkan kota dan kecamatan</small>
+                  </div>
+                </div>
+                <div class="col-full col-md">
+                  <div class="form-group">
+                    <input type="text" class="form-control custom-address-required int-only" name="address[zip]" value="{{form.zip}}" placeholder=" " id="address_zip_{{form.id}}">
+                    <label for="address_zip_{{form.id}}">Kode Pos</label>
+                    <small class="danger">Masukkan kode ZIP/pos</small>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control custom-address-required" name="address[address1]" value="{{form.address1}}" placeholder=" " id="address_address1_{{form.id}}">
+                <label for="address_address1_{{form.id}}">Alamat Lengkap</label>
+                <small class="default">Tulis alamat lengkap (jalan, no. rumah, blok, RT/RW).</small>
+                <small class="danger">Masukkan alamat lengkap</small>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="address[address2]" value="{{form.address2}}" placeholder=" " id="address_address2_{{form.id}}">
+                <label for="address_address2_{{form.id}}">Catatan untuk kurir (Optional)</label>
+                <small class="default">Warna rumah, titik referensi, instruksi khusus, dll.</small>
+              </div>
+
+              
+              <div class="checkbox-group">
+                <input type="checkbox" id="address_default_address_{{ address.id }}" name="address[default]" value="1" {% if address == customer.default_address %}checked{% endif %}>
+                <label for="address_default_address_{{ address.id }}">
+                  <span class="check"></span>
+                  <span class="box"></span>
+                  Atur sebagai alamat utama
+                </label>
+              </div>
+
+              <div class="row tt-custom-address-wrapper">
+                <div class="col-auto align-self-end ml-auto hidden-header">
+                  <div class="btn btn-primary-white btn-block btn-submit js-batal" data-pages="Ubah Alamat" style="cursor: pointer;">Batal</div>
+                </div>
+                <div class="col col-sm-auto align-self-end">
+                  <button type="submit" class="btn btn-primary-green btn-block btn-submit js-submit" data-type="edit" data-form="{{form.id}}">
+                    <svg class="animate-spin js-submit-loading-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle style="opacity: 0.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path style="opacity: 0.75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>Simpan</span>
+                  </button>
+                </div>
+              </div>
+              
+              {% endform %}
+            </div>
+          </div>
+
+        {% endfor %}
+        {% endif %}
+        <!-- tt-pages-addressList  -->
+        <div class="tt-pages-addressList tt-add-address-mobile" style="margin-top: 12px;">
+          <a href="#" class="address-btn js-new-address">
+            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5 4.94H7.5V0H5.5V4.94H0.5V6.94H5.5V12H7.5V6.94H12.5V4.94Z"/>
+            </svg>
+            Tambah Alamat Baru
+          </a>
+        </div>
 
     </div>
   {% if paginate.pages > 1 %}{% include 'pagination' align:' tt-pagination-left' %}{% endif %}
@@ -207,12 +280,228 @@
 {% endpaginate %}
 
 <script>
+  $(document).ready(function(){
+    
+    init();
+    function init() {
+      handleSuccessAddress();
+      setHeaderPages();
+    }
+
+    function showToastSuccessAddress(msg) {
+      $.toast({
+        text: "<div class='row'><div class='col'>"+msg+"</div></div>",
+        allowToastClose: false,
+        icon: 'success',
+        bgColor: '#000',
+        position: 'top-center',
+        hideAfter: 5000,
+        stack: false,
+        loader: false
+      });
+    }
+
+    function handleSuccessAddress() {
+      let params = new URLSearchParams(window.location.search);
+      const stateSubmit = params.get('submit');
+      const stateType = params.get('type');
+      const stateId = params.get('form');
+
+      if (stateSubmit == 'success') {
+        if (stateType == 'edit') {
+          showToastSuccessAddress('Berhasil ubah alamat.');
+          window.history.replaceState({}, '', '/account/addresses');
+        } else {
+          showToastSuccessAddress('Berhasil tambah alamat.');
+          window.history.replaceState({}, '', '/account/addresses/');
+        }
+      }
+    }
+
+    function setHeaderPages() {
+      var pages = $('#address_pages').attr('data-pages');
+      $('#sticky-header-title').text(pages);
+
+      if (pages != 'Alamat Saya') {
+        $('body').css('background-color', '#fff');
+      } else {
+        $('body').css('background-color', '#FAFAFA');
+      }
+    }
+
+    function modifHeaderPages(header) {
+      var pages = $('#address_pages').attr('data-pages');
+      var alamat = 'Alamat Saya';
+
+      if (header == pages) {
+        $('#address_pages').attr('data-pages', alamat);
+        $('.tt-custom-address-voila').attr('id', alamat.replaceAll(' ','-').toLowerCase());
+      } else {
+        console.log(header, 'header');
+        $('#address_pages').attr('data-pages', header);
+        $('.tt-custom-address-voila').attr('id', header.replaceAll(' ','-').toLowerCase());
+      }
+
+      setHeaderPages();
+    }
+
+    function runPageNew() {
+      $('.tt-pages-addressList').addClass('xhidden');
+      $('.tt-pages-addressEdit').addClass('xhidden');
+      modifHeaderPages('Tambah Alamat Baru');
+      //Shopify.CustomerAddress.toggleNewForm(); 
+      $('.tt-pages-addressNew').removeClass('xhidden');
+      window.scrollTo(0, 0);
+    }
+
+    function runPageEdit(formId) {
+      console.log(`#edit_address_${formId}.tt-pages-addressEdit`);
+      $(`#edit_address_${formId}.tt-pages-addressEdit`).removeClass('xhidden');
+      $('.tt-pages-addressList').addClass('xhidden');
+      $('.tt-pages-addressNew').addClass('xhidden');
+      modifHeaderPages('Ubah Alamat');
+      window.scrollTo(0, 0);
+    }
+
+    function runPageList() {
+      $('.tt-pages-addressList').removeClass('xhidden');
+      $('.tt-pages-addressNew, .tt-pages-addressEdit').addClass('xhidden');
+      resetFormInput();
+      modifHeaderPages('Alamat Saya');
+      window.scrollTo(0, 0);
+    }
+
+    function resetFormInput() {
+      var _form = $('#add_address');
+      var _input = _form.find('input.custom-address-required');
+
+      _input.each(function() {
+        $(this).val('');
+        $(this).closest('.form-group').removeClass('error');
+      });
+    }
+
+    function pagesCondition(pages) {
+      if (pages == 'Alamat Saya') {
+        window.location.href = '/account';
+      } else if(pages == 'Ubah Alamat') {
+        var id = $('.tt-custom-address-voila form:visible').find('.form-id').attr('data-form');
+        //Shopify.CustomerAddress.toggleForm(id);
+        runPageList();
+      } else {
+        $('#add_address').addClass('xhidden');
+        runPageList();
+      }
+    }
+
+    // submit validation required
+    $('.tt-custom-address-voila').on('click', '.js-submit', function(e){
+      e.preventDefault()
+      let _parentForm = $(this).closest('form');
+      let _required   = _parentForm.find('.custom-address-required');
+      let validForm   = true;
+      let actionURL   = _parentForm.attr('action');
+      let type        = $(this).attr('data-type');
+      let formId      = $(this).attr('data-form');
+
+      _required.each(function() {
+        let value = $(this).val();
+        if (value.trim() == '') {
+          validForm = false;
+          $(this).closest('.form-group').addClass('error');
+        } else {
+          $(this).closest('.form-group').removeClass('error');
+        }
+      });
+
+      if (validForm) {
+        $(this).addClass('js-submit-loading').attr('disabled', 'disabled');
+        $.ajax({
+          url: actionURL,
+          data: _parentForm.serialize(),
+          cache: false,
+          method: "POST",
+          success: function(result){
+            console.log('ajax success'); 
+            window.location.href = `?submit=success&type=${type}&form=${formId}`;
+          },
+          error: function(){
+            console.log('ajax error');
+            window.location.href = `?submit=fail&type=${type}&form=${formId}`;
+          }
+        });
+      }
+    });
+    // end: Submit validation required
+
+    // Add new address
+    $('.js-new-address').on('click', function(e){
+      e.preventDefault();
+      runPageNew();
+      return false;
+    });
+
+    // Edit new address
+    $('.js-edit-address').on('click', function(e){
+      e.preventDefault();
+      runPageEdit($(this).attr('data-form'));
+      return false;
+    });
+
+    // Sticky nav header link
+    $('.sticky-header a').on('click', function(e){
+      e.preventDefault();
+      var pages = $('#address_pages').attr('data-pages');
+      pagesCondition(pages);
+    })
+
+    $('.js-batal').on('click', function(e){
+      var pages = $('#address_pages').attr('data-pages');
+      pagesCondition(pages);
+    })
+  });
+
+  (function($) {
+    $.fn.inputFilter = function(callback, errMsg) {
+      return this.on("input keydown keyup mousedown mouseup select contextmenu drop focusout", function(e) {
+        if (callback(this.value)) {
+          // Accepted value
+          if (["keydown","mousedown","focusout"].indexOf(e.type) >= 0){
+            $(this).removeClass("input-error");
+            this.setCustomValidity("");
+          }
+          this.oldValue = this.value;
+          this.oldSelectionStart = this.selectionStart;
+          this.oldSelectionEnd = this.selectionEnd;
+        } else if (this.hasOwnProperty("oldValue")) {
+          // Rejected value - restore the previous one
+          $(this).addClass("input-error");
+          this.setCustomValidity(errMsg);
+          this.reportValidity();
+          this.value = this.oldValue;
+          this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+        } else {
+          // Rejected value - nothing to restore
+          this.value = "";
+        }
+      });
+    };
+  }(jQuery));
+
+  $(".int-only").inputFilter(
+    function(value) {
+      return /^-?\d*$/.test(value); 
+    }, 
+    "Isi dengan angka"
+  );
+
 	// initialize observers on address selectors
-  	new Shopify.CountryProvinceSelector('address_country_new', 'address_province_new', {hideElement: 'address_province_container_new'});  
-  	{% for address in customer.addresses %}
-  		var el = document.getElementById("address_country_{{address.id}}");
-		if (el){
-    		new Shopify.CountryProvinceSelector('address_country_{{address.id}}', 'address_province_{{address.id}}', {hideElement: 'address_province_container_{{address.id}}'});
-		}
-	{% endfor %}
+	new Shopify.CountryProvinceSelector('address_country_new', 'address_province_new', {hideElement: 'address_province_container_new'});  
+	{% for address in customer.addresses %}
+		var el = document.getElementById("address_country_{{address.id}}");
+	if (el){
+  		new Shopify.CountryProvinceSelector('address_country_{{address.id}}', 'address_province_{{address.id}}', {hideElement: 'address_province_container_{{address.id}}'});
+	}
+ {% endfor %}
+
 </script>

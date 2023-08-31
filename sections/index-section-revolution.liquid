@@ -17,7 +17,7 @@
               {%- else -%}
                 {%- assign img_url = 'template_slider.png' | asset_url -%}
               {%- endif -%}
-              <li data-slideitem="{{ section.id }}{{ forloop.index }}" data-thumb="{{ img_url }}" data-transition="parallaxtoright" data-slotamount="1" data-masterspeed="0" data-saveperformance="off"  data-title="Slide"{% if block.settings.show_item_button != 'yes' and block.settings.show_item_button != 'aslink' and block.settings.banner_link != blank %} data-link="{{ block.settings.banner_link }}"{% endif %}>
+              <li data-slideitem="{{ section.id }}{{ forloop.index }}" onclick="window.location.href = '{{ block.settings.banner_link }}'" data-thumb="{{ img_url }}" data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="0" data-saveperformance="off"  data-title="Slide"{% if block.settings.show_item_button != 'yes' and block.settings.show_item_button != 'aslink' and block.settings.banner_link != blank %} data-link="{{ block.settings.banner_link }}"{% endif %}>
                 {%- if block.settings.show_customhtml == 'no' -%}
 
                 {%- if block.settings.show_video == "yes" -%}
@@ -177,10 +177,20 @@ margin-top: 20px;
     position: relative;
     padding: 0;
     aspect-ratio: 21/8;
+    min-height: calc(1200px/2.675);
   }
   @media (min-width: 576px) {
    .tp-banner-container {
       height: 100% !important;
+    }
+  }
+  @media (max-width: 1199px) {
+    .tp-banner-container {
+      width: 100%;
+      position: relative;
+      padding: 0;
+      aspect-ratio: 21/8;
+      min-height: calc(100%/2.675);
     }
   }
   @media (max-width: 575px) {
@@ -194,6 +204,7 @@ margin-top: 20px;
       overflow: hidden !important;
       display: flex;
       align-items: inherit;
+      min-height: calc(100vw/2.675);
     }
   }
 

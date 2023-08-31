@@ -1,7 +1,35 @@
 <nav class="panel-menu mobile-main-menu" id="main-menu-mobile">
   <ul>
     {%- if item.show_categorie_button and settings.use_header_inline -%}<div class="CATEGORIE MOBILE"></div>{%- endif -%}
+    
     {%- for link in linklists[mm].links -%}
+
+    {%- if str_blocks_title contains checkval -%}
+      {%- assign i = str_blocks_title | split: checkval | last | split: '|' | first | plus: 0 -%}
+      {%- assign section_block = section.blocks[i] -%}
+      {%- assign section_block = section_block.settings -%}
+    {%- endif -%}
+  
+    {%- assign _title = link.title | append: '_' -%}
+    {%- assign checkval = '|' | append: _title -%}
+    {%- if str_blocks_title_drag contains checkval -%}
+      {%- assign i = str_blocks_title_drag | split: checkval | last | split: '|' | first | plus: 0 -%}
+      {%- assign section_block = section.blocks[i] -%}
+      {%- assign section_block = section_block.settings -%}
+    {%- endif -%}
+      
+    {%- assign widget = section_block.widget -%}
+    {%- assign widgetbanner_url = section_block.widgetbanner_url -%}
+    {%- assign widgetbanner_title = section_block.widgetbanner_title -%}
+    {%- assign widgetbanner_title2 = section_block.widgetbanner_title2 -%}
+    {%- assign widgetbanner_img = section_block.widgetbanner_img -%}
+    {%- assign widgetbanner_imgalt = section_block.widgetbanner_img.alt -%}
+    {%- assign widgetbanner_btn = section_block.widgetbanner_btn -%}
+    {%- assign widgetbanner_btnname = section_block.widgetbanner_btnname -%}
+    {%- assign widgetbanner_color = section_block.widgetbanner_color -%}
+    {%- assign widgetbanner_color2 = section_block.widgetbanner_color2 -%}
+    {%- assign widgetbanner_color4 = section_block.widgetbanner_color4 -%}
+
     <li>
       <a href="{{ link.url }}">{{ link.title }}</a>
 
@@ -67,9 +95,31 @@
          {%- endif -%}
         </li>
         {%- endfor -%}
+        {%- case widget -%}
+        {%- when 'banner' -%}
+          <li>
+            <a href="#" style="color:{{ widgetbanner_color }}">{{ widgetbanner_title }}</a>
+            <a class="row" href="{{ widgetbanner_url }}">
+              {%- if widgetbanner_img == blank -%}{%- include "get_svg" type:'image' size:'100x100px' -%}
+              {%- else -%}
+                <div class="col-md-12">
+                  <img class="lazyload"
+                      data-src="{{ widgetbanner_img | img_url: '510x' }}"
+                      alt="{{ widgetbanner_imgalt }}"
+                      style="display: block; width: 100%"/>
+                </div>
+              {%- endif -%}
+              <div class="col-md-12 mt-1" style="color:{{ widgetbanner_color2 }}">{{ widgetbanner_title2 }}</div>
+            </a>
+            {%- if widgetbanner_btn -%}
+            <a href="{{ widgetbanner_url }}" class="tt-promo-02 pt-0">
+              <span class="btn-underline tt-obj-bottom" style="color:{{ widgetbanner_color4 }}; border-color:{{ widgetbanner_color4 }};">{{ widgetbanner_btnname }}</span>
+            </a>
+            {%- endif -%}
+          </li>
+        {%- endcase -%}
       </ul>
       {%- endif -%}
-
     </li>
     {%- endfor -%}
   </ul>

@@ -1,0 +1,54 @@
+<div class="ky-block md:ky-flex ky-justify-center ky-gap-6">
+{%- assign i = 0 -%}
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'bestdeal' %}
+    <a class="ky-inline-block" href="{{ block.settings.urlbest }}">
+      <picture>
+        <source media="(max-width: 791px)" srcset="{{ block.settings.imgbest | img_url: '600x' }}">
+        <source media="(min-width: 792px)" srcset="{{ block.settings.imgbest | img_url: '600x' }}">
+        <img class="ky-w-full {% if i == 0 %} ky-mb-4 md:ky-mb-0 {% endif %}" src="{{ block.settings.imgbest | img_url: '600x' }}" alt="Best Deal">
+      </picture>
+    </a>
+  {% endcase %}
+  {%- assign i = 0 | plus: 1 -%}
+{% endfor %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Offer Best Deal",
+    "blocks": [
+      {
+        "name": "Banner",
+        "type": "bestdeal",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "imgbest",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "urlbest",
+            "label": "Url"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "deal wrapper"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+

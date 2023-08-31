@@ -1,11 +1,11 @@
-<div class="container-indent">
+{% if content_for_header contains 'pdfgenerator.js' %} {% render 'pdf_script-id' %} {% endif %}<div class="container-indent">
   <div class="container">
     <h1 class="tt-title-subpages noborder">{{ 'customer.account.title_main' | t }}</h1>
     <div class="tt-shopping-layout">
-      <h2 class="tt-title">{{ 'customer.order.title' | t: name: order.name }}</h2>
       <a href="/account" class="tt-link-back">
         <i class="icon-e-19"></i> {{ 'customer.general.return' | t }}
       </a>
+      <h2 class="tt-title">{{ 'customer.order.title' | t: name: order.name }}</h2>
       <div class="tt-data">{{ order.created_at | date: "%B %d, %Y %R" }}</div>
       
       {% if order.cancelled %}
@@ -13,10 +13,14 @@
         <p><strong>{{ 'customer.order.cancelled' | t }} {{ order.cancelled_at | date: "%B %d, %Y %R" }}</strong></p>
         <span>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason }}</span>
       </div>
-      <br>
+      {% else %}
+      <div class="tt-status">
+        <p><strong>{{ 'customer.order.payment_status' | t }}: {{ order.financial_status_label }}</strong></p>
+        <span><strong>{{ 'customer.order.fulfillment_status' | t }}: {{ order.fulfillment_status_label }}</strong></span>
+      </div>
       {% endif %}
       
-      <div class="tt-wrapper">
+      <div class="tt-wrapper-product">
         <div class="tt-table-responsive">
           <table class="tt-table-shop-03">
             <thead>
@@ -70,10 +74,10 @@
                 <br/>
                 <br/>
                 {% if order.fulfillment_status_label == 'Fulfilled' %}
- <a href="#" class="tracking_order" data-shop_name="{{shop.permanent_domain}}" data-order_number="{{order.order_number}}" data-email="{{order.email}}" >Track Order </a>
- {% endif %}
+                  <a href="#" class="tracking_order" data-shop_name="{{shop.permanent_domain}}" data-order_number="{{order.order_number}}" data-email="{{order.email}}" >Track Order </a>
+                {% endif %}
                 </td>
-                <td><strong>{{ order.total_price | money }} {{ order.currency }}</strong></td>
+                <td><strong>{{ order.total_price | money }}</strong></td>
               </tr>
             </tbody>
           </table>
@@ -81,11 +85,10 @@
       </div>
       
       <div class="tt-wrapper">
-        <div class="tt-shop-info">
+        <div class="tt-shop-info tt-account-order">
           <div class="tt-item">
             <h6 class="tt-title">{{ 'customer.order.billing_address' | t }}</h6>
             <div class="tt-description">
-              <strong>{{ 'customer.order.payment_status' | t }}: {{ order.financial_status_label }}</strong>
               <p>{{ order.billing_address.name }}</p>
               <p>{{ order.billing_address.company }}</p>
               <p>{{ order.billing_address.street }}</p>
@@ -98,7 +101,6 @@
           <div class="tt-item">
             <h6 class="tt-title">{{ 'customer.order.shipping_address' | t }}</h6>
             <div class="tt-description">
-              <strong>{{ 'customer.order.fulfillment_status' | t }}: {{ order.fulfillment_status_label }}</strong>
               <p>{{ order.shipping_address.name }}</p>
               <p>{{ order.shipping_address.company }}</p>
               <p>{{ order.shipping_address.street }}</p>
